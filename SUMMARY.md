@@ -1,24 +1,38 @@
 # Table of contents
 
-* [👋 Welcome to A Product](README.md)
+* [The Wildcat Protocol](README.md)
 
 ## Overview
 
 * [Introduction](overview/introduction.md)
-* [✨ Our Features](overview/our-features.md)
+* [What Wildcat Enables](overview/what-wildcat-enables.md)
+* [Whitepaper](overview/whitepaper.md)
 
-## Product Guides
+## Using Wildcat
 
-* [📪 Making a post](product-guides/making-a-post.md)
-* [📎 Understanding Projects](product-guides/understanding-projects.md)
+* [Terminology](using-wildcat/terminology.md)
+* [Onboarding](using-wildcat/onboarding.md)
+* [Day-To-Day Usage](using-wildcat/day-to-day-usage/README.md)
+  * [Borrowers](using-wildcat/day-to-day-usage/borrowers.md)
+  * [Lenders](using-wildcat/day-to-day-usage/lenders.md)
 
-## Fundamentals
+## Technical Deep-Dive
 
-* [🛠 Getting set up](fundamentals/getting-set-up/README.md)
-  * [📝 Setting permissions](fundamentals/getting-set-up/setting-permissions.md)
-  * [🧑 Inviting Members](fundamentals/getting-set-up/inviting-members.md)
+* [Contract Deployments](technical-deep-dive/contract-deployments.md)
 
-## Use Cases
+## Security Measures
 
-* [🎨 For Designers](use-cases/for-designers.md)
-* [🖥 For Developers](use-cases/for-developers.md)
+* [Code Audits](security-measures/code-audits.md)
+* [SphereX Protection](security-measures/spherex-protection.md)
+* [Bounty Program](security-measures/bounty-program.md)
+
+## Legal
+
+* [Wildcat Service Agreement](legal/wildcat-service-agreement.md)
+* [Master Loan Agreement](legal/master-loan-agreement.md)
+* [Website T\&Cs](legal/website-t-and-cs.md)
+
+## Miscellaneous
+
+* [Who We Are](miscellaneous/who-we-are.md)
+* [Contact Us](miscellaneous/contact-us.md)

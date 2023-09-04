@@ -1,4 +1,4 @@
-# 🛠 Getting set up
+# Wildcat Service Agreement
 
 <details>
 

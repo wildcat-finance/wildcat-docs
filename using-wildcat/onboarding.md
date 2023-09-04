@@ -1,4 +1,4 @@
-# 📎 Understanding Projects
+# Onboarding
 
 ## How Projects work
 
