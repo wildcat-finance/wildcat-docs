@@ -18,7 +18,17 @@
 
 ## Technical Deep-Dive
 
-* [Contract Deployments](technical-deep-dive/contract-deployments.md)
+* [Wildcat Protocol](technical-deep-dive/wildcat-protocol/README.md)
+  * [The Vault Factory](technical-deep-dive/wildcat-protocol/the-vault-factory/README.md)
+    * [WildcatVaultFactory](technical-deep-dive/wildcat-protocol/the-vault-factory/wildcatvaultfactory.md)
+  * [The Vault](technical-deep-dive/wildcat-protocol/the-vault/README.md)
+    * [WildcatMarketBase](technical-deep-dive/wildcat-protocol/the-vault/wildcatmarketbase.md)
+    * [WildcatMarketConfig](technical-deep-dive/wildcat-protocol/the-vault/wildcatmarketconfig.md)
+    * [WildcatMarketToken](technical-deep-dive/wildcat-protocol/the-vault/wildcatmarkettoken.md)
+    * [WildcatMarketWithdrawals](technical-deep-dive/wildcat-protocol/the-vault/wildcatmarketwithdrawals.md)
+    * [WildcatMarket](technical-deep-dive/wildcat-protocol/the-vault/wildcatmarket.md)
+    * [Events](technical-deep-dive/wildcat-protocol/the-vault/events.md)
+  * [The Controller (doc wip)](technical-deep-dive/wildcat-protocol/the-controller-doc-wip.md)
 
 ## Security Measures
 
