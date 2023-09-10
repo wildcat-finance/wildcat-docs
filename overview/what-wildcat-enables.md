@@ -1,17 +1,15 @@
 # What Wildcat Enables
 
-{% hint style="info" %}
-**GitBook tip:** A succinct video overview is a great way to introduce folks to your product. Embed a Loom, Vimeo or YouTube video and you're good to go! We love this video from the fine folks at Loom as a perfect example of a succinct feature overview.
-{% endhint %}
+The core premise of a Wildcat vault is fairly simple: borrowing and lending between two parties - but that simplicity belies creative applications.
 
-## Awesome Feature One
+Consider the following examples - all are well served by making use of Wildcat:
 
-Get amazing things done with awesome feature one. But remember that awesome feature two and three exist too. In fact, Awesome Product is full of awesome features.
+* Acquiring temporary inventory to provide a market spread for an asset,
+* Bringing long-dated call options on new assets on-chain,
+* Raising funds without issuing a token immediately (foregoing an initial LBP), or
+* Issuing interest-bearing variants of assets held in escrow, creating an on-chain bond
 
-![](https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?crop=entropy\&cs=tinysrgb\&fm=jpg\&ixid=MnwxOTcwMjR8MHwxfHNlYXJjaHwyfHxhcHB8ZW58MHx8fHwxNjYwNTgzMzQz\&ixlib=rb-1.2.1\&q=80)
+If you have admin costs associated with middle and back-office functionality because you're handling loans OTC via Telegram or the like, you're probably going to find using a Wildcat vault useful, since you can track everything using a Wildcat vault.
 
-## Awesome Feature Two
+TODO: Complete
 
-Get amazing things done with awesome feature two. But remember that awesome feature one and three exist too. In fact, Awesome Product is full of awesome features.
-
-![](https://images.unsplash.com/photo-1569144157591-c60f3f82f137?crop=entropy\&cs=tinysrgb\&fm=jpg\&ixid=MnwxOTcwMjR8MHwxfHNlYXJjaHwxfHxmZWF0dXJlfGVufDB8fHx8MTY2MDU4MzM1OQ\&ixlib=rb-1.2.1\&q=80)

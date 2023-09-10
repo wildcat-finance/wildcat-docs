@@ -1,40 +1,28 @@
+---
+description: Banking, but worse.
+---
+
 # The Wildcat Protocol
 
 {% hint style="info" %}
-**GitBook tip:** your product docs aren't just a reference of all your features! use them to encourage folks to perform certain actions and discover the value in your product.
+**This is an early version of the Wildcat protocol documentation!**\
+\
+Something you don't understand? Something missing?\
+\
+Fire a message to @functi0nZer0 on Twitter and watch him do Things That Don't Scale!
 {% endhint %}
 
-## Overview
+## Hi.
 
-Here are a couple of example overviews from products with really great docs:
+Welcome to the Wildcat documentation. We recognise that a protocol's Gitbook is - as a rule - only ever read by three categories of people:
 
-> Loom is a video messaging tool that helps you get your message across through instantly shareable videos.
->
-> With Loom, you can record your camera, microphone, and desktop simultaneously. Your video is then instantly available to share through Loom's patented technology.
->
-> — From the [Loom Docs](https://support.loom.com/hc/en-us/articles/360002158057-What-is-Loom-)
+* Security auditors working out if something is broken,
+* Protocol researchers working out if something is worth posting about, and
+* Lawyers working out if something is actually legal.
 
-> The Mailchimp Marketing API provides programmatic access to Mailchimp data and functionality, allowing developers to build custom features to do things like sync email activity and campaign analytics with their database, manage audiences and campaigns, and more.
->
-> — From the [Mailchimp Marketing API docs](https://mailchimp.com/developer/marketing/docs/fundamentals/)
-
-## Quick links
-
-{% content-ref url="overview/introduction.md" %}
-[introduction.md](overview/introduction.md)
-{% endcontent-ref %}
-
-{% content-ref url="overview/what-wildcat-enables.md" %}
-[what-wildcat-enables.md](overview/what-wildcat-enables.md)
-{% endcontent-ref %}
-
-## Get Started
-
-We've put together some helpful guides for you to get setup with our product quickly and easily.
-
-{% content-ref url="legal/wildcat-service-agreement.md" %}
-[wildcat-service-agreement.md](legal/wildcat-service-agreement.md)
-{% endcontent-ref %}
+With that in mind, we'll keep this high-level page brief.\
+\
+If you're an **auditor or developer**, you want:
 
 {% content-ref url="broken-reference" %}
 [Broken link](broken-reference)
@@ -43,3 +31,20 @@ We've put together some helpful guides for you to get setup with our product qui
 {% content-ref url="broken-reference" %}
 [Broken link](broken-reference)
 {% endcontent-ref %}
+
+If you're a **protocol researcher** looking for content for their next thread, you want:
+
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
+{% endcontent-ref %}
+
+And if you're a **lawyer or a regulator** (greetings, feds), you want:
+
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
+{% endcontent-ref %}
+
+Beyond that, the documentation is yours to enjoy (or not) at your leisure. We didn't enjoy writing it, but if you happen to enjoy reading it, then that all comes out fine in the wash.\
+
+
+Hic sunt dragones.
