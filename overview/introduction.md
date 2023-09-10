@@ -1,11 +1,29 @@
+---
+description: Sanity check for if this is worth your continued reading.
+---
+
 # Introduction
 
-{% hint style="info" %}
-**GitBook tip:** A succinct video overview is a great way to introduce folks to your product. Embed a Loom, Vimeo or YouTube video and you're good to go! We love this video from the fine folks at Loom as a perfect example of a succinct feature overview.
-{% endhint %}
+## The Elevator Pitch <a href="#the-elevator-pitch" id="the-elevator-pitch"></a>
 
-## Video overview
+Wildcat is a protocol that allows borrowers to deploy undercollateralised credit lines.\
+\
+That's it.\
+\
+Borrowers can dictate the terms of any parameter that they would care to modify when seeking to borrow: i.e. capacity, rates, underlying asset, penalty terms, withdrawal cycles, and so on.\
+\
+Wildcat borrowers can dictate their preferred lender set, either explicitly or through filtering. \
+\
+Depending on the controller contract underlying a given Wildcat vault, extra functionality can be bolted on: extra logic regarding the way that interest is paid, or to whom, or various on-chain conditions for deposit release.\
+\
+Wildcat vaults are not controlled or upgradable by the protocol itself once deployed.\
+\
+Your vault and its interactions are yours and yours alone.\
+\
+We can't liquidate collateral, we can't freeze pools, and we can't access your funds.\
+\
+The Wildcat Protocol: enabling 21st century wildcat banks.
 
-Got 2 minutes? Check out a video overview of our product:
+### ​ <a href="#undefined" id="undefined"></a>
 
-{% embed url="https://www.loom.com/embed/3bfa83acc9fd41b7b98b803ba9197d90" %}
+​​
