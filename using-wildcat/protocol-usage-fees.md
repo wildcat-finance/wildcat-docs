@@ -25,6 +25,8 @@ The borrower that deploys a vault through their own Controller Alpha instance wi
 
 Decreasing or increasing that APR will similarly adjust the actual protocol fee APR.
 
+Protocol fees do _not_ increase in the presence of a penalty APR if a vault is delinquent and over the grace period: if a vault deployed through Controller Alpha has a base rate of 10% and is currently paying an additional penalty APR of 20%, the total vault APR is 32% ((10% + 2%) + 20%), _not_ 36%.
+
 Protocol fees are claimed by either the archcontroller or the designated fee recipient of a vault.
 
 Protocol fees accrued as part of a vault APR are senior to lender claims within a vault - a lender who attempts to withdraw all of the reserves within a vault will only be capable of removing that amount net any protocol fees that have accrued over time and not been withdrawn.
