@@ -34,7 +34,7 @@
 
 ## Security Measures
 
-* [Code Audits](security-measures/code-audits.md)
+* [Code Security Reviews](security-measures/code-security-reviews.md)
 * [SphereX Protection](security-measures/spherex-protection.md)
 * [Bounty Program](security-measures/bounty-program.md)
 
