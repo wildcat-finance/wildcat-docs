@@ -16,6 +16,7 @@
   * [Borrowers](using-wildcat/day-to-day-usage/borrowers.md)
   * [Lenders](using-wildcat/day-to-day-usage/lenders.md)
 * [Protocol Usage Fees](using-wildcat/protocol-usage-fees.md)
+* [Delinquency](using-wildcat/delinquency.md)
 
 ## Technical Deep-Dive
 
