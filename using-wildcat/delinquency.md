@@ -55,5 +55,9 @@ More particularly, any withdrawal request that exceeds the reserves currently in
 * Against a supply of 750,000 USDC, this means that the temporary reserve ratio is 36% rather than the 20% we would 'expect' to see against the remaining supply: the market will remain delinquent until this 36% has been met.
 * Pending withdrawals - and their impact on the reserve ratio of a market - remain in place until the lender is capable of burning market tokens in order to reclaim their loaned assets.
 
+\[_The above includes one mild simplification: as stated in_ [_Protocol Usage Fees_](protocol-usage-fees.md)_, lenders are only capable of withdrawing reserves net of any protocol fees that have been accrued and not withdrawn. However, the overall point remains._]
+
 The astute borrower of a market will actively monitor withdrawal requests and current reserve ratios in order to minimise the time for which the grace tracker is active to avoid paying penalties.
+
+
 
