@@ -1,12 +1,26 @@
+---
+description: What you need to know as a Wildcat lender.
+---
+
 # Lenders
 
 ### Deposits
 
-To fill in.
+Depositing assets to a Wildcat market is a fairly simple process, and we presume in this section that a [**lender**](../terminology.md#lender) wishing to lend to a [**borrower**](../terminology.md#borrower) through a market has already been [**whitelisted**](../terminology.md#whitelisted) via the appropriate [**controller**](../terminology.md#controller).
+
+Upon first encounter with a Wildcat market via the UI (and assuming that the lender has signed the Wildcat [**Service Agreement**](../terminology.md#service-agreement) presented to them when first accessing the protocol UI), a lender will be asked whether or not they wish to countersign the associated [**MLA**](../terminology.md#master-loan-agreement-mla) for that market.
+
+Note that dependent on the borrower, there may be a separate legal agreement that is offered to the lender in lieu of the Wildcat MLA. After countersigning or declining, the lender is able to view the market itself.
+
+In short, provided that the lender holds some of the [**underlying asset**](../terminology.md#underlying-asset), and there is [**capacity**](../terminology.md#capacity) in the market, the lender is able to deposit as much of the asset as they are willing to (or up to the capacity), receiving in exchange a 1:1 amount of the **market token** associated with that particular market. The lender that deposits 133.7 XYZ tokens into a market will receive 133.7 market tokens - with the name depending on what was selected by the borrower when the market was launched.
+
+Market tokens are _rebasing_ - they do not have an internal exchange rate whereby 1 market token now will be worth - for example - 1.05 of the underlying asset after a year. Rather, after every interaction with the market that changes the state, market token balances will be adjusted to maintain the 1:1 ratio between market tokens held and the claim of each lender. That is to say, depositing 1,000 tokens of an underlying asset into a market offering 10% base APR will result in a wallet balance of 1,100 market tokens after a year.
+
+Lenders can transfer market tokens freely&#x20;
 
 ### Withdrawals
 
-Withdrawals are handled slightly differently within Wildcat markets than in other protocols you might be used to interacting with.
+Withdrawals are handled slightly differently within Wildcat markets than in other DeFi protocols you might be used to interacting with.
 
 To that end, this section provides a brief guide to how withdrawals are processed, and the ways in which you reclaim assets from a market that you have requested, either in full or _pro rata_ depending on both the reserves currently in the market and how many other lenders are simultaneously requesting a withdrawal.
 

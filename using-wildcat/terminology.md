@@ -4,60 +4,67 @@ description: It's dangerous to go alone - learn these.
 
 # Terminology
 
-* **Archcontroller**\
+#### **Archcontroller** 
 
-* **Base APR**\
+#### **Base APR** 
 
-* **Borrow**\
+#### **Borrow** 
 
-* **Borrower**\
+#### **Borrower** 
 
-* **Capacity**\
+*
 
-* **Controller**\
 
-* **Default**\
 
-* **Delinquency**\
+#### **Capacity** 
 
-* **Deposit**\
+#### **Controller** 
 
-* **Escrow Contract**\
+#### **Default** 
 
-* **Grace Period**\
+#### **Delinquency** 
 
-* **Grace Tracker**\
+#### **Deposit** 
 
-* **Lender**\
+#### **Escrow Contract** 
 
-* **Market**\
+#### **Grace Period** 
 
-* **Master Loan Agreement**\
+#### **Grace Tracker** 
 
-* **Penalty APR**\
+#### **Lender** 
 
-* **Pending Withdrawal**\
+#### **Market**
 
-* **Reserve Ratio**\
+####
 
-* **Reserved Assets Pool**\
+#### **Market Token** 
 
-* **Sentinel**\
+#### **Master Loan Agreement (MLA)** 
 
-* **Service Agreement**\
+#### **Penalty APR** 
 
-* **Terminated**\
+#### **Pending Withdrawal** 
 
-* **Undercollateralised**\
+#### **Reserve Ratio** 
 
-* **Underlying Asset**\
+#### **Reserved Assets Pool** 
 
-* **Vault**\
-  &#x20;See **Market**.\
+#### **Sentinel** 
 
-* **Withdraw**\
+#### **Service Agreement** 
 
-* **Withdrawal Cycle**\
+#### **Terminated** 
 
-* **Whitelisted**
+#### **Undercollateralised** 
+
+#### **Underlying Asset** 
+
+#### **Vault** 
+
+#### **Withdraw** 
+
+#### **Withdrawal Cycle** 
+
+#### **Whitelisted**
 
