@@ -24,6 +24,12 @@ We can't liquidate collateral, we can't freeze pools, and we can't access your f
 \
 The Wildcat Protocol: enabling 21st century wildcat banks.
 
-### ​ <a href="#undefined" id="undefined"></a>
+### ​A Comment Before You Head Further In <a href="#undefined" id="undefined"></a>
+
+This is the documentation prepared for launch, to familiarise people with the protocol. There is some repetition of terms and definitions in sections.
+
+This is intentional, as we don't want (or expect) people to have to read through the entire thing in order to understand the section that they're interested in.
+
+Post-launch, we will be fleshing this Gitbook out more with screenshots, illustrations, videos and so forth to help explain more concepts more clearly - waves of text can be difficult to parse, but we don't know yet what is coming across well and what isn't!
 
 ​​
