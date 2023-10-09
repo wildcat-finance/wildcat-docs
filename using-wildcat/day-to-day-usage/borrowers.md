@@ -1,3 +1,7 @@
+---
+description: What you need to know as a Wildcat borrower.
+---
+
 # Borrowers
 
 #### Launching A New Market
@@ -106,3 +110,9 @@ As a borrower, you are able to adjust the capacity up or down as you please. How
 In the event that a borrower has finished utilising the funds for the purpose that the market was set up to facilitate (or if lenders are choosing not to withdraw their assets and the borrower is paying too much interest on assets that have been repaid to the market), the borrower can _close_ a market at will.
 
 This is a special case of reducing the APR (with the associated increased reserve rate that accompanies it). When a vault is closed, sufficient assets must be repaid to increase the reserve ratio to 100%, after which _no further parameter adjustment or borrowing is possible_. The only thing possible to do in a closed vault is for the lenders to file withdrawal requests and exit.
+
+#### Removal From The Archcontroller
+
+For whatever reason, it may be the case that the Wildcat protocol itself no longer wishes to permit a given borrower to interact with it. In this case, the address(es) of a borrower are removed from the archcontroller.
+
+If this happens, the borrower can no longer deploy _new_ controllers or markets. However, they are still capable of interacting with _existing_ markets - the protocol cannot force these closed.
