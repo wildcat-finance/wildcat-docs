@@ -56,7 +56,7 @@ Deploys a new vault with the `create2` opcode given some [vault parameters](wild
 
 Logs:
 
-* [VaultDeployed](../the-vault/events.md#vaultdeployed)
+* [VaultDeployed](../wildcatmarket/events.md#vaultdeployed)
 
 #### computeVaultAddress
 
@@ -68,4 +68,4 @@ function computeVaultAddress(
 ) external view returns (address);
 ```
 
-Helper function to pre-computes the address that the `create2` would return for a given [controller](../the-vault/wildcatmarketbase.md#controller), deployer, and [asset](../the-vault/wildcatmarketbase.md#asset).
+Helper function to pre-computes the address that the `create2` would return for a given [controller](../wildcatmarket/wildcatmarketbase.md#controller), deployer, and [asset](../wildcatmarket/wildcatmarketbase.md#asset).
