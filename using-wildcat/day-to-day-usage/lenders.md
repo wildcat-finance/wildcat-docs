@@ -10,7 +10,7 @@ Depositing assets to a Wildcat market is a fairly simple process, and we presume
 
 Upon first encounter with a Wildcat market via the protocol UI (and assuming that the lender has signed the Wildcat [**Service Agreement**](../terminology.md#service-agreement) presented to them when first accessing said UI), a lender will be asked whether or not they wish to countersign the associated [**MLA**](../terminology.md#master-loan-agreement-mla) for that market.
 
-Note that dependent on the borrower, there may be a separate legal agreement that is offered to the lender in lieu of the Wildcat MLA. After countersigning or declining, the lender is able to access the market itself.
+Note that dependent on the borrower, there may be a _separate_ legal agreement that is offered to the lender in lieu of the Wildcat MLA. After countersigning or declining, the lender is able to access the market itself.
 
 In short, provided that the lender holds some of the [**underlying asset**](../terminology.md#underlying-asset), and there is [**capacity**](../terminology.md#capacity) in the market, the lender is able to deposit as much of the asset as they are willing to (or up to the capacity), receiving in exchange a 1:1 amount of the [**market token**](../terminology.md#market-token) associated with that particular market. The lender that deposits 133.7 XYZ tokens into a market will receive 133.7 market tokens - with the market token name depending on what was selected by the borrower when the market was launched.
 

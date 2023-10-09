@@ -15,6 +15,7 @@
 * [Day-To-Day Usage](using-wildcat/day-to-day-usage/README.md)
   * [Borrowers](using-wildcat/day-to-day-usage/borrowers.md)
   * [Lenders](using-wildcat/day-to-day-usage/lenders.md)
+  * [The Sentinel](using-wildcat/day-to-day-usage/the-sentinel.md)
 * [Protocol Usage Fees](using-wildcat/protocol-usage-fees.md)
 * [Delinquency](using-wildcat/delinquency.md)
 

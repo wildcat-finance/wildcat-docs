@@ -8,18 +8,18 @@ Wildcat takes a fee for the usage of markets deployed using it. The fee is varia
 
 Once a borrower has been added to the global registry by the archcontroller, they have free reign to deploy markets with whatever combination of parameters they see fit to.
 
-However, they do so by **first** deploying a controller contract that is both specific to them and supports the functionality that they wish to utilise. There are distinct variants of controller, and each of them are suited to particular circumstances. For example -&#x20;
+However, they do so by first deploying a controller contract that is both specific to them and supports the functionality that they wish to utilise. There are distinct variants of controller, and each of them are suited to particular circumstances. For example -&#x20;
 
 * **Controller Null is the MVP launch controller (basic functionality, limited access),**
-* **Controller Alpha is the general launch controller (basic functionality),**
+* Controller Alpha is the general launch controller (basic functionality),
 * Controller Beta might permit the deployment of long-dated call option markets,
 
 \- and so on.&#x20;
 
-Each controller has a specified protocol fee, which either manifests as an origination fee (i.e. it must be paid during the deployment of a market), or as a proportion of base APR.\
+Each controller has a specified protocol fee, which either manifests as an origination fee (which must be paid during the deployment of a market), or as a proportion of base APR, which accrues over the supply of assets rather than the capacity.\
 \
-**Controller Null - used in the launch stages - has a protocol origination fee of 100 USDC.**\
-**Controller Alpha has a protocol fee of 20% of the current base APR.**
+**Controller Null - used in the launch stages - has a protocol origination fee of 100 USDC and no protocol fee. Controller Null is a test, and is not for wider usage.**\
+Controller Alpha has a protocol fee of 20% of the current base APR.
 
 The borrower that deploys a market through their own Controller Alpha instance with an APR of 10% will find themselves paying 12% (the base rate receivable by lenders plus 20% of that base rate).
 

@@ -1,10 +1,10 @@
 # Code Security Reviews
 
-The Wildcat protocol contracts have been subjected to one independent security review and one (scheduled) crowdsourced review via Code4rena.
+The Wildcat protocol contracts have been subjected to one independent security review and one upcoming crowdsourced review via Code4rena.
 
 The results of these reviews (and associated reports) are available here:
 
-###
+
 
 ### [alpeh\_v](https://x.com/alpeh\_v) \[Independent Security Review]
 
@@ -26,11 +26,9 @@ The results of these reviews (and associated reports) are available here:
 
 
 
-
-
 ### [Code4rena](https://code4rena.com/) \[Crowdsourced Security Review]
 
-**Date**: TBC
+**Date**: 16 - 25th October 2023
 
 **Scope**: TBC
 
