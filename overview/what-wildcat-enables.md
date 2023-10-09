@@ -9,6 +9,8 @@ Consider the following examples - all are well served by making use of Wildcat:
 * Raising funds without issuing a token immediately (foregoing an initial LBP), or
 * Issuing interest-bearing variants of assets held in escrow, creating an on-chain quasi-'bond' with the borrower as counterparty and source of yield,
 
+You will have seen these use-cases before, associated with other protocols. What's different here is the amount of freedom the borrower has, provided with a novel mechanism for scheduling redemptions on behalf of lenders. However, Wildcat is very much tilted towards borrowers in the sense of who stands to benefit the most from the differences: they are responsible for maintaining the health of their markets, but this comes with substantial power to dictate their terms.
+
 If you have admin costs associated with middle and back-office functionality because you're handling loans OTC via Telegram or the like, you're probably going to find using a Wildcat market useful, since you can track everything using associated events.
 
 If you're trying to raise funds more generally (i.e. you're a legal entity associated with a DAO that wants to pay salaries without selling a native token to do so at the moment), a Wildcat market may prove convenient to you as well.
