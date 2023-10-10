@@ -6,8 +6,7 @@ Consider the following examples - all are well served by making use of Wildcat:
 
 * Acquiring temporary inventory to provide a market spread for an asset,
 * Bringing long-dated call options on new assets on-chain,
-* Raising funds without issuing a token immediately (foregoing an initial LBP), or
-* Issuing interest-bearing variants of assets held in escrow, creating an on-chain quasi-'bond' with the borrower as counterparty and source of yield,
+* Raising funds without issuing a token immediately (foregoing an initial LBP)
 
 You will have seen these use-cases before, associated with other protocols. What's different here is the amount of freedom the borrower has, provided with a novel mechanism for scheduling redemptions on behalf of lenders. However, Wildcat is very much tilted towards borrowers in the sense of who stands to benefit the most from the differences: they are responsible for maintaining the health of their markets, but this comes with substantial power to dictate their terms.
 

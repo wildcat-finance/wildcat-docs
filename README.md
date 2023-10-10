@@ -38,7 +38,7 @@ If you're a **protocol researcher** looking for content for their next thread, y
 [Broken link](broken-reference)
 {% endcontent-ref %}
 
-And if you're a **lawyer or a regulator** (greetings, feds), you want:
+And if you're a **lawyer or a regulator**, you want:
 
 {% content-ref url="broken-reference" %}
 [Broken link](broken-reference)
