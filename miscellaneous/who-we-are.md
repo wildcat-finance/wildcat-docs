@@ -13,7 +13,11 @@ Developers:
 * Laurence E. Day
 * Eugene Allenov
 
-Sincere thanks to:
+Operations:
+
+* Julian Debbag
+
+Support:
 
 * Evgeny Gaevoy
-* Julian Debbag
+* Wintermute Ventures
