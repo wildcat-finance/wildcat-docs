@@ -35,22 +35,22 @@ The penalty APR associated with a market activates once the grace tracker exceed
 * The grace tracker counts back down to zero from this point - subsequent market state updates will detect when the tracker drops below the market grace period and adjust scaling factors appropriately.
 * A total of **4** days of penalty APR will be applied in total: the failure of a market to update its state in a timely fashion as the tracker drops below the grace period does _not_ adversely impact the borrower.
 
-## Reserved Assets/Pending Withdrawals & Delinquency
+## Unclaimed/Pending Withdrawals & Delinquency
 
 Tthe reserve ratio of a market can be temporarily raised depending on the amount of assets that are either earmarked for withdrawal by a lender, or are part of a pending withdrawal request.
 
 When a lender burns market tokens in order to request a withdrawal of assets they have deposited in a market, any reserves that exist within the market are removed from the market supply. Consider the following:
 
 * A market with a supply of 1,000,000 USDC has a reserve ratio of 20%, and currently holds 250,000 USDC in reserves (current reserve ratio 25%).
-* A lender makes a request to withdraw 200,000 USDC, burning 200,000 market tokens to move 200,000 USDC of the reserves into the reserved assets pool, and reducing the supply by the same amount.
+* A lender makes a request to withdraw 200,000 USDC, burning 200,000 market tokens to move 200,000 USDC of the reserves into the unclaimed withdrawals pool, and reducing the supply by the same amount.
 * The market now has 50,000 USDC in reserves against a supply of 800,000 USDC. This means that the new reserve ratio is 6.25%, and the market is immediately delinquent.
 * The borrower needs to return 110,000 USDC to the market reserves in order to cure the delinquency.
 
 More particularly, any withdrawal request that exceeds the reserves currently in a market temporarily forces the reserve ratio upwards. To illustrate:
 
 * A market with a supply of 1,000,000 USDC has a reserve ratio of 20%, and currently holds 250,000 USDC in reserves (current reserve ratio 25%).
-* A lender makes a request to withdraw 400,000 USDC, burning 250,000 market tokens to move 250,000 USDC of the reserves into the reserved assets pool and generating a pending withdrawal of the remaining 150,000 USDC. The reserve ratio of the market is immediately 0%.
-* The supply of the market is reduced by the 250,000 that was moved into reserved assets, rather than the full 400,000 requested.
+* A lender makes a request to withdraw 400,000 USDC, burning 250,000 market tokens to move 250,000 USDC of the reserves into the unclaimed withdrawals pool and generating a pending withdrawal of the remaining 150,000 USDC. The reserve ratio of the market is immediately 0%.
+* The supply of the market is reduced by the 250,000 that was moved into unclaimed withdrawals, rather than the full 400,000 requested.
 * Pending withdrawals must be 100% collateralised by a market, with the standard reserve ratio of the market applying to the _remainder_ of the supply. In this case, then, the amount of reserves that the market must hold is (150,000 \* 1) + (600,000 \* 0.2) = 270,000 USDC.
 * Against a supply of 750,000 USDC, this means that the temporary reserve ratio is 36% rather than the 20% we would 'expect' to see against the remaining supply: the market will remain delinquent until this 36% has been met.
 * Pending withdrawals - and their impact on the reserve ratio of a market - remain in place until the lender is capable of burning market tokens in order to reclaim their loaned assets.
