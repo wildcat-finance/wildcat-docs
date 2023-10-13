@@ -34,42 +34,42 @@ A withdrawal involves:
 * Waiting for the withdrawal cycle period to elapse (either the full period if you were the request that kickstarted the cycle, or the remainder if you placed the request in the middle of a cycle), and then
 * Claiming the assets that are available to you at the end of the cycle.
 
-#### The Reserved Assets Pool
+#### The Unclaimed Withdrawals Pool
 
-Within a given market, there is a [**reserved assets pool**](../terminology.md#reserved-assets-pool) - a 'side-pot' containing assets that are still technically 'within' the market, but have been earmarked for withdrawal by a lender via a _withdrawal request_. Assets that are placed within this pool are unavailable to the borrower (they are considered to be removed from the market supply), and the [**reserve ratio**](../terminology.md#reserve-ratio) of a market does not factor them in.
+Within a given market, there is a unclaimed withdrawals pool - a 'side-pot' containing assets that are still technically 'within' the market, but have been earmarked for withdrawal by a lender via a _withdrawal request_. Assets that are placed within this pool are unavailable to the borrower (they are considered to be removed from the market supply), and the [**reserve ratio**](../terminology.md#reserve-ratio) of a market does not factor them in.
 
-When you request a withdrawal, whether you are required to burn your market tokens or not depends on whether there are any reserves that are _not_ yet in the reserved assets pool.
+When you request a withdrawal, whether you are required to burn your market tokens or not depends on whether there are any reserves that are _not_ yet in the unclaimed withdrawals pool.
 
-* If there are reserves in the pool that are not in the reserved assets pool, then you can burn market tokens that you hold at a 1:1 rate in order to move those reserves into the pool. If there is no current withdrawal cycle ongoing, this action begins the countdown for a new cycle.
-* If all assets within the market are currently within the reserved assets pool (or there are no reserves in the pool to speak of at present), then your withdrawal request is logged, but you are not required to burn any market tokens (as there is nothing to move into the pool). Instead, you will need to burn market tokens at the point of _claim_ (see below).
+* If there are reserves in the pool that are not in the unclaimed withdrawals pool, then you can burn market tokens that you hold at a 1:1 rate in order to move those reserves into the pool. If there is no current withdrawal cycle ongoing, this action begins the countdown for a new cycle.
+* If all assets within the market are currently within the unclaimed withdrawals pool (or there are no reserves in the pool to speak of at present), then your withdrawal request is logged, but you are not required to burn any market tokens (as there is nothing to move into the pool). Instead, you will need to burn market tokens at the point of _claim_ (see below).
 
 #### Claiming
 
-Once a withdrawal cycle completes, then lenders who made withdrawal requests during that cycle are able to _claim_ assets that they requested from the reserved assets pool, subject to the following:
+Once a withdrawal cycle completes, then lenders who made withdrawal requests during that cycle are able to _claim_ assets that they requested from the unclaimed withdrawals pool, subject to the following:
 
-* If there are enough assets in the reserved assets pool to cover the total amount requested for withdrawal in that cycle, then the lender can claim the full amount of their requested withdrawal.
-* In the scenario where the total amount requested (across several lenders) exceedes the amount in the reserved assets pool, then the lender is able to claim a _pro rata_ amount of the assets in the reserved pool proportional to the size of _their_ overall withdrawal amount compared to the total. To illustrate:
+* If there are enough assets in the unclaimed withdrawals pool to cover the total amount requested for withdrawal in that cycle, then the lender can claim the full amount of their requested withdrawal.
+* In the scenario where the total amount requested (across several lenders) exceedes the amount in the unclaimed withdrawals pool, then the lender is able to claim a _pro rata_ amount of the assets in the reserved pool proportional to the size of _their_ overall withdrawal amount compared to the total. To illustrate:
   * If Lender A requested a withdrawal of 10,000 tokens from a pool with 5,000 tokens in reserve, they would be able to withdraw all 5,000 if they were the only lender in that withdrawal cycle.
   * In the event that Lender B requests a withdrawal of 40,000 tokens in the same cycle, however, Lender A would only be able to claim 1,000 tokens while Lender B would be able to claim 4,000.
-  * Note in this scenario that Lender A - if they requested the withdrawal first - would be required to burn 5,000 market tokens to place these 5,000 assets in the reserved assets pool, while Lender B did not have to burn any. Rather, Lender B will be asked to burn 4,000 market tokens at the point of claim.
-  * The above situation leaves Lender A having burned 5,000 market tokens and only able to claim 1,000 - the discrepancy here is logged, and subsequent claims as the reserved assets pool refills - up to the remaining 4,000 tokens belonging to Lender A - will not require any market token burning.
+  * Note in this scenario that Lender A - if they requested the withdrawal first - would be required to burn 5,000 market tokens to place these 5,000 assets in the unclaimed withdrawals pool, while Lender B did not have to burn any. Rather, Lender B will be asked to burn 4,000 market tokens at the point of claim.
+  * The above situation leaves Lender A having burned 5,000 market tokens and only able to claim 1,000 - the discrepancy here is logged, and subsequent claims as the unclaimed withdrawals pool refills - up to the remaining 4,000 tokens belonging to Lender A - will not require any market token burning.
 
 
 
 #### Expired Claims and The Withdrawal Queue
 
-Any withdrawal amounts that cannot not be honoured at the end of a withdrawal cycle (either due to the assets in market reserves being insufficient, or due to a _pro rata_ claim on assets within the reserved assets pool) are batched together, marked as 'expired' and placed into a queue.
+Any withdrawal amounts that cannot not be honoured at the end of a withdrawal cycle (either due to the assets in market reserves being insufficient, or due to a _pro rata_ claim on assets within the unclaimed withdrawals pool) are batched together, marked as 'expired' and placed into a queue.
 
-Subsequent repayments by the borrower to a market with a non-zero queue will route assets to the reserved assets pool in the amounts required to fully honour _all_ expired claims _in the order that they were initiated_ - only after this obligation is met do repaid assets start counting towards the reserve ratio of a market.
+Subsequent repayments by the borrower to a market with a non-zero queue will route assets to the unclaimed withdrawals pool in the amounts required to fully honour _all_ expired claims _in the order that they were initiated_ - only after this obligation is met do repaid assets start counting towards the reserve ratio of a market.
 
 To illustrate in some depth:
 
 * A market with capacity 50,000 has a supply of 40,000 tokens, and 10,000 tokens in reserve (for a reserve ratio of 25%).
-* Lender A makes a withdrawal request for 15,000 tokens, burning 10,000 market tokens to move the reserves to the reserved asset pool (reserve ratio 0%).
+* Lender A makes a withdrawal request for 15,000 tokens, burning 10,000 market tokens to move the reserves to the unclaimed withdrawals pool (reserve ratio 0%).
 * The supply of the market is reduced to 30,000 tokens.
 * Lender B makes an additional withdrawal request in the same cycle for 5,000 tokens: there are no assets in reserve to move, so no market tokens are burned.
 * The withdrawal cycle period elapses.
-* There is a total of 10,000 tokens in the reserved assets pool and an outstanding claim of 20,000 tokens from both lenders:
+* There is a total of 10,000 tokens in the unclaimed withdrawals pool and an outstanding claim of 20,000 tokens from both lenders:
   * Lender A can claim 7,500 tokens,
   * Lender B can claim 2,500 tokens after burning 2,500 market tokens,
 * Lender A now has an outstanding claim of 7,500 tokens (2,500 of which have been 'pre-paid' in the sense that they have burned the market tokens), and Lender B has an outstanding claim of 2,500 tokens.
@@ -77,12 +77,12 @@ To illustrate in some depth:
 * Lender C starts a new withdrawal cycle by requesting a withdrawal of 5,000 tokens. As with Lender B, no reserves means no market tokens are burned.
 * This second withdrawal cycle elapses, and a second expired claim for 5,000 tokens is added to the queue.
 * At this point, the borrower returns 13,000 tokens to the market.
-* These tokens are immediately placed into the reserved assets pool, and since the amount returned is less than the total amount outstanding in the queue, the reserve ratio of the vault remains at 0%.
-* The assets newly placed in the reserved assets pool are claimable as follows:
+* These tokens are immediately placed into the unclaimed withdrawals pool, and since the amount returned is less than the total amount outstanding in the queue, the reserve ratio of the vault remains at 0%.
+* The assets newly placed in the unclaimed withdrawals pool are claimable as follows:
   * Lender A must burn 5,000 market tokens to claim 7,500 tokens, since a portion of this claim was 'pre-burned' via their original request,
   * Lender B must burn 2,500 market tokens to claim 2,500 tokens, and
   * Lender C must burn 3,000 market tokens to claim 3,000 tokens.
 * **Note:** even though the 13,000 tokens returned to the market are in excess of the 5,000 token claim of Lender C, they are only eligible to claim that part in excess of the first expired claim in the queue (10,000 tokens).
 * If all of these claims are processed, the first claim is eliminated from the queue, leaving only a 2,000 token claim for Lender C.
-* If the borrower subsequently returns an additional 11,000 tokens to the vault at this point, then 2,000 of them are again assigned to the reserved assets pool, with the remaining 9,000 being considered true reserve, bringing the reserve ratio of the vault back up to 9,000 / 30,000 = 30%.
+* If the borrower subsequently returns an additional 11,000 tokens to the vault at this point, then 2,000 of them are again assigned to the unclaimed withdrawals pool, with the remaining 9,000 being considered true reserve, bringing the reserve ratio of the vault back up to 9,000 / 30,000 = 30%.
 

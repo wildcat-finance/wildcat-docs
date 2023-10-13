@@ -29,7 +29,7 @@ description: It's dangerous to go alone - learn these.
 
 #### **Claim**
 
-* Removing [assets](terminology.md#underlying-asset) from the [reserved assets pool](terminology.md#reserved-assets-pool) that were requested for withdrawal by a [lender](terminology.md#lender) at the end of a [withdrawal cycle](terminology.md#withdrawal-cycle).&#x20;
+* Removing [assets](terminology.md#underlying-asset) from the [unclaimed withdrawals pool](terminology.md#unclaimed-withdrawals-pool) that were requested for withdrawal by a [lender](terminology.md#lender) at the end of a [withdrawal cycle](terminology.md#withdrawal-cycle).&#x20;
 * Depending on the reserve ratio of the market when the withdrawal request associated with a claim was made, claiming _may_ require the burning of [market tokens](terminology.md#market-token) (see [**Lenders**](day-to-day-usage/lenders.md) for details).
 * Note that retrieving your [deposits](terminology.md#deposit) from a Wildcat market requires a [withdrawal request](terminology.md#withdrawal-request) and _then_ a claim - it is a two transaction process with at least one withdrawal cycle in between them.
 
@@ -50,7 +50,7 @@ description: It's dangerous to go alone - learn these.
 
 * A [market](terminology.md#market) state wherein there are insufficient [assets](terminology.md#underlying-asset) in the market to meet the [reserve ratio](terminology.md#reserve-ratio) as specified by the borrower.
 * Arises via the passage of time through interest if the borrower borrows right up to their reserve ratio.
-* Can also arises if a [lender](terminology.md#lender) makes a [withdrawal request](terminology.md#withdrawal-request) and moves assets within the market into the [reserved assets pool](terminology.md#reserved-assets-pool).
+* Can also arises if a [lender](terminology.md#lender) makes a [withdrawal request](terminology.md#withdrawal-request) and moves assets within the market into the [unclaimed withdrawals pool](terminology.md#unclaimed-withdrawals-pool).
 * A market being delinquent for an extended period of time (as specified by the [grace period](terminology.md#grace-period)) results in the [penalty APR](terminology.md#penalty-apr) being enforced in addition to the [base APR](terminology.md#base-apr) and any [protocol APR](terminology.md#protocol-apr) that may apply.
 * 'Cured' by [depositing](terminology.md#deposit) sufficient assets into the market as to reattain the required reserve ratio.
 
@@ -70,7 +70,7 @@ description: It's dangerous to go alone - learn these.
 
 #### Expired Withdrawal
 
-* A [withdrawal request](terminology.md#withdrawal-request) that could not be fully honoured by [assets](terminology.md#underlying-asset) in the [reserved assets pool](terminology.md#reserved-assets-pool) within a single [withdrawal cycle](terminology.md#withdrawal-cycle).
+* A [withdrawal request](terminology.md#withdrawal-request) that could not be fully honoured by [assets](terminology.md#underlying-asset) in the [unclaimed withdrawals pool](terminology.md#unclaimed-withdrawals-pool) within a single [withdrawal cycle](terminology.md#withdrawal-cycle).
 
 #### **Grace Period**
 
@@ -142,14 +142,8 @@ description: It's dangerous to go alone - learn these.
 * Intended to provide a liquid buffer for [lenders](terminology.md#lender) to make [withdrawal requests](terminology.md#withdrawal-request) against, partially 'collateralising' the credit facility through lenders' deposits.
 * Increases temporarily when:
   * a borrower reduces the [base APR](terminology.md#base-apr) of a [market](terminology.md#market) (fixed-term increase), or
-  * there are [pending](terminology.md#pending-withdrawal) or [expired withdrawals](terminology.md#expired-withdrawal) which cannot be honoured by the contents of the [reserved assets pool](terminology.md#reserved-assets-pool) (increased until resolved).
+  * there are [pending](terminology.md#pending-withdrawal) or [expired withdrawals](terminology.md#expired-withdrawal) which cannot be honoured by the contents of the [unclaimed withdrawals pool](terminology.md#unclaimed-withdrawals-pool) (increased until resolved).
 * A market which has insufficient assets in the market to meet the reserve ratio is said to be [delinquent](terminology.md#delinquency), with the [penalty APR](terminology.md#penalty-apr) potentially being enforced if the delinquency is not cured before the [grace tracker](terminology.md#grace-tracker) value exceeds that of the [grace period](terminology.md#grace-period) for that particular market.
-
-#### **Reserved Assets Pool**
-
-* A sequestered pool of [underlying assets](terminology.md#underlying-asset) which are pending their [claim](terminology.md#claim) by [lenders](terminology.md#lender) following a [withdrawal request](terminology.md#withdrawal-request).
-* Assets are moved from market reserves to the reserved assets pool by burning [market tokens](terminology.md#market-token) at a 1:1 ratio (reducing the [supply](terminology.md#supply) of the market).
-* Assets within the reserved assets pool do not accrue interest, but similarly cannot be [borrowed](terminology.md#borrow) by the [borrower](terminology.md#borrower) - they are considered out of reach.
 
 #### **Sentinel**
 
@@ -170,6 +164,12 @@ description: It's dangerous to go alone - learn these.
 * [Reserve ratios](terminology.md#reserve-ratio) are enforced against the supply of a market, _not_ its [capacity](terminology.md#capacity).
 * Capacity can be reduced below current supply by a [borrower](terminology.md#borrower), but this only prevents the further deposit of assets until the supply is once again below capacity.
 
+#### **Unclaimed Withdrawals Pool**
+
+* A sequestered pool of [underlying assets](terminology.md#underlying-asset) which are pending their [claim](terminology.md#claim) by [lenders](terminology.md#lender) following a [withdrawal request](terminology.md#withdrawal-request).
+* Assets are moved from market reserves to the unclaimed withdrawals pool by burning [market tokens](terminology.md#market-token) at a 1:1 ratio (reducing the [supply](terminology.md#supply) of the market).
+* Assets within the unclaimed withdrawals pool do not accrue interest, but similarly cannot be [borrowed](terminology.md#borrow) by the [borrower](terminology.md#borrower) - they are considered out of reach.
+
 #### **Underlying Asset**
 
 * Parameter required of [borrower](onboarding.md#borrowers) when creating a new [market](terminology.md#market).
@@ -183,7 +183,7 @@ description: It's dangerous to go alone - learn these.
 #### **Withdrawal Cycle**
 
 * Parameter required of [borrower](terminology.md#borrower) when creating a new [market](terminology.md#market).
-* Period of time that must elapse between the first [withdrawal request](terminology.md#withdrawal-request) of a 'wave' of withdrawals and [assets](terminology.md#underlying-asset) in the [reserved assets pool](terminology.md#reserved-assets-pool) being made available to [claim](terminology.md#claim).
+* Period of time that must elapse between the first [withdrawal request](terminology.md#withdrawal-request) of a 'wave' of withdrawals and [assets](terminology.md#underlying-asset) in the [unclaimed withdrawals pool](terminology.md#unclaimed-withdrawals-pool) being made available to [claim](terminology.md#claim).
 * Withdrawal cycles do not work on a rolling basis - at the end of one withdrawal cycle, the next cycle will not start until the next withdrawal request.
 * In the event that the amount being claimed in the same cycle across all lenders is in excess of the reserves currently within a market, all [lenders](terminology.md#lender) requests within that cycle will be honoured _pro rata_ depending on overall amount requested.
 * Intended to prevent a run on a given market (mass withdrawal requests) leading to slower lenders receiving nothing.
@@ -194,11 +194,11 @@ description: It's dangerous to go alone - learn these.
 * Internal data structure of a [market](terminology.md#market).
 * All [withdrawal requests](terminology.md#withdrawal-request) that could not be fully honoured at the end of their [withdrawal cycle](terminology.md#withdrawal-cycle) are batched together, marked as [expired](terminology.md#expired-withdrawal) and added to the withdrawal queue.
 * Tracks the order and amounts of [lender](terminology.md#lender) [claims](terminology.md#claim).
-* FIFO (First-In-First-Out): when [assets](day-to-day-usage/lenders.md) are returned to a market which has a non-zero withdrawal queue, assets are immediately routed to the [reserved assets pool](terminology.md#reserved-assets-pool) and can subsequently be claimed by lenders with the oldest expired withdrawals first.
+* FIFO (First-In-First-Out): when [assets](day-to-day-usage/lenders.md) are returned to a market which has a non-zero withdrawal queue, assets are immediately routed to the [unclaimed withdrawals pool](terminology.md#unclaimed-withdrawals-pool) and can subsequently be claimed by lenders with the oldest expired withdrawals first.
 
 #### Withdrawal Request
 
-* An instruction to a [market](terminology.md#market) to transfer reserves within a market to the [reserved assets pool](terminology.md#reserved-assets-pool), to be [claimed](terminology.md#claim) at the end of a [withdrawal cycle](terminology.md#withdrawal-cycle).
+* An instruction to a [market](terminology.md#market) to transfer reserves within a market to the [unclaimed withdrawals pool](terminology.md#unclaimed-withdrawals-pool), to be [claimed](terminology.md#claim) at the end of a [withdrawal cycle](terminology.md#withdrawal-cycle).
 * A withdrawal request made of a market with non-zero reserves will burn as many [market tokens](terminology.md#market-token) as possible 1:1 to fully honour the request.
 * Any amount requested - whether or not it is in excess of the market reserves - is marked as a [pending withdrawal](terminology.md#pending-withdrawal), either to be fully honoured at the end of the cycle, or marked as [expired](terminology.md#expired-withdrawal) and added to the [withdrawal queue](terminology.md#withdrawal-queue), depending on the actions of the [borrower](terminology.md#borrower) during the cycle.
 
