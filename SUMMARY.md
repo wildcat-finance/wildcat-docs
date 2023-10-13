@@ -36,7 +36,7 @@
   * [WildcatSanctionsEscrow](technical-deep-dive/component-overview/wildcatsanctionsescrow.md)
   * [\[OBSOLETE\] Vault Factory](technical-deep-dive/component-overview/obsolete-vault-factory/README.md)
     * [WildcatVaultFactory](technical-deep-dive/component-overview/obsolete-vault-factory/wildcatvaultfactory.md)
-* [Gas Profiling](technical-deep-dive/gas-profiling.md)
+* [Gas Profile](technical-deep-dive/gas-profile.md)
 
 ## Security Measures
 
