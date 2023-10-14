@@ -30,9 +30,9 @@ The results of these reviews (and associated reports) are available here:
 
 **Date**: 16 - 25th October 2023
 
-**Scope**: TBC
+**Scope**: `src/markets/*`, `src/libraries/*, src/*`
 
-**LOC**: TBC
+**LOC**: 2,332
 
 **Results**:
 
