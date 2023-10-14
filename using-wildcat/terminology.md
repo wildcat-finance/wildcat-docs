@@ -125,7 +125,7 @@ description: It's dangerous to go alone - learn these.
 
 #### **Pending Withdrawal**
 
-* A [withdrawal request](terminology.md#withdrawal-request) that has not yet [expired](terminology.md#expired-withdrawal) (i.e. was created in the current [withdrawal cycle](../technical-deep-dive/component-overview/wildcatmarket/wildcatmarketwithdrawals.sol.md#processunpaidwithdrawalbatch)).
+* A [withdrawal request](terminology.md#withdrawal-request) that has not yet [expired](terminology.md#expired-withdrawal) (i.e. was created in the current [withdrawal cycle](../technical-deep-dive/component-overview/wildcat-market-overview/wildcatmarketwithdrawals.sol.md#processunpaidwithdrawalbatch)).
 
 #### Protocol APR
 
