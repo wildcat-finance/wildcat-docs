@@ -1,2 +1,0 @@
-# The Controller (doc wip)
-

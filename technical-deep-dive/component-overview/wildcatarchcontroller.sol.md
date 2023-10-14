@@ -1,4 +1,4 @@
-# WildcatArchController
+# WildcatArchController.sol
 
 The `WildcatArchcontroller` is the contract that determines which addresses are capable of deploying controllers (and thereafter markets through these controllers).&#x20;
 
@@ -62,7 +62,7 @@ function registerControllerFactory(address factory)
   external onlyOwner;
 ```
 
-TODO
+
 
 #### removeControllerFactory
 
@@ -71,7 +71,7 @@ function removeControllerFactory(address factory)
   external onlyOwner
 ```
 
-TODO
+
 
 #### isRegisteredControllerFactory
 
@@ -80,7 +80,7 @@ function isRegisteredControllerFactory(address factory)
   external view returns (bool)
 ```
 
-TODO
+
 
 #### getRegisteredControllerFactories
 
@@ -94,7 +94,7 @@ function getRegisteredControllerFactories(
   ) external view returns (address[] memory arr);
 ```
 
-TODO
+
 
 #### getRegisteredControllerFactoriesCount
 
@@ -103,7 +103,7 @@ function getRegisteredControllerFactoriesCount()
   external view returns (uint256);
 ```
 
-TODO
+
 
 #### registerController
 
@@ -112,7 +112,7 @@ function registerController(address controller)
   external onlyControllerFactory;
 ```
 
-TODO
+
 
 #### removeController
 
@@ -121,7 +121,7 @@ function removeController(address controller)
   external onlyOwner;
 ```
 
-TODO
+
 
 #### isRegisteredController
 
@@ -130,7 +130,7 @@ function isRegisteredController(address controller)
   external view returns (bool);
 ```
 
-TODO
+
 
 #### getRegisteredControllers
 
@@ -144,7 +144,7 @@ TODO
   ) external view returns (address[] memory arr);
 ```
 
-TODO
+
 
 #### getRegisteredControllersCount
 
@@ -153,7 +153,7 @@ TODO
    external view returns (uint256);
 ```
 
-TODO
+
 
 #### registerVault
 
@@ -162,7 +162,7 @@ TODO
    external onlyController;
 ```
 
-TODO
+
 
 #### removeVault
 
@@ -171,7 +171,7 @@ function removeVault(address vault)
   external onlyOwner;
 ```
 
-TODO
+
 
 #### isRegisteredVault
 
@@ -180,7 +180,7 @@ function isRegisteredVault(address vault)
   external view returns (bool);
 ```
 
-TODO
+
 
 #### getRegisteredVaults
 
@@ -194,7 +194,7 @@ TODO
   ) external view returns (address[] memory arr);
 ```
 
-TODO
+
 
 #### getRegisteredVaultsCount
 
@@ -202,4 +202,3 @@ TODO
 </strong><strong>   external view returns (uint256);
 </strong></code></pre>
 
-TODO

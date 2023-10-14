@@ -1,8 +1,4 @@
----
-description: issa wildcat market base innit
----
-
-# WildcatMarketBase
+# WildcatMarketBase.sol
 
 The `WildcatMarketBase` is the base contract containing core state mutation and computation logic as well as storage variables and immutable values.
 
@@ -38,7 +34,7 @@ uint256 public immutable protocolFeeBips;
 
 Protocol fee added to interest paid by borrower.
 
-One protocol fee bip is 0.01% of an [APR bip](wildcatmarketconfig.md#annualinterestbips).
+One protocol fee bip is 0.01% of an [APR bip](wildcatmarketconfig.sol.md#annualinterestbips).
 
 #### delinquencyFeeBips
 
@@ -70,7 +66,7 @@ Address of the vault controller.
 address public immutable asset;
 ```
 
-Address of the [underlying asset](wildcatmarketbase.md#asset).
+Address of the [underlying asset](wildcatmarketbase.sol.md#asset).
 
 #### withdrawalBatchDuration
 
@@ -86,7 +82,7 @@ Time before withdrawal batches are processed.
 uint8 public immutable decimals;
 ```
 
-Token decimals, derived from [underlying asset](wildcatmarketbase.md).
+Token decimals, derived from [underlying asset](wildcatmarketbase.sol.md).
 
 #### name
 
@@ -94,7 +90,7 @@ Token decimals, derived from [underlying asset](wildcatmarketbase.md).
 string public name;
 ```
 
-Token name, derived from [underlying asset](wildcatmarketbase.md#asset).
+Token name, derived from [underlying asset](wildcatmarketbase.sol.md#asset).
 
 #### symbol
 
@@ -102,7 +98,7 @@ Token name, derived from [underlying asset](wildcatmarketbase.md#asset).
 string public symbol;
 ```
 
-Token symbol, derived from [underlying asset](wildcatmarketbase.md#asset).
+Token symbol, derived from [underlying asset](wildcatmarketbase.sol.md#asset).
 
 #### coverageLiquidity
 
@@ -110,7 +106,7 @@ Token symbol, derived from [underlying asset](wildcatmarketbase.md#asset).
 function coverageLiquidity() external view nonReentrantView returns (uint256);
 ```
 
-Liquidity required based on the [current vault state](wildcatmarketbase.md#currentstate).
+Liquidity required based on the [current vault state](wildcatmarketbase.sol.md#currentstate).
 
 Reverts if:
 
@@ -122,7 +118,7 @@ Reverts if:
 function scaleFactor() external view nonReentrantView returns (uint256);
 ```
 
-Scale factor based on the [current vault state](wildcatmarketbase.md#currentstate).
+Scale factor based on the [current vault state](wildcatmarketbase.sol.md#currentstate).
 
 Reverts if:
 
@@ -134,7 +130,7 @@ Reverts if:
 function totalAssets() public view returns (uint256);
 ```
 
-Vault's total balance of the [underlying asset](wildcatmarketbase.md#asset).
+Vault's total balance of the [underlying asset](wildcatmarketbase.sol.md#asset).
 
 #### borrowableAssets
 
@@ -142,7 +138,7 @@ Vault's total balance of the [underlying asset](wildcatmarketbase.md#asset).
 function borrowableAssets() external view nonReentrantView returns (uint256);
 ```
 
-Amount of the [underlying asset](wildcatmarketbase.md#asset) that may be borrowed based on the [current vault state](wildcatmarketbase.md#currentstate).
+Amount of the [underlying asset](wildcatmarketbase.sol.md#asset) that may be borrowed based on the [current vault state](wildcatmarketbase.sol.md#currentstate).
 
 Reverts if:
 
@@ -154,7 +150,7 @@ Reverts if:
 function accruedProtocolFees() external view nonReentrantView returns (uint256);
 ```
 
-Amount of accrued protocol fees based on the [current vault state](wildcatmarketbase.md#currentstate).
+Amount of accrued protocol fees based on the [current vault state](wildcatmarketbase.sol.md#currentstate).
 
 Reverts if:
 
@@ -205,7 +201,7 @@ Reverts if:
 function scaledTotalSupply() external view nonReentrantView returns (uint256);
 ```
 
-Returns the total supply of the current vault state scaled by the [scale factor](wildcatmarketbase.md#scalefactor).
+Returns the total supply of the current vault state scaled by the [scale factor](wildcatmarketbase.sol.md#scalefactor).
 
 Reverts if:
 
@@ -217,7 +213,7 @@ Reverts if:
 function scaledBalanceOf(address account) external view nonReentrantView returns (uint256);
 ```
 
-Returns the balance of an account scaled by the [scale factor](wildcatmarketbase.md#scalefactor).
+Returns the balance of an account scaled by the [scale factor](wildcatmarketbase.sol.md#scalefactor).
 
 Reverts if:
 
@@ -230,9 +226,9 @@ Reverts if:
 function effectiveBorrowerAPR() external view returns (uint256);
 ```
 
-Effective interest rate paid by the [borrower](wildcatmarketbase.md#borrower), based on the [current vault state](wildcatmarketbase.md#currentstate).
+Effective interest rate paid by the [borrower](wildcatmarketbase.sol.md#borrower), based on the [current vault state](wildcatmarketbase.sol.md#currentstate).
 
-The [borrower](wildcatmarketbase.md#borrower) is responsible for base APR, protocol fee, and delinquency fee.
+The [borrower](wildcatmarketbase.sol.md#borrower) is responsible for base APR, protocol fee, and delinquency fee.
 
 TODO: link protocol and delinquency fee somewhere different
 
@@ -242,7 +238,7 @@ TODO: link protocol and delinquency fee somewhere different
 function effectiveLenderAPR() external view returns (uint256);
 ```
 
-Effective interest rate earned by the lenders, based on the [current vault state](wildcatmarketbase.md#currentstate).
+Effective interest rate earned by the lenders, based on the [current vault state](wildcatmarketbase.sol.md#currentstate).
 
 The lender earns base APR and delinquency fee.
 

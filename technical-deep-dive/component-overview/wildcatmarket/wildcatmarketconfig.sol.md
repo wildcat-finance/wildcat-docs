@@ -1,8 +1,4 @@
----
-description: issa wildcat market config innit
----
-
-# WildcatMarketConfig
+# WildcatMarketConfig.sol
 
 The `WildcatMarketConfig` is the configuration contract containing configuration and authorization logic.
 
@@ -12,7 +8,7 @@ The `WildcatMarketConfig` is the configuration contract containing configuration
 function maximumDeposit() external view returns (uint256);
 ```
 
-Maximum amount that may be deposited into the market, based on the [current vault state](wildcatmarketbase.md#currentstate).
+Maximum amount that may be deposited into the market, based on the [current vault state](wildcatmarketbase.sol.md#currentstate).
 
 #### maxTotalSupply
 
@@ -46,11 +42,11 @@ Percentage of outstanding balance that must be held in liquid reserves.
 function revokeAccountAuthorization(address _account) external onlyController nonReentrant;
 ```
 
-Revokes an account's authorization to deposit assets and [updates the vault state](wildcatmarket.md#updatestate).
+Revokes an account's authorization to deposit assets and [updates the vault state](wildcatmarket.sol.md#updatestate).
 
 Reverts if:
 
-* the caller is not the [controller](wildcatmarketbase.md#controller).
+* the caller is not the [controller](wildcatmarketbase.sol.md#controller).
 * the reentrancy lock is engaged.
 * the account is blacklisted.
 
@@ -64,13 +60,13 @@ Logs:
 function grantAccountAuthorization(address _account) external onlyController nonReentrant;
 ```
 
-Restores an account's authorization to deposit assets and [updates the vault state](wildcatmarket.md#updatestate).
+Restores an account's authorization to deposit assets and [updates the vault state](wildcatmarket.sol.md#updatestate).
 
 Cannot be used to restore a blacklisted account's status.
 
 Reverts if:
 
-* the caller is not the [controller](wildcatmarketbase.md#controller).
+* the caller is not the [controller](wildcatmarketbase.sol.md#controller).
 * the reentrancy lock is engaged.
 * the account is blacklisted.
 
@@ -84,11 +80,11 @@ Logs:
 function nukeFromOrbit(address _account) external onlySentinel;
 ```
 
-Block an account from interacting with the market, deletes its [balance](wildcatmarkettoken.md#balanceof), and [updates the vault state](wildcatmarket.md#updatestate).
+Block an account from interacting with the market, deletes its [balance](wildcatmarkettoken.sol.md#balanceof), and [updates the vault state](wildcatmarket.sol.md#updatestate).
 
 Reverts if:
 
-* the caller is not the [sentinel](wildcatmarketbase.md#sentinel).
+* the caller is not the [sentinel](wildcatmarketbase.sol.md#sentinel).
 
 Logs:
 
@@ -101,13 +97,13 @@ Logs:
 function setMaxTotalSupply(uint256 _maxTotalSupply) external onlyController nonReentrant;
 ```
 
-Sets the [maximum total supply](wildcatmarketconfig.md#maxtotalsupply) and [updates the vault state](wildcatmarket.md#updatestate). This only limits deposits and does not affect interest accrual.
+Sets the [maximum total supply](wildcatmarketconfig.sol.md#maxtotalsupply) and [updates the vault state](wildcatmarket.sol.md#updatestate). This only limits deposits and does not affect interest accrual.
 
 Reverts if:
 
-* the caller is not the [controller](wildcatmarketbase.md#controller).
+* the caller is not the [controller](wildcatmarketbase.sol.md#controller).
 * the reentrancy lock is engaged.
-* the new [maximum total supply](wildcatmarketconfig.md#maxtotalsupply) is less than the [total supply](wildcatmarkettoken.md#totalsupply).
+* the new [maximum total supply](wildcatmarketconfig.sol.md#maxtotalsupply) is less than the [total supply](wildcatmarkettoken.sol.md#totalsupply).
 
 Logs:
 
@@ -119,11 +115,11 @@ Logs:
 function setAnnualInterestBips(uint16 _annualInterestBips) public onlyController nonReentrant;
 ```
 
-Sets the [annual interest bips](wildcatmarketconfig.md#annualinterestbips) and [updates the vault state](wildcatmarket.md#updatestate).
+Sets the [annual interest bips](wildcatmarketconfig.sol.md#annualinterestbips) and [updates the vault state](wildcatmarket.sol.md#updatestate).
 
 Reverts if:
 
-* the caller is not the [controller](wildcatmarketbase.md#controller).
+* the caller is not the [controller](wildcatmarketbase.sol.md#controller).
 * the reentrancy lock is engaged.
 * the new annual interest bips is greater than the max bip size.
 
@@ -137,14 +133,14 @@ Logs:
 function setLiquidityCoverageRatio(uint16 _liquidityCoverageRatio) public onlyController nonReentrant;
 ```
 
-Sets the [liquidity coverage ratio](wildcatmarketconfig.md#liquiditycoverageratio) and [updates the vault state](wildcatmarket.md#updatestate).
+Sets the [liquidity coverage ratio](wildcatmarketconfig.sol.md#liquiditycoverageratio) and [updates the vault state](wildcatmarket.sol.md#updatestate).
 
 Reverts if:
 
-* the caller is not the [controller](wildcatmarketbase.md#controller).
+* the caller is not the [controller](wildcatmarketbase.sol.md#controller).
 * the reentrancy lock is engaged.
-* the new [liquidity coverage ratio](wildcatmarketconfig.md#liquiditycoverageratio) is greater than the max bip size.
-* the new [liquidity required](wildcatmarketbase.md#coverageliquidity) is greater than the [total assets](wildcatmarketbase.md#totalassets).
+* the new [liquidity coverage ratio](wildcatmarketconfig.sol.md#liquiditycoverageratio) is greater than the max bip size.
+* the new [liquidity required](wildcatmarketbase.sol.md#coverageliquidity) is greater than the [total assets](wildcatmarketbase.sol.md#totalassets).
 
 Logs:
 

@@ -1,13 +1,10 @@
----
-description: issa vault innit
----
+# WildcatMarket
 
-# The Vault
+The `WildcatMarket` (often referred to in code as a `Vault`in code) is the contract that facilitates lending and borrowing.
 
-The Vault, also known as `WildcatMarket`, is the contract that facilitates lending and borrowing. The WildcatMarket is the child of four main abstract contracts, each responsible for different functionality within the broader Vault.
+A [WildcatMarket](wildcatmarket.sol.md) is the child of four main abstract contracts, each responsible for different functionality within the broader market as a whole.
 
-* [WildcatMarketBase](wildcatmarketbase.md) contains stateful information and basic functionality.
-* [WildcatMarketConfig](wildcatmarketconfig.md) contains configuration functionality.
-* [WildcatMarketToken](wildcatmarkettoken.md) contains the token related functionality.
-* [WildcatMarketWithdrawals](wildcatmarketwithdrawals.md) contains the withdrawal functionality.
-* [WildcatMarket](wildcatmarket.md) is a composition of the above.
+* [WildcatMarketBase](wildcatmarketbase.sol.md) contains stateful information and basic functionality.
+* [WildcatMarketConfig](wildcatmarketconfig.sol.md) contains configuration functionality.
+* [WildcatMarketToken](wildcatmarkettoken.sol.md) contains market token related functionality.
+* [WildcatMarketWithdrawals](wildcatmarketwithdrawals.sol.md) contains withdrawal functionality.

@@ -1,8 +1,4 @@
----
-description: issa wildcat market withdrawals innit
----
-
-# WildcatMarketWithdrawals
+# WildcatMarketWithdrawals.sol
 
 The `WildcatMarketWithdrawals` is the withdrawal-related logic contract containing function to handle withdrawal queueing, processing, executing, and viewing.
 
@@ -28,7 +24,7 @@ function getWithdrawalBatch(uint32 expiry)
     returns (WithdrawalBatch memory);
 ```
 
-Gets a withdrawal for a given expiry based on the [current state](wildcatmarketbase.md#currentstate).
+Gets a withdrawal for a given expiry based on the [current state](wildcatmarketbase.sol.md#currentstate).
 
 Reverts if:
 
@@ -60,7 +56,7 @@ function getAvailableWithdrawalAmount(address accountAddress, uint32 expiry)
     returns (uint256);
 ```
 
-Gets the amount available for an account to withdrawal for a given expiry based on the [current state](wildcatmarketbase.md#currentstate).
+Gets the amount available for an account to withdrawal for a given expiry based on the [current state](wildcatmarketbase.sol.md#currentstate).
 
 Reverts if:
 
@@ -77,9 +73,9 @@ Queues a withdrawal.
 
 Procedures:
 
-* [Update the vault state](wildcatmarket.md#updatestate)
-* Scale the amount by the [scale factor](wildcatmarketbase.md#scalefactor)
-* [Transfer](wildcatmarkettoken.md#transfer) the caller's vault tokens to the vault
+* [Update the vault state](wildcatmarket.sol.md#updatestate)
+* Scale the amount by the [scale factor](wildcatmarketbase.sol.md#scalefactor)
+* [Transfer](wildcatmarkettoken.sol.md#transfer) the caller's vault tokens to the vault
 * If there is a pending withdrawal batch:
   * Queue the withdrawal
 * Otherwise:
@@ -95,7 +91,7 @@ Reverts if:
 * the reentrancy lock is engaged.
 * the caller is blacklisted.
 * the caller is not authorized to withdraw.
-* the caller's [balance](wildcatmarkettoken.md#balanceof) is less than the amount.
+* the caller's [balance](wildcatmarkettoken.sol.md#balanceof) is less than the amount.
 * the scaled amount is zero.
 
 Logs:
@@ -117,11 +113,11 @@ Executes a withdrawal for an account with a given expiry.
 
 Procedures:
 
-* [Update the vault state](wildcatmarket.md#updatestate)
+* [Update the vault state](wildcatmarket.sol.md#updatestate)
 * Update the withdrawal queue
 * Update the account status
 * Transfers the underlying asset to the account
-* Return the amount scaled by the [scale factor](wildcatmarketbase.md#scalefactor)
+* Return the amount scaled by the [scale factor](wildcatmarketbase.sol.md#scalefactor)
 
 Reverts if:
 
@@ -142,7 +138,7 @@ Processes the first unpaid withdrawal batch in the queue.
 
 Procedures:
 
-* [Update the vault state](wildcatmarket.md#updatestate)
+* [Update the vault state](wildcatmarket.sol.md#updatestate)
 * Apply withdrawal batch payment
 * Remove the batch if fully paid
 

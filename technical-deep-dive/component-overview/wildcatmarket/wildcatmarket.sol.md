@@ -1,8 +1,4 @@
----
-description: issa wildcat market innit
----
-
-# WildcatMarket
+# WildcatMarket.sol
 
 The `WildcatMarket` is the final contract, containing all vault-related logic.
 
@@ -50,11 +46,11 @@ Deposits up to a given amount.
 
 Procedures:
 
-* [Update the vault state](wildcatmarket.md#updatestate)
-* Reduce amount if it would exceed [total supply](wildcatmarkettoken.md#totalsupply)
-* Scale the mint amount by the [scale factor](wildcatmarketbase.md#scalefactor)
-* [Transfer](wildcatmarkettoken.md#transfer) deposit from the caller
-* Increase the [total supply](wildcatmarkettoken.md#totalsupply)
+* [Update the vault state](wildcatmarket.sol.md#updatestate)
+* Reduce amount if it would exceed [total supply](wildcatmarkettoken.sol.md#totalsupply)
+* Scale the mint amount by the [scale factor](wildcatmarketbase.sol.md#scalefactor)
+* [Transfer](wildcatmarkettoken.sol.md#transfer) deposit from the caller
+* Increase the [total supply](wildcatmarkettoken.sol.md#totalsupply)
 * Update the delinquency state
 
 Reverts if:
@@ -75,11 +71,11 @@ Logs:
 function deposit(uint256 amount) external virtual;
 ```
 
-Calls [depositUpTo](wildcatmarket.md#depositupto) internally then checks the [total supply](wildcatmarkettoken.md#totalsupply) would have been exceeded.
+Calls [depositUpTo](wildcatmarket.sol.md#depositupto) internally then checks the [total supply](wildcatmarkettoken.sol.md#totalsupply) would have been exceeded.
 
 Reverts if:
 
-* amount would have exceeded the [total supply](wildcatmarkettoken.md#totalsupply).
+* amount would have exceeded the [total supply](wildcatmarkettoken.sol.md#totalsupply).
 
 #### collectFees
 
@@ -87,14 +83,14 @@ Reverts if:
 function collectFees() external nonReentrant;
 ```
 
-Collects protocol fees and [updates the vault state](wildcatmarket.md#updatestate).
+Collects protocol fees and [updates the vault state](wildcatmarket.sol.md#updatestate).
 
 Coverage for deposits takes precedence over fee revenue.
 
 Reverts if:
 
 * the reentrancy guard is engaged.
-* the [total assets](wildcatmarketbase.md#totalassets) is less than the liquidity required for withdrawals.
+* the [total assets](wildcatmarketbase.sol.md#totalassets) is less than the liquidity required for withdrawals.
 
 Logs:
 
@@ -106,13 +102,13 @@ Logs:
 function borrow(uint256 amount) external onlyBorrower nonReentrant;
 ```
 
-Borrows an amount from the vault and [updates the vault state](wildcatmarket.md#updatestate).
+Borrows an amount from the vault and [updates the vault state](wildcatmarket.sol.md#updatestate).
 
 Reverts if:
 
 * the reentrancy guard is engaged.
-* the caller is not the [borrower](wildcatmarketbase.md#borrower).
-* the amount is greater than the [borrowable assets](wildcatmarketbase.md#borrowableassets).
+* the caller is not the [borrower](wildcatmarketbase.sol.md#borrower).
+* the amount is greater than the [borrowable assets](wildcatmarketbase.sol.md#borrowableassets).
 
 Logs:
 
@@ -124,12 +120,12 @@ Logs:
 function closeVault() external onlyController nonReentrant;
 ```
 
-Sets the vault to 0% [APR](wildcatmarketconfig.md#annualinterestbips), [updates the vault state](wildcatmarket.md#updatestate), and [transfers](wildcatmarkettoken.md#transfer) the outstanding balance for full redemption.
+Sets the vault to 0% [APR](wildcatmarketconfig.sol.md#annualinterestbips), [updates the vault state](wildcatmarket.sol.md#updatestate), and [transfers](wildcatmarkettoken.sol.md#transfer) the outstanding balance for full redemption.
 
 Reverts if:
 
 * the reentrancy guard is engaged.
-* the caller is not the [controller](wildcatmarketbase.md#controller).
+* the caller is not the [controller](wildcatmarketbase.sol.md#controller).
 
 Logs:
 

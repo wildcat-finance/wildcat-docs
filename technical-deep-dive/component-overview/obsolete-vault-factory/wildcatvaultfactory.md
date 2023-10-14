@@ -68,4 +68,4 @@ function computeVaultAddress(
 ) external view returns (address);
 ```
 
-Helper function to pre-computes the address that the `create2` would return for a given [controller](../wildcatmarket/wildcatmarketbase.md#controller), deployer, and [asset](../wildcatmarket/wildcatmarketbase.md#asset).
+Helper function to pre-computes the address that the `create2` would return for a given [controller](../wildcatmarket/wildcatmarketbase.sol.md#controller), deployer, and [asset](../wildcatmarket/wildcatmarketbase.sol.md#asset).

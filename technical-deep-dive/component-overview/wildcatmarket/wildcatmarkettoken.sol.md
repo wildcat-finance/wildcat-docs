@@ -1,8 +1,4 @@
----
-description: issa wildcat market token innit
----
-
-# WildcatMarketToken
+# WildcatMarketToken.sol
 
 The `WildcatMarketToken` is the token-related logic contract containing functions for transfers and approvals.
 
@@ -20,7 +16,7 @@ Amount of the vault token that a spender may transfer on behalf of another owner
 function balanceOf(address account) public view virtual nonReentrantView returns (uint256);
 ```
 
-Balance of an account based on the [current vault state](wildcatmarketbase.md#currentstate) scaled by the [scale factor](wildcatmarketbase.md#scalefactor).
+Balance of an account based on the [current vault state](wildcatmarketbase.sol.md#currentstate) scaled by the [scale factor](wildcatmarketbase.sol.md#scalefactor).
 
 Reverts if:
 
@@ -32,7 +28,7 @@ Reverts if:
 function totalSupply() external view virtual nonReentrantView returns (uint256);
 ```
 
-Total supply of the vault token based on the [current vault state](wildcatmarketbase.md#currentstate) scaled by the [scale factor](wildcatmarketbase.md#scalefactor).
+Total supply of the vault token based on the [current vault state](wildcatmarketbase.sol.md#currentstate) scaled by the [scale factor](wildcatmarketbase.sol.md#scalefactor).
 
 Reverts if:
 
@@ -44,7 +40,7 @@ Reverts if:
 function approve(address spender, uint256 amount) external virtual nonReentrant returns (bool);
 ```
 
-Sets the [allowance](wildcatmarkettoken.md#allowance) of the caller for the given spender to [transfer](wildcatmarkettoken.md#transfer) on their behalf.
+Sets the [allowance](wildcatmarkettoken.sol.md#allowance) of the caller for the given spender to [transfer](wildcatmarkettoken.sol.md#transfer) on their behalf.
 
 Reverts if:
 
@@ -60,12 +56,12 @@ Logs:
 function transfer(address to, uint256 amount) external virtual nonReentrant returns (bool);
 ```
 
-Transfers an amount of the vault token from the caller to another account and [updates the vault state](wildcatmarket.md#updatestate).
+Transfers an amount of the vault token from the caller to another account and [updates the vault state](wildcatmarket.sol.md#updatestate).
 
 Reverts if:
 
 * the reentrancy lock is engaged.
-* the caller's scaled [balance](wildcatmarkettoken.md#balanceof) is less than the scaled transfer amount.
+* the caller's scaled [balance](wildcatmarkettoken.sol.md#balanceof) is less than the scaled transfer amount.
 * the caller is blacklisted.
 * the receiver is blacklisted.
 
@@ -83,13 +79,13 @@ function transferFrom(
 ) external virtual nonReentrant returns (bool);
 ```
 
-Transfers an amount of the vault token from one account to another, decreases the [allowance](wildcatmarkettoken.md#allowance) by the amount if applicable, and [updates the vault state](wildcatmarket.md#updatestate).
+Transfers an amount of the vault token from one account to another, decreases the [allowance](wildcatmarkettoken.sol.md#allowance) by the amount if applicable, and [updates the vault state](wildcatmarket.sol.md#updatestate).
 
 Reverts if:
 
 * the reentrancy lock is engaged.
-* the caller's [allowance](wildcatmarkettoken.md#allowance) for the sender is less than the amount.
-* the caller's scaled [balance](wildcatmarkettoken.md#balanceof) is less than the scaled transfer amount.
+* the caller's [allowance](wildcatmarkettoken.sol.md#allowance) for the sender is less than the amount.
+* the caller's scaled [balance](wildcatmarkettoken.sol.md#balanceof) is less than the scaled transfer amount.
 * the caller is blacklisted.
 * the receiver is blacklisted.
 
