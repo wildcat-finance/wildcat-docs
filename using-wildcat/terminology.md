@@ -179,6 +179,7 @@ description: It's dangerous to go alone - learn these.
 #### **Vault**
 
 * See [market](terminology.md#market).
+* If you see this term anywhere, it's a mistake that we should have cleared up!
 
 #### **Withdrawal Cycle**
 

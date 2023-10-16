@@ -4,7 +4,7 @@ The core premise of a Wildcat market is fairly simple: borrowing and lending bet
 
 Consider the following examples - all are well served by making use of Wildcat:
 
-* Acquiring temporary inventory to provide a market spread for an asset,
+* Acquiring temporary inventory to provide a spread for an asset,
 * Bringing long-dated call options on new assets on-chain,
 * Raising funds without issuing a token immediately (foregoing an initial LBP)
 

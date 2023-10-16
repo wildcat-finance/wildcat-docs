@@ -18,11 +18,11 @@ However, they do so by first deploying a controller contract that is both specif
 
 Each controller has a specified protocol fee, which either manifests as an origination fee (which must be paid during the deployment of a market), or as a proportion of base APR, which accrues over the supply of assets rather than the capacity.\
 \
-**Controller Null - used in the launch stages - has a protocol origination fee of \[TBD] and no protocol fee. Controller Null is a test, and will not be made widely available.**\
+**Controller Null - used in the launch stages - is likely to have a symbolic protocol origination fee and no protocol APR fee. Controller Null is a test, and will not be made widely available.**\
 \
-Controller Alpha has a protocol fee of 20% of the current base APR.
+Controller Alpha will have a protocol fee of 20% of the current base APR.
 
-The borrower that deploys a market through their own Controller Alpha instance with an APR of 10% will find themselves paying 12% (the base rate receivable by lenders plus 20% of that base rate).
+The borrower that deploys a market through their own Controller Alpha instance with an APR of 10% will find themselves paying 12% (the base APR receivable by lenders plus 20% of that base rate).
 
 Decreasing or increasing that APR will similarly adjust the actual protocol fee APR.
 

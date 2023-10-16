@@ -62,7 +62,7 @@ The `WildcatSanctionsSentinel` contract interfaces with Chainalysis, allows borr
 
 Yes, anyone can 'file an override' because it's a public function - no, it doesn't work for the purpose of releasing assets from an escrow contract unless `msg.sender` is a borrower for a market that invoked `nukeFromOrbit`.
 
-Don't waste the gas, this isn't the gotcha you're thinking of.
+This isn't the gotcha you're thinking of.
 
 #### removeSanctionOverride
 

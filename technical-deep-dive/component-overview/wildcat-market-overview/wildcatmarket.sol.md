@@ -5,7 +5,7 @@ The `WildcatMarket` is the final contract, containing all vault-related logic.
 #### updateState
 
 ```solidity
-function updateState() external;
+ function updateState() external;
 ```
 
 Updates the market state.
@@ -39,7 +39,8 @@ Logs:
 #### depositUpTo
 
 ```solidity
-function depositUpTo(uint256 amount) public virtual nonReentrant returns (uint256);
+ function depositUpTo(uint256 amount)
+   public virtual nonReentrant returns (uint256);
 ```
 
 Deposits up to a given amount.
@@ -68,7 +69,8 @@ Logs:
 #### deposit
 
 ```solidity
-function deposit(uint256 amount) external virtual;
+ function deposit(uint256 amount)
+   external virtual;
 ```
 
 Calls [depositUpTo](wildcatmarket.sol.md#depositupto) internally then checks the [total supply](wildcatmarkettoken.sol.md#totalsupply) would have been exceeded.
@@ -80,7 +82,8 @@ Reverts if:
 #### collectFees
 
 ```solidity
-function collectFees() external nonReentrant;
+ function collectFees()
+   external nonReentrant;
 ```
 
 Collects protocol fees and [updates the market state](wildcatmarket.sol.md#updatestate).
@@ -99,7 +102,8 @@ Logs:
 #### borrow
 
 ```solidity
-function borrow(uint256 amount) external onlyBorrower nonReentrant;
+ function borrow(uint256 amount)
+   external onlyBorrower nonReentrant;
 ```
 
 Borrows an amount from the market and [update](wildcatmarket.sol.md#updatestate)[s the market state](wildcatmarket.sol.md#updatestate).
@@ -117,7 +121,8 @@ Logs:
 #### closeMarket
 
 ```solidity
-function closeMarket() external onlyController nonReentrant;
+ function closeMarket()
+   external onlyController nonReentrant;
 ```
 
 Sets the market to 0% [APR](wildcatmarketconfig.sol.md#annualinterestbips), [updates the market state](wildcatmarket.sol.md#updatestate), and [transfers](wildcatmarkettoken.sol.md#transfer) the outstanding balance for full redemption.

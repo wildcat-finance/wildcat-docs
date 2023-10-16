@@ -6,7 +6,7 @@
 event Transfer(address indexed from, address indexed to, uint256 value);
 ```
 
-Logs the transfer of the vault token.
+Logs the transfer of the market token.
 
 #### Approval
 
@@ -14,7 +14,7 @@ Logs the transfer of the vault token.
 event Approval(address indexed owner, address indexed spender, uint256 value);
 ```
 
-Logs changes in allowance with the vault token.
+Logs changes in allowance with the market token.
 
 #### MaxTotalSupplyUpdated
 
@@ -22,7 +22,7 @@ Logs changes in allowance with the vault token.
 event MaxTotalSupplyUpdated(uint256 assets);
 ```
 
-Logs changes to the maximum total supply of the vault token.
+Logs changes to the maximum total supply of the market token.
 
 #### AnnualInterestBipsUpdated
 
@@ -46,7 +46,7 @@ Logs changes to the liquidity coverage ratio
 event Deposit(address indexed account, uint256 assetAmount, uint256 scaledAmount);
 ```
 
-Logs deposits to the vault.
+Logs deposits to the market.
 
 #### Borrow
 
@@ -54,15 +54,15 @@ Logs deposits to the vault.
 event Borrow(uint256 assetAmount);
 ```
 
-Logs borrows from the vault.
+Logs borrows from the market.
 
-#### VaultClosed
+#### MarketClosed
 
 ```solidity
-event VaultClosed(uint256 timestamp);
+event MarketClosed(uint256 timestamp);
 ```
 
-Logs the closure of a vault.
+Logs the closure of a market.
 
 #### FeesCollected
 
@@ -78,7 +78,7 @@ Logs the collection of fees.
 event StateUpdated(uint256 scaleFactor, bool isDelinquent);
 ```
 
-Logs changes to the vault state.
+Logs changes to the market state.
 
 #### ScaleFactorUpdated
 
@@ -112,7 +112,7 @@ event WithdrawalBatchExpired(
 );
 ```
 
-Logs withdrawal batch expiration on vault state changes.
+Logs withdrawal batch expiration on market state changes.
 
 #### WithdrawalBatchCreated
 
@@ -158,10 +158,10 @@ event WithdrawalExecuted(uint256 expiry, address account, uint256 normalizedAmou
 
 Logs the execution of a withdrawal.
 
-#### VaultDeployed
+#### MarketDeployed
 
 ```solidity
-event VaultDeployed(address indexed controller, address indexed underlying, address vault)
+event MarketDeployed(address indexed controller, address indexed underlying, address market)
 ```
 
-Logs the deployment of a new vault.
+Logs the deployment of a new market.

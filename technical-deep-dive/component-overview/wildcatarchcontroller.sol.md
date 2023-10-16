@@ -19,6 +19,10 @@ Reverts if:
 
 * Not called by the owner of the archcontroller.
 
+Events:
+
+* BorrowerAdded
+
 #### removeBorrower
 
 ```solidity
@@ -31,6 +35,10 @@ Prevents a borrower `address` from deploying any further controllers or markets.
 Reverts if:
 
 * Not called by the owner of the archcontroller.
+
+Events:
+
+* BorrowerRemoved
 
 #### isRegisteredBorrower
 
@@ -62,7 +70,15 @@ function registerControllerFactory(address factory)
   external onlyOwner;
 ```
 
+Registers a new market controller factory smart contract, allowing borrowers to deploy new controllers and markets through it.
 
+Reverts if:
+
+* The controller factory has already been registered.
+
+Events:
+
+* ControllerFactoryAdded
 
 #### removeControllerFactory
 
@@ -71,7 +87,15 @@ function removeControllerFactory(address factory)
   external onlyOwner
 ```
 
+Removes a market controller factory, preventing borrowers from deploying any further controllers and markets through it.
 
+Reverts if:
+
+* The controller factory address does not exist or has been removed.
+
+Events:
+
+* ControllerFactoryRemoved
 
 #### isRegisteredControllerFactory
 

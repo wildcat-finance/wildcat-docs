@@ -228,9 +228,7 @@ function effectiveBorrowerAPR() external view returns (uint256);
 
 Effective interest rate paid by the [borrower](wildcatmarketbase.sol.md#borrower), based on the [current market state](wildcatmarketbase.sol.md#currentstate).
 
-The [borrower](wildcatmarketbase.sol.md#borrower) is responsible for base APR, protocol fee, and delinquency fee.
-
-TODO: link protocol and delinquency fee somewhere different
+The [borrower](wildcatmarketbase.sol.md#borrower) is responsible for base APR, protocol fee, and penalty APR in place.
 
 #### effectiveLenderAPR
 
@@ -240,6 +238,4 @@ function effectiveLenderAPR() external view returns (uint256);
 
 Effective interest rate earned by the lenders, based on the [current market state](../../../security-measures/code-security-reviews.md#code4rena-crowdsourced-security-review).
 
-The lender earns base APR and delinquency fee.
-
-TODO: link delinquency fee somewhere different
+The lender earns the base APR and any penalty APR in place.
