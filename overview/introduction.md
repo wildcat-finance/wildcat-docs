@@ -14,7 +14,7 @@ Wildcat borrowers can dictate the terms of any parameter that they would care to
 \
 Wildcat borrowers dictate their preferred lender set: currently through explicit permissioning of addresses.\
 \
-Depending on the controller contract underlying a given Wildcat vault, extra functionality can be bolted on: extra logic regarding the way that interest is paid, or to whom, or various on-chain conditions for deposit release.\
+Depending on the controller contract underlying a given Wildcat market, extra functionality can be bolted on: extra logic regarding the way that interest is paid, or to whom, or various on-chain conditions for deposit release.\
 \
 Wildcat markets are not controlled or upgradable by the protocol itself once deployed.\
 \
