@@ -23,8 +23,8 @@
 
 * [Component Overview](technical-deep-dive/component-overview/README.md)
   * [WildcatArchController.sol](technical-deep-dive/component-overview/wildcatarchcontroller.sol.md)
-  * [WildcatVaultControllerFactory.sol](technical-deep-dive/component-overview/wildcatvaultcontrollerfactory.sol.md)
-  * [WildcatVaultController.sol](technical-deep-dive/component-overview/wildcatvaultcontroller.sol.md)
+  * [WildcatMarketControllerFactory.sol](technical-deep-dive/component-overview/wildcatmarketcontrollerfactory.sol.md)
+  * [WildcatMarketController.sol](technical-deep-dive/component-overview/wildcatmarketcontroller.sol.md)
   * [Wildcat Market Overview](technical-deep-dive/component-overview/wildcat-market-overview/README.md)
     * [WildcatMarket.sol](technical-deep-dive/component-overview/wildcat-market-overview/wildcatmarket.sol.md)
     * [WildcatMarketBase.sol](technical-deep-dive/component-overview/wildcat-market-overview/wildcatmarketbase.sol.md)
@@ -34,6 +34,7 @@
     * [Events](technical-deep-dive/component-overview/wildcat-market-overview/events.md)
   * [WildcatSanctionsSentinel.sol](technical-deep-dive/component-overview/wildcatsanctionssentinel.sol.md)
   * [WildcatSanctionsEscrow.sol](technical-deep-dive/component-overview/wildcatsanctionsescrow.sol.md)
+  * [Structs](technical-deep-dive/component-overview/structs.md)
 * [Gas Profile](technical-deep-dive/gas-profile.md)
 * [Contract Deployments](technical-deep-dive/contract-deployments.md)
 

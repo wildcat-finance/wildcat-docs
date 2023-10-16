@@ -1,6 +1,6 @@
-# WildcatVaultControllerFactory.sol
+# WildcatMarketControllerFactory.sol
 
-A `WildcatVaultControllerFactory` is: TODO
+A `WildcatMarketControllerFactory` deploys controllers and manages protocol fee information.
 
 #### archController
 
@@ -18,18 +18,18 @@ A `WildcatVaultControllerFactory` is: TODO
 
 Address with blacklist control, used for blocking sanctioned addresses.
 
-#### vaultInitCodeStorage
+#### marketInitCodeStorage
 
 ```solidity
- address public immutable vaultInitCodeStorage;
+ address public immutable marketInitCodeStorage;
 ```
 
 
 
-#### vaultInitCodeHash
+#### marketInitCodeHash
 
 ```solidity
- uint256 public immutable vaultInitCodeHash;
+ uint256 public immutable marketInitCodeHash;
 ```
 
 
@@ -108,17 +108,17 @@ Address with blacklist control, used for blocking sanctioned addresses.
 ```solidity
  function getParameterConstraints()
    external view
-    returns (VaultParameterConstraints memory constraints);
+    returns (MarketParameterConstraints memory constraints);
 ```
 
 
 
-#### getVaultParameterParameters
+#### getMarketControllerParameters
 
 ```solidity
- function getVaultControllerParameters()
+ function getMarketControllerParameters()
    external view virtual
-    returns (VaultControllerParameters memory parameters);
+    returns (MarketControllerParameters memory parameters);
 ```
 
 
@@ -132,10 +132,10 @@ Address with blacklist control, used for blocking sanctioned addresses.
 
 
 
-#### deployControllerAndVault
+#### deployControllerAndMarket
 
 ```solidity
- function deployControllerAndVault(
+ function deployControllerAndMarket(
    string memory namePrefix,
    string memory symbolPrefix,
    address asset,
@@ -145,7 +145,7 @@ Address with blacklist control, used for blocking sanctioned addresses.
    uint32 withdrawalBatchDuration,
    uint16 reserveRatioBips,
    uint32 delinquencyGracePeriod
-  ) external returns (address controller, address vault);
+  ) external returns (address controller, address market);
 ```
 
 

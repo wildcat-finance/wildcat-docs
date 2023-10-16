@@ -155,40 +155,40 @@ function isRegisteredController(address controller)
 
 
 
-#### registerVault
+#### registerMarket
 
 ```solidity
- function registerVault(address vault)
+ function registerMarket(address market)
    external onlyController;
 ```
 
 
 
-#### removeVault
+#### removeMarket
 
 ```solidity
-function removeVault(address vault)
+function removeMarket(address market)
   external onlyOwner;
 ```
 
 
 
-#### isRegisteredVault
+#### isRegisteredMarket
 
 ```solidity
-function isRegisteredVault(address vault)
+function isRegisteredMarket(address market)
   external view returns (bool);
 ```
 
 
 
-#### getRegisteredVaults
+#### getRegisteredMarkets
 
 ```solidity
- function getRegisteredVaults()
+ function getRegisteredMarkets()
    external view returns (address[] memory);
  
- function getRegisteredVaults(
+ function getRegisteredMarkets(
     uint256 start,
     uint256 end
   ) external view returns (address[] memory arr);
@@ -196,9 +196,9 @@ function isRegisteredVault(address vault)
 
 
 
-#### getRegisteredVaultsCount
+#### getRegisteredMarketsCount
 
-<pre class="language-solidity"><code class="lang-solidity"><strong> function getRegisteredVaultsCount()
+<pre class="language-solidity"><code class="lang-solidity"><strong> function getRegisteredMarketsCount()
 </strong><strong>   external view returns (uint256);
 </strong></code></pre>
 

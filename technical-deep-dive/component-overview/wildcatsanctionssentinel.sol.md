@@ -1,6 +1,6 @@
 # WildcatSanctionsSentinel.sol
 
-A `WildcatSanctionsSentinel` contract is \[TODO]
+The `WildcatSanctionsSentinel` contract interfaces with Chainalysis, allows borrowers to override lenders' sanction statuses and deploys escrows.&#x20;
 
 #### WildcatSanctionsEscrowInitcodeHash
 

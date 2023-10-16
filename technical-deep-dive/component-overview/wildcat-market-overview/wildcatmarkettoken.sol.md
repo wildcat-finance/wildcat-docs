@@ -8,7 +8,7 @@ The `WildcatMarketToken` is the token-related logic contract containing function
 mapping(address => mapping(address => uint256)) public allowance;
 ```
 
-Amount of the vault token that a spender may transfer on behalf of another owner.
+Amount of the market token that a spender may transfer on behalf of another owner.
 
 #### balanceOf
 
@@ -16,7 +16,7 @@ Amount of the vault token that a spender may transfer on behalf of another owner
 function balanceOf(address account) public view virtual nonReentrantView returns (uint256);
 ```
 
-Balance of an account based on the [current vault state](wildcatmarketbase.sol.md#currentstate) scaled by the [scale factor](wildcatmarketbase.sol.md#scalefactor).
+Balance of an account based on the [current market state](wildcatmarketbase.sol.md#currentstate) scaled by the [scale factor](wildcatmarketbase.sol.md#scalefactor).
 
 Reverts if:
 
@@ -28,7 +28,7 @@ Reverts if:
 function totalSupply() external view virtual nonReentrantView returns (uint256);
 ```
 
-Total supply of the vault token based on the [current vault state](wildcatmarketbase.sol.md#currentstate) scaled by the [scale factor](wildcatmarketbase.sol.md#scalefactor).
+Total supply of the market token based on the [current market state](wildcatmarketbase.sol.md#currentstate) scaled by the [scale factor](wildcatmarketbase.sol.md#scalefactor).
 
 Reverts if:
 
@@ -56,7 +56,7 @@ Logs:
 function transfer(address to, uint256 amount) external virtual nonReentrant returns (bool);
 ```
 
-Transfers an amount of the vault token from the caller to another account and [updates the vault state](wildcatmarket.sol.md#updatestate).
+Transfers an amount of the market token from the caller to another account and [updates the market state](wildcatmarket.sol.md#updatestate).
 
 Reverts if:
 
@@ -79,7 +79,7 @@ function transferFrom(
 ) external virtual nonReentrant returns (bool);
 ```
 
-Transfers an amount of the vault token from one account to another, decreases the [allowance](wildcatmarkettoken.sol.md#allowance) by the amount if applicable, and [updates the vault state](wildcatmarket.sol.md#updatestate).
+Transfers an amount of the market token from one account to another, decreases the [allowance](wildcatmarkettoken.sol.md#allowance) by the amount if applicable, and [updates the market state](wildcatmarket.sol.md#updatestate).
 
 Reverts if:
 

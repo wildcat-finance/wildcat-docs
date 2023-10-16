@@ -8,7 +8,7 @@ The `WildcatMarketConfig` is the configuration contract containing configuration
 function maximumDeposit() external view returns (uint256);
 ```
 
-Maximum amount that may be deposited into the market, based on the [current vault state](wildcatmarketbase.sol.md#currentstate).
+Maximum amount that may be deposited into the market, based on the current market state.
 
 #### maxTotalSupply
 
@@ -42,7 +42,7 @@ Percentage of outstanding balance that must be held in liquid reserves.
 function revokeAccountAuthorization(address _account) external onlyController nonReentrant;
 ```
 
-Revokes an account's authorization to deposit assets and [updates the vault state](wildcatmarket.sol.md#updatestate).
+Revokes an account's authorization to deposit assets and updates the market state.
 
 Reverts if:
 
@@ -60,7 +60,7 @@ Logs:
 function grantAccountAuthorization(address _account) external onlyController nonReentrant;
 ```
 
-Restores an account's authorization to deposit assets and [updates the vault state](wildcatmarket.sol.md#updatestate).
+Restores an account's authorization to deposit assets and updates the market state.
 
 Cannot be used to restore a blacklisted account's status.
 
@@ -80,7 +80,7 @@ Logs:
 function nukeFromOrbit(address _account) external onlySentinel;
 ```
 
-Block an account from interacting with the market, deletes its [balance](wildcatmarkettoken.sol.md#balanceof), and [updates the vault state](wildcatmarket.sol.md#updatestate).
+Block an account from interacting with the market, deletes its [balance](wildcatmarkettoken.sol.md#balanceof), and updates the market state.
 
 Reverts if:
 
@@ -97,7 +97,7 @@ Logs:
 function setMaxTotalSupply(uint256 _maxTotalSupply) external onlyController nonReentrant;
 ```
 
-Sets the [maximum total supply](wildcatmarketconfig.sol.md#maxtotalsupply) and [updates the vault state](wildcatmarket.sol.md#updatestate). This only limits deposits and does not affect interest accrual.
+Sets the [maximum total supply](wildcatmarketconfig.sol.md#maxtotalsupply) and updates the market state. This only limits deposits and does not affect interest accrual.
 
 Reverts if:
 
@@ -115,7 +115,7 @@ Logs:
 function setAnnualInterestBips(uint16 _annualInterestBips) public onlyController nonReentrant;
 ```
 
-Sets the [annual interest bips](wildcatmarketconfig.sol.md#annualinterestbips) and [updates the vault state](wildcatmarket.sol.md#updatestate).
+Sets the [annual interest bips](wildcatmarketconfig.sol.md#annualinterestbips) and updates the market state.
 
 Reverts if:
 
@@ -133,7 +133,7 @@ Logs:
 function setLiquidityCoverageRatio(uint16 _liquidityCoverageRatio) public onlyController nonReentrant;
 ```
 
-Sets the [liquidity coverage ratio](wildcatmarketconfig.sol.md#liquiditycoverageratio) and [updates the vault state](wildcatmarket.sol.md#updatestate).
+Sets the [liquidity coverage ratio](wildcatmarketconfig.sol.md#liquiditycoverageratio) and updates the market state.
 
 Reverts if:
 

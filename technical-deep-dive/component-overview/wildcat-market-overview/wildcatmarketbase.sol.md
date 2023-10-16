@@ -16,7 +16,7 @@ Address with blacklist control, used for blocking sanctioned addresses.
 address public immutable borrower;
 ```
 
-Address with authority to borrow assets from the vault.
+Address with authority to borrow assets from the market.
 
 #### feeRecipient
 
@@ -58,7 +58,7 @@ Time after which delinquency incurs penalty fee.
 address public immutable controller;
 ```
 
-Address of the vault controller.
+Address of the market controller.
 
 #### asset
 
@@ -106,7 +106,7 @@ Token symbol, derived from [underlying asset](wildcatmarketbase.sol.md#asset).
 function coverageLiquidity() external view nonReentrantView returns (uint256);
 ```
 
-Liquidity required based on the [current vault state](wildcatmarketbase.sol.md#currentstate).
+Liquidity required based on the [current market state](wildcatmarketbase.sol.md#currentstate).
 
 Reverts if:
 
@@ -118,7 +118,7 @@ Reverts if:
 function scaleFactor() external view nonReentrantView returns (uint256);
 ```
 
-Scale factor based on the [current vault state](wildcatmarketbase.sol.md#currentstate).
+Scale factor based on the [current m](wildcatmarketbase.sol.md#currentstate)[arket state](wildcatmarketbase.sol.md#currentstate).
 
 Reverts if:
 
@@ -130,7 +130,7 @@ Reverts if:
 function totalAssets() public view returns (uint256);
 ```
 
-Vault's total balance of the [underlying asset](wildcatmarketbase.sol.md#asset).
+Total market balance of the [underlying asset](wildcatmarketbase.sol.md#asset).
 
 #### borrowableAssets
 
@@ -138,7 +138,7 @@ Vault's total balance of the [underlying asset](wildcatmarketbase.sol.md#asset).
 function borrowableAssets() external view nonReentrantView returns (uint256);
 ```
 
-Amount of the [underlying asset](wildcatmarketbase.sol.md#asset) that may be borrowed based on the [current vault state](wildcatmarketbase.sol.md#currentstate).
+Amount of the [underlying asset](wildcatmarketbase.sol.md#asset) that may be borrowed based on the [current market state](wildcatmarketbase.sol.md#currentstate).
 
 Reverts if:
 
@@ -150,7 +150,7 @@ Reverts if:
 function accruedProtocolFees() external view nonReentrantView returns (uint256);
 ```
 
-Amount of accrued protocol fees based on the [current vault state](wildcatmarketbase.sol.md#currentstate).
+Amount of accrued protocol fees based on the [current market state](wildcatmarketbase.sol.md#currentstate).
 
 Reverts if:
 
@@ -159,34 +159,34 @@ Reverts if:
 #### previousState
 
 ```solidity
-function previousState() external view returns (VaultState memory);
+function previousState() external view returns (MarketState memory);
 ```
 
-Returns the state of the vault from the last state update, performing no computation or mutations.
+Returns the state of the market from the last state update, performing no computation or mutations.
 
 #### currentState
 
 ```solidity
-function currentState() external view nonReentrantView returns (VaultState memory state);
+function currentState() external view nonReentrantView returns (MarketState memory state);
 ```
 
-Calculates the current vault state by applying fees and accrued interest from the last update.
+Calculates the current market state by applying fees and accrued interest from the last update.
 
-This function does not update the global state, all mutations and computations are performed on a cached version of the vault and withdrawal state in memory.
+This function does not update the global state, all mutations and computations are performed on a cached version of the market and withdrawal state in memory.
 
 Procedures:
 
 * If the timestamp matches that of the most recent state update:
-  * Return the vault state as is, performing no additional computations
+  * Return the market state as is, performing no additional computations
 * Otherwise:
   * If a withdrawal batch has expired:
-    * Update the vault state with the expiry timestamp for:
+    * Update the market state with the expiry timestamp for:
       * fees
       * delinquency when applicable
       * scale factor
       * withdrawal batch state
   * Otherwise, continue
-  * Update the vault state with the current timestamp for the following:
+  * Update the market state with the current timestamp for the following:
     * fees
     * delinquency when applicable
     * scale factor
@@ -201,7 +201,7 @@ Reverts if:
 function scaledTotalSupply() external view nonReentrantView returns (uint256);
 ```
 
-Returns the total supply of the current vault state scaled by the [scale factor](wildcatmarketbase.sol.md#scalefactor).
+Returns the total supply of the current market state scaled by the [scale factor](wildcatmarketbase.sol.md#scalefactor).
 
 Reverts if:
 
@@ -226,7 +226,7 @@ Reverts if:
 function effectiveBorrowerAPR() external view returns (uint256);
 ```
 
-Effective interest rate paid by the [borrower](wildcatmarketbase.sol.md#borrower), based on the [current vault state](wildcatmarketbase.sol.md#currentstate).
+Effective interest rate paid by the [borrower](wildcatmarketbase.sol.md#borrower), based on the [current market state](wildcatmarketbase.sol.md#currentstate).
 
 The [borrower](wildcatmarketbase.sol.md#borrower) is responsible for base APR, protocol fee, and delinquency fee.
 
@@ -238,7 +238,7 @@ TODO: link protocol and delinquency fee somewhere different
 function effectiveLenderAPR() external view returns (uint256);
 ```
 
-Effective interest rate earned by the lenders, based on the [current vault state](wildcatmarketbase.sol.md#currentstate).
+Effective interest rate earned by the lenders, based on the [current market state](../../../security-measures/code-security-reviews.md#code4rena-crowdsourced-security-review).
 
 The lender earns base APR and delinquency fee.
 

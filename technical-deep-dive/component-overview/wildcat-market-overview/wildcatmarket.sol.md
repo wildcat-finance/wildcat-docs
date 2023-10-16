@@ -8,15 +8,15 @@ The `WildcatMarket` is the final contract, containing all vault-related logic.
 function updateState() external;
 ```
 
-Updates the vault state.
+Updates the market state.
 
 Procedures:
 
 * If the timestamp is that of the last state update:
-  * Return the vault state as is, performing no additional computations
+  * Return the market state as is, performing no additional computations
 * Otherwise:
   * If a withdrawal batch has expired:
-    * Update the vault state with the expiry timestamp for:
+    * Update the market state with the expiry timestamp for:
       * fees
       * delinquency when applicable
       * scale factor
@@ -24,7 +24,7 @@ Procedures:
     * Process the expired withdrawal batch
   * Otherwise, continue
   * If the block timestamp is still not that of the last state update:
-    * Update the vault state with the expiry timestamp for:
+    * Update the market state with the expiry timestamp for:
       * fees
       * delinquency when applicable
       * scale factor
@@ -46,7 +46,7 @@ Deposits up to a given amount.
 
 Procedures:
 
-* [Update the vault state](wildcatmarket.sol.md#updatestate)
+* [Update the m state](wildcatmarket.sol.md#updatestate)
 * Reduce amount if it would exceed [total supply](wildcatmarkettoken.sol.md#totalsupply)
 * Scale the mint amount by the [scale factor](wildcatmarketbase.sol.md#scalefactor)
 * [Transfer](wildcatmarkettoken.sol.md#transfer) deposit from the caller
@@ -83,7 +83,7 @@ Reverts if:
 function collectFees() external nonReentrant;
 ```
 
-Collects protocol fees and [updates the vault state](wildcatmarket.sol.md#updatestate).
+Collects protocol fees and [updates the market state](wildcatmarket.sol.md#updatestate).
 
 Coverage for deposits takes precedence over fee revenue.
 
@@ -102,7 +102,7 @@ Logs:
 function borrow(uint256 amount) external onlyBorrower nonReentrant;
 ```
 
-Borrows an amount from the vault and [updates the vault state](wildcatmarket.sol.md#updatestate).
+Borrows an amount from the market and [update](wildcatmarket.sol.md#updatestate)[s the market state](wildcatmarket.sol.md#updatestate).
 
 Reverts if:
 
@@ -114,13 +114,13 @@ Logs:
 
 * [Borrow](events.md#borrow)
 
-#### closeVault
+#### closeMarket
 
 ```solidity
-function closeVault() external onlyController nonReentrant;
+function closeMarket() external onlyController nonReentrant;
 ```
 
-Sets the vault to 0% [APR](wildcatmarketconfig.sol.md#annualinterestbips), [updates the vault state](wildcatmarket.sol.md#updatestate), and [transfers](wildcatmarkettoken.sol.md#transfer) the outstanding balance for full redemption.
+Sets the market to 0% [APR](wildcatmarketconfig.sol.md#annualinterestbips), [updates the market state](wildcatmarket.sol.md#updatestate), and [transfers](wildcatmarkettoken.sol.md#transfer) the outstanding balance for full redemption.
 
 Reverts if:
 
@@ -129,4 +129,4 @@ Reverts if:
 
 Logs:
 
-* [VaultClosed](events.md#vaultclosed)
+* MarketClosed

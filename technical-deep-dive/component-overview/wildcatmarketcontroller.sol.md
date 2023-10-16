@@ -1,6 +1,6 @@
-# WildcatVaultController.sol
+# WildcatMarketController.sol
 
-A `WildcatVaultController` contract is \[TODO]
+A `WildcatMarketController` contract deploys markets and manages their configurable parameters (APR, reserve ratio) and maintains set of approved lenders.
 
 #### archController
 
@@ -13,7 +13,7 @@ A `WildcatVaultController` contract is \[TODO]
 #### controllerFactory
 
 ```solidity
- IWildcatVaultControllerFactory public immutable controllerFactory;
+ IWildcatMarketControllerFactory public immutable controllerFactory;
 ```
 
 
@@ -34,17 +34,17 @@ A `WildcatVaultController` contract is \[TODO]
 
 
 
-#### vaultInitCodeStorage
+#### marketInitCodeStorage
 
 ```solidity
- address public immutable vaultInitCodeStorage;
+ address public immutable marketInitCodeStorage;
 ```
 
 
 
-#### vaultInitCodeHash
+#### marketInitCodeHash
 
-<pre class="language-solidity"><code class="lang-solidity"><strong> uint256 public immutable vaultInitCodeHash;
+<pre class="language-solidity"><code class="lang-solidity"><strong> uint256 public immutable marketInitCodeHash;
 </strong></code></pre>
 
 
@@ -110,28 +110,28 @@ A `WildcatVaultController` contract is \[TODO]
 #### updateLenderAuthorization
 
 ```solidity
-   function updateLenderAuthorization(address lender, address[] memory vaults)
+   function updateLenderAuthorization(address lender, address[] memory markets)
      external;
 ```
 
 
 
-#### isControlledVault
+#### isControlledMarket
 
 ```solidity
- function isControlledVault(address vault)
+ function isControlledMarket(address market)
    external view returns (bool);
 ```
 
 
 
-#### getControlledVaults
+#### getControlledMarkets
 
 ```solidity
- function getControlledVaults()
+ function getControlledMarkets()
    external view returns (address[] memory);
    
- function getControlledVaults(
+ function getControlledMarkets(
     uint256 start,
     uint256 end
   ) external view returns (address[] memory arr);
@@ -139,18 +139,18 @@ A `WildcatVaultController` contract is \[TODO]
 
 
 
-#### getControlledVaultsCount
+#### getControlledMarketsCount
 
-<pre class="language-solidity"><code class="lang-solidity"><strong> function getControlledVaultsCount()
+<pre class="language-solidity"><code class="lang-solidity"><strong> function getControlledMarketsCount()
 </strong><strong>   external view returns (uint256);
 </strong></code></pre>
 
 
 
-#### computeVaultAddress
+#### computeMarketAddress
 
 ```solidity
- function computeVaultAddress(
+ function computeMarketAddress(
     address asset,
     string memory namePrefix,
     string memory symbolPrefix
@@ -159,18 +159,18 @@ A `WildcatVaultController` contract is \[TODO]
 
 
 
-#### getVaultParameters
+#### getMarketParameters
 
-<pre class="language-solidity"><code class="lang-solidity"><strong> function getVaultParameters()
-</strong>   external view returns (VaultParameters memory parameters);
+<pre class="language-solidity"><code class="lang-solidity"><strong> function getMarketParameters()
+</strong>   external view returns (MarketParameters memory parameters);
 </code></pre>
 
 
 
-#### deployVault
+#### deployMarket
 
 ```solidity
- function deployVault(
+ function deployMarket(
     address asset,
     string memory namePrefix,
     string memory symbolPrefix,
@@ -180,7 +180,7 @@ A `WildcatVaultController` contract is \[TODO]
     uint32 withdrawalBatchDuration,
     uint16 reserveRatioBips,
     uint32 delinquencyGracePeriod
-  ) external returns (address vault);
+  ) external returns (address market);
 ```
 
 
@@ -189,7 +189,7 @@ A `WildcatVaultController` contract is \[TODO]
 
 ```solidity
  function getParameterConstraints()
-   external view returns (VaultParameterConstraints memory constraints);
+   external view returns (MarketParameterConstraints memory constraints);
 ```
 
 
@@ -198,9 +198,9 @@ A `WildcatVaultController` contract is \[TODO]
 
 ```solidity
  function setAnnualInterestBips(
-    address vault,
+    address market,
     uint16 annualInterestBips
-  ) external virtual onlyBorrower onlyControlledVault(vault);
+  ) external virtual onlyBorrower onlyControlledMarket(market);
 ```
 
 
@@ -208,7 +208,7 @@ A `WildcatVaultController` contract is \[TODO]
 #### resetReserveRatio
 
 ```solidity
- function resetReserveRatio(address vault)
+ function resetReserveRatio(address market)
    external virtual;
 ```
 
