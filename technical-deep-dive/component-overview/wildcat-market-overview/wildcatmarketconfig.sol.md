@@ -91,6 +91,23 @@ Logs:
 * [Transfer](events.md#transfer)
 * [AuthorizationStatusUpdated](events.md#authorizationstatusupdated)
 
+#### stunningReversal
+
+```solidity
+function stunningReversal(address accountAddress) external nonReentrant 
+```
+
+Removes the blocked status from an account, setting it to Null instead.
+
+Reverts if:
+
+* The account was not blocked, with error `AccountNotBlocked`.
+* The account is still flagged as sanctioned according to the [sentinel](wildcatmarketbase.sol.md#sentinel), with error `NotReversedOrStunning`.
+
+Logs:
+
+* AuthorizationStatusUpdated
+
 #### setMaxTotalSupply
 
 ```solidity
