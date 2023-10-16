@@ -47,7 +47,7 @@ Deposits up to a given amount.
 
 Procedures:
 
-* [Update the m state](wildcatmarket.sol.md#updatestate)
+* [Update the market state](wildcatmarket.sol.md#updatestate)
 * Reduce amount if it would exceed [total supply](wildcatmarkettoken.sol.md#totalsupply)
 * Scale the mint amount by the [scale factor](wildcatmarketbase.sol.md#scalefactor)
 * [Transfer](wildcatmarkettoken.sol.md#transfer) deposit from the caller
