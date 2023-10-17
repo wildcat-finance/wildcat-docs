@@ -49,6 +49,7 @@
 * [Wildcat Service Agreement](legal/wildcat-service-agreement.md)
 * [Master Loan Agreement](legal/master-loan-agreement.md)
 * [Website T\&Cs](legal/website-t-and-cs.md)
+* [Protocol UI Privacy Policy](legal/protocol-ui-privacy-policy.md)
 
 ## Miscellaneous
 
