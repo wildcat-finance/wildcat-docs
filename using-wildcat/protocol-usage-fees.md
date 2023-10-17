@@ -26,7 +26,7 @@ The borrower that deploys a market through their own Controller Alpha instance w
 
 Decreasing or increasing that APR will similarly adjust the actual protocol fee APR.
 
-Protocol fees do _not_ increase in the presence of a penalty APR if a market is delinquent and over the grace period: if a market deployed through Controller Alpha has a base rate of 10% and is currently paying an additional penalty APR of 20%, the total vault APR is 32% ((10% + 2%) + 20%), _not_ 36%.
+Protocol fees do _not_ increase in the presence of a penalty APR if a market is delinquent and over the grace period: if a market deployed through Controller Alpha has a base rate of 10% and is currently paying an additional penalty APR of 20%, the total market APR is 32% ((10% + 2%) + 20%), _not_ 36%.
 
 Protocol fees are claimed by either the archcontroller or the designated fee recipient of a market.
 

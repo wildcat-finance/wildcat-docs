@@ -77,12 +77,12 @@ To illustrate in some depth:
 * Lender C starts a new withdrawal cycle by requesting a withdrawal of 5,000 tokens. As with Lender B, no reserves means no market tokens are burned.
 * This second withdrawal cycle elapses, and a second expired claim for 5,000 tokens is added to the queue.
 * At this point, the borrower returns 13,000 tokens to the market.
-* These tokens are immediately placed into the unclaimed withdrawals pool, and since the amount returned is less than the total amount outstanding in the queue, the reserve ratio of the vault remains at 0%.
+* These tokens are immediately placed into the unclaimed withdrawals pool, and since the amount returned is less than the total amount outstanding in the queue, the reserve ratio of the market remains at 0%.
 * The assets newly placed in the unclaimed withdrawals pool are claimable as follows:
   * Lender A must burn 5,000 market tokens to claim 7,500 tokens, since a portion of this claim was 'pre-burned' via their original request,
   * Lender B must burn 2,500 market tokens to claim 2,500 tokens, and
   * Lender C must burn 3,000 market tokens to claim 3,000 tokens.
 * **Note:** even though the 13,000 tokens returned to the market are in excess of the 5,000 token claim of Lender C, they are only eligible to claim that part in excess of the first expired claim in the queue (10,000 tokens).
 * If all of these claims are processed, the first claim is eliminated from the queue, leaving only a 2,000 token claim for Lender C.
-* If the borrower subsequently returns an additional 11,000 tokens to the vault at this point, then 2,000 of them are again assigned to the unclaimed withdrawals pool, with the remaining 9,000 being considered true reserve, bringing the reserve ratio of the vault back up to 9,000 / 30,000 = 30%.
+* If the borrower subsequently returns an additional 11,000 tokens to the market at this point, then 2,000 of them are again assigned to the unclaimed withdrawals pool, with the remaining 9,000 being considered true reserve, bringing the reserve ratio of the market back up to 9,000 / 30,000 = 30%.
 

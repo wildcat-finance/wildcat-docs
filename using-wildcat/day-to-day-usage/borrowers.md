@@ -28,7 +28,7 @@ There are a number of parameter fields that are presented here, and the screen m
 
 *   **Market Capacity**
 
-    * This represents the initial **capacity** of the vault - the maximum amount of debt that you're willing to pay interest on at launch. Note that depending on what you set the **reserve ratio** as, this does _not_ correspond to the amount that you are able to **borrow** from the market when fully subscribed.
+    * This represents the initial **capacity** of the market - the maximum amount of debt that you're willing to pay interest on at launch. Note that depending on what you set the **reserve ratio** as, this does _not_ correspond to the amount that you are able to **borrow** from the market when fully subscribed.
 
 
 * **Reserve Ratio (%)**
@@ -39,7 +39,7 @@ There are a number of parameter fields that are presented here, and the screen m
     Note that the capacity and the reserve ratio together dictate the _maximum_ that you are able to borrow from a market. A higher reserve ratio leads to a greater amount that you are paying interest on, but provides more of a cushion for lenders to easily exit their position, presuming that you fix delinquencies in a timely manner (lest you incur the _penalty fee_, see below).\
 
 * **Lender APR (%)**
-  * The amount of interest that you are willing to pay on deposits to _lenders_. This is the rate that will apply presuming that your vault never stays delinquent for long enough for the **penalty rate** to activate.\
+  * The amount of interest that you are willing to pay on deposits to _lenders_. This is the rate that will apply presuming that your market never stays delinquent for long enough for the **penalty rate** to activate.\
     \
     Note that dependent on controller, this may not be the final APR - markets deployed via controllers that utilise a **protocol fee** will add that rate onto the base rate (e.g. selecting a base rate of 10% for a market that includes a 20% protocol fee produces a final rate for the borrower of 10% + (0.2 \* 10%) = 12%.\
 
@@ -60,7 +60,7 @@ There are a number of parameter fields that are presented here, and the screen m
     \
     This parameter exists in order to fairly distribute assets across multiple lenders given the undercollateralised nature of Wildcat markets. In the event that a significant amount of the supply is recalled at once, a longer withdrawal cycle permits reserves to be handed out _pro rata_ depending on the reserves within the market. For more on how this looks from the lenders perspective, please see the [**Lenders**](lenders.md) page.
 
-Provided that all of these parameters are within range for the market type you are deploying (and these vary on a per-controller basis), you will then be asked to submit a single transaction which first deploys a controller of the correct type from the controller factory, and subsequently deploys a vault parameterised as you have directed.
+Provided that all of these parameters are within range for the market type you are deploying (and these vary on a per-controller basis), you will then be asked to submit a single transaction which first deploys a controller of the correct type from the controller factory, and subsequently deploys a market parameterised as you have directed.
 
 As part of this market deployment process, prior to submitting the above transaction, the borrower is required to pre-sign a [**Master Loan Agreement**](../terminology.md#master-loan-agreement-mla) populated with the fields provided. This is a document which binds each individual lender to the borrower via contract, and is intended to offer the lender protection via the legal system. For the process of countersigning, please see the [lenders.md](lenders.md "mention") page.
 
@@ -95,7 +95,7 @@ Withdrawal requests impact the reserve ratio of your market, and as such a good 
 
 The act of repaying is simple in the sense that it 'only' involves transferring assets back into the market, but please note that this _must_ be done using the `deposit` or `depositUpTo` functions of the market contract. **Direct transfers of assets into the market contract will result in assets being permanently lost, and the nature of the market contracts means that we **_**cannot**_** help you retrieve them.** Utilising the protocol UI will help you avoid this, but we understand that there may be some users who will prefer to interact with the contracts directly.
 
-It is worth noting that _anyone_ can repay assets to the vault provided they use the deposit functions referred to above - we've permitted this in case the borrower address is compromised. In this case, all lenders can file withdrawal requests, assets can subsequently be repaid from a third party, and - due to the manner in which withdrawal requests sequester assets during a withdrawal - can be honoured through the market contract without the compromised borrower address being able to access any assets.
+It is worth noting that _anyone_ can repay assets to the market provided they use the deposit functions referred to above - we've permitted this in case the borrower address is compromised. In this case, all lenders can file withdrawal requests, assets can subsequently be repaid from a third party, and - due to the manner in which withdrawal requests sequester assets during a withdrawal - can be honoured through the market contract without the compromised borrower address being able to access any assets.
 
 #### Reducing APR
 
@@ -113,7 +113,7 @@ As a borrower, you are able to adjust the capacity up or down as you please. How
 
 In the event that a borrower has finished utilising the funds for the purpose that the market was set up to facilitate (or if lenders are choosing not to withdraw their assets and the borrower is paying too much interest on assets that have been re-deposited to the market), the borrower can _close_ a market at will.
 
-This is a special case of reducing the APR (with the associated increased reserve rate that accompanies it). When a vault is closed, sufficient assets must be repaid to increase the reserve ratio to 100%, after which interest ceases to accrue and _no further parameter adjustment or borrowing is possible_. The only thing possible to do in a closed vault is for the lenders to file withdrawal requests and exit.
+This is a special case of reducing the APR (with the associated increased reserve rate that accompanies it). When a market is closed, sufficient assets must be repaid to increase the reserve ratio to 100%, after which interest ceases to accrue and _no further parameter adjustment or borrowing is possible_. The only thing possible to do in a closed market is for the lenders to file withdrawal requests and exit.
 
 #### Removal From The Archcontroller
 
