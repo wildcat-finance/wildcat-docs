@@ -50,7 +50,7 @@ description: It's dangerous to go alone - learn these.
 
 * A [market](terminology.md#market) state wherein there are insufficient [assets](terminology.md#underlying-asset) in the market to meet the [reserve ratio](terminology.md#reserve-ratio) as specified by the borrower.
 * Arises via the passage of time through interest if the borrower borrows right up to their reserve ratio.
-* Can also arises if a [lender](terminology.md#lender) makes a [withdrawal request](terminology.md#withdrawal-request) and moves assets within the market into the [unclaimed withdrawals pool](terminology.md#unclaimed-withdrawals-pool).
+* Can also arise if a [lender](terminology.md#lender) makes a [withdrawal request](terminology.md#withdrawal-request) and moves assets within the market into the [unclaimed withdrawals pool](terminology.md#unclaimed-withdrawals-pool).
 * A market being delinquent for an extended period of time (as specified by the [grace period](terminology.md#grace-period)) results in the [penalty APR](terminology.md#penalty-apr) being enforced in addition to the [base APR](terminology.md#base-apr) and any [protocol APR](terminology.md#protocol-apr) that may apply.
 * 'Cured' by [depositing](terminology.md#deposit) sufficient assets into the market as to reattain the required reserve ratio.
 
