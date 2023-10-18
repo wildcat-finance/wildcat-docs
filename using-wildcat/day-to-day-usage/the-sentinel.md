@@ -12,11 +12,15 @@ Here's how we've handled it:
 
 ### Lender Gets Sanctioned
 
-In the event that a lender address is sanctioned, the sentinel contract can deploy an escrow contract between the borrower of a market and the lender in question.
+In the event that a lender address is sanctioned, the sentinel contract can deploy escrow contracts between the borrower of a market and the lender in question.
 
 Within each market contract itself, a `nukeFromOrbit` function exists that creates an escrow contract, transfers the market balance corresponding to the lender from the market to the escrow, erases the lenders market token balance, and blocks them from any further interaction with the market itself.
 
-The underlying assets can be retrieved by the lender from the escrow contract via the `releaseEscrow` function in one of two cases:
+A second escrow contract is also created if a lender attempts to execute a withdrawal (i.e. claim) from a market while sanctioned - in this case, the assets within the unclaimed withdrawals pool that would have been claimable by the lender are similarly sent to that new escrow.
+
+**NOTE**: T_his means that potentially two escrow contracts can be created for a single lender - one for their market token balance, and one for any assets that they were trying to withdraw!_
+
+Assets within an escrow contract can be released to the lender via the `releaseEscrow` function in one of two cases:
 
 * The lender address is no longer flagged as being sanctioned by the Chainalysis oracle, or
 * The borrower involved in that particular escrow contract specifically overrides the sanction status via the `overrideSanction` function.
