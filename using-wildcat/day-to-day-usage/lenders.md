@@ -30,7 +30,7 @@ Wildcat does not permit immediate withdrawals - rather, the borrower that you ar
 
 A withdrawal involves:
 
-* Burning your market tokens at a 1:1 rate to the amount that you wish to withdraw (there is a caveat to this depending on the amount of reserves currently in the market),
+* Transferring the total number of market tokens corresponding to your requested amount to the market, which are either burned immediately or held to be burned (which one happens depends on the amount of reserves currently in the market),
 * Waiting for the withdrawal cycle period to elapse (either the full period if you were the request that kickstarted the cycle, or the remainder if you placed the request in the middle of a cycle), and then
 * Claiming the assets that are available to you at the end of the cycle.
 
@@ -38,10 +38,10 @@ A withdrawal involves:
 
 Within a given market, there is a unclaimed withdrawals pool - a 'side-pot' containing assets that are still technically 'within' the market, but have been earmarked for withdrawal by a lender via a _withdrawal request_. Assets that are placed within this pool are unavailable to the borrower (they are considered to be removed from the market supply), and the [**reserve ratio**](../terminology.md#reserve-ratio) of a market does not factor them in.
 
-When you request a withdrawal, whether you are required to burn your market tokens or not depends on whether there are any reserves that are _not_ yet in the unclaimed withdrawals pool.
+When you request a withdrawal, whether any of the market tokens you transfer to the market are burned or not depends on whether there are any reserves that are _not_ yet in the unclaimed withdrawals pool.
 
-* If there are reserves in the pool that are not in the unclaimed withdrawals pool, then you can burn market tokens that you hold at a 1:1 rate in order to move those reserves into the pool. If there is no current withdrawal cycle ongoing, this action begins the countdown for a new cycle.
-* If all assets within the market are currently within the unclaimed withdrawals pool (or there are no reserves in the pool to speak of at present), then your withdrawal request is logged, but you are not required to burn any market tokens (as there is nothing to move into the pool). Instead, you will need to burn market tokens at the point of _claim_ (see below).
+* If there are reserves in the pool that are not in the unclaimed withdrawals pool, then market tokens are burned at a 1:1 rate in order to move those reserves into the pool. If there is no current withdrawal cycle ongoing, this action begins the countdown for a new cycle.
+* If all assets within the market are currently within the unclaimed withdrawals pool (or there are no reserves in the pool to speak of at present), then your withdrawal request is logged, but no market tokens are burned after you transfer them (as there is nothing to move into the pool). Instead, you tokens will burn as assets become available (see below).
 
 #### Claiming
 
@@ -50,11 +50,9 @@ Once a withdrawal cycle completes, then lenders who made withdrawal requests dur
 * If there are enough assets in the unclaimed withdrawals pool to cover the total amount requested for withdrawal in that cycle, then the lender can claim the full amount of their requested withdrawal.
 * In the scenario where the total amount requested (across several lenders) exceedes the amount in the unclaimed withdrawals pool, then the lender is able to claim a _pro rata_ amount of the assets in the reserved pool proportional to the size of _their_ overall withdrawal amount compared to the total. To illustrate:
   * If Lender A requested a withdrawal of 10,000 tokens from a pool with 5,000 tokens in reserve, they would be able to withdraw all 5,000 if they were the only lender in that withdrawal cycle.
-  * In the event that Lender B requests a withdrawal of 40,000 tokens in the same cycle, however, Lender A would only be able to claim 1,000 tokens while Lender B would be able to claim 4,000.
-  * Note in this scenario that Lender A - if they requested the withdrawal first - would be required to burn 5,000 market tokens to place these 5,000 assets in the unclaimed withdrawals pool, while Lender B did not have to burn any. Rather, Lender B will be asked to burn 4,000 market tokens at the point of claim.
-  * The above situation leaves Lender A having burned 5,000 market tokens and only able to claim 1,000 - the discrepancy here is logged, and subsequent claims as the unclaimed withdrawals pool refills - up to the remaining 4,000 tokens belonging to Lender A - will not require any market token burning.
-
-
+  * In the event that Lender B requests a withdrawal of 40,000 tokens in the same cycle, however, Lender A would only be able to claim 1,000 tokens while Lender B would be able to claim 4,000 (because 10,000 : 40,000 is a 1:4 ratio).
+  * Note in this scenario that Lender A - if they requested the withdrawal first - would have had half of their market tokens burned to place these 5,000 assets in the unclaimed withdrawals pool, while Lender B had none burned. Rather, Lender B's market tokens will be burned later on as assets are repaid by the borrower.
+  * The above situation leaves Lender A having burned 5,000 market tokens and only able to claim 1,000 - the discrepancy here is logged, and is resolved as the overall outstanding amount is paid off by the borrower.
 
 #### Expired Claims and The Withdrawal Queue
 
@@ -65,24 +63,23 @@ Subsequent repayments by the borrower to a market with a non-zero queue will rou
 To illustrate in some depth:
 
 * A market with capacity 50,000 has a supply of 40,000 tokens, and 10,000 tokens in reserve (for a reserve ratio of 25%).
-* Lender A makes a withdrawal request for 15,000 tokens, burning 10,000 market tokens to move the reserves to the unclaimed withdrawals pool (reserve ratio 0%).
+* Lender A makes a withdrawal request for 15,000 tokens, moving them all into the market and burning 10,000 of them to move the reserves to the unclaimed withdrawals pool (reserve ratio 0%).
 * The supply of the market is reduced to 30,000 tokens.
 * Lender B makes an additional withdrawal request in the same cycle for 5,000 tokens: there are no assets in reserve to move, so no market tokens are burned.
 * The withdrawal cycle period elapses.
 * There is a total of 10,000 tokens in the unclaimed withdrawals pool and an outstanding claim of 20,000 tokens from both lenders:
   * Lender A can claim 7,500 tokens,
-  * Lender B can claim 2,500 tokens after burning 2,500 market tokens,
-* Lender A now has an outstanding claim of 7,500 tokens (2,500 of which have been 'pre-paid' in the sense that they have burned the market tokens), and Lender B has an outstanding claim of 2,500 tokens.
-* This claim of a total of 10,000 tokens is marked as expired and placed in the queue.
+  * Lender B can claim 2,500 tokens,
+* Lender A now has an outstanding claim of 7,500 tokens (2,500 of which have been 'pre-paid' in the sense that an extra 2,500 market tokens were burned than they were able to access), and Lender B has an outstanding claim of 2,500 tokens.
+* This claim of a total of 10,000 tokens is marked as expired and placed in the queue as **Batch A.**
 * Lender C starts a new withdrawal cycle by requesting a withdrawal of 5,000 tokens. As with Lender B, no reserves means no market tokens are burned.
-* This second withdrawal cycle elapses, and a second expired claim for 5,000 tokens is added to the queue.
+* This second withdrawal cycle elapses, and a second expired claim for 5,000 tokens is added to the queue as **Batch B.**
 * At this point, the borrower returns 13,000 tokens to the market.
-* These tokens are immediately placed into the unclaimed withdrawals pool, and since the amount returned is less than the total amount outstanding in the queue, the reserve ratio of the market remains at 0%.
-* The assets newly placed in the unclaimed withdrawals pool are claimable as follows:
-  * Lender A must burn 5,000 market tokens to claim 7,500 tokens, since a portion of this claim was 'pre-burned' via their original request,
-  * Lender B must burn 2,500 market tokens to claim 2,500 tokens, and
-  * Lender C must burn 3,000 market tokens to claim 3,000 tokens.
-* **Note:** even though the 13,000 tokens returned to the market are in excess of the 5,000 token claim of Lender C, they are only eligible to claim that part in excess of the first expired claim in the queue (10,000 tokens).
-* If all of these claims are processed, the first claim is eliminated from the queue, leaving only a 2,000 token claim for Lender C.
-* If the borrower subsequently returns an additional 11,000 tokens to the market at this point, then 2,000 of them are again assigned to the unclaimed withdrawals pool, with the remaining 9,000 being considered true reserve, bringing the reserve ratio of the market back up to 9,000 / 30,000 = 30%.
+* These tokens are immediately placed into the unclaimed withdrawals pool, and since the amount returned is less than the total amount outstanding in the queue (15,000), the reserve ratio of the market remains at 0%.
+* Since the unclaimed withdrawals pool now contains enough assets to fully honour Batch A, the remaining 7,500 market tokens held by the market and associated with this batch are burned (5,000 belonging to Lender A and 2,500 belonging to Lender B). Both Lender A and Lender B can now claim the remainder of their withdrawal request amounts.
+* After factoring in the assets to honour the previous batch, Batch B has 3,000 assets against a 5,000 claim. 3,000 of the market tokens transferred by Lender C are burned, and Lender C can claim 3,000.
+* **Important:** even though the 13,000 tokens returned to the market were in excess of the 5,000 token claim of Lender C, they were only eligible to claim that part in excess of the amount owed to the previous batch in the queue .
+* If all of these claims are processed, the Batch A is eliminated from the queue, leaving only a 2,000 token claim for Lender C.
+* If the borrower subsequently returns an additional 11,000 tokens to the market at this point, then 2,000 are again assigned to the unclaimed withdrawals pool, burning the remaining 2,000 market tokens associated with Batch B.
+* The remaining 9,000 are now considered 'true' reserves, bringing the reserve ratio of the market back up to 9,000 / 30,000 = 30%.
 
