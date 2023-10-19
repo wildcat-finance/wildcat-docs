@@ -93,9 +93,7 @@ The primary mechanic by which funds are recalled by lenders is through **withdra
 
 Withdrawal requests impact the reserve ratio of your market, and as such a good borrower is minded to monitor their reserve ratios to determine when funds are being requested. Requests (including who has placed the request and for how much) are also logged within the Market Details page.
 
-The act of repaying is simple in the sense that it 'only' involves transferring assets back into the market, but please note that this _must_ be done using the `deposit` or `depositUpTo` functions of the market contract. **Direct transfers of assets into the market contract will result in assets being permanently lost, and the nature of the market contracts means that we **_**cannot**_** help you retrieve them.** Utilising the protocol UI will help you avoid this, but we understand that there may be some users who will prefer to interact with the contracts directly.
-
-It is worth noting that _anyone_ can repay assets to the market provided they use the deposit functions referred to above - we've permitted this in case the borrower address is compromised. In this case, all lenders can file withdrawal requests, assets can subsequently be repaid from a third party, and - due to the manner in which withdrawal requests sequester assets during a withdrawal - can be honoured through the market contract without the compromised borrower address being able to access any assets.
+The act of repaying is simple in the sense that it just requires transferring assets back to the market contract via a standard ERC-20 transfer. Further, _anyone_ can repay assets to the market in this way - we've permitted this in case the borrower address is compromised. In this case, all lenders can file withdrawal requests, assets can subsequently be repaid from a third party, and - due to the manner in which withdrawal requests sequester assets during a withdrawal - can be honoured through the market contract without the compromised borrower address being able to access any assets.
 
 #### Reducing APR
 
