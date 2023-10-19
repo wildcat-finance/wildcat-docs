@@ -56,15 +56,15 @@ Once a withdrawal cycle completes, then lenders who made withdrawal requests dur
 
 #### Expired Claims and The Withdrawal Queue
 
-Any withdrawal amounts that cannot not be honoured at the end of a withdrawal cycle (either due to the assets in market reserves being insufficient, or due to a _pro rata_ claim on assets within the unclaimed withdrawals pool) are batched together, marked as 'expired' and placed into a queue.
+Any withdrawal amounts that cannot be honoured at the end of a withdrawal cycle (either due to the assets in market reserves being insufficient, or due to a _pro rata_ claim on assets within the unclaimed withdrawals pool) are batched together, marked as 'expired' and placed into a queue.
 
 Subsequent repayments by the borrower to a market with a non-zero queue will route assets to the unclaimed withdrawals pool in the amounts required to fully honour _all_ expired claims _in the order that they were initiated_ - only after this obligation is met do repaid assets start counting towards the reserve ratio of a market.
 
 To illustrate in some depth:
 
 * A market with capacity 50,000 has a supply of 40,000 tokens, and 10,000 tokens in reserve (for a reserve ratio of 25%).
-* Lender A makes a withdrawal request for 15,000 tokens, moving them all into the market and burning 10,000 of them to move the reserves to the unclaimed withdrawals pool (reserve ratio 0%).
-* The supply of the market is reduced to 30,000 tokens.
+* Lender A makes a withdrawal request for 15,000 tokens, moving 15,000 market tokens to the market and burning 10,000 of them to move the reserves to the unclaimed withdrawals pool (reserve ratio now 0%).
+* The supply of the market is reduced to 30,000 tokens (10,000 burned).
 * Lender B makes an additional withdrawal request in the same cycle for 5,000 tokens: there are no assets in reserve to move, so no market tokens are burned.
 * The withdrawal cycle period elapses.
 * There is a total of 10,000 tokens in the unclaimed withdrawals pool and an outstanding claim of 20,000 tokens from both lenders:
@@ -76,10 +76,16 @@ To illustrate in some depth:
 * This second withdrawal cycle elapses, and a second expired claim for 5,000 tokens is added to the queue as **Batch B.**
 * At this point, the borrower returns 13,000 tokens to the market.
 * These tokens are immediately placed into the unclaimed withdrawals pool, and since the amount returned is less than the total amount outstanding in the queue (15,000), the reserve ratio of the market remains at 0%.
-* Since the unclaimed withdrawals pool now contains enough assets to fully honour Batch A, the remaining 7,500 market tokens held by the market and associated with this batch are burned (5,000 belonging to Lender A and 2,500 belonging to Lender B). Both Lender A and Lender B can now claim the remainder of their withdrawal request amounts.
-* After factoring in the assets to honour the previous batch, Batch B has 3,000 assets against a 5,000 claim. 3,000 of the market tokens transferred by Lender C are burned, and Lender C can claim 3,000.
+* Since the unclaimed withdrawals pool now contains enough assets to fully honour Batch A, the remaining 7,500 market tokens held by the market and associated with this batch are burned (5,000 belonging to Lender A and 2,500 belonging to Lender B - remember that Lender A 'over-burned' 2,500).
+* Both Lender A and Lender B can now claim the remainder of their withdrawal request amounts.
+* After factoring in the assets to honour Batch A, Batch B has 3,000 assets against a 5,000 claim. 3,000 of the market tokens transferred by Lender C are burned, and so Lender C can claim 3,000.
 * **Important:** even though the 13,000 tokens returned to the market were in excess of the 5,000 token claim of Lender C, they were only eligible to claim that part in excess of the amount owed to the previous batch in the queue .
 * If all of these claims are processed, the Batch A is eliminated from the queue, leaving only a 2,000 token claim for Lender C.
 * If the borrower subsequently returns an additional 11,000 tokens to the market at this point, then 2,000 are again assigned to the unclaimed withdrawals pool, burning the remaining 2,000 market tokens associated with Batch B.
 * The remaining 9,000 are now considered 'true' reserves, bringing the reserve ratio of the market back up to 9,000 / 30,000 = 30%.
 
+One final point: if there are multiple lenders in a batch, and the batch can only be partially honoured (via a return of less than the total amount due), then each individual lender in the batch can only claim a pro-rata amount of the assets isolated to that batch.
+
+Phrased differently: if a batch has been 60% honoured with deposited assets, then each lender can only withdraw 60% of their outstanding claim, until such time as more assets arrive to completely honour the batch.
+
+This logic can be _very_ confusing when first encountering it, so please ask us if there's any particular part you'd like us to expand on differently!
