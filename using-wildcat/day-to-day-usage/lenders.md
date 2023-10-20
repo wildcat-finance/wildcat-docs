@@ -82,7 +82,7 @@ To illustrate in some depth:
 * **Important:** even though the 13,000 tokens returned to the market were in excess of the 5,000 token claim of Lender C, they were only eligible to claim that part in excess of the amount owed to the previous batch in the queue .
 * If all of these claims are processed, the Batch A is eliminated from the queue, leaving only a 2,000 token claim for Lender C.
 * If the borrower subsequently returns an additional 11,000 tokens to the market at this point, then 2,000 are again assigned to the unclaimed withdrawals pool, burning the remaining 2,000 market tokens associated with Batch B.
-* The remaining 9,000 are now considered 'true' reserves, bringing the reserve ratio of the market back up to 9,000 / 30,000 = 30%.
+* The remaining 9,000 are now considered 'true' reserves, bringing the reserve ratio of the market back up to 9,000 / 15,000 = 60%.
 
 One final point: if there are multiple lenders in a batch, and the batch can only be partially honoured (via a return of less than the total amount due), then each individual lender in the batch can only claim a pro-rata amount of the assets isolated to that batch.
 
