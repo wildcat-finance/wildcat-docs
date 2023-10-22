@@ -198,3 +198,49 @@ struct WithdrawalData {
 }
 ```
 
+## The Data Within Withdrawal Structs
+
+The Wildcat approach to handling withdrawals is novel, so it's worth quickly digging into what the various values within the structs refer to. For more details on normalized versus scaled amounts, see [this subpage](some-notes-on-normalized-versus-scaled-amounts.md).
+
+### **Withdrawal Data In** `MarketState`
+
+* `uint128 normalizedUnclaimedWithdrawals` - amount of underlying assets paid to batches but not yet claimed in `executeWithdrawal`
+* `uint104 scaledPendingWithdrawals` - sum of unpaid amounts for all withdrawal batches
+* `uint32 pendingWithdrawalExpiry` - expiry timestamp of the current unexpired withdrawal batch.
+
+`scaledPendingWithdrawals` is tracked because borrowers are obligated to honour 100% of pending withdrawals and the reserve ratio for the rest of the total supply to avoid delinquency.
+
+### **The `WithdrawalData` Struct**
+
+* `FIFOQueue unpaidBatches` - first-in-first-out queue of timestamps (identifiers) for `WithdrawalBatch`es that have expired but have not been fully honoured (i.e. `scaledAmountBurned` < `scaledTotalAmount`). Expiries are popped off the front of the list as the batches are completely paid off.
+* `mapping(uint32 => WithdrawalBatch) batches` - mapping of withdrawal batches using their expiry timestamps as keys
+* `mapping(uint256 => mapping(address => AccountWithdrawalStatus)) accountStatuses` - mapping of account withdrawal statuses by expiry and address.
+
+### **The `WithdrawalBatch` Struct**
+
+* `scaledTotalAmount` - sum of scaledAmount for all `AccountWithdrawalStatus` in the batch
+* `scaledAmountBurned` - scaled tokens burned to pay for the batch - increases when `_applyWithdrawalBatchPayment` reduces `scaledTotalSupply`
+* `normalizedAmountPaid` - total amount of underlying assets set aside to honour the batch's withdrawals.
+
+### **The `AccountWithdrawalStatus` Struct**
+
+* `uint104 scaledAmount` - scaled withdrawal amount subtracted from lender's balance when they call `queueWithdrawal`.
+* `uint128 normalizedAmountWithdrawn` - amount of underlying assets the lender has already claimed
+
+**Notes:** Scaled amounts are the original amounts lenders sent to the market when they queued a withdrawal.
+
+Until their requests are honoured (assets reserved for the batch), they continue accruing interest, hence the distinction between scaled/normalized amounts in batches.
+
+The normalized amount is the value their tokens had at the time they were actually paid by the borrower and made available for lenders to redeem.
+
+In `_applyWithdrawalBatchPayment`, some `normalizedAmount` of underlying is removed from the market's available liquidity and reserved to pay for the batch (added to `batch.normalizedAmountPaid` and `state.normalizedUnclaimedWithdrawals`).
+
+The corresponding `scaledAmount` is added to `batch.scaledAmountBurned` and subtracted from `state.scaledTotalSupply` and `state.scaledPendingWithdrawals`.
+
+The normalized amount set aside for the batch can only be used to execute withdrawal requests for this batch - the market's balance in the underlying assets can never go below `normalizedUnclaimedWithdrawals`.
+
+Just as borrowers can make multiple partial payments toward a batch over time, lenders can execute multiple partial redemptions.
+
+Lenders are always entitled to a pro-rata share of the total underlying assets that have been paid toward a batch at any given time. `normalizedAmountWithdrawn` is tracked per lender so that it can be subtracted from their total claim on the batch's reserved assets if they have to do multiple partial redemptions.
+
+As lenders redeem assets, their statuses' withdrawn amounts are increased and the market's `state.normalizedUnclaimedWithdrawals` is reduced.
