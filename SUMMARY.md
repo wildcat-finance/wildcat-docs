@@ -34,7 +34,8 @@
     * [Events](technical-deep-dive/component-overview/wildcat-market-overview/events.md)
   * [WildcatSanctionsSentinel.sol](technical-deep-dive/component-overview/wildcatsanctionssentinel.sol.md)
   * [WildcatSanctionsEscrow.sol](technical-deep-dive/component-overview/wildcatsanctionsescrow.sol.md)
-  * [Structs](technical-deep-dive/component-overview/structs.md)
+  * [Structs](technical-deep-dive/component-overview/structs/README.md)
+    * [Some Notes On Normalized versus Scaled Amounts](technical-deep-dive/component-overview/structs/some-notes-on-normalized-versus-scaled-amounts.md)
 * [Gas Profile](technical-deep-dive/gas-profile.md)
 * [Contract Deployments](technical-deep-dive/contract-deployments.md)
 

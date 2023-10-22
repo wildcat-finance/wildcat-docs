@@ -10,7 +10,7 @@ The Wildcat Protocol consists of several components:
 * A [**Market**](wildcat-market-overview/) is responsible for the borrowing and lending within the protocol.
 * The [**Sanctions Sentinel**](wildcatsanctionssentinel.sol.md) is responsible for deploying escrow contracts to remove lenders that are flagged by the Chainalysis oracle from markets.
 * A [**Sanctions Escrow**](wildcatsanctionsescrow.sol.md) holds the assets of a lender flagged by the sentinel.
-* Protocol-wide [**structs**](structs.md) are listed here.
+* Protocol-wide [**structs**](structs/) are listed here.
 
 Each hyperlink in the above will direct you to a list of the various _public or external_ functions, variables and structs contained therein.
 
