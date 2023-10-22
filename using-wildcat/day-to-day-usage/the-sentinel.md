@@ -25,6 +25,8 @@ Assets within an escrow contract can be released to the lender via the `releaseE
 * The lender address is no longer flagged as being sanctioned by the Chainalysis oracle, or
 * The borrower involved in that particular escrow contract specifically overrides the sanction status via the `overrideSanction` function.
 
+It's worth observing that any underlying assets that are within a market which cannot be redeemed by a sanctioned lender are still available for the borrower to utilise - market tokens being spirited away into an escrow contract do not impose any freezes on the underlying assets themselves. Of course, any underlying assets that were seized as part of an `executeWithdrawal` call by a sanctioned lender are out of the reach of both the borrower and the lender, as they are no longer part of the market.
+
 Note that this power cannot be randomly used to erase lenders from markets: the Chainalysis oracle **must** return `true` when asked if the lender address is sanctioned in order for the escrow contract to be created.
 
 We do not believe that Wildcat protocol users are at risk of a simultaneous exploit of the Chainalysis oracle and excision from a market as a result - in fact we do not _expect_ `nukeFromOrbit` to ever actually be _called_ - but better to be prepared.
