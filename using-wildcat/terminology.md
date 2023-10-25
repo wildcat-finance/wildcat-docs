@@ -65,7 +65,7 @@ description: It's dangerous to go alone - learn these.
 
 * An auxiliary smart contract that is deployed in the event that the [sentinel](terminology.md#sentinel) detects that a [lender](terminology.md#lender) address has been added to a sanctioned list such as the OFAC SDN: this check is performed through the [**Chainalysis oracle**](https://go.chainalysis.com/chainalysis-oracle-docs.html).
 * Used to transfer the debt (for the [lender](terminology.md#lender)) and obligation to repay (for the [borrower](terminology.md#borrower)) away from the [market](terminology.md#market) contract to avoid wider contamination through interaction. Interest ceases to accrue upon creation and transfer.
-* Borrower is immediately expected to transfer all outstanding [assets](terminology.md#underlying-asset) relating to the affected lender's [deposit](terminology.md#deposit) to the escrow contract.
+* Any [assets](terminology.md#underlying-asset) relating to an attempted claim by the affected lender as well as any market tokens tied to their remaining [deposit](terminology.md#deposit) are automatically transferred to the escrow contract when blocked (either through an attempt to withdraw or via a call to a 'nuke from orbit' function found within the market).
 * Assets can only be released to the lender in the event that they are no longer tagged as sanctioned by the Chainalysis oracle.
 
 #### Expired Withdrawal
