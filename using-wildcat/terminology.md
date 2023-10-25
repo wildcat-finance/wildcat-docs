@@ -14,7 +14,7 @@ description: It's dangerous to go alone - learn these.
 
 #### **Borrow**
 
-* To withdraw [assets](terminology.md#underlying-asset) from a [market](terminology.md#market) that has a non-zero [supply](terminology.md#supply) and [reserve ratio](terminology.md#reserve-ratio) less than 100%, with the intent of depositing the assets (plus any accrued interest) either when the required purpose of using the assets has concluded or as a response to [withdrawal requests](terminology.md#withdrawal-request).
+* To withdraw [assets](terminology.md#underlying-asset) from a [market](terminology.md#market) that has a non-zero [supply](terminology.md#supply) and [reserve ratio](terminology.md#reserve-ratio) less than 100%, with the intent of repaying the assets (plus any accrued interest) to the market either when the required purpose of using the assets has concluded or as a response to [withdrawal requests](terminology.md#withdrawal-request).
 
 #### **Borrower**
 
