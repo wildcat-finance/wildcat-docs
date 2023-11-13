@@ -48,6 +48,7 @@
 ## Legal
 
 * [Wildcat Service Agreement](legal/wildcat-service-agreement.md)
+* [Risk Disclosure Statement](legal/risk-disclosure-statement.md)
 * [Master Loan Agreement](legal/master-loan-agreement.md)
 * [Website T\&Cs](legal/website-t-and-cs.md)
 * [Protocol UI Privacy Policy](legal/protocol-ui-privacy-policy.md)
