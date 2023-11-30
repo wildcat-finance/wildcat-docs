@@ -1,6 +1,6 @@
 # Who We Are
 
-This is always the least interesting part of any website, truth be told.
+This is always the least interesting part of any protocol or website, truth be told.
 
 The 'who' we are doesn't really matter, since our powers extend to onboarding and offboarding borrowers, and you don't need to curry any favour with us to use the protocol.
 
@@ -9,15 +9,27 @@ Nonetheless:\
 
 Developers:
 
-* Dillon Kellar
-* Laurence E. Day
-* Eugene Allenov
+* Solidity/General Tinkerers
+  * **Dillon Kellar**
+  * **Laurence E. Day**
+* Frontend Developer
+  * **Eugene Allenov**
 
 Operations:
 
-* Julian Debbag
+* **Julian Debbag**
+
+Design:
+
+* **Pentacle and Alpha**
+* **Anastasia Miagkova**
+
+Artwork:
+
+* **Shizzy Aizawa**
 
 Support:
 
-* Evgeny Gaevoy
-* Wintermute Ventures
+* **Evgeny Gaevoy**
+* **Wintermute Ventures**
+* **West Ham Capital**
