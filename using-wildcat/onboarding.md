@@ -22,7 +22,7 @@ If all is well, we'll be asking you for an address, which will subsequently be a
 
 ## Lenders
 
-If you're a party that wishes to fulfil the role of a lender, Wildcat itself cannot onboard you - this must be done by an active borrower that has deployed a market.
+If you're a party that wishes to fulfil the role of a lender, Wildcat itself cannot onboard you - this must be done by an active borrower via a controller that they deployed.
 
 On the protocol UI, we intend to provide contact points for such borrowers (i.e. email, Telegram), however the protocol does not play any further role in this process.
 
