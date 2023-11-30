@@ -20,10 +20,6 @@ The Wildcat Protocol is currently permissioned, with addresses belonging to borr
 
 There is a risk that malicious third-parties could gain access to one of these roles (either by taking control of an already authorised address or by somehow granting themselves this power), which may put markets and the balances/assets they track at risk of theft.
 
-#### Re-entrancy
-
-TBA
-
 #### Rounding Errors
 
 Wildcat contracts occasionally utilise rounding when dividing large numbers. Given the way in which Wildcat works, any loss in precision that results from this should not have any impact on protocol operations, relating mostly to growth of the scale factor to determine interest due.
@@ -32,7 +28,7 @@ There is a risk that this rounding might be exploitable in some manner to interf
 
 #### SphereX Transaction Rejection
 
-TBA
+It may be the case that your legitimate transaction follows a path that was not encountered sufficiently many times during the SphereX training stage to be considered acceptable. The SphereX engine may subsequently reject your transaction as a false positive as a result. If this happens, the Wildcat team will investigate and determine whether or not to update the reference set with that particular transaction pattern in order to permit it going forward.
 
 ***
 

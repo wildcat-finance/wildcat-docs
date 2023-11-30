@@ -36,6 +36,7 @@ The results of these reviews (and associated reports) are available here:
 
 **Results**:
 
-* [Audit currently active](https://github.com/code-423n4/2023-10-wildcat).
+* 6 high
+* 11 medium
 
-**Report**: N/A \[Still in progress]
+**Report**: [https://code4rena.com/contests/2023-10-the-wildcat-protocol](https://code4rena.com/contests/2023-10-the-wildcat-protocol)

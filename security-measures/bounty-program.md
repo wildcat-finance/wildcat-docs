@@ -4,5 +4,5 @@ We will be operating a bug bounty program at launch, provided by [Immunefi](http
 
 At this stage, the total amount allocated to the program is US$50,000.
 
-Details to be added soon.
+\[30 November 2023] Link to specific dashboard and terms to follow shortly after launch.
 

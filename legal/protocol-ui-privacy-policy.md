@@ -1,10 +1,3 @@
----
-description: >-
-  This policy is a draft, is not in force anywhere for Wildcat, and - when live
-  - *only applies to users of the protocol website interface*. It's copied from
-  elsewhere while we work on it.
----
-
 # Protocol UI Privacy Policy
 
 ## Privacy Policy

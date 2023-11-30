@@ -1,3 +1,5 @@
 # Master Loan Agreement
 
-\[9 October 2023] In progress, we'll drop stuff in here soon.
+\[30 November 2023]\
+\
+WIP, skeleton document will be provided following finalisation from legal team.

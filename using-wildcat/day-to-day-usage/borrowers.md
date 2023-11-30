@@ -64,14 +64,15 @@ Provided that all of these parameters are within range for the market type you a
 
 As part of this market deployment process, prior to submitting the above transaction, the borrower is required to pre-sign a [**Master Loan Agreement**](../terminology.md#master-loan-agreement-mla) populated with the fields provided. This is a document which binds each individual lender to the borrower via contract, and is intended to offer the lender protection via the legal system. For the process of countersigning, please see the [lenders.md](lenders.md "mention") page.
 
-A note: each borrower address is constrained to owning one instance of a controller per variant, but a borrower _can_ deploy several markets with the same underlying asset against such a controller provided that the name and symbols are unique. **However**, while controllers can support multiple markets, the **launch version of the protocol UI insists on a 1:1 association**: as a result, if you wish to deploy multiple markets, the borrower must make use of (and be approved via the archcontroller for) additional deployer addresses.
+A note: each borrower address is constrained to owning one instance of a controller per variant, but a borrower _can_ deploy several markets with the same underlying asset against such a controller provided that the market token name and symbols along with underlying asset are unique.
 
 #### Sourcing Deposits
 
-Once a given market is live, the borrower can start the process of approving lenders that they wish to interact with it (i.e. deposit assets). They can do this through the Market Details page of the market, approving one or multiple addresses per transaction. These transactions target the _controller_ for that particular market. This has two caveats:
+Once a given market is live, the borrower can start the process of approving lenders that they wish to interact with it (i.e. deposit assets). They can do this through the Market Details page of the market, approving one or multiple addresses per transaction. These transactions target the _controller_ for that particular market. This has one caveat:
 
-* Deploying a new market from a different controller produces a different whitelist: as a borrower you are expected to maintain distinct lender whitelists for each of your markets.
-* New markets deployed from the _same_ controller (which is possible, but the current UI does not permit) inherit the whitelist the borrower set up for any previous markets deployed against it.
+* New markets deployed from the _same_ controller inherit the whitelist the borrower set up for any previous markets deployed against it.
+
+If you wish to further granulate your approval lists as a borrower, you will have to make use of separate borrower addresses.
 
 We defer the process of how the borrower determines the suitability of a lender to be whitelisted for their markets to them, but expect the bare minimum in terms of not approving lenders resident in sanctioned nations or within nations that have legislation preventing their interaction with the protocol (see [**Onboarding**](../onboarding.md)).
 
@@ -103,9 +104,11 @@ Should a borrower wish to increase the APR of a market in order to encourage add
 
 Should they wish to _decrease_ the APR, however, the controller of that market will likely require a temporarily increased reserve ratio (which will hold in place for some time) before the change, in order to provide liquid reserves to lenders who disagree with the rate decrease and wish to exit (for more details on this, please see the [**Lenders**](lenders.md) page). The exact amount of this reserve ratio increase is controller-dependent: it could be a flat requirement of a 90% reserve ratio, it could be the larger of the current ratio or the relative difference between the old and new rates, or a third, more complex thing.
 
+Check the UI, or if you're confused, you can ask us directly.
+
 #### Altering Capacity
 
-As a borrower, you are able to adjust the capacity up or down as you please. However, reducing the capacity below the current supply does not release you from your obligation to that supply: interest will still accrue on the outstanding supply until such time as lenders reduce the supply through withdrawal requests that burn market tokens, and your required reserves remain unchanged.
+As a borrower, you are able to adjust the capacity up to whatever amount you wish, or down to the market's current outstanding supply of market tokens, however it should be noted that rebasing of market tokens can bring their total supply above such a capacity. Interest accrues on the outstanding supply until such time as lenders reduce the supply through withdrawal requests that burn market tokens. Your required reserves remain unchanged regardless of capacity changes.
 
 #### Closing A Market
 
