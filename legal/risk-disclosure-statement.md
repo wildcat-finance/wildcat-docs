@@ -4,7 +4,7 @@ This RDS describes those risks which are present within the Wildcat Protocol, bo
 
 The contents of this RDS are acknowledged and accepted by all parties that have signed the Service Agreement. This RDS may periodically be updated, and it is the responsibility of protocol users to ensure that they are aware of - and accept - the latest version of this document.
 
-_Last update: 14th November 2023_
+_Last update: 30 November 2023_
 
 ***
 
