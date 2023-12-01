@@ -154,7 +154,7 @@ description: It's dangerous to go alone - learn these.
 
 * Agreement that must be signed by all users of the protocol ([borrower](terminology.md#borrower) or [lender](terminology.md#lender)) when first accessing the protocol UI and connecting their wallet.
 * Presents - among other things - protocol terminology and logic, and constitutes a waiver of protocol responsibility for any damages incurred via its use.
-* For the full text, please see [**Service Agreement**](terminology.md#service-agreement) (pending as of 09/10/2023).
+* For the full text, please see [**Service Agreement**](../legal/wildcat-service-agreement.md)**.**
 
 #### **Supply**
 
