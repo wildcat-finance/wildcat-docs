@@ -154,7 +154,7 @@ Each Borrower and each Lender represents and warrants that (a) it has the power 
 
 7.1. Liability For Loss
 
-(a) The Service Provider is not liable for any Loss arising out of or relating to this Agreement or the Protocol, whether for breach of contract, tort, negligence, or other form of action or theory of liability, and irrespective of whether the Service Provider or the Borrowers or the Lenders have been advised of the possibility of any such Loss, unless such Loss arises directly from the Service Provider’s or its Affiliates’ wilful default or actual fraud.
+(a) The Service Provider is not liable for any Loss arising out of or relating to this Agreement or the Protocol, whether for breach of contract, tort, negligence, or other form of action or theory of liability, and irrespective of whether the Service Provider or the Borrowers or the Lenders have been advised of the possibility of any such Loss, unless such Loss arises directly from the Service Provider’s or its Affiliates’ wilful default, gross negligence or actual fraud.
 
 (b) The Service Provider will not be responsible or liable for the acts or omissions of its Affiliates or any third party.
 
@@ -176,7 +176,7 @@ Each Borrower and each Lender represents and warrants that (a) it has the power 
 
 8\. INDEMNITY TO THE SERVICE PROVIDER
 
-Each Borrower and each Lender agrees to indemnify the Service Provider and keep it indemnified at all times against all or any costs, claims, damages or expenses incurred by the Service Provider arising during the course of the Service Provider providing the Services save for costs, claims, damages or expenses arising due to the Service Provider’s actual fraud or wilful default.
+Each Borrower and each Lender agrees to indemnify the Service Provider and keep it indemnified at all times against all or any costs, claims, damages or expenses incurred by the Service Provider arising during the course of the Service Provider providing the Services save for costs, claims, damages or expenses arising due to the Service Provider’s actual fraud, gross negligence or wilful default.
 
 9\. TERMINATION
 
