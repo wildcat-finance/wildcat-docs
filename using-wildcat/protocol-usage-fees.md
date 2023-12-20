@@ -10,14 +10,14 @@ Once a borrower has been added to the global registry by the archcontroller, the
 
 However, they do so by first deploying a controller contract that is both specific to them and supports the functionality that they wish to utilise. There are distinct variants of controller, and each of them are suited to particular circumstances. For example -&#x20;
 
-* **Controller Alpha is the launch controller (basic functionality, limited access),**
+* **Controller Alpha is the launch controller (open-ended functionality, the 'basic' market),**
 * Controller Beta might permit the deployment of long-dated call option markets,
 
 \- and so on.&#x20;
 
 Each controller has a specified protocol fee, which either manifests as an origination fee (which must be paid during the deployment of a market), or as a proportion of base APR, which accrues over the supply of assets rather than the capacity, or potentially both.\
 \
-**Controller Alpha has a protocol fee of 10% of the current base APR and no origination fee.**
+**As of launch, Controller Alpha has a protocol fee of 0% of the current base APR and no origination fee. After some trial markets go live, we will be shifting it to a 10% base APR fee configuration.**
 
 The borrower that deploys a market through their own Controller Alpha instance with an APR of 10% will find themselves paying 11% (the base APR receivable by lenders plus 10% of that base rate).
 

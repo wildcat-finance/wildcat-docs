@@ -26,12 +26,13 @@ description: It's dangerous to go alone - learn these.
 
 * Parameter required of [borrower](terminology.md#borrower) when creating a new [market](terminology.md#market).
 * The _maximum_ amount of an asset that a borrower is looking to source via a market - the sum total of what all lenders can [deposit](terminology.md#deposit) and earn interest on.
+* Can be exceeded by the current supply of a market token depending on interest accrued.
 
 #### **Claim**
 
 * Removing [assets](terminology.md#underlying-asset) from the [unclaimed withdrawals pool](terminology.md#unclaimed-withdrawals-pool) that were requested for withdrawal by a [lender](terminology.md#lender) at the end of a [withdrawal cycle](terminology.md#withdrawal-cycle).&#x20;
 * Depending on the reserve ratio of the market when the withdrawal request associated with a claim was made, claiming _may_ require the burning of [market tokens](terminology.md#market-token) (see [**Lenders**](day-to-day-usage/lenders.md) for details).
-* Note that retrieving your [deposits](terminology.md#deposit) from a Wildcat market requires a [withdrawal request](terminology.md#withdrawal-request) and _then_ a claim - it is a two transaction process with at least one withdrawal cycle in between them.
+* Note that retrieving your [deposits](terminology.md#deposit) from a Wildcat market requires a [withdrawal request](terminology.md#withdrawal-request) and _then_ a claim - it is a two transaction process with the conclusion of one withdrawal cycle in between.
 
 #### **Controller**
 
@@ -66,7 +67,7 @@ description: It's dangerous to go alone - learn these.
 * An auxiliary smart contract that is deployed in the event that the [sentinel](terminology.md#sentinel) detects that a [lender](terminology.md#lender) address has been added to a sanctioned list such as the OFAC SDN: this check is performed through the [**Chainalysis oracle**](https://go.chainalysis.com/chainalysis-oracle-docs.html).
 * Used to transfer the debt (for the [lender](terminology.md#lender)) and obligation to repay (for the [borrower](terminology.md#borrower)) away from the [market](terminology.md#market) contract to avoid wider contamination through interaction. Interest ceases to accrue upon creation and transfer.
 * Any [assets](terminology.md#underlying-asset) relating to an attempted claim by the affected lender as well as any market tokens tied to their remaining [deposit](terminology.md#deposit) are automatically transferred to the escrow contract when blocked (either through an attempt to withdraw or via a call to a 'nuke from orbit' function found within the market).
-* Assets can only be released to the lender in the event that they are no longer tagged as sanctioned by the Chainalysis oracle.
+* Assets can only be released to the lender in the event that a) they are no longer tagged as sanctioned by the Chainalysis oracle, or b) the borrower specifically overrides the sanction.
 
 #### Expired Withdrawal
 
@@ -115,6 +116,7 @@ description: It's dangerous to go alone - learn these.
 * Must be signed by borrower when deploying a market using the protocol UI.
 * Is offered to lender to countersign when first encountering a market via the protocol UI (which can be signed or declined depending on lenders preference, or whether counterparties have entered into another agreement).
 * Offered by Wildcat as protection for lenders.
+* As of 20th December 2023, not yet enforced: drafting in progress.
 
 #### **Penalty APR**
 
@@ -208,4 +210,5 @@ description: It's dangerous to go alone - learn these.
 * The state in which either:
   * A [borrower](terminology.md#borrower) address has been added to the [archcontroller](terminology.md#archcontroller) and is permitted to deploy [controllers](terminology.md#controller) and [markets](terminology.md#market), or
   * A [lender](terminology.md#lender) address has been added to a controller by a borrower and is permitted to [deposit](terminology.md#deposit) to any [markets](terminology.md#market) deployed by said controller.
+  * Also known as 'authorised'.
 
