@@ -8,7 +8,7 @@ description: What you need to know as a Wildcat lender.
 
 Depositing assets to a Wildcat market is a fairly simple process, and we presume in this section that a [**lender**](../terminology.md#lender) wishing to lend to a [**borrower**](../terminology.md#borrower) through a market has already been [**whitelisted**](../terminology.md#whitelisted) via the appropriate [**controller**](../terminology.md#controller).
 
-Upon first encounter with a Wildcat market via the protocol UI (and assuming that the lender has signed the Wildcat [**Service Agreement**](../terminology.md#service-agreement) presented to them when first accessing said UI), a lender will be asked whether or not they wish to countersign the associated [**MLA**](../terminology.md#master-loan-agreement-mla) for that market.
+Upon first encounter with a Wildcat market via the protocol UI (and assuming that the lender has signed the Wildcat [**Service Agreement**](../terminology.md#service-agreement) presented to them when first accessing said UI), a lender will be asked whether or not they wish to countersign the associated [**MLA**](../terminology.md#master-loan-agreement-mla) for that market. (_**Note:** as of 20 December 2023 this step is not yet in place - the Wildcat MLA template is still being drafted._)
 
 Note that dependent on the borrower, there may be a _separate_ legal agreement that is offered to the lender in lieu of the Wildcat MLA. After countersigning or declining, the lender is able to access the market itself.
 
