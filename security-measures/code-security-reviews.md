@@ -1,6 +1,6 @@
 # Code Security Reviews
 
-The Wildcat protocol contracts have been subjected to one independent security review and one upcoming crowdsourced review via Code4rena.
+The Wildcat protocol contracts have been subjected to one independent security review and one crowdsourced review via Code4rena.
 
 The results of these reviews (and associated reports) are available here:
 
