@@ -43,7 +43,7 @@
 
 * [Code Security Reviews](security-measures/code-security-reviews.md)
 * [SphereX Protection](security-measures/spherex-protection.md)
-* [Bounty Program](security-measures/bounty-program.md)
+* [Bug Bounty Program](security-measures/bug-bounty-program.md)
 
 ## Legal
 
