@@ -56,7 +56,7 @@ There are a number of parameter fields that are presented here, and the screen m
     Note: this means that if a markets grace period is 3 days, and it takes 5 days to cure delinquency, this means that **4** days of penalty APR are paid. **This is important**: a borrower does not necessarily have `grace_period` amount of time to cure each distinct instance of delinquency!\
 
 * **Withdrawal Cycle Length (Hours)**
-  * The amount of time that a lender who has filed a withdrawal request must wait before they are permitted to claim their assets from the market. This parameter is measured in hours, and _can_ be set to zero in order to enable instant withdrawals.\
+  * The amount of time that a lender who has filed a withdrawal request must wait before they are permitted to claim their assets from the market.\
     \
     This parameter exists in order to fairly distribute assets across multiple lenders given the undercollateralised nature of Wildcat markets. In the event that a significant amount of the supply is recalled at once, a longer withdrawal cycle permits reserves to be handed out _pro rata_ depending on the reserves within the market. For more on how this looks from the lenders perspective, please see the [**Lenders**](lenders.md) page.
 
