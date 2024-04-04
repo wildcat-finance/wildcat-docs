@@ -8,7 +8,7 @@ The Wildcat protocol is fundamentally permissioned in both roles that it is poss
 
 ## Borrowers
 
-Borrowers who wish to make use of Wildcat are encouraged - on the UI landing page and the protocol site itself - to get in touch via this [**Typeform**](https://rvficirw76q.typeform.com/to/FKBzhnmo)**.**
+Borrowers who wish to make use of Wildcat are encouraged - on the UI landing page and the protocol site itself - to get in touch via this [**form**](https://forms.gle/irca7KeC7ASmkRh16).
 
 After first contact, what we're looking for is proof that the borrower is a legal entity in a jurisdiction that is a) not sanctioned, and b) we reasonably believe won't expose the protocol to legal risk (sorry, Americans).
 
