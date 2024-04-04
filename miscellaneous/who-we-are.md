@@ -15,9 +15,9 @@ Developers:
 * Frontend Developer
   * **Eugene Allenov**
 
-Operations:
+Product:
 
-* **Julian Debbag**
+* **Andreas Fletcher**
 
 Design:
 
@@ -31,5 +31,6 @@ Artwork:
 Support:
 
 * **Evgeny Gaevoy**
+* **Julian Debbag**
 * **Wintermute Ventures**
 * **West Ham Capital**
