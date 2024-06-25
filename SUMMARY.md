@@ -7,6 +7,7 @@
 * [Introduction](overview/introduction.md)
 * [What Wildcat Enables](overview/what-wildcat-enables.md)
 * [Whitepaper](overview/whitepaper.md)
+* [FAQs](overview/faqs.md)
 
 ## Using Wildcat
 
