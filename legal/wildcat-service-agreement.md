@@ -1,12 +1,14 @@
 ---
 description: >-
   Last Updated: 18 December 2023; SHA:
-  ae3cb02ca5bf86414f44d8156f64c6b6968489ecbc68a1d5a3f626d06259bc45
+  48a56e9e278b17a98fbf18af466487ebc66e61884ebdbd1bd75e977e44905a3d
+
+  This page is formatted using markdown. To verify the agreement hash, please see the [plaintext version](https://github.com/wildcat-finance/wildcat-docs/blob/wip-docs/legal/wildcat-service-agreement.txt) formatted for readability in wallet signature requests.
 ---
 
 # Wildcat Service Agreement
 
-This Wildcat Protocol Services Agreement (this ’Agreement’) sets out the terms and conditions under which you access the Wildcat Protocol (the ’Protocol’) and accept the Services (as defined below) that the Service Provider (also referred to as ’us’; or ’we’) will provide in connection with the Protocol.
+This Wildcat Protocol Services Agreement (this ’Agreement’) sets out the terms and conditions under you access the Wildcat Protocol (the ’Protocol’) and accept the Services (as defined below) that the Service Provider (also referred to as ’us’; or ’we’) will provide in connection with the Protocol.
 
 By entering into this Agreement by clicking on the ’Sign’ (or similar) button, or by otherwise accessing or using the Protocol, you agree to be bound by the terms and conditions as set forth in this Agreement.
 
