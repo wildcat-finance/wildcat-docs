@@ -1,5 +1,7 @@
 ---
-description: 'Last Updated: 15 August 2024'
+description: >-
+  Last Updated: 15 August 2024; SHA:
+  ae3cb02ca5bf86414f44d8156f64c6b6968489ecbc68a1d5a3f626d06259bc45
 ---
 
 # Wildcat Service Agreement
