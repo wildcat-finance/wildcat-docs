@@ -1,6 +1,6 @@
 ---
 description: >-
-  Last Updated: 15 August 2024; SHA:
+  Last Updated: 18 December 2023; SHA:
   48a56e9e278b17a98fbf18af466487ebc66e61884ebdbd1bd75e977e44905a3d
 
   This page is formatted using markdown. To verify the agreement hash, please see the [plaintext version](https://github.com/wildcat-finance/wildcat-docs/blob/wip-docs/legal/wildcat-service-agreement.txt) formatted for readability in wallet signature requests.
