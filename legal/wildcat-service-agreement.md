@@ -1,3 +1,7 @@
+---
+description: 'Last Updated: 15 August 2024'
+---
+
 # Wildcat Service Agreement
 
 This Wildcat Protocol Services Agreement (this ’Agreement’) sets out the terms and conditions under you access the Wildcat Protocol (the ’Protocol’) and accept the Services (as defined below) that the Service Provider (also referred to as ’us’; or ’we’) will provide in connection with the Protocol.
