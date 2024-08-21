@@ -22,24 +22,10 @@
 
 ## Technical Deep-Dive
 
-* [Component Overview](technical-deep-dive/component-overview/README.md)
-  * [WildcatArchController.sol](technical-deep-dive/component-overview/wildcatarchcontroller.sol.md)
-  * [WildcatMarketControllerFactory.sol](technical-deep-dive/component-overview/wildcatmarketcontrollerfactory.sol.md)
-  * [WildcatMarketController.sol](technical-deep-dive/component-overview/wildcatmarketcontroller.sol.md)
-  * [Wildcat Market Overview](technical-deep-dive/component-overview/wildcat-market-overview/README.md)
-    * [WildcatMarket.sol](technical-deep-dive/component-overview/wildcat-market-overview/wildcatmarket.sol.md)
-    * [WildcatMarketBase.sol](technical-deep-dive/component-overview/wildcat-market-overview/wildcatmarketbase.sol.md)
-    * [WildcatMarketConfig.sol](technical-deep-dive/component-overview/wildcat-market-overview/wildcatmarketconfig.sol.md)
-    * [WildcatMarketToken.sol](technical-deep-dive/component-overview/wildcat-market-overview/wildcatmarkettoken.sol.md)
-    * [WildcatMarketWithdrawals.sol](technical-deep-dive/component-overview/wildcat-market-overview/wildcatmarketwithdrawals.sol.md)
-    * [Events](technical-deep-dive/component-overview/wildcat-market-overview/events.md)
-  * [WildcatSanctionsSentinel.sol](technical-deep-dive/component-overview/wildcatsanctionssentinel.sol.md)
-  * [WildcatSanctionsEscrow.sol](technical-deep-dive/component-overview/wildcatsanctionsescrow.sol.md)
-  * [Structs](technical-deep-dive/component-overview/structs/README.md)
-    * [Some Notes On Normalized versus Scaled Amounts](technical-deep-dive/component-overview/structs/some-notes-on-normalized-versus-scaled-amounts.md)
-* [Protocol Gas Profile](technical-deep-dive/protocol-gas-profile.md)
+* [Security Auditor Docs](technical-deep-dive/security-auditor-docs/README.md)
+  * [The Scale Factor](technical-deep-dive/security-auditor-docs/the-scale-factor.md)
 * [Contract Deployments](technical-deep-dive/contract-deployments.md)
-* [The Scale Factor](technical-deep-dive/the-scale-factor.md)
+* [Protocol Gas Profile](technical-deep-dive/protocol-gas-profile.md)
 
 ## Security Measures
 
@@ -58,4 +44,19 @@
 
 * [Who We Are](miscellaneous/who-we-are.md)
 * [Contact Us](miscellaneous/contact-us.md)
-* [DEPRECATED DOCUMENTATION](miscellaneous/deprecated-documentation.md)
+* [DEPRECATED DOCUMENTATION](miscellaneous/deprecated-documentation/README.md)
+  * [V1 Component Overview](miscellaneous/deprecated-documentation/component-overview/README.md)
+    * [WildcatArchController.sol](miscellaneous/deprecated-documentation/component-overview/wildcatarchcontroller.sol.md)
+    * [WildcatMarketControllerFactory.sol](miscellaneous/deprecated-documentation/component-overview/wildcatmarketcontrollerfactory.sol.md)
+    * [WildcatMarketController.sol](miscellaneous/deprecated-documentation/component-overview/wildcatmarketcontroller.sol.md)
+    * [Wildcat Market Overview](miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/README.md)
+      * [WildcatMarket.sol](miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/wildcatmarket.sol.md)
+      * [WildcatMarketBase.sol](miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/wildcatmarketbase.sol.md)
+      * [WildcatMarketConfig.sol](miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/wildcatmarketconfig.sol.md)
+      * [WildcatMarketToken.sol](miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/wildcatmarkettoken.sol.md)
+      * [WildcatMarketWithdrawals.sol](miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/wildcatmarketwithdrawals.sol.md)
+      * [Events](miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/events.md)
+    * [WildcatSanctionsSentinel.sol](miscellaneous/deprecated-documentation/component-overview/wildcatsanctionssentinel.sol.md)
+    * [WildcatSanctionsEscrow.sol](miscellaneous/deprecated-documentation/component-overview/wildcatsanctionsescrow.sol.md)
+    * [Structs](miscellaneous/deprecated-documentation/component-overview/structs/README.md)
+      * [Some Notes On Normalized versus Scaled Amounts](miscellaneous/deprecated-documentation/component-overview/structs/some-notes-on-normalized-versus-scaled-amounts.md)

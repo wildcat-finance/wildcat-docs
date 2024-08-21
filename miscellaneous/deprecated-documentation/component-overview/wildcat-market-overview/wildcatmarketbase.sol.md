@@ -236,6 +236,6 @@ The [borrower](wildcatmarketbase.sol.md#borrower) is responsible for base APR, p
 function effectiveLenderAPR() external view returns (uint256);
 ```
 
-Effective interest rate earned by the lenders, based on the [current market state](../../../security-measures/code-security-reviews.md#code4rena-crowdsourced-security-review).
+Effective interest rate earned by the lenders, based on the [current market state](../../../../security-measures/code-security-reviews.md#code4rena-crowdsourced-security-review).
 
 The lender earns the base APR and any penalty APR in place.
