@@ -39,6 +39,7 @@
     * [Some Notes On Normalized versus Scaled Amounts](technical-deep-dive/component-overview/structs/some-notes-on-normalized-versus-scaled-amounts.md)
 * [Protocol Gas Profile](technical-deep-dive/protocol-gas-profile.md)
 * [Contract Deployments](technical-deep-dive/contract-deployments.md)
+* [The Scale Factor](technical-deep-dive/the-scale-factor.md)
 
 ## Security Measures
 
@@ -57,3 +58,4 @@
 
 * [Who We Are](miscellaneous/who-we-are.md)
 * [Contact Us](miscellaneous/contact-us.md)
+* [DEPRECATED DOCUMENTATION](miscellaneous/deprecated-documentation.md)
