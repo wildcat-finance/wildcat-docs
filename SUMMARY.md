@@ -27,6 +27,9 @@
   * [Core Behaviour](technical-deep-dive/security-auditor-docs/core-behaviour.md)
   * [V1 -> V2 Changelog](technical-deep-dive/security-auditor-docs/v1-greater-than-v2-changelog.md)
   * [Known Issues](technical-deep-dive/security-auditor-docs/known-issues.md)
+  * [Hooks](technical-deep-dive/security-auditor-docs/hooks/README.md)
+    * [How Hooks Work](technical-deep-dive/security-auditor-docs/hooks/how-hooks-work.md)
+    * [Access Control Hooks](technical-deep-dive/security-auditor-docs/hooks/access-control-hooks.md)
 * [Contract Deployments](technical-deep-dive/contract-deployments.md)
 * [Protocol Gas Profile](technical-deep-dive/protocol-gas-profile.md)
 
