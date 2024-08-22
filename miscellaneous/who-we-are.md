@@ -1,30 +1,35 @@
-# Who We Are
+# Who Built This
 
 This is always the least interesting part of any protocol or website, truth be told.
 
-The 'who' we are doesn't really matter, since our powers extend to onboarding and offboarding borrowers, and you don't need to curry any favour with us to use the protocol.
+The Wildcat protocol was conceived of and built by **Wildcat Labs**, which deployed and currently operates the archcontroller of the protocol referenced in [Contract Deployments](../technical-overview/contract-deployments.md).
 
-Nonetheless:\
+As a potted history, Wildcat V1 was built between June 2022 - October 2023 and deployed in November 2023. Wildcat V2 was built in gradual iterations between February - August 2024.
 
+Just saying 'Wildcat Labs' doesn't do justice to the number of people involved though, so if you want some actual names:
 
 Developers:
 
-* Solidity/General Tinkerers
+* Solidity
   * **Dillon Kellar**
-  * **Laurence E. Day**
 * Frontend Developer
   * **Eugene Allenov**
+  * **Thom Withaar**
+
+Operations
+
+* **Laurence Day**
 
 Product:
 
 * **Andreas Fletcher**
 
-Design:
+UI/UX Design:
 
-* **Pentacle and Alpha**
 * **Anastasia Miagkova**
+* **Pentacle and Alpha \[legacy webpage]**
 
-Artwork:
+Artwork/Branding:
 
 * **Shizzy Aizawa**
 

@@ -20,18 +20,18 @@
 * [Protocol Usage Fees](using-wildcat/protocol-usage-fees.md)
 * [Delinquency](using-wildcat/delinquency.md)
 
-## Technical Deep-Dive
+## Technical Overview
 
-* [Security Auditor Docs](technical-deep-dive/security-auditor-docs/README.md)
-  * [The Scale Factor](technical-deep-dive/security-auditor-docs/the-scale-factor.md)
-  * [Core Behaviour](technical-deep-dive/security-auditor-docs/core-behaviour.md)
-  * [V1 -> V2 Changelog](technical-deep-dive/security-auditor-docs/v1-greater-than-v2-changelog.md)
-  * [Known Issues](technical-deep-dive/security-auditor-docs/known-issues.md)
-  * [Hooks](technical-deep-dive/security-auditor-docs/hooks/README.md)
-    * [How Hooks Work](technical-deep-dive/security-auditor-docs/hooks/how-hooks-work.md)
-    * [Access Control Hooks](technical-deep-dive/security-auditor-docs/hooks/access-control-hooks.md)
-* [Contract Deployments](technical-deep-dive/contract-deployments.md)
-* [Protocol Gas Profile](technical-deep-dive/protocol-gas-profile.md)
+* [Security/Developer Dives](technical-overview/security-developer-dives/README.md)
+  * [The Scale Factor](technical-overview/security-developer-dives/the-scale-factor.md)
+  * [Core Behaviour](technical-overview/security-developer-dives/core-behaviour.md)
+  * [V1 -> V2 Changelog](technical-overview/security-developer-dives/v1-greater-than-v2-changelog.md)
+  * [Known Issues](technical-overview/security-developer-dives/known-issues.md)
+  * [Hooks](technical-overview/security-developer-dives/hooks/README.md)
+    * [How Hooks Work](technical-overview/security-developer-dives/hooks/how-hooks-work.md)
+    * [Access Control Hooks](technical-overview/security-developer-dives/hooks/access-control-hooks.md)
+* [Contract Deployments](technical-overview/contract-deployments.md)
+* [Protocol Gas Profile](technical-overview/protocol-gas-profile.md)
 
 ## Security Measures
 
@@ -48,7 +48,7 @@
 
 ## Miscellaneous
 
-* [Who We Are](miscellaneous/who-we-are.md)
+* [Who Built This](miscellaneous/who-we-are.md)
 * [Contact Us](miscellaneous/contact-us.md)
 * [DEPRECATED DOCUMENTATION](miscellaneous/deprecated-documentation/README.md)
   * [V1 Component Overview](miscellaneous/deprecated-documentation/component-overview/README.md)

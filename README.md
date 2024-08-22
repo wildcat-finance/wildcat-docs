@@ -1,11 +1,13 @@
 ---
-description: Banking, but worse.
+description: >-
+  Massively configurable, unopinionated, hands-off un(der)collateralised
+  on-chain credit rails.
 ---
 
 # The Wildcat Protocol
 
 {% hint style="info" %}
-**This is an early version of the Wildcat protocol documentation!**\
+**This Gitbook is currently undergoing active changes to reflect Wildcat V2.**\
 \
 Something you don't understand? Something missing?\
 \
@@ -14,37 +16,68 @@ Fire a message to @functi0nZer0 on Twitter and watch him do Things That Don't Sc
 
 ## Hi.
 
-Welcome to the Wildcat documentation. We recognise that a protocol's Gitbook is - as a rule - only ever read by three categories of people:
+Welcome to the Wildcat protocol documentation.
 
-* Security auditors working out if something is broken,
-* Protocol researchers working out if something is worth posting about, and
-* Lawyers working out if something is actually legal.
+We recognise that a protocol Gitbook is - as a rule - read by three distinct categories of people:
 
-With that in mind, we'll keep this high-level page brief.\
+* _Potential users and researchers_ working out if something is actually useful,
+* _Security auditors_ working out if something is actually broken, and
+* _Lawyers and regulators_ working out if something is actually legal.
+
+With that in mind, we'll keep this high-level page brief.
+
+
+
+***
+
+## Users/Researchers
+
+
+
+{% content-ref url="overview/introduction.md" %}
+[introduction.md](overview/introduction.md)
+{% endcontent-ref %}
+
+
+
+***
+
+## Auditors/Developers
+
+
+
+Contract deployments, gas profiles etc can be found under the following section:
+
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
+{% endcontent-ref %}
+
+More specifically, if you're taking part in an audit or validating a potential bug, please refer to:
+
+{% content-ref url="technical-overview/security-developer-dives/" %}
+[security-developer-dives](technical-overview/security-developer-dives/)
+{% endcontent-ref %}
+
 \
-If you're an **auditor or developer**, you want:
+If you're interested in reading about our on-chain protection or previous security reviews:
 
 {% content-ref url="broken-reference" %}
 [Broken link](broken-reference)
 {% endcontent-ref %}
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
 
-If you're a **protocol researcher** looking for content for their next thread, you want:
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
+***
 
-And if you're a **lawyer or a regulator**, you want:
+## Lawyers/Regulators:
 
 {% content-ref url="broken-reference" %}
 [Broken link](broken-reference)
 {% endcontent-ref %}
 
-Beyond that, the documentation is yours to enjoy (or not) at your leisure. We didn't enjoy writing it, but if you happen to enjoy reading it, then that all comes out fine in the wash.\
+
+
+Beyond that, the documentation is yours to enjoy (or not) at your leisure. \
 
 
 Hic sunt dragones.
