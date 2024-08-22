@@ -6,7 +6,7 @@ description: It's dangerous to go alone - learn these.
 
 #### **Archcontroller**
 
-* Smart contract which doubles up as a registry and permission gate. [Borrowers](terminology.md#borrower) are added or removed from the archcontroller by the operators of the protocol itself (granting/rescinding the ability to deploy [controllers](terminology.md#controller) and/or [markets](terminology.md#market)), and the addresses of any controller factories, controllers or markets that get deployed through the protocol are stored here.
+* Smart contract which doubles up as a registry and permission gate. [Borrowers](terminology.md#borrower) are added or removed from the archcontroller by the operators of the protocol itself (granting/rescinding the ability to deploy [hooks](terminology.md#hook) and/or [markets](terminology.md#market)), and the addresses of any factories, market controllers or markets that get deployed through the protocol are stored here.
 
 #### **Base APR**
 
@@ -20,19 +20,29 @@ description: It's dangerous to go alone - learn these.
 
 * Both:
   * The counterparty that wishes to make use of a credit facility through a Wildcat [market](terminology.md#market), and
-  * The blockchain address that defines the parameters of a market and deploys the [controller](terminology.md#controller) and market contracts that comprise it.
+  * The blockchain address that defines the parameters of a market and deploys the [hook instances](terminology.md#hooks-instance) and market contracts that use them.
 
 #### **Capacity**
 
 * Parameter required of [borrower](terminology.md#borrower) when creating a new [market](terminology.md#market).
-* The _maximum_ amount of an asset that a borrower is looking to source via a market - the sum total of what all lenders can [deposit](terminology.md#deposit) and earn interest on.
-* Can be exceeded by the current supply of a market token depending on interest accrued.
+* The `maxTotalSupply` field in the state.
+* The _maximum_ amount of an asset that a borrower is looking to source via a market - the threshold for `totalSupply` after which the market will stop accepting [deposits](terminology.md#deposit) on.
+* Can be exceeded by the market's `totalSupply` due to interest accrual.
 
 #### **Claim**
 
-* Removing [assets](terminology.md#underlying-asset) from the [unclaimed withdrawals pool](terminology.md#unclaimed-withdrawals-pool) that were requested for withdrawal by a [lender](terminology.md#lender) at the end of a [withdrawal cycle](terminology.md#withdrawal-cycle).&#x20;
-* Depending on the reserve ratio of the market when the withdrawal request associated with a claim was made, claiming _may_ require the burning of [market tokens](terminology.md#market-token) (see [**Lenders**](day-to-day-usage/lenders.md) for details).
+* Removing [assets](terminology.md#underlying-asset) from the [unclaimed withdrawals pool](terminology.md#unclaimed-withdrawals-pool) that were requested for withdrawal by a [lender](terminology.md#lender).
+* Can only occur after a [withdrawal cycle](terminology.md#withdrawal-cycle) expires.
 * Note that retrieving your [deposits](terminology.md#deposit) from a Wildcat market requires a [withdrawal request](terminology.md#withdrawal-request) and _then_ a claim - it is a two transaction process with the conclusion of one withdrawal cycle in between.
+
+#### Collateral Obligation
+
+* The minimum amount of [assets](terminology.md#underlying-asset) that the borrower is obligated to keep in the market in order to avoid [delinquency](terminology.md#delinquency).
+* The sum of:
+  * The [reserves](terminology.md#required-reserves) needed to meet the [reserve ratio](terminology.md#reserve-ratio) for the [outstanding supply](terminology.md#outstanding-supply),
+  * The market's [unclaimed withdrawals pool](terminology.md#unclaimed-withdrawals-pool),
+  * The normalized value of the market's [pending](terminology.md#pending-withdrawal) and [expired](terminology.md#expired-withdrawal) withdrawals, and
+  * The unclaimed [protocol fees](terminology.md#protocol-apr).
 
 #### **Controller**
 
@@ -41,19 +51,13 @@ description: It's dangerous to go alone - learn these.
 * Controls APR adjustments and enforces [reserve ratios](terminology.md#reserve-ratio) of markets.
 * Imposes protocol fees (either lump-sum origination or APR-based) on markets.
 
-#### **Default**
-
-* Event in which a counterparty has failed their obligations in some form or another, _typically_ involving the unwillingness or inability of the [borrower](terminology.md#borrower) to [deposit](terminology.md#deposit) to a [delinquent](terminology.md#delinquency) [market](terminology.md#market) after a [lender](terminology.md#lender) has waited a sufficiently long period of time with an [expired withdrawal request](terminology.md#expired-withdrawal).
-* Gives rise to the right to arbitration or civil action in the courts.
-* Further defined in both the [Service Agreement](terminology.md#service-agreement) and the [Master Loan Agreement](terminology.md#master-loan-agreement-mla) between borrower and lender (if countersigned by the latter).
-
 #### **Delinquency**
 
-* A [market](terminology.md#market) state wherein there are insufficient [assets](terminology.md#underlying-asset) in the market to meet the [reserve ratio](terminology.md#reserve-ratio) as specified by the borrower.
+* A [market](terminology.md#market) state wherein there are insufficient [assets](terminology.md#underlying-asset) in the market to meet the market's [collateral obligations](terminology.md#collateral-obligation).
 * Arises via the passage of time through interest if the borrower borrows right up to their reserve ratio.
-* Can also arise if a [lender](terminology.md#lender) makes a [withdrawal request](terminology.md#withdrawal-request) and moves assets within the market into the [unclaimed withdrawals pool](terminology.md#unclaimed-withdrawals-pool).
+* Can also arise if a [lender](terminology.md#lender) makes a [withdrawal request](terminology.md#withdrawal-request) that exceeds the market's available liquidity.
 * A market being delinquent for an extended period of time (as specified by the [grace period](terminology.md#grace-period)) results in the [penalty APR](terminology.md#penalty-apr) being enforced in addition to the [base APR](terminology.md#base-apr) and any [protocol APR](terminology.md#protocol-apr) that may apply.
-* 'Cured' by [depositing](terminology.md#deposit) sufficient assets into the market as to reattain the required reserve ratio.
+* 'Cured' by [depositing](terminology.md#deposit) sufficient assets into the market as to reattain the required collateral obligation.
 
 #### **Deposit**
 
@@ -82,9 +86,26 @@ description: It's dangerous to go alone - learn these.
 #### **Grace Tracker**
 
 * Internal [market](terminology.md#market) parameter associated with the [grace period](terminology.md#grace-period).
+* `timeDelinquent` in the market state.
 * Once a market becomes [delinquent](terminology.md#delinquency), begins counting seconds up from zero - when the value of the grace tracker exceeds the grace period, the [penalty APR](terminology.md#penalty-apr) activates.
 * Once a market is cured of delinquency, begins counting seconds down to zero - the penalty APR continues to apply _until the grace tracker value is below the grace period value_.
 * Enforces the rolling nature of the grace period.
+
+#### **Hook**
+
+* A function on a [hook instance](terminology.md#hook-instance) which is executed when a particular action occurs on a [market](terminology.md#market).
+* Corresponds to a specific market action, such as the `onCloseMarket` hook which is called when `closeMarket` is called on a market.
+
+#### **Hook Instance**
+
+* Contract that defines the [hook functions](terminology.md#hook) for a market.
+* Deployed by an approved borrower as an instance of a particular [hooks template](terminology.md#hooks-template).
+* Configured in the market parameters at market deployment.
+
+#### **Hooks Template**
+
+* A base contract defining behavior for a kind of [hook contract](terminology.md#hook-instance) approved by factory operators.
+* Copied when borrowers deploy hook instances.
 
 #### **Lender**
 
@@ -92,10 +113,16 @@ description: It's dangerous to go alone - learn these.
   * A counterparty that wishes to provide a credit facility through a Wildcat [market](terminology.md#market), and
   * The blockchain address associated with that counterparty which [deposits](terminology.md#deposit) [assets](terminology.md#underlying-asset) to a market for the purposes of being [borrowed](terminology.md#borrow) by the [borrower](terminology.md#borrower).
 
+#### Liquid Reserves
+
+* The amount of [underlying assets](terminology.md#underlying-asset) currently counting towards the [market](terminology.md#market)'s [required reserves](terminology.md#required-reserves).
+* Comprises the liquidity that can be made available for new [withdrawals](terminology.md#withdrawal-request).
+* Is equal to the total assets in the market minus the [unclaimed withdrawals](terminology.md#unclaimed-withdrawals-pool), [pending withdrawals](terminology.md#pending-withdrawal), [expired withdrawals](terminology.md#expired-withdrawal) and accrued [protocol fees](terminology.md#protocol-apr).
+
 #### **Market**
 
 * Smart contract that accepts [underlying assets](terminology.md#underlying-asset), issuing [market tokens](terminology.md#market-token) in return.
-* Deployed by [borrower](terminology.md#borrower) through an associated [controller](terminology.md#controller).
+* Deployed by [borrower](terminology.md#borrower) through the factory.
 * Holds assets in escrow pending either being [borrowed](terminology.md#borrow) by the borrower or [withdrawn](terminology.md#withdrawal-request) by a [lender](terminology.md#lender).
 * Permissioned: only lenders that have been authorised on the associated controller by the borrower to deposit can interact.
 
@@ -103,20 +130,14 @@ description: It's dangerous to go alone - learn these.
 
 * ERC-20 token indicating a [claim](terminology.md#claim) on the [underlying assets](terminology.md#underlying-asset) in a [market](terminology.md#market).
 * Issued to [lenders](terminology.md#lender) after a [deposit](terminology.md#deposit).
-* [Supply](terminology.md#supply) rebases after every non-static call to the market contract depending on the total current APR of the market: always redeemable 1:1.
-* Transferable to arbitrary addresses.
+* [Supply](terminology.md#supply) rebases after every non-static call to the market contract depending on the total current APR of the market.
 * Can only be redeemed by authorised lender addresses (not necessarily the same one that received the market tokens initially).
 * Name and symbol prefixes are customisable in market creation, prepending to the name and symbol of the underlying asset.
 
-#### **Master Loan Agreement (MLA)**
+#### Outstanding Supply
 
-* Legal agreement binding [borrowers](terminology.md#borrower) and [lenders](terminology.md#lender) together on a one-to-one basis for a specific [market](terminology.md#market).
-* Defines expected behaviour and various covenants and representations concerning identity, usage of funds, security practices and various events that constitute [default](terminology.md#default).
-* Sets jurisdiction for any arbitration or civil suits as the UK.
-* Must be signed by borrower when deploying a market using the protocol UI.
-* Is offered to lender to countersign when first encountering a market via the protocol UI (which can be signed or declined depending on lenders preference, or whether counterparties have entered into another agreement).
-* Offered by Wildcat as protection for lenders.
-* As of 20th December 2023, not yet enforced: drafting in progress.
+* The amount of [market tokens](terminology.md#market-token) not currently queued for [withdrawal](terminology.md#withdrawal-request).
+* Equal to the market's [supply](terminology.md#supply) minus its [pending](terminology.md#pending-withdrawal) and [expired](terminology.md#expired-withdrawal) withdrawals.
 
 #### **Penalty APR**
 
@@ -132,31 +153,28 @@ description: It's dangerous to go alone - learn these.
 #### Protocol APR
 
 * Percentage of [base APR](terminology.md#base-apr) that accrues to the Wildcat protocol itself.
-* Fixed parameter in [controller](terminology.md#controller) contracts, applying to all [markets](terminology.md#market) deployed by said [controller](terminology.md#controller).
+* Parameter configured by the factory operator for each [hooks template](terminology.md#hooks-template), applying to all [markets](terminology.md#market) deployed with an instance of said template.
 * Can be zero.
 * Does not increase in the presence of an active [penalty APR](terminology.md#penalty-apr) (which only increases the APR accruing to [lenders](terminology.md#lender)).&#x20;
 * Example: market with base APR of 10% and protocol APR of 20% results in borrower paying 12% when penalty APR is not active.&#x20;
 
+#### Required Reserves
+
+* Amount of [underlying assets](terminology.md#underlying-asset) that must be made available for new withdrawals according to the configured [reserve ratio](terminology.md#reserve-ratio).
+* Equal to the reserve ratio times the [outstanding supply](terminology.md#outstanding-supply).
+
 #### **Reserve Ratio**
 
 * Parameter required of [borrower](terminology.md#borrower) when creating a new [market](terminology.md#market).
-* Percentage of current market [supply](terminology.md#supply) - [deposited](terminology.md#deposit) [assets](terminology.md#underlying-asset) - that must be kept in the market (but still accrue interest).
+* Percentage of current [outstanding supply](terminology.md#outstanding-supply) that must be kept in the market (but still accrue interest).
 * Intended to provide a liquid buffer for [lenders](terminology.md#lender) to make [withdrawal requests](terminology.md#withdrawal-request) against, partially 'collateralising' the credit facility through lenders' deposits.
-* Increases temporarily when:
-  * a borrower reduces the [base APR](terminology.md#base-apr) of a [market](terminology.md#market) (fixed-term increase), or
-  * there are [pending](terminology.md#pending-withdrawal) or [expired withdrawals](terminology.md#expired-withdrawal) which cannot be honoured by the contents of the [unclaimed withdrawals pool](terminology.md#unclaimed-withdrawals-pool) (increased until resolved).
+* Increases temporarily when a borrower reduces the [base APR](terminology.md#base-apr) of a [market](terminology.md#market) (fixed-term increase).
 * A market which has insufficient assets in the market to meet the reserve ratio is said to be [delinquent](terminology.md#delinquency), with the [penalty APR](terminology.md#penalty-apr) potentially being enforced if the delinquency is not cured before the [grace tracker](terminology.md#grace-tracker) value exceeds that of the [grace period](terminology.md#grace-period) for that particular market.
 
 #### **Sentinel**
 
 * Smart contract that ensures that addresses which interact with the protocol are not flagged by the [**Chainalysis oracle**](https://go.chainalysis.com/chainalysis-oracle-docs.html) for sanctions.
 * Can deploy escrow contracts to excise a [lender](terminology.md#lender) flagged by the oracle from a wider [market](terminology.md#market).
-
-#### **Service Agreement**
-
-* Agreement that must be signed by all users of the protocol ([borrower](terminology.md#borrower) or [lender](terminology.md#lender)) when first accessing the protocol UI and connecting their wallet.
-* Presents - among other things - protocol terminology and logic, and constitutes a waiver of protocol responsibility for any damages incurred via its use.
-* For the full text, please see [**Service Agreement**](../legal/wildcat-service-agreement.md)**.**
 
 #### **Supply**
 
@@ -204,11 +222,4 @@ description: It's dangerous to go alone - learn these.
 * An instruction to a [market](terminology.md#market) to transfer reserves within a market to the [unclaimed withdrawals pool](terminology.md#unclaimed-withdrawals-pool), to be [claimed](terminology.md#claim) at the end of a [withdrawal cycle](terminology.md#withdrawal-cycle).
 * A withdrawal request made of a market with non-zero reserves will burn as many [market tokens](terminology.md#market-token) as possible 1:1 to fully honour the request.
 * Any amount requested - whether or not it is in excess of the market reserves - is marked as a [pending withdrawal](terminology.md#pending-withdrawal), either to be fully honoured at the end of the cycle, or marked as [expired](terminology.md#expired-withdrawal) and added to the [withdrawal queue](terminology.md#withdrawal-queue), depending on the actions of the [borrower](terminology.md#borrower) during the cycle.
-
-#### **Whitelisted**
-
-* The state in which either:
-  * A [borrower](terminology.md#borrower) address has been added to the [archcontroller](terminology.md#archcontroller) and is permitted to deploy [controllers](terminology.md#controller) and [markets](terminology.md#market), or
-  * A [lender](terminology.md#lender) address has been added to a controller by a borrower and is permitted to [deposit](terminology.md#deposit) to any [markets](terminology.md#market) deployed by said controller.
-  * Also known as 'authorised'.
 
