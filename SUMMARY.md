@@ -25,6 +25,7 @@
 * [Security Auditor Docs](technical-deep-dive/security-auditor-docs/README.md)
   * [The Scale Factor](technical-deep-dive/security-auditor-docs/the-scale-factor.md)
   * [Core Behaviour](technical-deep-dive/security-auditor-docs/core-behaviour.md)
+  * [Known Issues](technical-deep-dive/security-auditor-docs/known-issues.md)
 * [Contract Deployments](technical-deep-dive/contract-deployments.md)
 * [Protocol Gas Profile](technical-deep-dive/protocol-gas-profile.md)
 
