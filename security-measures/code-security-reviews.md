@@ -12,21 +12,21 @@ The results of these reviews (and associated reports) are available here:
 
 **Date**: 12 - 23rd August 2024
 
-**Scope**: \*
+**Scope**: Entire protocol
 
 **LOC**: \~4,700
 
 **Results**:
 
 * 2 medium
-* 1 low
+* 2 low
 * 2 notes
 
-**Report**: pending
+**Report**: [https://hackmd.io/@geistermeister/BJk4Ekt90](https://hackmd.io/@geistermeister/BJk4Ekt90)
 
 
 
-### [Code4rena](https://code4rena.com/) \[Pro League Audit]
+### [Code4rena](https://code4rena.com/) \[Zenith Audit]
 
 **Date**: TBC
 
@@ -38,7 +38,7 @@ The results of these reviews (and associated reports) are available here:
 
 * Contest pending
 
-**Report**: pending
+**Report**: Pending
 
 
 
@@ -54,7 +54,7 @@ The results of these reviews (and associated reports) are available here:
 
 * Contest pending
 
-**Report**: pending\
+**Report**: Pending\
 
 
 ***
