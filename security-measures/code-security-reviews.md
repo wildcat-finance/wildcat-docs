@@ -28,7 +28,7 @@ The results of these reviews (and associated reports) are available here:
 
 ### [Code4rena](https://code4rena.com/) \[Zenith Audit]
 
-**Date**: TBC
+**Date**: 31 August - 18 September 2024
 
 **Scope**: TBC
 
@@ -44,7 +44,7 @@ The results of these reviews (and associated reports) are available here:
 
 ### [Code4rena](https://code4rena.com/) \[Competitive Public Audit]
 
-**Date**: TBC
+**Date**: 31 August - 18 September 2024
 
 **Scope**: TBC
 

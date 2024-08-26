@@ -1,22 +1,48 @@
 # What Wildcat Enables
 
-The core premise of a Wildcat market is fairly simple: borrowing and lending between two parties - but that simplicity belies creative applications.
+The core premise of a Wildcat market is simple: enabling un(der)collateralised borrowing and lending.
 
-Consider the following examples - all are well served by making use of Wildcat:
+You will have seen this use-case before, associated with other protocols. What's different here is the amount of freedom the borrower has in how their market is shaped and constrained, alongside a novel mechanism for scheduling redemptions on behalf of lenders.\
+\
+Borrowers are responsible for maintaining the health of their markets, but this comes with substantial power to dictate their terms.\
+\
+Conversely, Wildcat is designed so that lenders both know where they stand and can deploy capital in places that they perhaps did not expect.
 
-* Acquiring temporary inventory to provide a spread for an asset,
-* Bringing long-dated call options on new assets on-chain,
-* Raising funds without issuing a token immediately (foregoing an initial LBP)
+### For Borrowers
 
-You will have seen these use-cases before, associated with other protocols. What's different here is the amount of freedom the borrower has, provided with a novel mechanism for scheduling redemptions on behalf of lenders. However, Wildcat is very much tilted towards borrowers in the sense of who stands to benefit the most from the differences: they are responsible for maintaining the health of their markets, but this comes with substantial power to dictate their terms.
+A borrower may wish to create a completely uncollateralised market to borrow 4,000,000 USDC paying 15% to lenders that deposit into it, where they have seven days to repay any withdrawal request they receive before an additional penalty rate of 10% kicks in. They may also wish to set it up such that lenders cannot withdraw for the first six months that the market exists (thereafter switching to open-term), that they must deposit at least 100,000 USDC per transaction and they must provide a ZK proof that they have passed a third-party KYC check confirming they are not resident in the United States. The debt tokens issued by the resulting market can either be freely tradable, constrained to other approved lenders, or completely locked down.
 
-If you have admin costs associated with middle and back-office functionality because you're handling loans OTC via Telegram or the like, you're probably going to find using a Wildcat market useful, since you can track everything using associated events.
+Wildcat enables this and much more, depending on the selected market configuration, which is presented in an easy-to-understand user interface.
 
-If you're trying to raise funds more generally (i.e. you're a legal entity associated with a DAO that wants to pay salaries without selling a native token to do so at the moment), a Wildcat market may prove convenient to you as well.
+If you have admin costs associated with middle and back-office functionality because you're handling loans OTC via Telegram or the like, you're probably going to find using a Wildcat market useful, since you can track everything using associated events and other features provided through the protocol UI.&#x20;
 
-With that said, it's not our place to proscribe what Wildcat _should_ and _shouldn't_ be used for - tokenised lending instruments have a wide scope, and we've intentionally designed the protocol to be as hands-off as possible. Beyond vetting borrowers (to confirm that they are, in fact, extant legal entities that don't operate in sanctioned countries), we can't and don't get involved in the interactions between borrower and lender(s).
+If you're trying to raise funds for operational purposes (i.e. you're a legal entity associated with a DAO that wants to pay salaries without selling a native token to do so at the moment), a Wildcat market may prove convenient to you as well.
 
-Please note that as a lender, counterparty risk is very real: usage of this protocol requires trust in your borrower - Wildcat provides no insurance fund for defaults, and the collateral provided comes from _you_ in the form of the reserve ratio selected by your borrower in the market you are lending to them through. To re-emphasise: the protocol cannot help you if your borrower disappears with your assets.
+### For Lenders
 
-We're looking forward to seeing what you use us for.
+From the lender perspective, the goal of Wildcat is to open up a number of competitive avenues for you to deploy capital: it may not have even dawned on you that some of the borrowers making use of Wildcat would be willing to accept your funds!
+
+Wildcat provides you with a way to direct credit towards a specific counterparty that you may know and trust, rather than into a pool which is distributed across several borrowers.
+
+Wildcat also makes use of fixed rates, which - while adjustable in circumstances where you can ragequit if the rate is no longer to your liking or you reckon you can get better rates elsewhere - provides a measure of certainty, compared to systems using dynamic rates wherein a borrower can drop your APR significantly simply by repaying a large chunk of their debt.
+
+Wildcat V2 enables borrowers to set up structures such as Masterchef contracts on top of their markets: a borrower may offer you a given rate of interest, but also stream additional tokens to you as an additional incentive for you to provide credit. We can easily envisage this being used as a liquidity mining mechanism of sorts, should it be opted for.
+
+Finally, Wildcat has drawn up and open-sourced a Master Loan Agreement that is cognisant of the fact that your engagement is in fact a credit agreement taking place on-chain between yourself and the borrower. We encourage lenders to make use of it if the borrower has opted to make use of it.
+
+**Put simply, with Wildcat, you know what you're getting.**
+
+Now, a bit that we need to include here so that we don't accidentally taunt a regulator:
+
+Wildcat does not provide any assurances or underwriting regarding the financial health or creditworthiness of a borrower. Markets will - in the fullness of time - include reference to external reports or dashboards attesting to liquid assets where they exist, but lenders are expected to exercise their judgment as to whether Borrower X is likely going to be good on their word.&#x20;
+
+Counterparty risk is very real, and usage of this protocol requires trust in your borrower: Wildcat provides no insurance fund for defaults, and cannot help you if a borrower disappears with your assets.&#x20;
+
+### Interested?
+
+It's not our place to proscribe what Wildcat _should_ and _shouldn't_ be used for - tokenised lending instruments have a wide scope, and we've intentionally designed the protocol to be as hands-off and abstract as possible.&#x20;
+
+As a settlement layer, consider the protocol itself to be an Uatu the Watcher figure: we're interested, and we're watching, but it will not and _cannot_ interfere.
+
+We're looking forward to seeing how you make use of us!
 

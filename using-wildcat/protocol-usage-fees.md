@@ -4,28 +4,21 @@ description: There's no such thing as a free lunch.
 
 # Protocol Usage Fees
 
-Wildcat takes a fee for the usage of markets deployed using it. The fee is variable, and depends on the _controller_ that underpins a given market.
+Wildcat has the ability to charge a fee for the usage of its markets.
 
-Once a borrower has been added to the global registry by the archcontroller, they have free reign to deploy markets with whatever combination of parameters they see fit to.
+Once a borrower has been added to the global registry by the archcontroller, they have free reign to deploy markets however they see fit, both in market parameters themselves (e.g. capacity, withdrawal period) and which hooks are in place to gate access.
 
-However, they do so by first deploying a controller contract that is both specific to them and supports the functionality that they wish to utilise. There are distinct variants of controller, and each of them are suited to particular circumstances. For example -&#x20;
+However, there is one immutable parameter associated with a market that a borrower cannot change: the _protocol fee._ This manifests as an origination fee (which must be paid during the deployment of a market), a 'streaming' proportion of base APR (which accrues over the supply of assets rather than the capacity), or potentially both.
 
-* **Controller Alpha is the launch controller (open-ended functionality, the 'basic' market),**
-* Controller Beta might permit the deployment of long-dated call option markets,
+The borrower that deploys a market with a base APR of 10% that has a 5% streaming protocol fee in place will find themselves paying 10.5% (the base APR receivable by lenders plus 5% of that rate).
 
-\- and so on.&#x20;
+Decreasing or increasing that APR will similarly adjust the actual protocol fee APR: reducing the base APR to 8% will result in them paying 8.4%.
 
-Each controller has a specified protocol fee, which either manifests as an origination fee (which must be paid during the deployment of a market), or as a proportion of base APR, which accrues over the supply of assets rather than the capacity, or potentially both.\
-\
-**As of launch, Controller Alpha has a protocol fee of 0% of the current base APR and no origination fee. After some trial markets go live, we will be shifting it to a 10% base APR fee configuration.**
-
-The borrower that deploys a market through their own Controller Alpha instance with an APR of 10% will find themselves paying 11% (the base APR receivable by lenders plus 10% of that base rate).
-
-Decreasing or increasing that APR will similarly adjust the actual protocol fee APR.
-
-Protocol fees do _not_ increase in the presence of a penalty APR if a market is delinquent and over the grace period: if a market deployed through Controller Alpha has a base rate of 10% and is currently paying an additional penalty APR of 20%, the total market APR is 31% ((10% + 1%) + 20%), _not_ 33%.
+Protocol fees do _not_ increase in the presence of a penalty APR if a market is delinquent and over the grace period: if a market has a base rate of 10% and is currently paying an additional penalty APR of 20%, the total market APR is 30.5% ((10% + 0.5%) + 20%), _not_ 31.5%.
 
 Protocol fees accrued as part of a market APR are senior to lender claims within a market - a lender who attempts to withdraw all of the reserves within a market will only be capable of removing that amount net any protocol fees that have accrued over time and not been withdrawn.\
 \
-The fee configuration of a given market can be adjusted by the protocol operators, however any changes that are made this way only apply to markets deployed thereafter - if your market was already deployed with a given fee configuration, it will not be adjusted.
+The fee configuration of a given market can be adjusted by the protocol operators, and changes are retroactive in V2 markets: if your market was launched with a 0% protocol fee which is subsequently increased to 5%, that fee will start to take effect as of the block that the transaction is processed.
+
+
 
