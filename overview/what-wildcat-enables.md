@@ -1,6 +1,6 @@
 # What Wildcat Enables
 
-The core premise of a Wildcat market is simple: enabling un(der)collateralised borrowing and lending.
+The core premise of a Wildcat market is simple: enabling undercollateralised borrowing and lending.
 
 You will have seen this use-case before, associated with other protocols. What's different here is the amount of freedom the borrower has in how their market is shaped and constrained, alongside a novel mechanism for scheduling redemptions on behalf of lenders.\
 \
@@ -16,7 +16,9 @@ Wildcat enables this and much more, depending on the selected market configurati
 
 If you have admin costs associated with middle and back-office functionality because you're handling loans OTC via Telegram or the like, you're probably going to find using a Wildcat market useful, since you can track everything using associated events and other features provided through the protocol UI.&#x20;
 
-If you're trying to raise funds for operational purposes (i.e. you're a legal entity associated with a DAO that wants to pay salaries without selling a native token to do so at the moment), a Wildcat market may prove convenient to you as well.
+If you're trying to raise funds for operational purposes (i.e. you're a legal entity associated with a DAO that wants to pay salaries without selling a native token OTC or into on-chain liquidity to do so), a Wildcat market may prove convenient to you as well.
+
+In crypto/DeFi we often speak at length about how one of the remaining holy grails is an effective reputation/credit risk metric tied to on-chain wallets. However, this suffers from a cold start problem: it's hard to infer any meaningful information when previous wallet interactions _typically_ involve overcollateralised mechanisms or those which offer no real insight into probability of default. We consider honest usage of Wildcat by borrowers an effective bootstrap mechanism upon which such reputations can be built.
 
 ### For Lenders
 

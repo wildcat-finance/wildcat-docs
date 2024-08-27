@@ -8,11 +8,11 @@ Wildcat has the ability to charge a fee for the usage of its markets.
 
 Once a borrower has been added to the global registry by the archcontroller, they have free reign to deploy markets however they see fit, both in market parameters themselves (e.g. capacity, withdrawal period) and which hooks are in place to gate access.
 
-However, there is one immutable parameter associated with a market that a borrower cannot change: the _protocol fee._ This manifests as an origination fee (which must be paid during the deployment of a market), a 'streaming' proportion of base APR (which accrues over the supply of assets rather than the capacity), or potentially both.
+However, there is one parameter associated with a market that a borrower cannot change: the _protocol fee._ This manifests as a) an origination fee (which must be paid during the deployment of a market), b) a 'streaming' proportion of base APR (which accrues over the supply of assets rather than the capacity), or c) both.
 
-The borrower that deploys a market with a base APR of 10% that has a 5% streaming protocol fee in place will find themselves paying 10.5% (the base APR receivable by lenders plus 5% of that rate).
+The borrower that deploys a market with a base APR of 10% that has a 5% streaming protocol fee in place will find themselves paying 10.5% (the base APR receivable by lenders plus 5% of that rate). The lender will receive 10% as expected, the rest accrues to the protocol over time.
 
-Decreasing or increasing that APR will similarly adjust the actual protocol fee APR: reducing the base APR to 8% will result in them paying 8.4%.
+Decreasing or increasing that APR will similarly adjust the actual protocol fee APR: reducing the base APR to 8% will result in a borrower paying 8.4%.
 
 Protocol fees do _not_ increase in the presence of a penalty APR if a market is delinquent and over the grace period: if a market has a base rate of 10% and is currently paying an additional penalty APR of 20%, the total market APR is 30.5% ((10% + 0.5%) + 20%), _not_ 31.5%.
 

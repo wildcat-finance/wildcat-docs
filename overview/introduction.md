@@ -2,7 +2,7 @@
 
 ## The Elevator Pitch <a href="#the-elevator-pitch" id="the-elevator-pitch"></a>
 
-Wildcat is a protocol that allows borrowers to deploy undercollateralised credit lines.\
+Wildcat is a protocol that allows borrowers to deploy massively configurable, unopinionated, hands-off un(der)collateralised on-chain credit rails.\
 \
 That's it.\
 \
@@ -14,7 +14,7 @@ Wildcat borrowers can dictate the terms of almost any parameter that they would 
 * penalties,
 * withdrawal cycle lengths, and so on.
 
-Borrowers can also impose various access constraints that they may require:
+Markets can also impose various access constraints that they may require:
 
 * disabling withdrawals for a certain period (corresponding to a fixed-duration agreement),
 * disabling transfers for the tokenised debt that Wildcat issues,
@@ -24,17 +24,27 @@ Wildcat markets are not controlled or upgradable by the protocol itself once dep
 \
 A market and its goings-on are between the borrowers and lenders alone.\
 \
-Wildcat itself doesn't liquidate collateral, can't freeze markets, can't access your funds.
+Wildcat itself doesn't liquidate collateral, can't freeze markets, and can't access your funds.
 
-Wildcat provides a template loan agreement between borrower and lender on a per-market basis, but you are free to decline to use this, or use your own.
+Wildcat provides a template loan agreement between borrower and lender on a per-market basis, but you are free to decline to use this, or borrowers can opt to use their own.
 
-**The Wildcat Protocol**: enabling 21st century wildcat banks.
+Wildcat exists to create credit systems _by you_, _for you_.
+
+
+
+***
+
+
 
 ### ​A Comment Before You Head Further In <a href="#undefined" id="undefined"></a>
 
-This documentation is currently undergoing revision as the protocol shifts towards the deployment of V2 and the deprecation of V1. There may be some inconsistencies, which we are actively seeking out.
+This documentation is currently undergoing revision as the protocol shifts towards the deployment of V2 and the deprecation of V1. There may be some inconsistencies, which we are seeking out.
 
-There is also some repetition of terms and definitions in various sections.
+There is some repetition of terms and definitions in various sections.
+
+There is some repetition of terms and definitions in various sections.
+
+There is some repetition of terms and definitions in various sections.
 
 You aren't going insane: this is intentional, as we don't want (or expect) people to have to read through the entire site in order to understand the section that they're interested in.
 

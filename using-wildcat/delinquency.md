@@ -12,6 +12,8 @@ This ratio applies to the current _supply_ of assets to the market. If a market 
 
 Rather, if the market has a supply of 4,000,000 USDC from lenders, then 800,000 USDC must be in reserve. The amount that a market requires in reserves inflates as interest accrues on a stable supply, since the market token and underlying asset are redeemable 1:1.
 
+A market which has a zero percent reserve ratio need only worry about this to the extent that they need to monitor for withdrawal requests and keep sufficient assets available to cover the protocol fee, if the latter is active.
+
 A market that goes below the reserve ratio - however it does so - is _delinquent_.
 
 ## Related Market Parameters
