@@ -6,7 +6,7 @@ description: It's dangerous to go alone - learn these.
 
 #### **Archcontroller**
 
-* Smart contract which doubles up as a registry and permission gate. [Borrowers](terminology.md#borrower) are added or removed from the archcontroller by the operators of the protocol itself (granting/rescinding the ability to deploy [hooks](terminology.md#hook) and/or [markets](terminology.md#market)), and the addresses of any factories, market controllers or markets that get deployed through the protocol are stored here.
+* Smart contract which doubles up as a registry and permission gate. [Borrowers](terminology.md#borrower) are added or removed from the archcontroller by the operators of the protocol itself (granting/rescinding the ability to deploy [hooks](terminology.md#hook) and/or [markets](terminology.md#market)), and the addresses of any factories, hooks instances or markets that get deployed through the protocol are stored here.
 
 #### **Base APR**
 
@@ -26,7 +26,7 @@ description: It's dangerous to go alone - learn these.
 
 * Parameter required of [borrower](terminology.md#borrower) when creating a new [market](terminology.md#market).
 * The `maxTotalSupply` field in the state.
-* The _maximum_ amount of an asset that a borrower is looking to source via a market - the threshold for `totalSupply` after which the market will stop accepting [deposits](terminology.md#deposit) on.
+* The _maximum_ amount of an asset that a borrower is looking to source via a market - the threshold for `totalSupply` after which the market will stop accepting [deposits](terminology.md#deposit).
 * Can be exceeded by the market's `totalSupply` due to interest accrual.
 
 #### **Claim**
@@ -43,13 +43,6 @@ description: It's dangerous to go alone - learn these.
   * The market's [unclaimed withdrawals pool](terminology.md#unclaimed-withdrawals-pool),
   * The normalized value of the market's [pending](terminology.md#pending-withdrawal) and [expired](terminology.md#expired-withdrawal) withdrawals, and
   * The unclaimed [protocol fees](terminology.md#protocol-apr).
-
-#### **Controller**
-
-* Smart contract deployed by a [borrower](terminology.md#borrower) which contains the list of addresses which are authorised to [deposit](terminology.md#deposit) to any [markets](terminology.md#market) deployed through it.
-* Contains logic concerning parameters of markets deployed through it (e.g. maximum [grace period](terminology.md#grace-period), minimum [penalty APR](terminology.md#penalty-apr)).
-* Controls APR adjustments and enforces [reserve ratios](terminology.md#reserve-ratio) of markets.
-* Imposes protocol fees (either lump-sum origination or APR-based) on markets.
 
 #### **Delinquency**
 
@@ -94,7 +87,7 @@ description: It's dangerous to go alone - learn these.
 #### **Hook**
 
 * A function on a [hook instance](terminology.md#hook-instance) which is executed when a particular action occurs on a [market](terminology.md#market).
-* Corresponds to a specific market action, such as the `onCloseMarket` hook which is called when `closeMarket` is called on a market.
+* Corresponds to a specific market action, such as the `onCloseMarket` hook which is called when `closeMarket` is called on a market during termination.
 
 #### **Hook Instance**
 
@@ -104,7 +97,7 @@ description: It's dangerous to go alone - learn these.
 
 #### **Hooks Template**
 
-* A base contract defining behavior for a kind of [hook contract](terminology.md#hook-instance) approved by factory operators.
+* A base contract defining behaviour for a kind of [hook contract](terminology.md#hook-instance) approved by factory operators.
 * Copied when borrowers deploy hook instances.
 
 #### **Lender**
@@ -124,7 +117,7 @@ description: It's dangerous to go alone - learn these.
 * Smart contract that accepts [underlying assets](terminology.md#underlying-asset), issuing [market tokens](terminology.md#market-token) in return.
 * Deployed by [borrower](terminology.md#borrower) through the factory.
 * Holds assets in escrow pending either being [borrowed](terminology.md#borrow) by the borrower or [withdrawn](terminology.md#withdrawal-request) by a [lender](terminology.md#lender).
-* Permissioned: only lenders that have been authorised on the associated controller by the borrower to deposit can interact.
+* Permissioned: only lenders that have been obtained a credential authorising them to deposit (either through explicit whitelisting or another access provider via hooks) can interact.
 
 #### **Market Token**
 
@@ -142,7 +135,7 @@ description: It's dangerous to go alone - learn these.
 #### **Penalty APR**
 
 * Parameter required of [borrower](terminology.md#borrower) when creating a new [market](terminology.md#market).
-* Additional interest rate (above and beyond the [base APR](terminology.md#base-apr) and any [protocol APR](terminology.md#protocol-apr) imposed by a market [controller](terminology.md#controller)) that is applied for as long as the [grace tracker](terminology.md#grace-tracker) value for a market is in excess of the specified [grace period](terminology.md#grace-period).
+* Additional interest rate (above and beyond the [base APR](terminology.md#base-apr) and any [protocol APR](terminology.md#protocol-apr)) that is applied for as long as the [grace tracker](terminology.md#grace-tracker) value for a market is in excess of the specified [grace period](terminology.md#grace-period).
 * Encourages borrower to responsibly monitor the [reserve ratio](terminology.md#reserve-ratio) of a market.
 * No part of the penalty APR is receivable by the Wildcat protocol itself (does not inflate the protocol APR if present).
 
@@ -195,11 +188,6 @@ description: It's dangerous to go alone - learn these.
 * Parameter required of [borrower](onboarding.md#borrowers) when creating a new [market](terminology.md#market).
 * The asset which the borrower is seeking to [borrow](terminology.md#borrow) by deploying a market - for example DAI (Dai Stablecoin) or WETH (Wrapped Ether).
 * Can be _any_ ERC-20 token.
-
-#### **Vault**
-
-* See [market](terminology.md#market).
-* If you see this term anywhere, it's a mistake that we should have cleared up!
 
 #### **Withdrawal Cycle**
 
