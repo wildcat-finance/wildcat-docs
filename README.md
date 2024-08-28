@@ -34,6 +34,8 @@ With that in mind, we'll keep this high-level page brief.
 
 
 
+You might as well start at the beginning.
+
 {% content-ref url="overview/introduction.md" %}
 [introduction.md](overview/introduction.md)
 {% endcontent-ref %}

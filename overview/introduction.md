@@ -18,6 +18,7 @@ Markets can also impose various access constraints that they may require:
 
 * disabling withdrawals for a certain period (corresponding to a fixed-duration agreement),
 * disabling transfers for the tokenised debt that Wildcat issues,
+* enforcing minimum deposit amounts to prevent dust from accumulating,
 * requiring lenders to prove compliance with a given profile before self-onboarding, etc.
 
 Wildcat markets are not controlled or upgradable by the protocol itself once deployed.\
