@@ -23,6 +23,14 @@
 
 ## Technical Overview
 
+* [Security/Developer Dives](technical-overview/security-developer-dives/README.md)
+  * [The Scale Factor](technical-overview/security-developer-dives/the-scale-factor.md)
+  * [Core Behaviour](technical-overview/security-developer-dives/core-behaviour.md)
+  * [V1 -> V2 Changelog](technical-overview/security-developer-dives/v1-greater-than-v2-changelog.md)
+  * [Known Issues](technical-overview/security-developer-dives/known-issues.md)
+  * [Hooks](technical-overview/security-developer-dives/hooks/README.md)
+    * [How Hooks Work](technical-overview/security-developer-dives/hooks/how-hooks-work.md)
+    * [Access Control Hooks](technical-overview/security-developer-dives/hooks/access-control-hooks.md)
 * [Function/Event Signatures](technical-overview/function-event-signatures/README.md)
   * [/access](technical-overview/function-event-signatures/access/README.md)
     * [AccessControlHooks.sol](technical-overview/function-event-signatures/access/accesscontrolhooks.sol.md)
@@ -50,14 +58,7 @@
   * [WildcatArchController.sol](technical-overview/function-event-signatures/wildcatarchcontroller.sol.md)
   * [WildcatSanctionsEscrow.sol](technical-overview/function-event-signatures/wildcatsanctionsescrow.sol.md)
   * [WildcatSanctionsSentinel.sol](technical-overview/function-event-signatures/wildcatsanctionssentinel.sol.md)
-* [Security/Developer Dives](technical-overview/security-developer-dives/README.md)
-  * [The Scale Factor](technical-overview/security-developer-dives/the-scale-factor.md)
-  * [Core Behaviour](technical-overview/security-developer-dives/core-behaviour.md)
-  * [V1 -> V2 Changelog](technical-overview/security-developer-dives/v1-greater-than-v2-changelog.md)
-  * [Known Issues](technical-overview/security-developer-dives/known-issues.md)
-  * [Hooks](technical-overview/security-developer-dives/hooks/README.md)
-    * [How Hooks Work](technical-overview/security-developer-dives/hooks/how-hooks-work.md)
-    * [Access Control Hooks](technical-overview/security-developer-dives/hooks/access-control-hooks.md)
+* [Protocol Structs](technical-overview/protocol-structs.md)
 * [Contract Deployments](technical-overview/contract-deployments.md)
 * [Protocol Gas Profile](technical-overview/protocol-gas-profile.md)
 

@@ -1,5 +1,7 @@
 # Protocol Gas Profile
 
+NOTE: this page has not been updated to reflect Wildcat V2, this was last updated for V1 launch.
+
 Last Update: 30 November 2023\
 \
 As of commit[ ](https://github.com/wildcat-finance/wildcat-protocol/commit/d46ecb80842c523b224d2d2e793db9750b611d0a)[**d46ecb**](https://github.com/wildcat-finance/wildcat-protocol/commit/d46ecb80842c523b224d2d2e793db9750b611d0a), the gas report produced by `forge test --gas-report` is:&#x20;
