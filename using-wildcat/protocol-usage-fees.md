@@ -20,7 +20,7 @@ Protocol fees accrued as part of a market APR are senior to lender claims within
 \
 The fee configuration of an active market can be adjusted by the archcontroller owners, and changes are retroactive in V2 markets.
 
-if your market launched with a 0% streaming protocol fee which is subsequently increased to 5%, that fee will start to take effect after the appropriate hooks instance contracts are updated. Any origination fee update will be rendered void for existing markets (since the market exists already!).
+if your market launched with a 0% streaming protocol fee which is subsequently increased to 5%, that fee will start to take effect after the appropriate hook instance contract tied to a market is updated. Any origination fee update will be rendered void for existing markets (since the market exists already!).
 
 In Wildcat V2, streaming protocol fees are **hard-capped at 10% of base APR**.
 
