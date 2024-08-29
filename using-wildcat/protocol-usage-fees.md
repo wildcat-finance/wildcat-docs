@@ -18,7 +18,11 @@ Protocol fees do _not_ increase in the presence of a penalty APR if a market is 
 
 Protocol fees accrued as part of a market APR are senior to lender claims within a market - a lender who attempts to withdraw all of the reserves within a market will only be capable of removing that amount net any protocol fees that have accrued over time and not been withdrawn.\
 \
-The fee configuration of a given market can be adjusted by the protocol operators, and changes are retroactive in V2 markets: if your market was launched with a 0% protocol fee which is subsequently increased to 5%, that fee will start to take effect as of the block that the transaction is processed.
+The fee configuration of an active market can be adjusted by the archcontroller owners, and changes are retroactive in V2 markets.
+
+if your market launched with a 0% streaming protocol fee which is subsequently increased to 5%, that fee will start to take effect after the appropriate hooks instance contracts are updated. Any origination fee update will be rendered void for existing markets (since the market exists already!).
+
+In Wildcat V2, streaming protocol fees are **hard-capped at 10% of base APR**.
 
 
 
