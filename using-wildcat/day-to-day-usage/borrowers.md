@@ -6,9 +6,9 @@ description: What you need to know as a Wildcat borrower.
 
 ## Launching A New Market
 
-For the purpose of this section, we assume that the borrower has already gotten in contact with Wildcat and been added as a whitelisted borrower on the [**archcontroller**](../../terminology.md#archcontroller) (the registry that tracks permissions and deployments).
+For the purpose of this section, we assume that the borrower has already gotten in contact with Wildcat and been added as a whitelisted borrower on the [**archcontroller**](../terminology.md#archcontroller) (the registry that tracks permissions and deployments).
 
-Once this is done, the borrower can go to the protocol UI, and having signed the [**Service Agreement**](../../terminology.md#service-agreement) (if not done already), navigate to the Borrower section, and then click New Market.
+Once this is done, the borrower can go to the protocol UI, and having signed the [**Service Agreement**](../terminology.md#service-agreement) (if not done already), navigate to the Borrower section, and then click New Market.
 
 There are a number of parameter fields that are presented here, and the screen may appear a bit overwhelming, but they fundamentally represent the degrees of freedom you have available to you. \
 \
@@ -67,12 +67,12 @@ The amount of interest that you are willing to pay on deposits to _lenders_. Thi
 
 Wildcat V2 markets allow for this value to range between **0 - 100%**.\
 \
-Note that this may not be the true APR that you pay - markets which utilise a [protocol fee](../../protocol-usage-fees.md) will add that rate onto the base rate (e.g. selecting a base rate of 10% for a market that includes a 5% protocol fee produces a final rate for the borrower of 10% + (0.05 \* 10%) = 10.5%.\
+Note that this may not be the true APR that you pay - markets which utilise a [protocol fee](../protocol-usage-fees.md) will add that rate onto the base rate (e.g. selecting a base rate of 10% for a market that includes a 5% protocol fee produces a final rate for the borrower of 10% + (0.05 \* 10%) = 10.5%.\
 
 
 ### **Penalty Rate (%)**
 
-The amount of _additional_ APR that you agree to pay in the event that your market becomes [**delinquent**](../../terminology.md#delinquency) (i.e. falls below the reserve ratio) and the delinquency is not resolved within the amount of time specified by the [**grace period**](../../terminology.md#grace-period), as observed by the [**grace tracker**](../../terminology.md#grace-tracker).
+The amount of _additional_ APR that you agree to pay in the event that your market becomes [**delinquent**](../terminology.md#delinquency) (i.e. falls below the reserve ratio) and the delinquency is not resolved within the amount of time specified by the [**grace period**](../terminology.md#grace-period), as observed by the [**grace tracker**](../terminology.md#grace-tracker).
 
 Wildcat V2 markets allow for this value to range between **0 - 100%**. Note that a penalty rate of zero means that the borrower does not incur a penalty for ignoring delinquency until such time as they are marked as having defaulted (either as defined in a master loan agreement or as might be declared during legal proceedings after an extended period of non-repayment). We encourage borrowers to select a non-zero value to illustrate the seriousness with which they intend to monitor their obligations.\
 \
@@ -96,7 +96,7 @@ The amount of time that a lender who has filed a withdrawal request must wait be
 
 Wildcat V2 markets allow for this value to range between **0 - 8760 hours (365 days)**.\
 \
-This parameter exists in order to fairly distribute assets across multiple lenders given the undercollateralised nature of Wildcat markets. In the event that a significant amount of the supply is recalled at once, a longer withdrawal cycle permits reserves to be handed out _pro rata_ depending on the reserves within the market. For more on how this looks from the lenders perspective, please see the [**Lenders**](../lenders.md) page.
+This parameter exists in order to fairly distribute assets across multiple lenders given the undercollateralised nature of Wildcat markets. In the event that a significant amount of the supply is recalled at once, a longer withdrawal cycle permits reserves to be handed out _pro rata_ depending on the reserves within the market. For more on how this looks from the lenders perspective, please see the [**Lenders**](lenders.md) page.
 
 
 
@@ -106,7 +106,7 @@ This parameter exists in order to fairly distribute assets across multiple lende
 
 Provided that all of these parameters are within range for the market type you are deploying, you will then be asked to submit a transaction which deploys a hooks instance and market contract parameterised as you have directed.&#x20;
 
-If the template Master Loan Agreement has been selected, the borrower is required to pre-sign a [**Master Loan Agreement**](../../terminology.md#master-loan-agreement-mla). This document is then offered to lenders which seek to deposit to a market after onboarding, binding them to the borrower via contract. It defines certain warranties and covenants, accounts for the mutability of certain parameters and is intended to offer the lender protection via the legal system, as they shoulder the bulk of the risk in a trusted relationship.
+If the template Master Loan Agreement has been selected, the borrower is required to pre-sign a [**Master Loan Agreement**](../terminology.md#master-loan-agreement-mla). This document is then offered to lenders which seek to deposit to a market after onboarding, binding them to the borrower via contract. It defines certain warranties and covenants, accounts for the mutability of certain parameters and is intended to offer the lender protection via the legal system, as they shoulder the bulk of the risk in a trusted relationship.
 
 ## Sourcing Deposits
 
@@ -118,7 +118,7 @@ For those markets which make use of an such a Keyring policy, would-be lenders a
 
 We defer the decision-making of who is allowed to be onboarded to borrowers, but require that they will not seek to approve lenders either resident in sanctioned nations or those that come with extant regulatory risk preventing interaction with the protocol.
 
-If Wildcat notices that policies are breaching this, we are likely to [offboard](./#archcontroller-removal) the offending borrower, and may opt to remove affected markets from the UI. Crypto is global, and Wildcat isn't going to stand by and watch a borrower reap the whirlwind by allowing non-accredited American retail trader Joe Bloggs to lend them ten thousand dollars.
+If Wildcat notices that policies are breaching this, we are likely to [offboard](borrowers.md#archcontroller-removal) the offending borrower, and may opt to remove affected markets from the UI. Crypto is global, and Wildcat isn't going to stand by and watch a borrower reap the whirlwind by allowing non-accredited American retail trader Joe Bloggs to lend them ten thousand dollars.
 
 ## Borrowing From A Market
 
@@ -134,7 +134,7 @@ We strongly advise not borrowing right up to the limit, as the result of this wi
 
 ## Repaying A Market
 
-The primary mechanic by which funds are recalled by lenders is through **withdrawal requests**, which isolate assets currently in reserve in a market for lenders to claim at the end of a withdrawal cycle (for more details on this, please refer to the [**Lenders**](../lenders.md) page).
+The primary mechanic by which funds are recalled by lenders is through **withdrawal requests**, which isolate assets currently in reserve in a market for lenders to claim at the end of a withdrawal cycle (for more details on this, please refer to the [**Lenders**](lenders.md) page).
 
 Withdrawal requests impact the liquid and required reserves of your market, and as such borrowers are minded to monitor their reserve ratios to determine when funds are being requested. Requests (including who has placed the request and for how much) are also logged within the Market Details page.
 
