@@ -6,7 +6,7 @@ description: Things you need to know as a would-be lender through Wildcat.
 
 ## Making Deposits
 
-Depositing assets to a Wildcat market is a fairly simple process, and we presume in this section that a [**lender**](../terminology.md#lender) wishing to lend to a [**borrower**](../terminology.md#borrower) through a market has obtained an access credential (either self-served via a [Keyring Network policy](keyring-policies.md), an explicit whitelist or however the market is set up). We'll fill out some examples here as markets start spinning up and we can display some concrete examples.
+Depositing assets to a Wildcat market is a fairly simple process, and we presume in this section that a [**lender**](../terminology.md#lender) wishing to lend to a [**borrower**](../terminology.md#borrower) through a market has obtained an access credential (either self-served via a [Keyring Network policy](market-access-via-policies-hooks.md), an explicit whitelist or however the market is set up). We'll fill out some examples here as markets start spinning up and we can display some concrete examples.
 
 If the borrower has specified that they want to make use of it, the lender will be asked whether or not they wish to countersign an associated Wildcat Master Loan Agreement (MLA) parametised for the specific market terms. Note that dependent on the borrower, this may not be in place, and rather there is a separate legal agreement that is offered to the lender which you may be asked to sign off-chain.
 

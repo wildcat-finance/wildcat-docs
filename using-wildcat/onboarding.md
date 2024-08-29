@@ -38,6 +38,6 @@ Credentials may not last forever depending on borrower configuration, and may re
 
 However, in Wildcat V2, addresses that have previously been authorised are always be able to make withdrawal requests, even if their credentials have expired. For this reason, we encourage that you make use of a hardware wallet or a multisig when engaging with Wildcat.
 
-There's some more detail on this available [here](day-to-day-usage/keyring-policies.md), and we will provide a clearer walkthrough once live.
+There's some more detail on this available [here](day-to-day-usage/market-access-via-policies-hooks.md), and we will provide a clearer walkthrough once live.
 
 Note that addresses which are flagged as sanctioned by the [Chainalysis oracle contract](https://go.chainalysis.com/chainalysis-oracle-docs.html) are prevented from interacting with the protocol at the code-level - although it's a _brave_ entity that tries either asking for or seeking to extend credit from any of these.&#x20;

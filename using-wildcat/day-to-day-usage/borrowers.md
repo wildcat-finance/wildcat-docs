@@ -33,7 +33,7 @@ Each market is fundamentally open access to start (anyone can deposit, debt is f
 * **Minimum deposit amounts**: what is the minimum amount of the underlying asset that will be accepted by the market in a single deposit transaction by an approved lender?
 * **Minimum market-freeze duration** (enabling fixed duration markets): how many days after market launch before withdrawal requests will process?
 * **Transferability restrictions**: should the debt token issued by your Wildcat market be freely transferable to any recipient, restricted only to addresses that have credentials/authorisation to engage with the market, or further constrained to only move to/from the market itself?
-* **Onboarding policy**: what mechanism do you want to use to enable lenders to engage with your market? At present, the options are an explicit address whitelist operated by the borrower, or adopting a [Keyring Network](https://keyring.network) policy (substantially on this [here](keyring-policies.md)).
+* **Onboarding policy**: what mechanism do you want to use to enable lenders to engage with your market? At present, the options are an explicit address whitelist operated by the borrower, or adopting a [Keyring Network](https://keyring.network) policy (substantially on this [here](market-access-via-policies-hooks.md)). If you have a more specific need, reach out to us, and we can very likely produce something for you that we can add to the toolbox for everyone else going forward.
 
 ### **Market Token Name Prefix**
 
