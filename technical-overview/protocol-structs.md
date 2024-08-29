@@ -1,8 +1,8 @@
----
-description: All of the structs used within Wildcat V2, plus where to find them.
----
-
 # Protocol Structs
+
+This page includes details of the structs used within Wildcat V2.
+
+Note: you can generate this yourself via the `calculate_structs.py` Python script in the `/scripts` directory of the repository.
 
 ## File: /src/HooksFactory.sol
 
