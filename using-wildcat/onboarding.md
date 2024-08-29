@@ -12,9 +12,9 @@ The operators of the Wildcat protocol grant permission to borrower candidates to
 
 Borrowers who wish to make use of Wildcat are encouraged - on the landing page and the protocol UI itself - to get in touch via this [**form**](https://forms.gle/irca7KeC7ASmkRh16).
 
-After first contact, what Wildcat is looking for is proof that the borrower is a legal entity in a jurisdiction that is a) not sanctioned, and b) we reasonably believe won't expose the protocol to legal or regulatory risk. Discretion is currently being exercised in that we seek to reach 'up', meaning that we are more likely to accept recognised market makers, trading desks, protocols and such as borrowers. That's not to say that your smaller, less-recognised entity has a more significant probability of default
+After first contact, what Wildcat is looking for is proof that the borrower is a legal entity in a jurisdiction that is a) not sanctioned, and b) we reasonably believe won't expose the protocol to legal or regulatory risk. Discretion is currently being exercised in that we seek to reach 'up', meaning that we are more likely to accept recognised market makers, trading desks, protocols and such as borrowers. That's not to say that your smaller, less-recognised entity has a more significant probability of default: it very likely doesn't!
 
-We be asking what you intend to utilise Wildcat for, checking that you're a going concern, who your ultimate beneficiaries are and so on. We may request that you engage with a third-party assessment service (such as SumSub) - we'll let you know if that's the case.
+We be asking what you intend to utilise Wildcat credit lines _for_, checking that you're a going concern, who your ultimate beneficiaries are and so on. We may request that you engage with a third-party KYB service (such as SumSub or the like) - we'll let you know if that's the case.
 
 In short, this stage can be summarised as: play ball with us and be honest.
 
@@ -26,9 +26,9 @@ After this point, Wildcat steps back.
 
 If you're a party that wishes to lend to a particular borrower, Wildcat itself cannot onboard you.
 
-Rather, the process is determined by the policies in place for a particular market, as these are what grant you a credential 'through' the market hook that gates deposit access.
+Rather, the process is determined by the [policies](day-to-day-usage/market-access-via-policies-hooks.md) in place for a particular market, as these are what grant you a credential 'through' the market hook that gates deposit access.
 
-It's hard to abstract the above into a 'this is how you onboard into market X' for this documentation, because one market may require you to reach out to the borrower and get explicitly whitelisted, another may require you to pass a third-party KYC check via [Keyring Network](https://keyring.network) to verify your jurisdiction and that you're accredited (or whatever other requirement the borrower has), and another still may be content to accept a [Coinbase Verification](https://www.coinbase.com/en-gb/onchain-verify) or [Binance Account Bound Token](https://www.binance.com/en-GB/babt).
+It's hard to abstract the above into a 'this is how you onboard into market X' for this documentation, because one market may require you to reach out to the borrower and get explicitly whitelisted, another may require you to pass a third-party KYC check via an entity such as [Keyring Network](https://keyring.network) to verify your jurisdiction and that you're accredited (or whatever other requirement the borrower has), and another still may be content to accept a [Coinbase Verification](https://www.coinbase.com/en-gb/onchain-verify) or [Binance Account Bound Token](https://www.binance.com/en-GB/babt).
 
 Wildcat does not decide what a particular borrower should demand in terms of lender onboarding, as we consider this a compliance/legal issue for each borrower depending on their location, risk appetite and purpose. However, the protocol UI provides contact points for borrowers (i.e. email, Telegram), and each market will also indicate the requirements that are in place for onboarding.
 
