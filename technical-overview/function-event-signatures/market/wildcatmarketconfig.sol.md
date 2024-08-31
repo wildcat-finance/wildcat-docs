@@ -26,6 +26,8 @@ delinquencyFeeBips() 0x4be687c6
 
 delinquencyGracePeriod() 0x514a4cd6
 
+factory() 0xc45a0155
+
 feeRecipient() 0x46904840
 
 hooks() 0xcd7033c4
@@ -42,8 +44,6 @@ nukeFromOrbit(address) 0xdcd549d4
 
 previousState() 0x0c1e3fea
 
-protocolFeeBips() 0xabadbf16
-
 reserveRatioBips() 0xd98e0fe8
 
 scaleFactor() 0x683dd191
@@ -57,6 +57,8 @@ sentinel() 0xf58c251c
 setAnnualInterestAndReserveRatioBips(uint16,uint16) 0xe5adc635
 
 setMaxTotalSupply(uint256) 0x3f3e4c11
+
+setProtocolFeeBips(uint16) 0xae6ea191
 
 sphereXEngine() 0x3c231166
 
@@ -99,6 +101,8 @@ InterestAndFeesAccrued(uint256,uint256,uint256,uint256,uint256,uint256) 0x18247a
 MarketClosed(uint256) 0x9dc30b8e
 
 MaxTotalSupplyUpdated(uint256) 0xf2672935
+
+ProtocolFeeBipsUpdated(uint256) 0x4b347052
 
 ReserveRatioBipsUpdated(uint256) 0x72877a15
 

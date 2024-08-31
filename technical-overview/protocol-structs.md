@@ -4,7 +4,7 @@ This page includes details of the structs used within Wildcat V2.
 
 Note: you can generate this yourself via the `calculate_structs.py` Python script in the `/scripts` directory of the repository.
 
-## File: /src/HooksFactory.sol
+## File: src/HooksFactory.sol
 
 ### &#x20; Struct: TmpMarketParameterStorage
 
@@ -38,12 +38,12 @@ Note: you can generate this yourself via the `calculate_structs.py` Python scrip
 
 &#x20;   uint8 decimals
 
-&#x20;   HooksConfig hooks // note: type HooksConfig is uint256;\
+&#x20;   HooksConfig hooks // NOTE: type HooksConfig is uint256;\
 
 
-## File: /src/IHooksFactory.sol
+## File: src/IHooksFactory.sol
 
-### &#x20; Struct: HooksTemplate
+## &#x20; Struct: HooksTemplate
 
 &#x20;   /// @dev Asset used to pay origination fee
 
@@ -83,22 +83,52 @@ Note: you can generate this yourself via the `calculate_structs.py` Python scrip
 
 
 
-## File: /src/types/LenderStatus.sol
+## File: src/types/LenderStatus.sol
 
 ### &#x20; Struct: LenderStatus
 
 &#x20;   bool isBlockedFromDeposits
 
-&#x20;   bool hasEverDeposited
-
 &#x20;   address lastProvider
 
 &#x20;   bool canRefresh
 
-&#x20;   uint32 lastApprovalTimestamp\
+&#x20;   uint32 lastApprovalTimestamp
 
 
-## File: /src/access/MarketConstraintHooks.sol
+
+## File: src/access/AccessControlHooks.sol
+
+### &#x20; Struct: HookedMarket
+
+&#x20;   bool isHooked
+
+&#x20;   bool transferRequiresAccess
+
+&#x20;   bool depositRequiresAccess
+
+&#x20;   uint128 minimumDeposit\
+
+
+## File: src/access/FixedTermLoanHooks.sol
+
+### &#x20; Struct: HookedMarket
+
+&#x20;   bool isHooked
+
+&#x20;   bool transferRequiresAccess
+
+&#x20;   bool depositRequiresAccess
+
+&#x20;   bool withdrawalRequiresAccess
+
+&#x20;   uint128 minimumDeposit
+
+&#x20;   uint32 fixedTermEndTime
+
+
+
+## File: src/access/MarketConstraintHooks.sol
 
 ### &#x20; Struct: TemporaryReserveRatio
 
@@ -110,7 +140,7 @@ Note: you can generate this yourself via the `calculate_structs.py` Python scrip
 
 
 
-## File: /src/libraries/MarketState.sol
+## File: src/libraries/MarketState.sol
 
 ### &#x20; Struct: MarketState
 
@@ -146,6 +176,10 @@ Note: you can generate this yourself via the `calculate_structs.py` Python scrip
 
 &#x20; uint32 timeDelinquent
 
+&#x20;   // Fee charged to borrowers as a fraction of the annual interest rate
+
+&#x20; uint16 protocolFeeBips
+
 &#x20;   // Annual interest rate accrued to lenders, in basis points
 
 &#x20; uint16 annualInterestBips
@@ -158,9 +192,7 @@ Note: you can generate this yourself via the `calculate_structs.py` Python scrip
 
 &#x20; uint112 scaleFactor
 
-&#x20; uint32 lastInterestAccruedTimestamp
-
-
+&#x20;   uint32 lastInterestAccruedTimestamp
 
 ### &#x20; Struct: Account
 
@@ -168,7 +200,7 @@ Note: you can generate this yourself via the `calculate_structs.py` Python scrip
 
 
 
-## File: /src/libraries/Withdrawal.sol
+## File: src/libraries/Withdrawal.sol
 
 ### &#x20; Struct: WithdrawalBatch
 
@@ -184,15 +216,11 @@ Note: you can generate this yourself via the `calculate_structs.py` Python scrip
 
 &#x20; uint128 normalizedAmountPaid
 
-
-
 ### &#x20; Struct: AccountWithdrawalStatus
 
 &#x20;   uint104 scaledAmount
 
 &#x20;   uint128 normalizedAmountWithdrawn
-
-
 
 ### &#x20; Struct: WithdrawalData
 
@@ -204,7 +232,7 @@ Note: you can generate this yourself via the `calculate_structs.py` Python scrip
 
 
 
-## File: /src/libraries/FIFOQueue.sol
+## File: src/libraries/FIFOQueue.sol
 
 ### &#x20; Struct: FIFOQueue
 
@@ -216,7 +244,7 @@ Note: you can generate this yourself via the `calculate_structs.py` Python scrip
 
 
 
-## File: /src/spherex/ISphereXEngine.sol
+## File: src/spherex/ISphereXEngine.sol
 
 ### &#x20; Struct: ModifierLocals
 
@@ -226,11 +254,10 @@ Note: you can generate this yourself via the `calculate_structs.py` Python scrip
 
 &#x20;   uint256 gas
 
-&#x20;   address engine
+&#x20;   address engine\
 
 
-
-## File: /src/interfaces/IWildcatSanctionsSentinel.sol
+## File: ../src/interfaces/IWildcatSanctionsSentinel.sol
 
 ### &#x20; Struct: TmpEscrowParams
 
@@ -241,7 +268,7 @@ Note: you can generate this yourself via the `calculate_structs.py` Python scrip
 &#x20;   address asset\
 
 
-## File: /src/interfaces/WildcatStructsAndEnums.sol
+## File: src/interfaces/WildcatStructsAndEnums.sol
 
 ### &#x20; Struct: MarketParameters
 
@@ -281,7 +308,8 @@ Note: you can generate this yourself via the `calculate_structs.py` Python scrip
 
 &#x20;   address sphereXEngine
 
-&#x20;   HooksConfig hooks\
+&#x20;   HooksConfig hooks
+
 
 
 ### &#x20; Struct: DeployMarketInputs

@@ -30,6 +30,8 @@ delinquencyFeeBips() 0x4be687c6
 
 delinquencyGracePeriod() 0x514a4cd6
 
+factory() 0xc45a0155
+
 feeRecipient() 0x46904840
 
 hooks() 0xcd7033c4
@@ -37,8 +39,6 @@ hooks() 0xcd7033c4
 name() 0x06fdde03
 
 previousState() 0x0c1e3fea
-
-protocolFeeBips() 0xabadbf16
 
 scaleFactor() 0x683dd191
 
@@ -95,6 +95,8 @@ InterestAndFeesAccrued(uint256,uint256,uint256,uint256,uint256,uint256) 0x18247a
 MarketClosed(uint256) 0x9dc30b8e
 
 MaxTotalSupplyUpdated(uint256) 0xf2672935
+
+ProtocolFeeBipsUpdated(uint256) 0x4b347052
 
 ReserveRatioBipsUpdated(uint256) 0x72877a15
 

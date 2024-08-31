@@ -22,6 +22,8 @@ MarketClosed(uint256) 0x9dc30b8e
 
 MaxTotalSupplyUpdated(uint256) 0xf2672935
 
+ProtocolFeeBipsUpdated(uint256) 0x4b347052
+
 ReserveRatioBipsUpdated(uint256) 0x72877a15
 
 SanctionedAccountAssetsQueuedForWithdrawal(address,uint256,uint256,uint256) 0xe12b220b

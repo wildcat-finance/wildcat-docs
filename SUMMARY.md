@@ -43,8 +43,6 @@
     * [IWildcatArchController.sol](technical-overview/function-event-signatures/interfaces/iwildcatarchcontroller.sol.md)
     * [IWildcatSanctionsEscrow.sol](technical-overview/function-event-signatures/interfaces/iwildcatsanctionsescrow.sol.md)
     * [IWildcatSanctionsSentinel.sol](technical-overview/function-event-signatures/interfaces/iwildcatsanctionssentinel.sol.md)
-  * [/libraries](technical-overview/function-event-signatures/libraries/README.md)
-    * [LibStoredInitCode.sol](technical-overview/function-event-signatures/libraries/libstoredinitcode.sol.md)
   * [/market](technical-overview/function-event-signatures/market/README.md)
     * [WildcatMarketConfig.sol](technical-overview/function-event-signatures/market/wildcatmarketconfig.sol.md)
     * [WildcatMarketToken.sol](technical-overview/function-event-signatures/market/wildcatmarkettoken.sol.md)
@@ -72,7 +70,7 @@
 
 * [Wildcat Service Agreement](legal/wildcat-service-agreement.md)
 * [Risk Disclosure Statement](legal/risk-disclosure-statement.md)
-* [Master Loan Agreement](legal/master-loan-agreement.md)
+* [Template MLA](legal/master-loan-agreement.md)
 * [Protocol UI Privacy Policy](legal/protocol-ui-privacy-policy.md)
 
 ## Miscellaneous

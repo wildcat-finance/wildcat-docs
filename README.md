@@ -7,11 +7,11 @@ description: >-
 # The Wildcat Protocol
 
 {% hint style="info" %}
-**This Gitbook is currently undergoing active changes to reflect Wildcat V2.**\
+**This Gitbook recently underwent substantial changes to incorporate Wildcat V2 details.**\
 \
 Something you don't understand? Something missing?\
 \
-Fire a message to @functi0nZer0 on Twitter and watch him do Things That Don't Scale!
+Fire a message to @[functi0nZer0](https://x.com/functi0nZer0) on Twitter/X and watch him do Things That Don't Scale!
 {% endhint %}
 
 ## Hi.

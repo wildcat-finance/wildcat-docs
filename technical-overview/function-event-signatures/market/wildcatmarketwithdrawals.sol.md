@@ -28,6 +28,8 @@ executeWithdrawal(address,uint32) 0x34bca29c
 
 executeWithdrawals(address\[],uint32\[]) 0x74058859
 
+factory() 0xc45a0155
+
 feeRecipient() 0x46904840
 
 getAccountWithdrawalStatus(address,uint32) 0x02372c4f
@@ -43,8 +45,6 @@ hooks() 0xcd7033c4
 name() 0x06fdde03
 
 previousState() 0x0c1e3fea
-
-protocolFeeBips() 0xabadbf16
 
 queueFullWithdrawal() 0x7243d96c
 
@@ -101,6 +101,8 @@ InterestAndFeesAccrued(uint256,uint256,uint256,uint256,uint256,uint256) 0x18247a
 MarketClosed(uint256) 0x9dc30b8e
 
 MaxTotalSupplyUpdated(uint256) 0xf2672935
+
+ProtocolFeeBipsUpdated(uint256) 0x4b347052
 
 ReserveRatioBipsUpdated(uint256) 0x72877a15
 

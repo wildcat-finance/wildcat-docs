@@ -8,27 +8,29 @@ factory() 0xc45a0155
 
 getParameterConstraints() 0xa11ef067
 
-onBorrow(uint256,(bool,uint128,uint128,uint128,uint104,uint104,uint32,bool,uint32,uint16,uint16,uint112,uint32),bytes) 0x5add5bea
+onBorrow(uint256,(bool,uint128,uint128,uint128,uint104,uint104,uint32,bool,uint32,uint16,uint16,uint16,uint112,uint32),bytes) 0xb1cfda0d
 
-onCloseMarket((bool,uint128,uint128,uint128,uint104,uint104,uint32,bool,uint32,uint16,uint16,uint112,uint32),bytes) 0x7bc725f5
+onCloseMarket((bool,uint128,uint128,uint128,uint104,uint104,uint32,bool,uint32,uint16,uint16,uint16,uint112,uint32),bytes) 0x9ecc64e6
 
 onCreateMarket(address,address,(address,string,string,uint128,uint16,uint16,uint32,uint16,uint32,uint256),bytes) 0x28fd0307
 
-onDeposit(address,uint256,(bool,uint128,uint128,uint128,uint104,uint104,uint32,bool,uint32,uint16,uint16,uint112,uint32),bytes) 0xec4dc31f
+onDeposit(address,uint256,(bool,uint128,uint128,uint128,uint104,uint104,uint32,bool,uint32,uint16,uint16,uint16,uint112,uint32),bytes) 0x5aeb713f
 
-onExecuteWithdrawal(address,uint128,(bool,uint128,uint128,uint128,uint104,uint104,uint32,bool,uint32,uint16,uint16,uint112,uint32),bytes) 0xf8887e15
+onExecuteWithdrawal(address,uint128,(bool,uint128,uint128,uint128,uint104,uint104,uint32,bool,uint32,uint16,uint16,uint16,uint112,uint32),bytes) 0x2970403d
 
-onNukeFromOrbit(address,(bool,uint128,uint128,uint128,uint104,uint104,uint32,bool,uint32,uint16,uint16,uint112,uint32),bytes) 0xb96166f9
+onNukeFromOrbit(address,(bool,uint128,uint128,uint128,uint104,uint104,uint32,bool,uint32,uint16,uint16,uint16,uint112,uint32),bytes) 0x8b3ce9b3
 
-onQueueWithdrawal(address,uint32,uint256,(bool,uint128,uint128,uint128,uint104,uint104,uint32,bool,uint32,uint16,uint16,uint112,uint32),bytes) 0x7ce23452
+onQueueWithdrawal(address,uint32,uint256,(bool,uint128,uint128,uint128,uint104,uint104,uint32,bool,uint32,uint16,uint16,uint16,uint112,uint32),bytes) 0x3521cccc
 
-onRepay(uint256,(bool,uint128,uint128,uint128,uint104,uint104,uint32,bool,uint32,uint16,uint16,uint112,uint32),bytes) 0x8db431c3
+onRepay(uint256,(bool,uint128,uint128,uint128,uint104,uint104,uint32,bool,uint32,uint16,uint16,uint16,uint112,uint32),bytes) 0x83d9e1eb
 
-onSetAnnualInterestAndReserveRatioBips(uint16,uint16,(bool,uint128,uint128,uint128,uint104,uint104,uint32,bool,uint32,uint16,uint16,uint112,uint32),bytes) 0x1a8771f7
+onSetAnnualInterestAndReserveRatioBips(uint16,uint16,(bool,uint128,uint128,uint128,uint104,uint104,uint32,bool,uint32,uint16,uint16,uint16,uint112,uint32),bytes) 0xcc452642
 
-onSetMaxTotalSupply(uint256,(bool,uint128,uint128,uint128,uint104,uint104,uint32,bool,uint32,uint16,uint16,uint112,uint32),bytes) 0x7a2c09ae
+onSetMaxTotalSupply(uint256,(bool,uint128,uint128,uint128,uint104,uint104,uint32,bool,uint32,uint16,uint16,uint16,uint112,uint32),bytes) 0x849da129
 
-onTransfer(address,address,address,uint256,(bool,uint128,uint128,uint128,uint104,uint104,uint32,bool,uint32,uint16,uint16,uint112,uint32),bytes) 0xc4a066bf
+onSetProtocolFeeBips(uint16,(bool,uint128,uint128,uint128,uint104,uint104,uint32,bool,uint32,uint16,uint16,uint16,uint112,uint32),bytes) 0x03473d8d
+
+onTransfer(address,address,address,uint256,(bool,uint128,uint128,uint128,uint104,uint104,uint32,bool,uint32,uint16,uint16,uint16,uint112,uint32),bytes) 0xa018f90e
 
 temporaryExcessReserveRatio(address) 0xfeb368e2
 
