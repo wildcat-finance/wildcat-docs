@@ -60,7 +60,6 @@
   * [WildcatSanctionsSentinel.sol](technical-overview/function-event-signatures/wildcatsanctionssentinel.sol.md)
 * [Protocol Structs](technical-overview/protocol-structs.md)
 * [Contract Deployments](technical-overview/contract-deployments.md)
-* [Protocol Gas Profile](technical-overview/protocol-gas-profile.md)
 
 ## Security Measures
 
@@ -95,3 +94,4 @@
     * [WildcatSanctionsEscrow.sol](miscellaneous/deprecated-documentation/component-overview/wildcatsanctionsescrow.sol.md)
     * [Structs](miscellaneous/deprecated-documentation/component-overview/structs/README.md)
       * [Some Notes On Normalized versus Scaled Amounts](miscellaneous/deprecated-documentation/component-overview/structs/some-notes-on-normalized-versus-scaled-amounts.md)
+  * [Protocol Gas Profile](miscellaneous/deprecated-documentation/protocol-gas-profile.md)

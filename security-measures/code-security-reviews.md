@@ -26,33 +26,17 @@ The results of these reviews (and associated reports) are available here:
 
 
 
-### [Code4rena](https://code4rena.com/) \[Zenith Audit]
-
-**Date**: 31 August - 18 September 2024
-
-**Scope**: TBC
-
-**LOC**: TBC
-
-**Results**:
-
-* Contest pending
-
-**Report**: Pending
-
-
-
 ### [Code4rena](https://code4rena.com/) \[Competitive Public Audit]
 
 **Date**: 31 August - 18 September 2024
 
-**Scope**: TBC
+**Scope**: See README/Scope [here](https://github.com/code-423n4/2024-08-wildcat/tree/main?tab=readme-ov-file#scope).
 
-**LOC**: TBC
+**LOC**: 3,784
 
 **Results**:
 
-* Contest pending
+* Contest ongoing: [https://code4rena.com/audits/2024-08-the-wildcat-protocol](https://code4rena.com/audits/2024-08-the-wildcat-protocol)
 
 **Report**: Pending\
 

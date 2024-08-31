@@ -45,3 +45,32 @@ Specifically, because payment towards a withdrawal batch does not have its own h
 We anticipate that, for any features added in the future, considering an account to have burned their market tokens at the time a withdrawal is queued will be sufficient precision for the purposes we expect to need this for, and as such we consider the loss of 100% precision on the exact internal market state to be a reasonable sacrifice considering the additional cost such precision would impose.
 
 Any other issues with the ability of a hooks instance to track the state of the market should be reported.
+
+## **Conversion Between Scaled And Normalised Amounts Have Some Rounding Error**
+
+We are aware that deposits, withdrawals, and even transfers incur some inevitable rounding error. We will only accept findings that show either:
+
+* This dust is sufficient to break something in the market, or
+* The rounding error can realistically be more than dust
+
+So for example, we would not accept a finding that says you could do ten million transfers to accumulate ten million wei worth of the market token. On the other hand, in V1 there was a finding where the dust could cause a market to be impossible to close, which is why we now round down for withdrawal payments to a batch.
+
+## **Some Assembly Blocks Leave Dirty Bits In Memory**
+
+For example, in `HooksConfig`, all of the calls from a market to the various hook functions are done in assembly, with the calldata written to unallocated memory that is left as is at the end of the call. We would only accept a finding on this subject if it demonstrated a specific attack showing this is unsafe or can lead to buggy behavior.
+
+## **Markets Can Be Constructed In A Way That Makes It Impossible For Anyone To Request A Withdrawal**
+
+While we tried our best to ensure lenders who deposit to a market can not have their withdrawal rights revoked (by ensuring the deposit/transfer hooks are always enabled if the withdrawal hook is enabled), it is still possible for a borrower to maliciously prevent lenders from ever acquiring the necessary credential for withdrawals.
+
+The way this would work is:
+
+* Create a market with credentials required for withdrawal but not for deposit or transfers.
+* Never add any role providers.
+* Lenders can deposit, but since they'll never have a credential, they will never be given the `isKnownLender` flag, and thus can never withdraw.
+
+Unfortunately it is not possible to remove this problem without eliminating certain kinds of market that are desirable, so we consider this in a similar vein to the issue with malicious borrowers simply not repaying their debt, in that it's up to lenders to be selective with who they lend to.
+
+## **Reliance On Chainalysis**
+
+If the Chainalysis sanctions oracle were to be compromised or otherwise start flagging accounts as sanctioned that in reality are not, that would lead to those accounts being frozen on all Wildcat markets they lend to.
