@@ -31,6 +31,7 @@
   * [Hooks](technical-overview/security-developer-dives/hooks/README.md)
     * [How Hooks Work](technical-overview/security-developer-dives/hooks/how-hooks-work.md)
     * [Access Control Hooks](technical-overview/security-developer-dives/hooks/access-control-hooks.md)
+    * [Fixed Term Loan Hooks](technical-overview/security-developer-dives/hooks/fixed-term-loan-hooks.md)
 * [Function/Event Signatures](technical-overview/function-event-signatures/README.md)
   * [/access](technical-overview/function-event-signatures/access/README.md)
     * [AccessControlHooks.sol](technical-overview/function-event-signatures/access/accesscontrolhooks.sol.md)
