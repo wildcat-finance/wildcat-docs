@@ -14,22 +14,18 @@ Here's how we've handled it:
 
 In the event that a lender address is sanctioned, the sentinel contract can deploy escrow contracts between the borrower of a market and the lender in question.
 
-Within each market contract itself, a `nukeFromOrbit` function exists that creates an escrow contract, transfers the market balance corresponding to the lender from the market to the escrow, erases the lenders market token balance, and blocks them from any further interaction with the market itself.
+Within each market contract, a `nukeFromOrbit` function exists that forces any account reported as sanctioned on the sanctions sentinel into a withdrawal request. Once that withdrawal expires, any claimable assets for their withdrawal request can be executed using the normal `executeWithdrawal` function.\
+\
+When a withdrawal is executed for a lender that is sanctioned, their redeemed assets are transferred to an escrow contract specific to the combination of lender, borrower and asset.
 
-A second escrow contract is also created if a lender attempts to execute a withdrawal (i.e. claim) from a market while sanctioned - in this case, the assets within the unclaimed withdrawals pool that would have been claimable by the lender are similarly sent to that new escrow.
-
-**NOTE**: T_his means that potentially two escrow contracts can be created for a single lender - one for their market token balance, and one for any assets that they were trying to withdraw!_
-
-Assets within an escrow contract can be released to the lender via the `releaseEscrow` function in one of two cases:
+Assets within an escrow contract can be released to the lender via the `releaseEscrow` function in two cases:
 
 * The lender address is no longer flagged as being sanctioned by the Chainalysis oracle, or
 * The borrower involved in that particular escrow contract specifically overrides the sanction status via the `overrideSanction` function.
 
-It's worth observing that any underlying assets that are within a market which cannot be redeemed by a sanctioned lender are still available for the borrower to utilise - market tokens being spirited away into an escrow contract do not impose any freezes on the underlying assets themselves. Of course, any underlying assets that were seized as part of an `executeWithdrawal` call by a sanctioned lender are out of the reach of both the borrower and the lender, as they are no longer part of the market.
+Note that this power cannot be randomly used to erase lenders from markets: the Chainalysis oracle must return true when asked if the lender address is sanctioned in order for the escrow contract to be created.
 
-Note that this power cannot be randomly used to erase lenders from markets: the Chainalysis oracle **must** return `true` when asked if the lender address is sanctioned in order for the escrow contract to be created.
-
-We do not believe that Wildcat protocol users are at risk of a simultaneous exploit of the Chainalysis oracle and excision from a market as a result - in fact we do not _expect_ `nukeFromOrbit` to ever actually be _called_ - but better to be prepared.
+We do not believe that Wildcat protocol users are at risk of a simultaneous exploit of the Chainalysis oracle and excision from a market as a result - in fact we do not expect nukeFromOrbit to ever actually be called - but better to be prepared.
 
 ### Borrower Gets Sanctioned
 
