@@ -2,6 +2,8 @@
 
 The Wildcat protocol contracts have been subjected to independent security reviews and crowdsourced review via Code4rena.
 
+The code repository for V2 is available&#x20;
+
 The results of these reviews (and associated reports) are available here:
 
 
@@ -26,7 +28,7 @@ The results of these reviews (and associated reports) are available here:
 
 
 
-### [Code4rena](https://code4rena.com/) \[Competitive Public Audit]
+### [Code4rena](https://code4rena.com/) \[$100,000 Competitive Public Audit]
 
 **Date**: 31 August - 18 September 2024
 
@@ -36,9 +38,12 @@ The results of these reviews (and associated reports) are available here:
 
 **Results**:
 
-* Contest ongoing: [https://code4rena.com/audits/2024-08-the-wildcat-protocol](https://code4rena.com/audits/2024-08-the-wildcat-protocol)
+* 1 high
+* 8 medium
 
-**Report**: Pending\
+**Report**: [https://code4rena.com/audits/2024-08-the-wildcat-protocol](https://code4rena.com/audits/2024-08-the-wildcat-protocol)
+
+Followed up by two subsequent mitigation reviews by [alpeh\_v](https://x.com/alpeh\_v).\
 
 
 ***
@@ -65,7 +70,7 @@ The results of these reviews (and associated reports) are available here:
 
 
 
-### [Code4rena](https://code4rena.com/) \[Competitive Audit]
+### [Code4rena](https://code4rena.com/) \[$60,500 Competitive Public Audit]
 
 **Date**: 16 - 25th October 2023
 
