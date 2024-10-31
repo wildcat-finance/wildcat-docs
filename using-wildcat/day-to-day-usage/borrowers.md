@@ -30,10 +30,18 @@ Following the deprecation of Wildcat V1, the only type of market currently suppo
 
 Each market is fundamentally open access to start (anyone can deposit, debt is freely transferable etc.), however there are a number of choices to be made which constrain access in certain ways depending on borrower preference. Examples are:
 
-* **Minimum deposit amounts**: what is the minimum amount of the underlying asset that will be accepted by the market in a single deposit transaction by an approved lender?
-* **Minimum market-freeze duration** (enabling fixed duration markets): how many days after market launch before withdrawal requests will process?
-* **Transferability restrictions**: should the debt token issued by your Wildcat market be freely transferable to any recipient, restricted only to addresses that have credentials/authorisation to engage with the market, or further constrained to only move to/from the market itself?
-* **Onboarding policy**: what mechanism do you want to use to enable lenders to engage with your market? At present, the options are an explicit address whitelist operated by the borrower, or adopting a [Keyring Network](https://keyring.network) policy (substantially on this [here](market-access-via-policies-hooks.md)). If you have a more specific need, reach out to us, and we can very likely produce something for you that we can add to the toolbox for everyone else going forward.
+* **Minimum deposit amounts**: what is the minimum amount of the underlying asset that will be accepted by the market in a single deposit transaction by an approved lender? Default value is **0**.
+* **Fixed term duration:** how long after market launch before withdrawal requests can process? Default value is **0**. Attached to this are two further sub-choices:
+  * **Early termination**: do you want the ability to close the market before that fixed term elapses?
+  * **Early maturity**: do you want the ability to bring the fixed term maturity closer to the present?
+* **Token transferability restrictions**: should the debt token issued by your Wildcat market be freely transferable to any recipient, restricted only to addresses that are marked as known lenders or hold a valid deposit credential, or further constrained to only move to/from the market itself? Default value is **freely transferable**.
+* **Force buybacks:** as a borrower, do you want the power to be able to forcefully repurchase debt (market tokens) held by a lender by directly exchanging market tokens from their wallet for an equivalent amount of the underlying asset from your wallet? Note that this power cannot be used with a market is delinquent or if it's currently in a fixed term state. Also note that this power grants you the ability to repurchase tokens from _any_ address, including Uniswap liquidity pools if the token transferability was set as freely transferable. Default value is **no**.
+*   **Onboarding policy**: what mechanism(s) do you want to use to enable lenders to engage with your market? There is no default value for this parameter. At V2 launch, the options available are:
+
+    * an explicit address whitelist operated by the borrower, and
+    * an open access role provider that checks addresses against Chainalysis for sanctions.&#x20;
+
+    We'll be rolling out more (such as Coinbase Verification/Binance Account Bound Token filters and various KYC requirements) in short order after V2 launch. If you have a more specific need, reach out to us, and we can work towards producing a template for you that we can subsequently add to the toolbox for everyone else going forward.
 
 ### **Market Token Name Prefix**
 
@@ -61,7 +69,7 @@ Failing to maintain this level will result in the market becoming **delinquent**
 Note that the capacity and the reserve ratio together dictate the _maximum_ that you are able to borrow from a market. A higher reserve ratio leads to a greater amount that you are paying interest on, but provides more of a cushion for lenders to easily exit their position, presuming that you fix delinquencies in a timely manner (lest you incur the _penalty rate_, see below).\
 
 
-### **Lender APR (%)**
+### **Base (Lender) APR (%)**
 
 The amount of interest that you are willing to pay on deposits to _lenders_. This is the rate that will apply presuming that your market never stays delinquent for long enough for the **penalty rate** to activate.
 
@@ -104,21 +112,19 @@ This parameter exists in order to fairly distribute assets across multiple lende
 
 
 
-Provided that all of these parameters are within range for the market type you are deploying, you will then be asked to submit a transaction which deploys a hooks instance and market contract parameterised as you have directed.&#x20;
+If the template Master Loan Agreement has been selected as part of the policy, the borrower is required to pre-sign a copy of the [**Master Loan Agreement**](../terminology.md#master-loan-agreement-mla) with the relevant parameters added in. This document is then offered to lenders which seek to deposit to a market after onboarding, binding them to the borrower via contract. It defines certain warranties and covenants, discusses the handling of sanctions, accounts for the mutability of certain parameters and is intended to offer the lender protection via the legal system, as they shoulder the bulk of the risk in a trusted relationship.
 
-If the template Master Loan Agreement has been selected, the borrower is required to pre-sign a [**Master Loan Agreement**](../terminology.md#master-loan-agreement-mla). This document is then offered to lenders which seek to deposit to a market after onboarding, binding them to the borrower via contract. It defines certain warranties and covenants, accounts for the mutability of certain parameters and is intended to offer the lender protection via the legal system, as they shoulder the bulk of the risk in a trusted relationship.
+Provided that all of the above parameters are within range for the market type you are deploying, you will then be asked to submit a transaction which deploys both hook instances (where necessary) and market contracts, parameterised as you have directed.&#x20;
 
 ## Sourcing Deposits
 
-Once a given market is live, lenders can start onboarding to the market, depending on the hooks policy in place. For those markets which make use of an explicit address whitelist, the borrower must make use of the Market Details section of a market page to execute an on-chain transaction specifying one or multiple addresses.
+Once a given market is live, lenders can start onboarding to the market, depending on the access policy in place. For those markets which make use of an explicit address whitelist, the borrower must make use of the Market Details section of a market page to execute an on-chain transaction specifying one or multiple addresses.
 
-If you wish to make use of a Keyring Network policy to enable lender self-onboarding, you will need to register with Keyring Network off-site and either clone the default Wildcat Keyring policy or create your own. Note: you cannot piggyback off of the Wildcat policy for your markets - you _must_ clone-and-own the policy which you make use of. This is both for compliance reasons and because if you own your policy, you're capable of editing it yourself. If you have any questions here, we're happy to help.
+Wildcat itself does not source capital providers for you, although we may well advertise the fact that your markets exist and what their parameters are (as well as any changes).
 
-For those markets which make use of an such a Keyring policy, would-be lenders are directed off-site to Keyring to verify they meet the policy requirements, concluding in their submitting a transaction containing a zero-knowledge proof of adherence which will grant them an market access credential.
+We defer the decision-making of who is 'allowed' to be onboarded to borrowers, but require that they do not seek to approve lenders resident in sanctioned nations (even with things like geoblocking in place, an explicit whitelist can add whatever addresses they want).
 
-We defer the decision-making of who is allowed to be onboarded to borrowers, but require that they will not seek to approve lenders either resident in sanctioned nations or those that come with extant regulatory risk preventing interaction with the protocol.
-
-If Wildcat notices that policies are breaching this, we are likely to [offboard](borrowers.md#archcontroller-removal) the offending borrower, and may opt to remove affected markets from the UI. Crypto is global, and Wildcat isn't going to stand by and watch a borrower reap the whirlwind by allowing non-accredited American retail trader Joe Bloggs to lend them ten thousand dollars.
+If Wildcat notices that borrowers are breaching this incredibly light-handed requirement, we are likely to [offboard](borrowers.md#archcontroller-removal) the offending borrower, and may opt to remove affected markets from the UI. Crypto is global, and Wildcat isn't going to stand by and watch a borrower reap the whirlwind by authorising addresses clearly tied to North Korea.
 
 ## Borrowing From A Market
 
@@ -163,11 +169,20 @@ As a borrower, you are able to adjust the capacity up to whatever amount you wis
 
 ## Forced Withdrawals
 
-A new addition to Wildcat V2 is that a borrower has the ability to eject specific lenders into a withdrawal cycle. We are wary that this ability in effect enables a preferential repayment mechanism whereby they can evacuate a preferred counterparty if they know that they are likely to default in the near future, but this risk is offset by the fact that other lenders are free to join the same withdrawal cycle alongside them.\
-\
-This functionality has been introduced to account for the fact that lenders have the ability to onboard themselves by self-generating an access credential if a policy hook is in place: a borrower may decide that someone that has self-onboarded is not a counterparty they wish to be exposed to.
+A new addition to Wildcat V2 is that a borrower has the optional ability (set on market deployment) to purchase market tokens directly from any account that holds them. If invoked, this exchanges a number of market tokens from said wallet for an equivalent amount of the underlying asset directly from the borrower address, and immediately invokes a withdrawal request for the market tokens to be claimed by the borrower. This feature _cannot_ be used if a market is delinquent or in a fixed term: if people are already trying to withdraw, you cannot use this to queue-jump any preferred lenders - you must settle up with everyone asking for their assets back first.
 
-More generally, this ability resolves an issue within V1 markets where a borrower may have been forced to terminate a market before they were ready because a lender refused to exit their position in order to accrue further interest.
+This power is very wide-ranging, and in combination with an open token transferability configuration permits the borrower to repurchase tokens even from accounts where the result is disastrous, such as knocking the balance of assets out of sync in a Uniswap or Curve pool. More restrained token transferability options somewhat evade this, as it is much harder to mark smart contracts as known lenders, and addresses typically need to call a role provider itself to receive a deposit credential.
+
+Sadly, we can't constrain the protocol code to insist that holders of market tokens cannot be smart contracts, both because several large parties make use of smart contract wallets via platforms such as Fireblocks, and we simultaneously encourage all parties involved to use smart contract wallets such as Safe multisigs.
+
+Nonetheless, you may find that if you have both force buyback and open transferability in a market, no secondary markets for the debt arises due to the Sword of Damocles hanging over everyone: even if by mistake, a borrower could destroy backing for LP tokens or other such collateral purposes.
+
+If a market is deployed with force buyback enabled, it can be permanently disabled by the borrower at any time: say a secondary market arises for the debt and the borrower wants to provide assurance.\
+\
+This functionality has been introduced to account for two particular scenarios:
+
+* A borrower may reduce the maximum capacity of a market, but find there are still a large number of deposits over and above the new capacity that refuse to withdraw. In this case, in order to reduce their future interest obligations, without this a borrower would likely be forced to close the market and redeploy, which is a gigantic hassle in terms of both deployment costs and logistics.
+* The fact that lenders have the ability to onboard themselves by self-generating deposit credentials through role providers: even though a lender may technically meet the requirements laid down, a borrower may decide that they are not a counterparty they wish to be exposed to (say, Three Arrows Capital decides they want to lend to someone).
 
 ## Terminating A Market
 
