@@ -50,7 +50,7 @@ description: It's dangerous to go alone - learn these.
 * Arises via the passage of time through interest if the borrower borrows right up to their reserve ratio.
 * Can also arise if a [lender](terminology.md#lender) makes a [withdrawal request](terminology.md#withdrawal-request) that exceeds the market's available liquidity.
 * A market being delinquent for an extended period of time (as specified by the [grace period](terminology.md#grace-period)) results in the [penalty APR](terminology.md#penalty-apr) being enforced in addition to the [base APR](terminology.md#base-apr) and any [protocol APR](terminology.md#protocol-apr) that may apply.
-* 'Cured' by [depositing](terminology.md#deposit) sufficient assets into the market as to reattain the required collateral obligation.
+* 'Cured' by the borrower [depositing](terminology.md#deposit) sufficient assets into the market as to reattain the required collateral obligation.
 
 #### **Deposit**
 
@@ -58,6 +58,13 @@ description: It's dangerous to go alone - learn these.
   * The act of sending [assets](terminology.md#underlying-asset) as a [lender](terminology.md#lender) to a [market](terminology.md#market) for the purposes of being [borrowed](terminology.md#borrow) by the [borrower](terminology.md#borrower),
   * The act of sending assets as a borrower to a market for the purposes of being [withdrawn](terminology.md#withdrawal-request) by lenders,
   * A term for the lenders' assets themselves once in a market.
+
+#### Deposit Credential
+
+* Permission granted to a [lender](terminology.md#lender) through a [role provider](terminology.md#role-provider) in order to [deposit](terminology.md#deposit) into a [market](terminology.md#market).
+* The set of requirements for receiving a deposit credential from a given role provider are arbitrary, determined by the [borrower](terminology.md#borrower) according to their needs.
+* May be associated with a TTL (Time-To-Live) configured by the borrower, after which the deposit credential expires and a new one must be acquired from a role provider in order to make any further deposits.
+* Depositing into a market while holding a valid deposit credential (or receiving [market tokens](terminology.md#market-token) while in possession of one) marks lender as a [known lender](terminology.md#known-lender).
 
 #### **Escrow Contract**
 
@@ -69,6 +76,25 @@ description: It's dangerous to go alone - learn these.
 #### Expired Withdrawal
 
 * A [withdrawal request](terminology.md#withdrawal-request) that could not be fully honoured by [assets](terminology.md#underlying-asset) in the [unclaimed withdrawals pool](terminology.md#unclaimed-withdrawals-pool) within a single [withdrawal cycle](terminology.md#withdrawal-cycle).
+
+#### Fixed Term
+
+* Parameter configured by a [borrower](terminology.md#borrower) when creating a new [market](terminology.md#market).
+* Determines the length of time after market deployment in which [withdrawal requests](terminology.md#withdrawal-request) and reductions in [base APR](terminology.md#base-apr) will be rejected by the market.
+* After this time has elapsed, the market converts into an '_open term_' market where the above are permitted. Once a market has converted to open term, it cannot be moved back into a fixed term.
+* Default value is zero (immediately open term).
+* Associated with two distinct market configuration flags that allow a borrower to either prematurely close a market or bring the maturity/conversion time closer to the present.
+* Cannot be extended once a market is deployed.
+
+#### **Force Buyback**
+
+* Permission toggled by a [borrower](terminology.md#borrower) when creating a new [market](terminology.md#market).
+* If enabled, permits the borrower to purchase [market tokens](terminology.md#market-token) directly from a [lender](terminology.md#lender), subverting the market by swapping the market tokens for an equivalent amount of [underlying assets](terminology.md#underlying-asset) sourced from the borrower.
+* Cannot be used if a market is [delinquent](terminology.md#delinquency) or currently in a [fixed term](terminology.md#fixed-term) state.
+* If performed for the first time on a market, marks the borrower as a [known lender](terminology.md#known-lender).
+* Immediately forces the market tokens into a [withdrawal request](terminology.md#withdrawal-request) on behalf of the borrower.
+* Can be permanently disabled for a market at the borrower's discretion.
+* **Note**: if a market has both force buyback enabled _and_ open [token transferability](terminology.md#token-transferability), a borrower is capable of force rebuying market tokens from LP contracts that hold market tokens such as Uniswap or Curve pools. Despite there being a warranty in the (optional) template Master Loan Agreement related to this point, the potential for substantial damage exists here.
 
 #### **Grace Period**
 
@@ -100,6 +126,11 @@ description: It's dangerous to go alone - learn these.
 * A base contract defining behaviour for a kind of [hook contract](terminology.md#hook-instance) approved by factory operators.
 * Copied when borrowers deploy hook instances.
 
+#### **Known Lender**
+
+* A state marked within the [market](terminology.md#market) contracts for any [lender](terminology.md#lender) that either [deposited](terminology.md#deposit) [assets](terminology.md#underlying-asset) into a market or received [market tokens](terminology.md#market-token) while holding a valid [deposit credential](terminology.md#deposit-credential).
+* Any known lender is always capable of making a [withdrawal request](terminology.md#withdrawal-request) unless i) the market is in a [fixed term](terminology.md#fixed-term) or ii) the known lender is marked as sanctioned by the [sentinel](terminology.md#sentinel).
+
 #### **Lender**
 
 * Both:
@@ -126,6 +157,12 @@ description: It's dangerous to go alone - learn these.
 * [Supply](terminology.md#supply) rebases after every non-static call to the market contract depending on the total current APR of the market.
 * Can only be redeemed by authorised lender addresses (not necessarily the same one that received the market tokens initially).
 * Name and symbol prefixes are customisable in market creation, prepending to the name and symbol of the underlying asset.
+
+#### Minimum Deposit
+
+* Parameter required of [borrower](terminology.md#borrower) when creating a new [market](terminology.md#market).
+* Determines the amount of [assets](terminology.md#underlying-asset) below which any attempts by a [lender](terminology.md#lender) to [deposit](terminology.md#deposit) in a single transaction will be rejected.
+* Defaults to zero, can be configured after launch by the borrower.
 
 #### Outstanding Supply
 
@@ -164,10 +201,19 @@ description: It's dangerous to go alone - learn these.
 * Increases temporarily when a borrower reduces the [base APR](terminology.md#base-apr) of a [market](terminology.md#market) (fixed-term increase).
 * A market which has insufficient assets in the market to meet the reserve ratio is said to be [delinquent](terminology.md#delinquency), with the [penalty APR](terminology.md#penalty-apr) potentially being enforced if the delinquency is not cured before the [grace tracker](terminology.md#grace-tracker) value exceeds that of the [grace period](terminology.md#grace-period) for that particular market.
 
+#### Role Provider
+
+* A smart contract registered to an access [hook instance](terminology.md#hook-instance) for a [market](terminology.md#market) which grants [deposit credentials](terminology.md#deposit-credential) to would-be [lenders](terminology.md#lender) according to a specific set of requirements (i.e. lender has a Coinbase Verification, and/or lender is not marked as sanctioned by the Chainalysis oracle).
+* Two variants: 'pull' providers which are contracts that can be queried by wallet address to determine suitability, or 'push' providers that explicitly tell the market _which_ addresses are suitable.
+* Deployed by the [borrower](terminology.md#borrower) (either from a template or constructed themselves).
+* Can be arbitrarily added and removed to a market after deployment by the borrower.
+* **Note:** the removal of all role providers from a hook instance for a market means that no more deposit credentials can be granted. However, all [known lenders](terminology.md#known-lender) will always be able to make [withdrawal requests](terminology.md#withdrawal-request) provided the market is not in a [fixed term](terminology.md#fixed-term) and they are not sanctioned.
+
 #### **Sentinel**
 
 * Smart contract that ensures that addresses which interact with the protocol are not flagged by the [**Chainalysis oracle**](https://go.chainalysis.com/chainalysis-oracle-docs.html) for sanctions.
 * Can deploy escrow contracts to excise a [lender](terminology.md#lender) flagged by the oracle from a wider [market](terminology.md#market).
+* Facilitates the deployment of [escrow contracts](terminology.md#escrow-contract).
 
 #### **Supply**
 
@@ -176,6 +222,15 @@ description: It's dangerous to go alone - learn these.
 * Can only be reduced by burning market tokens as part of a [withdrawal request](terminology.md#withdrawal-request) or [claim](terminology.md#claim).
 * [Reserve ratios](terminology.md#reserve-ratio) are enforced against the supply of a market, _not_ its [capacity](terminology.md#capacity).
 * Capacity can be reduced below current supply by a [borrower](terminology.md#borrower), but this only prevents the further deposit of assets until the supply is once again below capacity.
+
+#### Token Transferability
+
+* Parameter required of [borrower](terminology.md#borrower) when creating a new [market](terminology.md#market).
+* Determines whether [market tokens](terminology.md#market-token) can be transferred from their holders to arbitrary wallets.
+* Three configurations options (default is Open):
+  * **Open**: market tokens can be transferred anywhere at any time.
+  * **Restricted**: market tokens can only be transferred to either [known lenders](terminology.md#known-lender) or addresses holding a valid (unexpired) [deposit credential](terminology.md#deposit-credential).
+  * **Disabled**: market tokens can only be sent back to the market as part of a [withdrawal request](terminology.md#withdrawal-request).
 
 #### **Unclaimed Withdrawals Pool**
 
@@ -187,7 +242,7 @@ description: It's dangerous to go alone - learn these.
 
 * Parameter required of [borrower](onboarding.md#borrowers) when creating a new [market](terminology.md#market).
 * The asset which the borrower is seeking to [borrow](terminology.md#borrow) by deploying a market - for example DAI (Dai Stablecoin) or WETH (Wrapped Ether).
-* Can be _any_ ERC-20 token.
+* Can be _any_ ERC-20 token (however, rebasing tokens break the underlying interest model).
 
 #### **Withdrawal Cycle**
 

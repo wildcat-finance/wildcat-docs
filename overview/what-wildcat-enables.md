@@ -10,7 +10,7 @@ Conversely, Wildcat is designed so that lenders both know where they stand and c
 
 ### For Borrowers
 
-A borrower may wish to create a completely uncollateralised market to borrow 4,000,000 USDC paying 15% to lenders that deposit into it, where they have seven days to repay any withdrawal request they receive before an additional penalty rate of 10% kicks in. They may also wish to set it up such that lenders cannot withdraw for the first six months that the market exists (thereafter switching to open-term), that they must deposit at least 100,000 USDC per transaction and they must provide a ZK proof that they have passed a third-party KYC check confirming they are not resident in the United States. The debt tokens issued by the resulting market can either be freely tradable, constrained to other approved lenders, or completely locked down.
+A borrower may wish to create a completely uncollateralised market to borrow 4,000,000 USDC paying 15% to lenders that deposit into it, where they have seven days to repay any withdrawal request they receive before an additional penalty rate of 10% kicks in. They may also wish to set it up such that lenders cannot withdraw for the first six months that the market exists (thereafter switching to open-term), that they must deposit at least 100,000 USDC per transaction and they must prove that they have a Coinbase Verification tied to that wallet. The debt tokens issued by the resulting market can either be freely tradable, constrained to other approved lenders, or completely locked down.
 
 Wildcat enables this and much more, depending on the selected market configuration, which is presented in an easy-to-understand user interface.
 
@@ -30,15 +30,15 @@ Wildcat also makes use of fixed rates, which - while adjustable in circumstances
 
 Wildcat V2 enables borrowers to set up structures such as Masterchef contracts on top of their markets: a borrower may offer you a given rate of interest, but also stream additional tokens to you as an additional incentive for you to provide credit. We can easily envisage this being used as a liquidity mining mechanism of sorts, should it be opted for.
 
-Finally, Wildcat has drawn up and open-sourced a Master Loan Agreement that is cognisant of the fact that your engagement is in fact a credit agreement taking place on-chain between yourself and the borrower. We encourage lenders to make use of it if the borrower has opted to make use of it.
+Finally, Wildcat has drawn up and open-sourced a Master Loan Agreement that is cognisant of the fact that your engagement is in fact a credit agreement taking place on-chain between yourself and the borrower. We encourage lenders to sign it if the borrower has opted to make use of it.
 
 **Put simply, with Wildcat, you know what you're getting.**
 
 Now, a bit that we need to include here so that we don't accidentally taunt a regulator:
 
-Wildcat does not provide any assurances or underwriting regarding the financial health or creditworthiness of a borrower. Markets will - in the fullness of time - include reference to external reports or dashboards attesting to liquid assets where they exist, but lenders are expected to exercise their judgment as to whether Borrower X is likely going to be good on their word.&#x20;
+Wildcat does not provide any assurances or underwriting regarding the financial health or creditworthiness of a borrower. Markets will - in the fullness of time - include reference to external reports or dashboards attesting to borrower assets where they exist, but lenders are expected to exercise their judgment as to whether Borrower X is likely going to be good on their word.&#x20;
 
-Counterparty risk is very real, and usage of this protocol requires trust in your borrower: Wildcat provides no insurance fund for defaults, and cannot help you if a borrower disappears with your assets.&#x20;
+Counterparty risk is very real, and usage of this protocol requires trust in your borrower: Wildcat provides no insurance fund for defaults, and cannot help you if a borrower disappears with your assets. There is risk here beyond the usual on-chain vectors: _hic sunt dragones_.&#x20;
 
 ### Interested?
 

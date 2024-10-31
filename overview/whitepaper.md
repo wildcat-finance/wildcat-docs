@@ -5,12 +5,11 @@ The bulk of the ideology, design decisions and high-level logic behind the proto
 Most of the content is expanded on in this Gitbook, however, so if you've read this site top to bottom you're not going to be missing out by skipping it.\
 
 
-**v2.0 \[Release Date: Pending]:**
+**v2.0 \[Release Date: 21 October 2024]:**
 
-[https://github.com/wildcat-finance/wildcat-whitepaper/blob/main/whitepaper\_v2.0.pdf](https://github.com/wildcat-finance/wildcat-whitepaper/blob/main/whitepaper\_v2.0.pdf)\
-\[placeholder link]
+[https://github.com/wildcat-finance/wildcat-whitepaper/blob/main/whitepaper\_v2.0.pdf](https://github.com/wildcat-finance/wildcat-whitepaper/blob/main/whitepaper\_v2.0.pdf)
 
-**v1.0 \[Release Date: 13 November 2023]:**\
+**Soon To Be Deprecated - v1.0 \[Release Date: 13 November 2023]:**\
 \
 [https://github.com/wildcat-finance/wildcat-whitepaper/blob/main/whitepaper\_v1.0.pdf](https://github.com/wildcat-finance/wildcat-whitepaper/blob/main/whitepaper\_v1.0.pdf)
 
