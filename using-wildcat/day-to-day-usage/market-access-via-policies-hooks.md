@@ -1,6 +1,6 @@
 # Market Access Via Policies/Hooks
 
-When you first encounter a Wildcat market, you will very likely be prevented from depositing unless you meet certain requirements specified by the borrower, to make sure that they're not making use of funds sourced from Lazarus, or worse, Ripple enthusiasts.
+When you first encounter a Wildcat market, you will be prevented from depositing unless you meet certain requirements specified by the borrower, to make sure that they're not making use of funds sourced from Lazarus, or worse, Ripple enthusiasts.
 
 The way that this worked in Wildcat V1 was that the borrower had to perform due diligence on each would-be lender that approached them and subsequently add their address to a controller contract via an on-chain transaction. This was a huge friction point, and one of the primary reasons we built V2.
 
@@ -29,4 +29,4 @@ Depending on the way that a market is configured by a borrower, gaining a deposi
 
 When you have acquired a deposit credential granting you access to one or more Wildcat markets, it's worth noting that it may eventually expire, depending on whether or not the borrower has set a 'Time-To-Live' limit on it. This is to reduce the risk of an address being compromised and funds being deposited from an entity that is not the party which initially received the credential (unlikely as this may be). Credentials can be refreshed, assuming that the role provider that granted it is still tied to the market: borrowers can add and remove role providers from their access hook at will.
 
-Note also that any address that received a credential and either (i) deposited while it was active or (ii) received market tokens from a third party while it was active is marked as a _known lender_. Known lenders permanently retain the ability to file withdrawal requests, so that a borrower is incapable of removing all role provider contracts from a market and removing the ability for anyone to exit.
+Note also that any address that received a credential and either (i) deposited while it was active or (ii) received market tokens from a third party while it was active is marked as a _known lender_. Known lenders permanently retain the ability to file withdrawal requests, so that a borrower is incapable of removing all role provider contracts from a market and erasing the ability for anyone to exit.
