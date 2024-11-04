@@ -195,7 +195,7 @@ n) Each Party represents and warrants that it has agreed to be bound by the term
 
 ### **4) Default**
 
-Any of the following events in respect of a Party (the “Defaulting Party”) shall constitute an event of default, and shall be herein referred to as an “Event of Default”:&#x20;
+Any of the following events in respect of a Party (the “**Defaulting Party**”) shall constitute an event of default, and shall be herein referred to as an “Event of Default”:&#x20;
 
 a) the failure of the Borrower to return enough Equivalent Loaned Assets to honour a Lender's Withdrawal request such that the Penalty APR has applied for 90 days;
 
