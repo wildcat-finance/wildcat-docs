@@ -2,17 +2,17 @@
 
 **This document is a template, currently under review prior to Wildcat V2 mainnet launch.**
 
-This template master loan agreement (MLA) can be selected by borrowers wholesale for their use when deploying a market, adjusted according to their desires, or replaced with their own variant (which may be no agreement at all, in which case lenders are encouraged to be wary).
+This template master loan agreement (MLA) can be selected by borrowers wholesale for their use when deploying a market. The borrower may also elect to not offer this, in which case instances of what constitutes default are less explicitly defined for that market: caveat emptor.
 
-As a lender, please ensure that you are comfortable with the agreement you are presented with by a market before engaging: it may not be the same version of the agreement presented below.
+As a lender, please ensure that you are comfortable with the agreement you are presented with by a market before engaging.
 
 Note that this template does not require personal details of the lender to be attested to, rather relying on ownership of the wallet entering into the agreement. This is so as to encourage the minimisation of personal data tied to lenders that sits server-side, despite being in an encrypted format.
 
-Fields highlighted \[_<mark style="background-color:yellow;">in this way</mark>_] correspond to data which is either inserted into the agreement based on the borrower profile, parameters selected at market deployment and dates signed, or otherwise require manual selection by the borrower (e.g. Section 6).
+Fields highlighted \[_<mark style="background-color:yellow;">in this way</mark>_] correspond to data which is either inserted into the agreement based on the borrower profile, parameters selected at market deployment and dates signed, or otherwise require manual selection by the borrower.
 
 Regardless of the form it takes, if an MLA is adopted for a market, it is pre-signed by the borrower and presented to each lender to countersign prior to their first deposit into a market via the website.
 
-Encrypted hashes of the resulting agreement are stored on a standalone server, and can only be decrypted and viewed by lenders/borrowers in possession of the private keys to relevant Ethereum addresses. This is to account for the possibility that a borrower enforces an MLA variant which requires certain personal details of the lender - such as their name - to be provided. Lenders are encouraged to not enter Boaty McBoatface here if this happens: the bulk of the risk in a trusted credit agreement falls on them, this document is for their protection, and a court might look dimly on someone who presents that.
+Encrypted hashes of the resulting agreement are stored on a standalone server, and can only be decrypted and viewed by lenders/borrowers in possession of the private keys to relevant Ethereum addresses. This is to account for the possibility that in future iterations a borrower may present an customised MLA variant which requires certain personal details of the lender - such as their name - to be provided. Lenders are encouraged to not enter Boaty McBoatface here if this happens: the bulk of the risk in a trusted credit agreement falls on them, this document is for their protection, and a court might look dimly on someone who presents that.
 
 **Note**: _The security measures for handling this data are currently in active development - the final approach may require additional layers such as a site login. This paragraph will be edited to reflect the chosen solution once implemented_.
 
@@ -51,8 +51,6 @@ NOW, THEREFORE, in consideration of the foregoing and other good and valuable co
 “**Equivalent**” means, with respect to Loaned Assets, Assets equivalent to those Loaned Assets; Assets are “equivalent to” other Assets for the purposes of this Agreement if they are of an identical type, nominal value, description and (except where otherwise stated) amount, as those other Assets.
 
 “**Fixed Term State**” means the optional Borrower-configured period of time after the deployment of a Market during which Withdrawals from Lenders are rejected.
-
-“**Force Buyback**” means, with respect to a Loan, the optional Borrower-configured power to directly and immediately exchange Market Tokens for Equivalent Loaned Assets, as further detailed in Section 2(g).
 
 “**Grace Period**” means the period of time for which a Market can be Delinquent on a rolling basis before the Penalty APR becomes payable.
 
@@ -149,15 +147,9 @@ A Loan will terminate upon the earlier of:
 (iv) the date agreed by the Lender and the Borrower that a Loan shall terminate as a result of any or all of the Loaned Assets under such law applicable to the Lender in the Borrower’s and the Lender’s mutual discretion, becoming at risk of being:&#x20;
 
 1. considered a security, swap, derivative, or other similarly-regulated financial instrument or asset by any regulatory authority having jurisdiction over the Lender, whether governmental, industrial, or otherwise, or by any court of law or dispute resolution organisation, arbitrator, or mediator having jurisdiction over the Lender, such that the Lender is unable to perform its obligations under the Agreement; or&#x20;
-2. subject to future regulation materially impacting this Agreement, the Loan, or Lender’s business such that the Lender is unable to perform its obligations under this Agreement;
+2. subject to future regulation materially impacting this Agreement, the Loan, or Lender’s business such that the Lender is unable to perform its obligations under this Agreement.
 
-(v) the date of a Force Buyback for all Market Tokens held by the Lender.
-
-#### g) Forced Buybacks&#x20;
-
-Provided that the Market was deployed with Force Buyback permissions, the Borrower may elect to directly and immediately exchange the Market Tokens held by any Wallet Address for Equivalent Loaned Assets in accordance with the terms of Section 2(a), provided that (i) the Market is not Delinquent at the time of the Force Buyback, and (ii) the Market is not in a Fixed Term State. The Force Buyback permission can be irrevocably removed from a Market by a Borrower at their discretion.
-
-#### h) Taxes and Fees&#x20;
+#### g) Taxes and Fees&#x20;
 
 Neither the Borrower nor the Lender shall have any liability to the other Party for any taxes due under this Agreement.
 
@@ -181,17 +173,15 @@ g) The Lender represents and warrants that it has, or will have at the time of t
 
 h) The Borrower represents and warrants that it has, or will have at the time of the transfer of any Assets (as Equivalent Loaned Assets), the right to transfer such Assets subject to the terms and conditions hereof, and free and clear of all security, liens, charges, mortgages and encumbrances other than those arising under this Agreement.
 
-i) The Borrower represents and warrants that in the event that a Market has been configured so as to have both Force Buyback power and freely transferable Token Transferability, they will not execute the Force Buyback power on any Wallet Address associated with a smart contract that could lead to exogenous losses for any holder of Market Tokens, such as, but not limited to, Uniswap V2 liquidity pools as defined at [https://docs.uniswap.org/contracts/v2/concepts/core-concepts/pools](https://docs.uniswap.org/contracts/v2/concepts/core-concepts/pools).
+i) Each Party represents and warrants that it has all consents of any governmental or other authority that are required to be obtained by it with respect to this Agreement to which it is a Party and will use all reasonable efforts to maintain these in full force and effect, and obtain any that may become necessary in the future.
 
-j) Each Party represents and warrants that it has all consents of any governmental or other authority that are required to be obtained by it with respect to this Agreement to which it is a Party and will use all reasonable efforts to maintain these in full force and effect, and obtain any that may become necessary in the future.
+j) Each Party represents and warrants that it shall provide such information considered reasonably necessary to allow the other Party to conduct appropriate anti-money laundering and know your customer checks as may be required.
 
-k) Each Party represents and warrants that it shall provide such information considered reasonably necessary to allow the other Party to conduct appropriate anti-money laundering and know your customer checks as may be required.
+k) Each Party represents and warrants that, to the best of its knowledge and belief, no Assets, as Loaned Assets, are, or are related to, the proceeds of criminal activity.
 
-l) Each Party represents and warrants that, to the best of its knowledge and belief, no Assets, as Loaned Assets, are, or are related to, the proceeds of criminal activity.
+l) Each Party represents and warrants that it has (i) undertaken sufficient due diligence regarding the Chainalysis Sanctions Screening Oracle (the “**Oracle**”) operation; (ii) understood that a Lender’s Equivalent Loaned Assets may be transferred to a Sanctions Escrow contingent on a Sanctions Event; and (iii) agreed to bear all risks associated with potential Oracle errors or misdesignations, subject to the dispute resolution process outlined in Section 13.
 
-m) Each Party represents and warrants that it has (i) undertaken sufficient due diligence regarding the Chainalysis Sanctions Screening Oracle (the “**Oracle**”) operation; (ii) understood that a Lender’s Equivalent Loaned Assets may be transferred to a Sanctions Escrow contingent on a Sanctions Event; and (iii) agreed to bear all risks associated with potential Oracle errors or misdesignations, subject to the dispute resolution process outlined in Section 13.
-
-n) Each Party represents and warrants that it has agreed to be bound by the terms and conditions of the Services Agreement.
+m) Each Party represents and warrants that it has agreed to be bound by the terms and conditions of the Services Agreement.
 
 ### **4) Default**
 
@@ -211,7 +201,7 @@ Upon the occurrence and during the continuation of any Event of Default by the D
 
 ### 6) Liability for Attacks on the Protocol
 
-\[_<mark style="background-color:yellow;">The Lender</mark>_] \[_<mark style="background-color:yellow;">The Borrower</mark>_] \[_<mark style="background-color:yellow;">Neither Party</mark>_] will \[_<mark style="background-color:yellow;">not</mark>_] be liable for any Loss arising from any attack on the Protocol, including any such potential attacks as may be detailed in the Risk Disclosure Statement. For the avoidance of doubt, in no event shall the Service Provider be liable for any such Loss arising from any attack on the Protocol.
+Neither party will be liable for any Loss arising from any attack on the Protocol, including any such potential attacks as may be detailed in the Risk Disclosure Statement. For the avoidance of doubt, in no event shall the Service Provider be liable for any such Loss arising from any attack on the Protocol.
 
 ### 7) Alternative Arrangements in the Event of Loss of Wallet Address Access
 
@@ -354,15 +344,13 @@ The following Loan shall be made by the Lender to the Borrower in accordance wit
 
 **Market Token Transferability**: \[_<mark style="background-color:yellow;">Open/Restricted/Disabled</mark>_]
 
-**Force Buybacks Enabled**: _\[<mark style="background-color:yellow;">Yes/No</mark>_]
-
 **Chain ID**: \[_<mark style="background-color:yellow;">insert chain ID</mark>_]
 
 **Chainalysis Sanctions Screening Oracle**: <mark style="background-color:yellow;">\[</mark>_<mark style="background-color:yellow;">insert Chainalysis oracle address</mark>_]
 
 **Loan Effective Date**: \[_<mark style="background-color:yellow;">insert date signed by Lender</mark>_]
 
-The Lender hereby acknowledges that it is aware that the Base APR and maximum Amount of Digital Asset To Be Loaned can be adjusted by the Borrower in accordance with Section 2 of the Agreement. The Lender further acknowledges that it is aware that if (i) Force Buybacks are enabled for the Market, (ii) the Market is not Delinquent and (iii) the Market is not in a Fixed Term State, the Borrower has the power to directly and immediately exchange Market Tokens held by any Wallet Address for an equal amount of Equivalent Loaned Assets, in accordance with Section 2(g) of the agreement. The Lender further acknowledges that if the Market is in a Fixed Term State, no Withdrawal requests will be processed until the earlier of i) the maturity specified above elapsing since the deployment of the Market, ii) the maturity being reduced by the Borrower to a period which has elapsed, or iii) the Market being terminated prematurely by the Borrower.\
+The Lender hereby acknowledges that it is aware that the Base APR and maximum Amount of Digital Asset To Be Loaned can be adjusted by the Borrower in accordance with Section 2 of the Agreement. The Lender further acknowledges that if the Market is in a Fixed Term State, no Withdrawal requests will be processed until the earlier of i) the maturity specified above elapsing since the deployment of the Market, ii) the maturity being reduced by the Borrower to a period which has elapsed, or iii) the Market being terminated prematurely by the Borrower.\
 \
 Borrower: \[_<mark style="background-color:yellow;">insert Borrower’s full legal name</mark>_]
 
