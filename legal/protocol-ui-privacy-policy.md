@@ -1,158 +1,139 @@
-# Protocol UI Privacy Policy
+---
+description: 'Updated and effective: 16 January 2025'
+---
 
-## Privacy Policy
+# Privacy Policy
 
-This privacy policy describes how we, Wildcat (“Wildcat”, “we” or “us”), the data controller, collect, store and process information about individual visitors to this website.\
-\
-This privacy policy only applies to www.wildcat.finance and does not apply to linked website that are not owned and controlled by us.
+## Introduction
 
-**Our commitment to your data and to data protection**
+Wildcat Foundation is committed to protecting and respecting your privacy. This Privacy Policy (the “Policy”) describes how Wildcat and its affiliates (“we”, “us”, or “our”), might collect, use, and/or share your personal data when you access our company websites, including but not limited to, wildcat.finance (including the Wildcat app) and its sub-domains, and all of our other properties, products, and services (collectively the “Services”).
 
-Personal data is any information relating to personal or material circumstances that relates to an identified or identifiable individual. This includes, for example, your name, date of birth, e-mail address, postal address, or telephone number as well as online identifiers such as your IP address. In contrast, information of a general nature that cannot be used to determine your identity is not personal data. This includes, for example, the number of users of a website.
+For the purposes of this Policy, personal data is any data related to an identified or identifiable individual. Your use of the Services is subject to this Policy as well as our Terms of Use. If you do not agree with the terms of this Policy, do not access or use these Services, or any other aspect of our business.
 
-In principle, we will only use your personal data in accordance with the applicable data protection laws, in particular the British Virgin Islands' Data Protection Act (DPA), the General Data Protection Regulation (GDPR), and of course only as described in this privacy policy.
+## What Personal Data We Collect
 
-However, we reserve the right to put this data to additional uses to the extent permitted or required by law or necessary to support legal or criminal investigations. In this case, we will inform you again about this further data processing to the extent required by law and obtain your consent.
+When you visit our company websites and use our Services, we may collect the following data:
 
-In the next sections we explain when and how we process personal data about you when you visit our website.
+Publicly available blockchain data when you connect your non-custodial wallet to the Services. When you connect your non-custodial blockchain wallet to the Services, we may collect and log your publicly-available blockchain address in order to learn more about your use of the Services and to screen your wallet for any prior illicit activity. Note that blockchain addresses are publicly-available data that are not created or assigned by us or any central party, and by themselves are not personally identifying.
 
-**Relevant legal basis**
+Information from localStorage and other tracking technologies. We and our third-party services providers may access and collect data from localStorage, mobile deviceID, cookies, web beacons, and other similar technologies to provide and personalise the Services and features of the Services for you across sessions.
 
-In accordance with the DPA and the GDPR, the following legal basis, unless specifically described below apply to the processing of your personal data:
+Direct Communications that you send to us. Whenever you reach out to us through email, social media, or other support channels like X, Discord, or Telegram, or engage in surveys or questionnaires, we will receive the data and communications you share. It's important to note that we will not try to link any of this data to your wallet address, IP address, or any other personal details.
 
-* the legal basis for obtaining consent is Art. 6 para. 1 lit. a) and rt. 7 GDPR,
-* the legal basis for processing in order to fulfil our services and carry out contractual measures and respond to enquiries is Art. 6 para. 1 lit. b) GDPR,
-* the legal basis for processing in order to fulfil our legal obligations is Art. 6 para. 1 lit. c) GDPR, and
-* the legal basis for processing in order to protect our legitimate interests is Art. 6 para. 1 lit. f) GDPR.
+Information from job applicants. When you apply for a position with us, we collect all data you may provide, including name, email phone, work and immigration status, and any other resume, cover letter, or free form text you include.
 
-**Your rights**
+## How We Use Your Data
 
-These rights are standardised in both the DPA and GDPR. This includes:
+As the operator of the Websites and Services, we take the protection of your personal data very seriously. We may use your personal data for the following purposes:
 
-* the right to information (Article 15 GDPR),
-* the right to rectification (Article 16 GDPR),
-* the right to erasure (Article 17 GDPR),
-* the right to restriction of data processing (Article 18 GDPR),
-* the right to data portability (Article 20 GDPR),
-* the right to object to data processing (Article 21 GDPR),
-* the right to revoke any consent you have given (Art. 7 (3) GDPR), and
-* the right to lodge a complaint with the competent supervisory authority (Art. 77 GDPR).
+User support and communication. We may use the data we collect to provide you with support and to answer any requests you may have about the Services, and to share information with you about our Services.
 
-Please contact us at any time with questions and suggestions regarding data protection and to enforce your rights as a data subject.
+Providing services if applicable. We use the data we collect to provide, maintain, customise and improve our Services and features of our Services. We may use this data in an aggregated form, to compile information across multiple users.
 
-**Purposes of use of personal data and legal basis**
+Safety and security. We may use the data we collect to protect against, investigate, and stop fraudulent, unauthorised, or illegal activity. We may also use it to address security risks, solve potential security issues such as bugs, enforce our agreements, and protect our users.
 
-_a) Log Files_
+Legal and regulatory compliance. We may use the data we collect as needed or requested by regulators, government entities, and law enforcement to comply with applicable laws and regulations.
 
-We only collect and process access data that your internet browser automatically transmits to us for technical reasons in order to provide the website. Depending on the access protocol used, the protocol data record contains general information with the following contents: Your session data (usage behaviour, length of stay, which links were clicked on, etc.), your abbreviated and unabbreviated IP address, your browser version, your operating system, your website-specific settings, your cookie IDs, your pixel IDs. This data does not allow any direct inference to your person and is processed to improve our website offer and to defend against attempted attacks on our web server. The legal basis for the processing of your personal data is Art. 6 para. 1 lit. f) GDPR. We have a legitimate interest in presenting you with a website optimised for your browser and in enabling communication between our server and your device.
+Due diligence processing. If applicable, we may use the data we collect to process your job application (or other relevant counterparty due diligence required).
 
-_b) Hosting_
+Data anonymisation and aggregation. We may aggregate or anonymise your personal data, so it no longer identifies you as an individual. We may use this aggregated or anonymised data for statistical analysis, research, or other purposes to improve our Services and better understand our customer base.
 
-The hosting services used by us for the purpose of operating this website is {TODO: REPLACE, PROBABLY AWS}. In doing so they process usage data, meta data and communication data of customers, interested parties and visitors of our website and services, on the basis of our legitimate interests in an efficient and secure provision of the website and services in conjunction with the provision of services and the conclusion of the contract for our services, including but not limited to our services Art. 6 para. 1 lit. f) GDPR.
+Other. If we need to use your personal data for any other purpose, we will ask you for consent and will use your data only on receiving your consent and then, only for the purpose(s) for which grant consent unless we are required to do otherwise by law.
 
-_c) Contact requests_
+You may opt-out of direct marketing communications by writing to us at contact@thewildcat.foundation. Do note that if you do not allow us to collect or process the required personal information or withdraw the consent to process the same for the required purposes, you may not be able to access or use the services for which your information was sought.
 
-When contacting us (e.g., via e-mail, or social media), your details may be processed for the purpose of handling the request and its processing. Your details may be stored in a customer relationship management system or comparable enquiry organisation. We delete the enquiries if they are no longer necessary. We review the necessity every two years; furthermore, the legal archiving obligations apply. The legal basis for the processing of your personal data is Art. 6 para. 1 lit. b) GDPR.
+We may use personal data relevant to any legal claims, disputes, or regulatory inquiries to comply with applicable laws and regulations. This includes using such data to investigate or address claims or disputes relating to the use of our Services, or as required by regulators, government entities, and official inquiries.
 
-_d) Business-related processing_
+We use cookies (small, often encrypted, text files that are stored on your computer or mobile device) and similar technologies (such as web beacons, pixels, and scripts) (collectively, “Cookies”) to provide you with certain functions on our Services and help collect data. This section explains how we use Cookies to collect information about the way you use our Services and how you can control them.
 
-In addition, we process: Contract data (e.g., subject matter of the contract, term, category of customer), and Payment data (e.g., bank details, payment history). of our customers, prospective customers for the purpose of providing contractual services, service and customer care, marketing, advertising, and market research. The legal basis for the processing of your personal data is Art. 6 para. 1 lit. b) GDPR.&#x20;
+## How We Use Cookies
 
-_e) Provision of services_
+We use Cookies to track how you use our Services by providing usage statistics. Cookies are also used to deliver our information (including updates) and allow account authentication to you based upon your browsing history and previous visits to the Services. We may combine the information we collect from Cookies with personal information that we have collected from you to learn more about how you use our Services to improve it.
 
-We process the data of our customers within the scope of our services. In doing so, we process:
+## Types of Cookies
 
-Contact data (e.g., e-mail, telephone numbers), content data (e.g., text entries, messages), usage data and metadata (e.g., in the context of evaluating and measuring the success of marketing measures). The legal basis for the processing of your personal data is Art. 6 para. 1 lit. b) GDPR.
+We may use both session Cookies (which expire once you close your web browser) and persistent Cookies (which stay on your device until you delete them). To make it easier for you to understand why we need them, the Cookies we use on our Services can be grouped into the following categories:
 
-As a matter of principle, we do not process special categories of personal data, unless these are components of commissioned processing.  The purpose of the processing is the provision of services.  We process data that is necessary for the justification and fulfilment of services and point out the necessity of their disclosure. Disclosure to external parties only takes place if it is necessary in the context of the service.
+Strictly Necessary: These Cookies are necessary for the Services to work properly. They include any essential authentication and authorisation Cookies for our Services.
 
-When processing the data provided to us within the scope of providing our services, we act in accordance with the instructions of the client as well as the legal requirements of order processing pursuant to Art. 28 GDPR and do not process the data for any other purposes than those specified in the services.
+Functional: These Cookies enable technical performance and allow us to remember the choices you make while browsing our Services, including any preferences you set. They also include sign-in and authentication Cookies and IDs that enable you to return without additional sign-in.
 
-We delete the data after the expiry of statutory warranty and comparable obligations. The necessity of storing the data is reviewed every three years; in the case of statutory archiving obligations, the deletion takes place after their expiry (6 years).
+Performance/Analytics: These Cookies allow us to collect certain information about how you navigate the Services and services running on your device. They help us understand which areas you use and what we can do to improve them.
 
-In the case of data disclosed to us by the user within the scope of a services, we delete the data in accordance with the specifications of the services, in principle after the end of the services.
+Targeting: These Cookies are used to deliver relevant information related to our Services to an identified machine or other device (not a named or otherwise identifiable person) which has previously been used to visit our Services. Some of these types of Cookies on our Services are operated by third parties with our permission and are used to identify advertising sources that are effectively driving customers to our Services.
 
-_g) Cookies and similar technologies_
+How to Control and Delete Cookies Cookies can be controlled, blocked, or restricted through your web browser settings. Information on how to do this can be found within the Help section of your browser. All Cookies are browser specific. Therefore, if you use multiple browsers or devices to access the Services, you will need to manage your Cookie preferences across these environments.
 
-We use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. Tracking technologies used are beacons, tags, and scripts to collect and track information and to improve and analyse Our Service. You can instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. However, if You do not accept Cookies, You may not be able to use some parts of our Service. Cookies can be “Persistent” or “Session” Cookies. Persistent Cookies remain on your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close your web browser. We use both session and persistent Cookies for the purposes set out below:
+Find out how to manage Cookies on popular browsers:
 
-*   Essential Session Cookies
+Google Chrome, available at https://support.google.com/accounts/answer/61416?co=GENIE.Platform%3DDesktop\&hl=en
 
-    * Administered by: Us
-    * Purpose: These Cookies are essential to provide You with services available through the Website and to enable You to use some of its features. They help to authenticate users and prevent fraudulent use of user accounts. Without these Cookies, the services that You have asked for cannot be provided, and We only use these Cookies to provide You with those services.
+Microsoft Edge, available at https://privacy.microsoft.com/en-us/windows-10-microsoft-edge-and-privacy
 
+Mozilla Firefox, available at https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-webServices-preferences
 
-*   Notice Acceptance Cookies
+Microsoft Internet Explorer, available at https://support.microsoft.com/en-gb/help/17442/windows-internet-explorer-delete-manage-cookies
 
-    * Administered by: Us
-    * Purpose: These Cookies identify if users have accepted the use of cookies on the Website.
+Opera, available at https://www.opera.com/help/tutorials/security/privacy/
 
+Apple Safari, available at https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac
 
-*   Functionality Cookies
+If you are using a mobile device to access the Services, you will need to refer to your instruction manual or other help/settings resource to find out how you can control Cookies on your device. For more information about cookies, and how to disable cookies, visit http://www.allaboutcookies.org.
 
-    * Administered by: Us
-    * Purpose: These Cookies allow us to remember choices You make when You use the Website, such as remembering your login details or language preference. The purpose of these Cookies is to provide You with a more personal experience and to avoid You having to re-enter your preferences every time You use the Website.
+Please note that if you restrict, disable or block any or all Cookies from your web browser or mobile or other device, the Services may not operate properly, and you may not have access to our services available through the Services. We are not responsible for your inability to use our Services or any degraded function you may experience that may be caused by your settings and choices regarding Cookies.
 
+We do not control third parties’ collection or use of your information to serve interest-based advertising. However, these third parties may provide you with ways to choose not to have your information collected or used in this way. You can opt out of receiving targeted ads from members of the Network Advertising Initiative (“NAI”) on the NAI’s website.
 
-* Tracking and Performance Cookies
-  * Administered by: Third-Parties
-  * Purpose: These Cookies are used to track information about traffic to the Website and how users use the Website. The information gathered via these Cookies may directly or indirectly identify you as an individual visitor. This is because the information collected is typically linked to a pseudonymous identifier associated with the device you use to access the Website. We may also use these Cookies to test new advertisements, pages, features or new functionality of the Website to see how our users react to them.
+## How We Share Your Data
 
-The legal basis for the use of cookies is Art. 6 para. 1 lit. a) GDPR and Art. 6 para. 1 lit. f) GDPR.
+We may share or disclose the data we collect in the limited circumstances as described below:
 
-**Transfer of personal data**
+With regulators, government entities, and law enforcement to comply with our legal obligations
 
-Wildcat will not disclose or otherwise distribute your personal data to third parties unless this is necessary for the performance of our services (legal basis for processing: Art. 6 para. 1 lit. b) GDPR), you have consented to the disclosure (legal basis for processing: Art. 6 para. 1 lit. a) GDPR) or the disclosure of data is permitted by relevant legal provisions.
+With service providers and vendors who may assist us in providing, delivering, and improving the Services (hosting provider, mailing provider, etc)
 
-Wildcat is entitled to outsource the processing of your personal data in whole or in part to external service providers acting as processors for Wildcat pursuant to Art. 4 No. 8 GDPR within the framework of the data protection provisions. External service providers support us, for example, in the technical operation and support of the website, data management, the provision and performance of services, marketing, as well as the implementation and fulfilment of reporting obligations.
+With blockchain security analytics providers to ensure the safety and security of our Services and to screen your wallet for any prior illicit activity
 
-The service providers commissioned by Wildcat process your data exclusively in accordance with our instructions. Wildcat remains responsible for the protection of your data, which is ensured by strict contractual regulations, technical and organisational measures, and additional controls by us.
+To enforce your agreements with us, including this Privacy Policy, and to respond to claims that your use of the Service violates any third-party rights
 
-Personal data may also be disclosed to third parties if we are legally obliged to do so e.g., by court order (legal basis for processing: Art. 6 para. 1 lit. c) GDPR) or if this is necessary to support criminal or legal investigations or other legal investigations or proceedings at home or abroad or to fulfil Wildcat's legitimate interests (legal basis for processing: Art. 6 para. 1 lit. f) GDPR).
+We require such third parties to use the personal data we share with them only for the purpose for which the data was transferred and not to retain it for longer than is required for fulfilling the said purpose.
 
-It goes without saying that Wildcat ensures that the respective service provider guarantees data security before passing on personal data. Wildcat will therefore only commission companies that can guarantee secure and proper data processing based on their qualifications and their technical and organisational capabilities.
+## International Data Transfers
 
-**Storage and retention**
+We, along with our affiliates, subsidiaries, and trusted third-party providers, may handle your personal information in countries outside of your own. The data privacy laws in these countries may differ from, and potentially offer less protection than, those in your home country.
 
-Your personal data will be stored by us only for as long as is necessary to achieve the purposes for which the data was collected or – if statutory retention periods exist that go beyond this point and for the duration of the legally prescribed retention period. We then delete your personal data. Only in a few exceptional cases is your data be stored beyond this period, e.g., if storage is necessary in connection with the enforcement of and defence against legal claims against us.
+When transferring your personal information internationally, and in accordance with applicable legal requirements, we will implement appropriate safeguards to ensure your data is adequately protected and compliant with relevant data protection laws. For further details on how we manage international data transfers, please contact us through the information provided in the “Contact Us” section of this policy.
 
-Wildcat is entitled to process your personal data insofar as this is necessary to fulfil legal obligations. For this purpose, Wildcat may transfer this data in particular to authorities, law enforcement agencies and courts. In this case, the transfer of your data is required by Art. 6 para. 1 lit. c) GDPR for compliance with a legal obligation to which we are subject. Wildcat is further entitled to process personal data if and to the extent necessary to detect or prevent misuse of this website or to enforce claims of Wildcat, its employees or users, whereby the data processing in these cases is necessary to protect these aforementioned legitimate interests of Wildcat pursuant to Art. 6 para. 1 lit. f) GDPR. Insofar as the disclosure of special category data is necessary for the assertion of claims or the defence against claims, the related data processing is based on Art. 9 (2) f) GDPR.
+This section will ensure that users are informed about how their data is managed when transferred internationally, in line with the rest of the privacy policy.
 
-**International transfers**
+## Security
 
-Our main operations are based in in the British Virgin Islands and your personal data is generally processed, stored and used within in the British Virgin Islands and other countries in the European Economic Area (EEA). In some instances, your personal data may be processed outside the European Economic Area. If and when this is the case, we take steps to ensure there is an appropriate level of security, so your personal data is protected in the same way as if it was being used within the British Virgin Islands and the EEA. Where we need to transfer your data outside the British Virgin Islands or the EEA, we will use one of the following safeguards:
+The security of your data is important to us, and we take reasonable security measures to prevent the loss, misuse, unauthorised access, modification, or disclosure of your personal data under our control. The security measures in place will, from time to time, be reviewed in line with legal and technical developments.
 
-* The use of approved standard contractual clauses in contracts for the transfer of personal data to third countries.
-* Transfers to a non-EEA country with privacy laws that give the same protection as the British Virgin Islands and the EEA.
+However, given the inherent risks, we cannot guarantee absolute security and give no guarantee that such loss, misuse, unauthorised access, modification, or disclosure will not occur. You are responsible for all of your activity on the Services, including the security of your blockchain network addresses, cryptocurrency wallets, and their cryptographic keys.
 
-**Automated decision-making**
+## Age Limitations
 
-Automated decision-making including profiling pursuant to Art. 22 (1) and (4) GDPR does not take place on the part of Wildcat.
+Our Services are not intended for use by anyone under the age of 18. If we learn that we have collected personal data from an individual under 18 without verification of parental consent, we will delete that information promptly. If you believe we may have any information from or about a person under 18, please contact us.
 
-**Direct marketing in the context of a customer relationship**
+## Links
 
-We use the data you provide to fulfil and process our contract and to respond to your enquiries in accordance with Art. 6 para. 1 lit. b) GDPR or on the basis of your consent in accordance with Art. 6 para. 1 lit. a) GDPR. Insofar as you have also given us separate consent to process your data for various purposes, Wildcat is entitled to contact you for these purposes via the communication channels you have ticked in this consent.
+There may be links from our Sites to other websites and resources provided by third parties. This Privacy Policy applies only to our Sites. Accessing those third-party websites or sources requires you to leave our Sites. We do not control those third-party sites or any of the content contained therein, and you agree that we are in no circumstances responsible or liable for any of those third-party sites, including, without limitation, their content, policies, failures, promotions, products, services or actions and/or any damages, losses, failures or problems caused by, related to or arising from those sites. We encourage you to review all policies, rules, terms and regulations, including the privacy policies, of each site that you visit.
 
-**Data Intermediary**
+## Changes to the Policy
 
-Where we process your Personal Data as a data intermediary on behalf of a third party, we will process your Personal Data in accordance with the instructions of the third party and shall use it only for the purposes agreed between you and the third party. All such Personal Data will be protected and retained in accordance with this privacy policy and the terms of the DPA and GDPR. We will take steps to inform the third party of any requests, complaints or questions that you may have regarding such Personal Data.
+Please note that we may modify this Privacy Policy at any time without any prior notice. The revised Policy will be effective immediately from when the revised Policy is posted in the Service and your continued access or use of the Service after such time will constitute your acceptance of the revised Privacy Policy. We encourage you to regularly review the latest version of this Privacy Policy
 
-**Online presences in social media**
+## Retention of Personal Information
 
-We maintain online presences on the basis of our legitimate interests. We maintain online presences within social networks and platforms in order to communicate with customers, interested parties and users who are active there. Unless otherwise stated in this policy, we process the data of users if they communicate with us within the social networks and platforms, e.g., write articles on our online presences or send us messages.
+We retain the personal data we collect only for as long as necessary to fulfil the purposes for which it was collected, to provide our Services, to resolve disputes, to enforce our agreements, and to comply with legal obligations. This period may vary depending on the nature of the data and the reasons for collecting it, having regard to the purposes described in this Privacy Policy and our own legal and regulatory requirements.
 
-**Personal data and children**
+## Contact Information
 
-The services available on this website are aimed at people aged 18 and over. We will not knowingly collect, use or disclose personal data from minors under the age of 18 without first obtaining consent from a legal guardian through direct offline contact. The parent or guardian will be provided with (i) information about the specific type of personal data being collected from the minor, (ii) the purpose for which it will be used, and (iii) the opportunity to object to any further collection, use or storage of such information. We comply with youth protection laws.
+If you have any questions, comments, or concerns regarding our Privacy Policy, please contact us at contact@thewildcat.foundation.
 
-**Links to other website**
+## Acknowledgment of Risks
 
-The website may contain links to another website. We have no control over the privacy practices or the content of those other website. Therefore, we recommend that you carefully read the respective privacy policies of these other website that you visit.
+By using the Wildcat Protocol, you acknowledge that you have read, understood, and agree to this privacy policy.
 
-**Changes**
-
-This Policy and our commitment to protecting the privacy of your personal data can result in changes to this Policy. Please regularly review this Policy to keep up to date with any changes.
-
-**Who should I contact for more information?**
-
-If you have any questions or comments about our Privacy Policy or wish to exercise your rights under applicable laws, please contact us using the following contact address: operations@wildcat.finance
+Updated and effective: 16 January 2025

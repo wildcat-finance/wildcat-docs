@@ -71,7 +71,7 @@
 * [Wildcat Service Agreement](legal/wildcat-service-agreement.md)
 * [Risk Disclosure Statement](legal/risk-disclosure-statement.md)
 * [Template MLA](legal/master-loan-agreement.md)
-* [Protocol UI Privacy Policy](legal/protocol-ui-privacy-policy.md)
+* [Privacy Policy](legal/protocol-ui-privacy-policy.md)
 
 ## Miscellaneous
 
