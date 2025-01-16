@@ -26,7 +26,11 @@ The fee configuration of an active market can be adjusted by the archcontroller 
 
 if your market launched with a 0% streaming protocol fee which is subsequently increased to 5%, that fee will start to take effect after the appropriate hook instance contract tied to a market is updated. Any origination fee update will be rendered void for existing markets (since the market exists already!).
 
-In Wildcat V2, streaming protocol fees are **hard-capped at 10% of base APR**.
+At the time of the Wildcat V2 launch, the fee was set at **5% streaming and no origination fee**.
+
+In Wildcat V2, streaming protocol fees are hard-capped at 10% of base APR.
+
+
 
 
 

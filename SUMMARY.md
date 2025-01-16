@@ -75,7 +75,7 @@
 
 ## Miscellaneous
 
-* [Who Built This](miscellaneous/who-we-are.md)
+* [Protocol History/Development](miscellaneous/who-we-are.md)
 * [Contact Us](miscellaneous/contact-us.md)
 * [DEPRECATED DOCUMENTATION](miscellaneous/deprecated-documentation/README.md)
   * [V1 Component Overview](miscellaneous/deprecated-documentation/component-overview/README.md)

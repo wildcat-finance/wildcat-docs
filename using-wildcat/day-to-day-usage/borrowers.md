@@ -53,7 +53,7 @@ At present, we support two options here:
 * **Lender Self-Onboarding**: any lender can grant themselves a deposit credential provided they are not sanctioned by OFAC as detectable through the Chainalysis oracle for that chain.
 * **Borrower Operated Allowlist**: lenders can only deposit into markets if their address has been explicitly added to the policy by yourself.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## 2) Basic Market Setup
 
@@ -71,7 +71,7 @@ The prefix string that the **market token** issued to represent debt will use. F
 
 The prefix string that the market token issued to represent debt will use. For example, if you are borrowing _WETH_ and enter 'mmx' here, the symbol of the market token will be _mmxWETH_.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## 3) Basic Market Terms
 

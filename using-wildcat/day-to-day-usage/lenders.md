@@ -6,11 +6,11 @@ description: Things you need to know as a would-be lender through Wildcat.
 
 ## Making Deposits
 
-Depositing assets to a Wildcat market is a fairly simple process, and we presume in this section that a [**lender**](../terminology.md#lender) wishing to lend to a [**borrower**](../terminology.md#borrower) through a market has obtained an deposit credential from a role provider attached to the market via the protocol UI. We'll fill out some examples here as markets start spinning up and we can display some concrete examples.
+Depositing assets to a Wildcat market is a fairly simple process, but depends somewhat on the policy in place for said market: you may not be able to deposit because you haven't been added to the allowlist for that policy. At present however, we imagine a large number of markets will be self-onboarding in an open access setting, which means you can obtain a credential simply by not being sanctioned by OFAC.
 
-If the borrower has specified that they want to make use of it, the lender will be asked whether or not they wish to countersign an associated Wildcat Master Loan Agreement (MLA) parametised for the specific market terms. Note that dependent on the borrower, this may not be in place: there may be a different version of a loan agreement presented to you, or there may be a separate legal agreement that is offered to the lender which you may be asked to sign off-chain. We can't know for sure!
+Upon entering a market page from the main dashboard, if the borrower has specified that this market is to be bound by one, the lender will be asked whether or not they wish to countersign the associated Wildcat Master Loan Agreement (MLA) parameterised for the specific market terms. Note that dependent on the borrower, this may not be in place: for all Wildcat itself knows, you may be looking to lend to a market which you've been added to an allow-list for having signed a separate agreement which you may be asked to sign off-chain.
 
-Provided that the lender holds some of the [**underlying asset**](../terminology.md#underlying-asset), and there is [**capacity**](../terminology.md#capacity) in the market, the lender is able to deposit as much of the asset as they are willing to (or up to the capacity), receiving in exchange a 1:1 amount of the [**market token**](../terminology.md#market-token) associated with that particular market. The lender that deposits 133.7 XYZ tokens into a market will receive 133.7 market tokens - with the market token name depending on what was selected by the borrower when the market was launched: e.g. wildcatXYZ.
+After this point (whether the MLA - if present - is countersigned or declined), provided that the lender holds some of the [**underlying asset**](../terminology.md#underlying-asset), and there is [**capacity**](../terminology.md#capacity) in the market, the lender is able to deposit as much of the asset as they are willing to (or up to the capacity), receiving in exchange a 1:1 amount of the [**market token**](../terminology.md#market-token) associated with that particular market. The lender that deposits 133.7 XYZ tokens into a market will receive 133.7 market tokens - with the market token name depending on what was selected by the borrower when the market was launched: e.g. wildcatXYZ.
 
 Market tokens are _rebasing_ - depositing 1,000 tokens of an underlying asset into a market offering 10% base APR will result in a wallet balance of 1,100 market tokens after a year, giving rise to a claim on 1,100 tokens of the underlying.
 
@@ -91,15 +91,3 @@ One final point: if there are multiple lenders in a batch, and the batch can onl
 Phrased differently: if a batch has been 60% honoured with deposited assets, then each lender can only withdraw 60% of their outstanding claim, until such time as more assets arrive to completely honour the batch.
 
 This logic can be _very_ confusing when first encountering it, so please ask us if there's any particular part you'd like us to expand on differently!
-
-### Force Buybacks And You
-
-You may have deposited into a market which has the force buybacks flag turned on.
-
-If this is the case, then the borrower can - while the market is not delinquent or in a fixed term state - elect to buy any market tokens you hold back from you, exchanging them for the underlying asset.
-
-That is to say, you may wake up one morning and find that the 10,000 xyzUSDC you held has been replaced by 10,000 USDC.
-
-Be aware that if the market also permits market tokens to be freely transferred, any debt that you place into a smart contract such as Uniswap, Pendle or the like is also subject to this power, and may end up severely damaging the value of any LP tokens or other such synthetic assets you have tied to these. This may be done completely by accident by a borrower choosing to force buyback debt from the largest holder, failing to realise that that address is actually a liquidity pool.
-
-Net-net, so long as you are sensible with what you do with your market tokens, the 'worst' that can happen to you is that you get booted out for exactly the same amount that you would have expected to receive had you entered into a withdrawal request at that precise moment: in some cases it may even work to your advantage, if the withdrawal cycle duration is particularly long. With that said, note that it is not intended to be used as a ripcord for preferred lenders to a market, which is why it is disabled if there are already people waiting for withdrawals.

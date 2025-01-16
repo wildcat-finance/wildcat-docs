@@ -11,9 +11,9 @@ Wildcat V2 abstracts this away by putting the `deposit` function behind a 'hook'
 * Addresses that have some form of NFT or soulbound token testifying to their identity, and
 * Addresses that have a credential testifying to off-chain circumstances.
 
-The first example is the most accessible, and simply verifies whether or not the address applying for a credential is subject to a sanctions designation by the US, EU, UN and so forth, as provided by Chainalysis. Notwithstanding the fact that the entire protocol has defences against addresses flagged by Chainalysis (see The Sentinel), it's worth ensuring that North Koreans can't get a credential that notionally 'allows' them to deposit assets, even if they'd never actually be able to follow through with it.
+The first example is the most accessible, and simply verifies whether or not the address applying for a credential is subject to a sanctions designation by the US, EU, UN and so forth, as provided by Chainalysis. Given that the entire protocol has defences against addresses flagged by Chainalysis (see [The Sentinel](the-sentinel.md)), this category falls out naturally.
 
-The second example is effectively the V1 model, but we didn't want to throw it in the bin: we just also didn't want it to be the _only_ way that people could access Wildcat. We plan to evolve this slightly, however: if a borrower is an entity that has a significant number of OTC counterparties, Wildcat can deploy a market which is accessed by providing proof that your address is in the Merkle tree of that set (ensuring that addresses of counterparties aren't exposed).
+The second example is effectively the V1 model, but we didn't want to throw it in the bin: we just also didn't want it to be the _only_ way that people could access Wildcat. We plan to evolve this slightly, however: if a borrower is an entity that has a significant number of OTC counterparties, Wildcat can look into deploy a hooks template which grants credentials by providing proof that your address is in the Merkle tree of that set.
 
 The third example accounts for on-chain solutions such as [Coinbase Verifications](https://www.coinbase.com/en-gb/onchain-verify) and [Binance Account Bound Tokens](https://www.binance.com/en-GB/babt), assuming that the borrower is comfortable relying on these. In this case, access credentials are granted by signing a transaction that verifies that your address is in fact in possession of whatever is being sought out (i.e. an NFT in your wallet with a certain timestamp).
 
@@ -25,7 +25,7 @@ We'll be able to illustrate this in far more detail once we have some live polic
 
 ## Credential Applicability/Durations
 
-Depending on the way that a market is configured by a borrower, gaining a deposit credential for one market may simultaneously grant you access to other markets the same borrower has deployed. This is contingent on the markets having been deployed with the same hook contracts tied to each, so it's worth checking if you're able to access more offerings by the same borrower.
+Depending on the way that a market is configured by a borrower, gaining a deposit credential for one market may simultaneously grant you access to other markets the same borrower has deployed. This is contingent on the markets having been deployed with the same policy tied to each, so it's worth checking if you're able to access more offerings by the same borrower.
 
 When you have acquired a deposit credential granting you access to one or more Wildcat markets, it's worth noting that it may eventually expire, depending on whether or not the borrower has set a 'Time-To-Live' limit on it. This is to reduce the risk of an address being compromised and funds being deposited from an entity that is not the party which initially received the credential (unlikely as this may be). Credentials can be refreshed, assuming that the role provider that granted it is still tied to the market: borrowers can add and remove role providers from their access hook at will.
 
