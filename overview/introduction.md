@@ -23,17 +23,17 @@ Markets can also impose various access constraints that they may require:
 
 Wildcat markets are not controlled or upgradable by the protocol itself once deployed.\
 \
-A market and its goings-on are between the borrowers and lenders alone. Wildcat itself doesn't liquidate collateral, and can't access funds.
+A market and its goings-on are between the borrowers and lenders alone. Wildcat does not custody _and_ cannot access - or force the movement of - any assets within markets.
 
-Wildcat provides a template loan agreement between borrower and lender on a per-market basis, but you are free to decline to use this, or borrowers can opt to use their own.
+**Wildcat** **does not underwrite any risk on any of the markets deployed through it.**
+
+The Wildcat frontend provides an optional template loan agreement between borrower and lender on a per-market basis, but borrowers are free to decline to use this, and lenders are similarly free to decline to countersign.
 
 Wildcat exists to create credit mechanisms _by you_, _for you_.
 
-
+Your markets, your terms.
 
 ***
-
-
 
 ### ​A Comment Before You Head Further In <a href="#undefined" id="undefined"></a>
 

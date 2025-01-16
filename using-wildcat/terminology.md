@@ -180,6 +180,10 @@ description: It's dangerous to go alone - learn these.
 
 * A [withdrawal request](terminology.md#withdrawal-request) that has not yet [expired](terminology.md#expired-withdrawal) (i.e. was created in the current [withdrawal cycle](../miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/wildcatmarketwithdrawals.sol.md#processunpaidwithdrawalbatch)).
 
+#### Policy
+
+* Another term for a [hook instance](terminology.md#hook-instance).
+
 #### Protocol APR
 
 * Percentage of [base APR](terminology.md#base-apr) that accrues to the Wildcat protocol itself.
