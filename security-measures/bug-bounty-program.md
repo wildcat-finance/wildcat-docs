@@ -1,6 +1,10 @@
-# Bounty Program
+# Bug Bounty Program
 
-We operate a bug bounty program, facilitated by [Immunefi](https://immunefi.com/).
+**NOTE: A bug bounty program is&#x20;**_**not**_**&#x20;yet active for Wildcat V2.**
+
+***
+
+We operate a bug bounty program for Wildcat V1, facilitated by [Immunefi](https://immunefi.com/).
 
 At this stage, the total amount allocated to the program is US$50,000.
 
