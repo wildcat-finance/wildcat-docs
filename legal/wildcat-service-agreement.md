@@ -1,7 +1,7 @@
 ---
 description: >-
   Last Updated: 17 January 2025; SHA:
-  7ad0875c9fc12a65097445a3555d7ab564af842e104dfc598ba0792980ae339d
+  8aabe6da14a69e1785f166f38c69eaa1cd3b932654cea531c30aed5c11d693c1
 ---
 
 > This page is formatted using markdown. To verify the agreement hash, please see the [plaintext version](https://github.com/wildcat-finance/wildcat-docs/blob/wip-docs/legal/wildcat-service-agreement.txt) formatted for readability in wallet signature requests.
@@ -36,7 +36,7 @@ Modifications to these Terms will apply only prospectively. If any modification 
 We do not provide custodial services or control your digital assets. You are responsible for managing your digital wallet and private keys, securing your digital assets, and safeguarding against unauthorised access. We disclaim all liability for any loss or damage resulting from your loss of control over these keys or any unauthorised access to your digital assets.
 
 ## 3.2 Risks of Digital Assets
-You acknowledge that digital assets can be volatile, and you may lose some or all of your digital assets. Using the Protocol involves significant risks outlined in our Risk Disclosures – see also Section 4 below (titled ’Products vs. Protocol).
+You acknowledge that digital assets can be volatile, and you may lose some or all of your digital assets. Using the Protocol involves significant risks outlined in our Risk Disclosures – see also Section 4 below (titled ’Products vs. Protocol’).
 
 ## 3.3 No Financial Advice
 We do not provide financial, legal, or tax advice. Consult a professional advisor before using the Products and/or making decisions related to or engaging in any transactions with the Protocol.
@@ -102,7 +102,7 @@ You must familiarise yourself with the Company’s Risk Disclosures and are boun
 
 You are solely responsible for determining and ensuring compliance with all applicable laws, regulations, and tax obligations in your jurisdiction. The Company will not be held liable for any legal or regulatory violations arising from your use of any Market, and it is your responsibility to ensure that you are using the Markets in compliance with the applicable legal regime, including tax laws of your jurisdiction.
 
-As a Market user, you are subject to all terms and conditions outlined in these Terms, including Section 3 (Disclaimers and Acknowledgments), Section 13 (Limitation of Liability), and Section 14 (Indemnification). You further agree that your use of any Market is governed by these provisions, and the Company disclaims all liability for any consequences of your interactions with Market.
+As a Market user, you are subject to all terms and conditions outlined in these Terms, including Section 3 (Disclaimers and Acknowledgments), Section 13 (Limitation of Liability), and Section 14 (Indemnification). You further agree that your use of any Market is governed by these provisions, and the Company disclaims all liability for any consequences of your interactions with Markets.
 
 ## 6.4 No Control or Warranties
 The Company makes no warranties, express or implied, regarding the security, reliability, functionality, or performance of any Market created or used on the Protocol. All Markets operate independently of the Company, which has no control over, and disclaims all responsibility for, any issues, bugs, vulnerabilities, hacks, attacks, or failures related to Markets. Users and creators of Markets must understand that their interactions with Markets are at their own risk and that the Company disclaims all liability for any associated losses.
@@ -252,7 +252,7 @@ You agree that any losses incurred due to third-party services are solely your r
 
 # 14 Indemnification
 
-# 14.1 User Responsibility
+## 14.1 User Responsibility
 In addition to all other indemnification obligations set forth in these Terms, you agree to indemnify, defend, and hold harmless the Company, its affiliates, and their respective officers, directors, employees, agents, and contractors (collectively, the ’Indemnified Parties’) from and against any claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys’ fees and court costs) arising out of or in connection with:
 
 * Your use of, or conduct in connection with, the Products or the Protocol.
