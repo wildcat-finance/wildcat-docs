@@ -68,7 +68,6 @@
 
 ## Legal
 
-* [Wildcat Service Agreement](legal/wildcat-service-agreement.md)
 * [Wildcat Terms Of Use](legal/wildcat-terms-of-use.md)
 * [Risk Disclosure Statement](legal/risk-disclosure-statement.md)
 * [Template MLA](legal/master-loan-agreement.md)

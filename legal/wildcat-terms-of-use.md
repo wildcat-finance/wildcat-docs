@@ -1,7 +1,7 @@
 ---
 description: >-
-  Last Updated: 16 January 2025; SHA:
-  6dafcbb5b5d5c2aa5520d3f3b6e5d6e1174cd2426168a7f43287e4ffc65af769
+  Last Updated: 17 January 2025; SHA:
+  8aabe6da14a69e1785f166f38c69eaa1cd3b932654cea531c30aed5c11d693c1
 ---
 
 # Wildcat Terms Of Use
@@ -12,7 +12,7 @@ description: >-
 
 ### 1.1 Welcome and Overview
 
-Welcome! These Terms of Use ("Terms") govern your access to and use of the products, services and related information and materials (collectively, the "Products") offered by Wildcat Foundation ("Company," "we," "us," or "our"), which includes wildcat.finance, app.wildcat.finance and the interface and related services that facilitate interaction with the Wildcat Protocol (the "Protocol"). You understand and acknowledge that the Protocol is not a Product. See Section 4 below titled "Products vs. Protocol" for an overview.
+Welcome! These Terms of Use (’Terms’) govern your access to and use of the products, services and related information and materials (collectively, the ’Products’) offered by Wildcat Foundation (’Company,’ ’we,’ ’us,’ or ’our’), which includes wildcat.finance, app.wildcat.finance and the interface and related services that facilitate interaction with the Wildcat Protocol (the ’Protocol’). You understand and acknowledge that the Protocol is not a Product. See Section 4 below titled ’Products vs. Protocol’ for an overview.
 
 ### 1.2 Binding Agreement
 
@@ -28,7 +28,7 @@ ARBITRATION NOTICE: THESE TERMS CONTAIN AN ARBITRATION CLAUSE BELOW. EXCEPT FOR 
 
 ### 2.1 Right to Modify
 
-We reserve the right to modify, amend, or update these Terms at our discretion. Any changes will be effective immediately upon posting on the Products, with the "Last Updated" date reflecting the revision. We may also provide notice of modifications via email, pop-up notifications, or announcements on or through the Products. It is your responsibility to review the updated Terms, and your continued use of the Products constitutes acceptance of the changes.
+We reserve the right to modify, amend, or update these Terms at our discretion. Any changes will be effective immediately upon posting on the Products, with the ’Last Updated’ date reflecting the revision. We may also provide notice of modifications via email, pop-up notifications, or announcements on or through the Products. It is your responsibility to review the updated Terms, and your continued use of the Products constitutes acceptance of the changes.
 
 ### 2.2 Continued Use
 
@@ -46,7 +46,7 @@ We do not provide custodial services or control your digital assets. You are res
 
 ### 3.2 Risks of Digital Assets
 
-You acknowledge that digital assets can be volatile, and you may lose some or all of your digital assets. Using the Protocol involves significant risks outlined in our Risk Disclosures – see also Section 4 below (titled "Products vs. Protocol).
+You acknowledge that digital assets can be volatile, and you may lose some or all of your digital assets. Using the Protocol involves significant risks outlined in our Risk Disclosures – see also Section 4 below (titled ’Products vs. Protocol’).
 
 ### 3.3 No Financial Advice
 
@@ -60,7 +60,7 @@ Due to the non-custodial and decentralised nature of the Products and Protocol, 
 
 ### 4.1 Products Overview
 
-The Products include the websites wildcat.finance and app.wildcat.finance, along with related applications and tools. The Protocol, as further explained below, is a decentralised finance (DeFi) application for the lending and borrowing of Ethereum-based crypto assets. The Products provide a user interface and other means of interacting with the Protocol but do not include the Protocol itself. Neither the Company nor the Products manage or control transactions or assets using the Protocol beyond dictating who is eligible to deploy Markets using the Products - see Section 6.1 below (titled "Markets Overview").
+The Products include the websites wildcat.finance and app.wildcat.finance, along with related applications and tools. The Protocol, as further explained below, is a decentralised finance (DeFi) application for the lending and borrowing of Ethereum-based crypto assets. The Products provide a user interface and other means of interacting with the Protocol but do not include the Protocol itself. Neither the Company nor the Products manage or control transactions or assets using the Protocol beyond dictating who is eligible to deploy Markets using the Products - see Section 6.1 below (titled ’Markets Overview’).
 
 ### 4.2 Your responsibility to understand and accept Risk Disclosures Policy
 
@@ -94,13 +94,13 @@ Certain Products allow you to configure and deploy your own products and service
 
 ### 5.2 Indemnification
 
-You agree to indemnify, defend, and hold harmless the Company, its affiliates, and their respective officers, directors, employees, agents, and contractors from and against any claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or in connection with your use of the Products and Protocol or your products and services, including, but not limited to, any claims related to third-party rights, applicable laws, tax obligations, or regulatory violations.
+You agree to indemnify, defend, and hold harmless the Company, its affiliates, and their respective officers, directors, employees, agents, and contractors from and against any claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys’ fees) arising out of or in connection with your use of the Products and Protocol or your products and services, including, but not limited to, any claims related to third-party rights, applicable laws, tax obligations, or regulatory violations.
 
 ## 6 Markets: Borrowers and Lenders
 
 ### 6.1 Markets Overview
 
-The Products allow certain users to use the Wildcat Protocol to create and deploy custom smart contract markets ("Markets") to facilitate credit lines involving digital assets. The Company does not control, influence, permission or monitor the design, parameters, or operation of any Markets created by any party using the Wildcat Protocol or otherwise created using the Products. All Markets are entirely user-generated, and the Company bears no responsibility for any aspect of their creation, management, or outcomes.
+The Products allow certain users to use the Wildcat Protocol to create and deploy custom smart contract markets (’Markets’) to facilitate credit lines involving digital assets. The Company does not control, influence, permission or monitor the design, parameters, or operation of any Markets created by any party using the Wildcat Protocol or otherwise created using the Products. All Markets are entirely user-generated, and the Company bears no responsibility for any aspect of their creation, management, or outcomes.
 
 ### 6.2 Market Deployers/Borrowers: Responsibility and Liability
 
@@ -108,11 +108,11 @@ As a creator of a Market, you acknowledge and agree that:
 
 You assume full responsibility for all risks associated with the creation, deployment, and operation of your Market, and of use of your Markets by any party. This includes, but is not limited to, risks arising from coding errors, vulnerabilities, hacks, attacks, or interactions with other users, other smart contracts or blockchain events.
 
-The Company has no control over, and disclaims any responsibility for, the risk parameters, attributes, and performance of your Market. You understand that the Company does not provide oversight or validation of your Market's design or execution.
+The Company has no control over, and disclaims any responsibility for, the risk parameters, attributes, and performance of your Market. You understand that the Company does not provide oversight or validation of your Market’s design or execution.
 
 You are solely responsible for determining and ensuring compliance with all applicable laws, regulations, and tax obligations in your jurisdiction and in the jurisdiction of users of your Markets. The Company will not be held liable for any legal or regulatory violations arising from your Market, and it is your responsibility to ensure that your Market operates within the applicable legal regime, including AML/KYC, sanctions compliance, and tax laws of your jurisdiction and in other jurisdictions whose law may apply to the users of your Markets.
 
-By creating and deploying a Market, you agree to indemnify, defend, and hold harmless the Company and its affiliates from any claims, liabilities, damages, losses, costs, or expenses (including reasonable attorneys' fees) arising from or related to your Market(s), including any third-party claims or legal actions of any kind.
+By creating and deploying a Market, you agree to indemnify, defend, and hold harmless the Company and its affiliates from any claims, liabilities, damages, losses, costs, or expenses (including reasonable attorneys’ fees) arising from or related to your Market(s), including any third-party claims or legal actions of any kind.
 
 ### 6.3 Market Users/Lenders: Acknowledgment of Risk and Responsibility
 
@@ -122,11 +122,11 @@ You are solely responsible to conduct thorough due diligence before interacting 
 
 You understand that Market are user-generated, and the Company has no control over their risk parameters, functionality, or any potential updates. Your use of a Market is entirely at your own risk, and you bear full responsibility for any losses, damages, or liabilities incurred as a result.
 
-You must familiarise yourself with the Company's Risk Disclosures and are bound to the terms therein. By using a Market, you confirm that you have reviewed and understand the risks associated with interacting with decentralised finance applications, including the potential for complete loss of digital assets.
+You must familiarise yourself with the Company’s Risk Disclosures and are bound to the terms therein. By using a Market, you confirm that you have reviewed and understand the risks associated with interacting with decentralised finance applications, including the potential for complete loss of digital assets.
 
 You are solely responsible for determining and ensuring compliance with all applicable laws, regulations, and tax obligations in your jurisdiction. The Company will not be held liable for any legal or regulatory violations arising from your use of any Market, and it is your responsibility to ensure that you are using the Markets in compliance with the applicable legal regime, including tax laws of your jurisdiction.
 
-As a Market user, you are subject to all terms and conditions outlined in these Terms, including Section 3 (Disclaimers and Acknowledgments), Section 13 (Limitation of Liability), and Section 14 (Indemnification). You further agree that your use of any Market is governed by these provisions, and the Company disclaims all liability for any consequences of your interactions with Market.
+As a Market user, you are subject to all terms and conditions outlined in these Terms, including Section 3 (Disclaimers and Acknowledgments), Section 13 (Limitation of Liability), and Section 14 (Indemnification). You further agree that your use of any Market is governed by these provisions, and the Company disclaims all liability for any consequences of your interactions with Markets.
 
 ### 6.4 No Control or Warranties
 
@@ -138,7 +138,7 @@ The Company expressly disclaims any and all warranties, whether express or impli
 
 ### 6.6 Indemnification
 
-You agree to indemnify, defend, and hold harmless the Company, its affiliates, and their respective officers, directors, employees, agents, and contractors from and against any claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or in connection with your use of any Market, including, but not limited to, any claims related to third-party rights, applicable laws, tax obligations, or regulatory violations.
+You agree to indemnify, defend, and hold harmless the Company, its affiliates, and their respective officers, directors, employees, agents, and contractors from and against any claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys’ fees) arising out of or in connection with your use of any Market, including, but not limited to, any claims related to third-party rights, applicable laws, tax obligations, or regulatory violations.
 
 ## 7 Eligibility and Access
 
@@ -155,7 +155,7 @@ You agree to notify the Company immediately if your eligibility status changes. 
 
 ### 7.3 No Access from Restricted Jurisdiction
 
-You represent and warrant that you will not access or use the Products from any jurisdiction where such access or use is prohibited by law. You further agree not to use any virtual private network ("VPN") or other tools to circumvent restrictions. Any attempt to do so may result in immediate termination of your access and potential legal actions.
+You represent and warrant that you will not access or use the Products from any jurisdiction where such access or use is prohibited by law. You further agree not to use any virtual private network (’VPN’) or other tools to circumvent restrictions. Any attempt to do so may result in immediate termination of your access and potential legal actions.
 
 ### 7.4 Geographic Restrictions
 
@@ -163,7 +163,7 @@ The Products and Protocol are not intended for use by individuals or entities lo
 
 ### 7.5 Sanctioned Jurisdictions
 
-As of the "Last Updated" date above, the list of Sanctioned Jurisdictions is as follows:
+As of the ’Last Updated’ date above, the list of Sanctioned Jurisdictions is as follows:
 
 * Iran
 * Cuba
@@ -174,9 +174,9 @@ As of the "Last Updated" date above, the list of Sanctioned Jurisdictions is as 
 
 ### 7.6 Sanctioned Persons
 
-You hereby agree and affirm that you are not a "Sanctioned Person" or accessing the Products or Protocol on behalf of, for the benefit of, or at the direction of any Sanctioned Person. For purposes of this Section 7.6, a Sanctioned Person is any of the following:
+You hereby agree and affirm that you are not a ’Sanctioned Person’ or accessing the Products or Protocol on behalf of, for the benefit of, or at the direction of any Sanctioned Person. For purposes of this Section 7.6, a Sanctioned Person is any of the following:
 
-An individual or entity that is designated under blocking and asset freeze-type sanctions of any jurisdiction including but not limited to the Specially Designated Nationals and Blocked Persons List, which is enforced by the U.S. Department of the Treasury's Office of Foreign Assets Control, the HM Treasury (HMT) Financial Sanctions List (also known as the UK Consolidated Financial Sanctions List), and the Consolidated Financial Sanctions List enforced by member states of the European Union;
+An individual or entity that is designated under blocking and asset freeze-type sanctions of any jurisdiction including but not limited to the Specially Designated Nationals and Blocked Persons List, which is enforced by the U.S. Department of the Treasury’s Office of Foreign Assets Control, the HM Treasury (HMT) Financial Sanctions List (also known as the UK Consolidated Financial Sanctions List), and the Consolidated Financial Sanctions List enforced by member states of the European Union;
 
 Any entity that is owned 50% or more directly or indirectly, either individually or in the aggregate, by one or more Sanctioned Persons, or otherwise subject to the control of a Sanctioned Person;
 
@@ -230,7 +230,7 @@ You agree that you will not submit content that is illegal, infringing, defamato
 
 ### 9.3 No Endorsement
 
-The submission of user-generated content does not constitute the Company's endorsement of such content. The Company disclaims liability arising from user-generated content.
+The submission of user-generated content does not constitute the Company’s endorsement of such content. The Company disclaims liability arising from user-generated content.
 
 ### 9.4 Responsibility for Content
 
@@ -254,7 +254,7 @@ All intellectual property rights in the Products, including text, graphics, logo
 
 ### 11.2 Restrictions on Use
 
-Except as expressly permitted, you may not copy, modify, distribute, or create derivative works based on the Products without our prior written consent. Unauthorised use of the Products' intellectual property is strictly prohibited and may result in legal action.
+Except as expressly permitted, you may not copy, modify, distribute, or create derivative works based on the Products without our prior written consent. Unauthorised use of the Products’ intellectual property is strictly prohibited and may result in legal action.
 
 ## 12 Privacy
 
@@ -279,9 +279,9 @@ To the maximum extent permitted by law, we disclaim all liability for any damage
 * The inclusion of personal data in blockchain transactions, which cannot be modified or erased by the Company.
 * Your failure to comply with these Terms, including any misuse of the Products.
 
-The Company's total liability for any claim shall not exceed the greater of (i) $1,000 USD, or (ii) the total amount you paid to the Company for the use of the Products within the twelve (12) months preceding the event giving rise to the claim. The Company shall not be liable for any damages arising from software bugs, vulnerabilities, or failures in smart contracts associated with the Products or Protocol. You acknowledge that the Products operate on an experimental basis and may encounter unforeseen issues that the Company cannot predict or mitigate. Furthermore, the Company disclaims all liability for any interruptions or errors caused by third-party service providers, such as those related to blockchain infrastructure or network access.
+The Company’s total liability for any claim shall not exceed the greater of (i) $1,000 USD, or (ii) the total amount you paid to the Company for the use of the Products within the twelve (12) months preceding the event giving rise to the claim. The Company shall not be liable for any damages arising from software bugs, vulnerabilities, or failures in smart contracts associated with the Products or Protocol. You acknowledge that the Products operate on an experimental basis and may encounter unforeseen issues that the Company cannot predict or mitigate. Furthermore, the Company disclaims all liability for any interruptions or errors caused by third-party service providers, such as those related to blockchain infrastructure or network access.
 
-To the fullest extent permitted by law, all other warranties, including but not limited to, implied warranties of merchantability, fitness for a particular purpose, and non-infringement, are expressly waived. The Products and Protocol are provided on an "as is" and "as available" basis, and you use them entirely at your own risk.
+To the fullest extent permitted by law, all other warranties, including but not limited to, implied warranties of merchantability, fitness for a particular purpose, and non-infringement, are expressly waived. The Products and Protocol are provided on an ’as is’ and ’as available’ basis, and you use them entirely at your own risk.
 
 ### 13.2 Maximum Liability
 
@@ -291,19 +291,19 @@ Our total liability for any claim arising out of or relating to the Products or 
 
 ### 13.3 No Liability for Cyberattacks or Third-Party Malicious Activity
 
-The Company cannot guarantee that the Products or the Protocol will be free from cyberattacks, viruses, or other malicious code that may result in unauthorised access to or loss of digital assets. By using the Products, you acknowledge and accept that the Company shall not be held liable for any damages or losses resulting from denial-of-service attacks, viruses, or other forms of cyberattacks. In addition, the Company shall not be responsible for any losses arising from phishing attacks, social engineering, or other fraudulent activities that target users outside of the Company's control. Users must exercise caution and implement robust security measures to protect their assets and personal information.
+The Company cannot guarantee that the Products or the Protocol will be free from cyberattacks, viruses, or other malicious code that may result in unauthorised access to or loss of digital assets. By using the Products, you acknowledge and accept that the Company shall not be held liable for any damages or losses resulting from denial-of-service attacks, viruses, or other forms of cyberattacks. In addition, the Company shall not be responsible for any losses arising from phishing attacks, social engineering, or other fraudulent activities that target users outside of the Company’s control. Users must exercise caution and implement robust security measures to protect their assets and personal information.
 
-The Company cannot guarantee that the Products or the Protocol will be free from cyberattacks, viruses, or other malicious code that may result in unauthorised access to or loss of digital assets. By using the Products, you acknowledge and accept that the Company shall not be held liable for any damages or losses resulting from denial-of-service attacks, viruses, or other forms of cyberattacks. In addition, the Company shall not be responsible for any losses arising from phishing attacks, social engineering, or other fraudulent activities that target users outside of the Company's control. Users must exercise caution and implement robust security measures to protect their assets and personal information.
+The Company cannot guarantee that the Products or the Protocol will be free from cyberattacks, viruses, or other malicious code that may result in unauthorised access to or loss of digital assets. By using the Products, you acknowledge and accept that the Company shall not be held liable for any damages or losses resulting from denial-of-service attacks, viruses, or other forms of cyberattacks. In addition, the Company shall not be responsible for any losses arising from phishing attacks, social engineering, or other fraudulent activities that target users outside of the Company’s control. Users must exercise caution and implement robust security measures to protect their assets and personal information.
 
 ### 13.4 Third-Party Dependencies
 
-You agree that any losses incurred due to third-party services are solely your responsibility, and you hold the Company harmless from any related claims. The Company expressly disclaims any responsibility for, and shall not be held liable for, the actions or inactions of any third-party service providers, including but not limited to, third-party decentralised applications, blockchain nodes, oracles, or any other service integrated or used in conjunction with the Products. Any reliance on third-party services is solely at the user's risk, and the Company shall not be responsible for any interruptions, failures, inaccuracies, or damages caused by such services. Users are encouraged to independently verify the reliability and security of third-party services before use.
+You agree that any losses incurred due to third-party services are solely your responsibility, and you hold the Company harmless from any related claims. The Company expressly disclaims any responsibility for, and shall not be held liable for, the actions or inactions of any third-party service providers, including but not limited to, third-party decentralised applications, blockchain nodes, oracles, or any other service integrated or used in conjunction with the Products. Any reliance on third-party services is solely at the user’s risk, and the Company shall not be responsible for any interruptions, failures, inaccuracies, or damages caused by such services. Users are encouraged to independently verify the reliability and security of third-party services before use.
 
 ## 14 Indemnification
 
-## 14.1 User Responsibility
+### 14.1 User Responsibility
 
-In addition to all other indemnification obligations set forth in these Terms, you agree to indemnify, defend, and hold harmless the Company, its affiliates, and their respective officers, directors, employees, agents, and contractors (collectively, the "Indemnified Parties") from and against any claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees and court costs) arising out of or in connection with:
+In addition to all other indemnification obligations set forth in these Terms, you agree to indemnify, defend, and hold harmless the Company, its affiliates, and their respective officers, directors, employees, agents, and contractors (collectively, the ’Indemnified Parties’) from and against any claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys’ fees and court costs) arising out of or in connection with:
 
 * Your use of, or conduct in connection with, the Products or the Protocol.
 * Digital assets associated with your Ethereum address.
@@ -311,11 +311,11 @@ In addition to all other indemnification obligations set forth in these Terms, y
 * Your violation of these Terms or any applicable law.
 * Your infringement or misappropriation of the rights of any other person or entity.
 
-You further agree to indemnify, defend, and hold harmless the Indemnified Parties from any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or in connection with: (i) your interactions with any third-party services or platforms accessed through the Products or Protocol; (ii) your failure to comply with any applicable laws, regulations, or tax obligations in your jurisdiction or the jurisdiction of any user of any product or service based on the Products; (iii) any claims or disputes related to intellectual property, privacy, or data protection arising from content you generate or transactions you conduct on the Products or Protocol; and (iv) any regulatory enforcement actions or penalties imposed due to your use of the Products or Protocol.
+You further agree to indemnify, defend, and hold harmless the Indemnified Parties from any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys’ fees) arising out of or in connection with: (i) your interactions with any third-party services or platforms accessed through the Products or Protocol; (ii) your failure to comply with any applicable laws, regulations, or tax obligations in your jurisdiction or the jurisdiction of any user of any product or service based on the Products; (iii) any claims or disputes related to intellectual property, privacy, or data protection arising from content you generate or transactions you conduct on the Products or Protocol; and (iv) any regulatory enforcement actions or penalties imposed due to your use of the Products or Protocol.
 
 This indemnification also extends to any intellectual property disputes arising from your use of the Products, including but not limited to claims related to copyright, trademark, or patent infringement. Additionally, you agree to indemnify, defend and hold the Company harmless against any third-party claims related to your conduct, such as defamation, breach of contract, or violation of applicable laws and regulations.
 
-With respect to all obligations of indemnification contained in these Terms, the Indemnified Parties shall have the exclusive right to control any such action or proceeding and to determine whether the Company wishes to settle, and if so, on what terms. You agree to cooperate fully with the Indemnified Parties in defending any claims and to cover all costs associated with such defence, including reasonable attorneys' fees and expenses.
+With respect to all obligations of indemnification contained in these Terms, the Indemnified Parties shall have the exclusive right to control any such action or proceeding and to determine whether the Company wishes to settle, and if so, on what terms. You agree to cooperate fully with the Indemnified Parties in defending any claims and to cover all costs associated with such defence, including reasonable attorneys’ fees and expenses.
 
 ### 14.2 Third-Party Enforcement Rights
 
@@ -329,9 +329,9 @@ These Terms shall be governed by and construed in accordance with the laws of th
 
 ### 15.2 Arbitration
 
-Any dispute, claim, or disagreement (each a "Dispute") arising out of or related to these Terms, the Products or the Protocol, including any Dispute that arose before the effective date of these Terms, shall be resolved through binding individual arbitration. The arbitration shall be confidential, and the arbitrator, the parties, and any involved persons shall maintain the confidentiality of the arbitration proceedings and any related information unless disclosure is required by law. The parties agree to limit the scope of discovery to what is strictly necessary for the resolution of the dispute.
+Any dispute, claim, or disagreement (each a ’Dispute’) arising out of or related to these Terms, the Products or the Protocol, including any Dispute that arose before the effective date of these Terms, shall be resolved through binding individual arbitration. The arbitration shall be confidential, and the arbitrator, the parties, and any involved persons shall maintain the confidentiality of the arbitration proceedings and any related information unless disclosure is required by law. The parties agree to limit the scope of discovery to what is strictly necessary for the resolution of the dispute.
 
-The arbitration shall be conducted in accordance with the rules of the London Court of International Arbitration ("LCIA"). The arbitration shall be conducted by a single arbitrator selected in accordance with the LCIA rules. The arbitrator shall have no authority to award punitive or exemplary damages, attorney's fees, or costs to either party, except as may be expressly provided by law, and shall limit any award of damages to damages proven by the claiming party, subject to limitations of Section 13. The parties agree to limit the scope of discovery to what is strictly necessary for the resolution of the dispute. The arbitrator shall issue a reasoned award explaining the basis of any decision. All arbitration proceedings and outcomes shall remain strictly confidential, except as required by law. The arbitrator shall have the authority to decide all disputes relating to the scope, interpretation, applicability, and enforceability of this arbitration agreement. The parties waive their rights to a judge or jury trial.
+The arbitration shall be conducted in accordance with the rules of the London Court of International Arbitration (’LCIA’). The arbitration shall be conducted by a single arbitrator selected in accordance with the LCIA rules. The arbitrator shall have no authority to award punitive or exemplary damages, attorney’s fees, or costs to either party, except as may be expressly provided by law, and shall limit any award of damages to damages proven by the claiming party, subject to limitations of Section 13. The parties agree to limit the scope of discovery to what is strictly necessary for the resolution of the dispute. The arbitrator shall issue a reasoned award explaining the basis of any decision. All arbitration proceedings and outcomes shall remain strictly confidential, except as required by law. The arbitrator shall have the authority to decide all disputes relating to the scope, interpretation, applicability, and enforceability of this arbitration agreement. The parties waive their rights to a judge or jury trial.
 
 ### 15.3 Class Action Waiver
 
@@ -349,7 +349,7 @@ Any claim arising out of or relating to these Terms or the use of the Products o
 
 ### 16.1 Independent Rules
 
-Any bug bounty programs or security contests ("Contests") offered by the Company will be governed by their own specific terms and conditions, which will be provided separately. These terms may include details regarding eligibility, scope, rewards, confidentiality, and other conditions related to participation in the Contests. Participation in any such Contest is subject to your acceptance of the specific rules and conditions applicable to that Contest.
+Any bug bounty programs or security contests (’Contests’) offered by the Company will be governed by their own specific terms and conditions, which will be provided separately. These terms may include details regarding eligibility, scope, rewards, confidentiality, and other conditions related to participation in the Contests. Participation in any such Contest is subject to your acceptance of the specific rules and conditions applicable to that Contest.
 
 ### 16.2 No Guarantee of Payment
 
@@ -413,4 +413,4 @@ Wildcat Foundation Email: contact@thewildcat.foundation Address: PO Box 448, Elg
 
 By accessing or using the Products, you acknowledge that you have read, understood, and agree to be bound by these Terms of Use, as well as the Risk Disclosures, and Privacy Policy.
 
-Updated and effective: 16 January 2025
+Updated and effective: 17 January 2025
