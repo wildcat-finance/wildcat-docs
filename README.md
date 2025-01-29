@@ -14,7 +14,7 @@ Something you don't understand? Something missing?\
 Fire a message to @[functi0nZer0](https://x.com/functi0nZer0) on Twitter/X and watch him do Things That Don't Scale!
 {% endhint %}
 
-## Hi.
+## Hi there.
 
 Welcome to the Wildcat protocol documentation.
 
