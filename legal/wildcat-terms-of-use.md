@@ -6,7 +6,7 @@ description: >-
 
 # Wildcat Terms Of Use
 
-> This page is formatted using markdown. To verify the agreement hash, please see the [plaintext version](wildcat-service-agreement.txt) formatted for readability in wallet signature requests.
+> This page is formatted using markdown. To verify the agreement hash, please see the [plaintext version](wildcat-terms-of-use.txt) formatted for readability in wallet signature requests.
 
 ## 1. Introduction and Agreement
 
