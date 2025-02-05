@@ -34,8 +34,6 @@ A withdrawal involves:
 * Waiting for the withdrawal cycle period to elapse (either the full period if you were the request that kickstarted the cycle, or the remainder if you placed the request in the middle of a cycle), and then
 * Claiming the assets that are available to you at the end of the cycle.
 
-Please note that as of Wildcat V2, a borrower can explicitly force a lender into a withdrawal cycle at their discretion, bypassing any fixed duration hook that may be in place (please see [here](borrowers.md#forced-withdrawals) for details).
-
 ### The Unclaimed Withdrawals Pool
 
 Within a given market, there is a unclaimed withdrawals pool - a 'side-pot' containing reserves that are still technically 'within' the market, but have been earmarked for withdrawal by lenders via a _withdrawal request_. Assets that are placed within this pool are unavailable to the borrower (they are considered to be removed from the market supply), and the [**reserve ratio**](../terminology.md#reserve-ratio) of a market does not factor them in.
