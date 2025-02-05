@@ -14,7 +14,7 @@ After this point (whether the MLA - if present - is countersigned or declined), 
 
 Market tokens are _rebasing_ - depositing 1,000 tokens of an underlying asset into a market offering 10% base APR will result in a wallet balance of 1,100 market tokens after a year, giving rise to a claim on 1,100 tokens of the underlying.
 
-Wildcat market tokens differ somewhat from aTokens/eTokens from Aave and Euler in that do not have an internal exchange rate whereby 1 market token will be worth - for example - 1.05 of the underlying asset after a year. Rather, after every interaction with the market that changes the state, market token balances will be adjusted to maintain the 1:1 ratio between market tokens held and the claim of each lender.
+Wildcat market tokens differ somewhat from aTokens/eTokens from Aave and Euler in that they do not have an internal exchange rate whereby 1 market token will be worth - for example - 1.05 of the underlying asset after a year. Rather, after every interaction with the market that changes the state, market token balances will be adjusted to maintain the 1:1 ratio between market tokens held and the claim of each lender.
 
 Depending on the constraints placed upon the markets, lenders _may_ be able to transfer market tokens freely (you can send them to a cold wallet, you can LP them, you can build additional infrastructure around them). Borrowers are able to constrain transfers to only those addresses that hold an unexpired deposit credential or are marked as known lenders, or completely prevent transfers except for those to/from the market contract. Check the details of your particular market via the protocol interface, it's all explained there.
 
