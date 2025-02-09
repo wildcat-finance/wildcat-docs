@@ -14,7 +14,7 @@ Thereafter, you need to ensure that your Borrower Profile page is accurate: you 
 
 <figure><img src="../../.gitbook/assets/image (10) (1).png" alt="" width="338"><figcaption></figcaption></figure>
 
-Ensured this is filled out (Wildcat admins will approve any changes here): this is needed for grabbing information for the master loan agreement template if you opt to make use of it.&#x20;
+Ensured this is filled out (folk at the Wildcat Foundation will make any changes here if needed): this is needed for grabbing information for the master loan agreement template if you opt to make use of it.&#x20;
 
 Now click **Create New Market**.
 
