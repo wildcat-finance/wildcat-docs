@@ -74,7 +74,7 @@ If your market is Open Term (i.e. you can place withdrawals requests at any time
 
 <figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
-However, if your market is Fixed Term, then you will not be able to place a withdrawal request until such time as that maturity passes (well, either that or the market is closed by the borrower), and as such the Withdraw button is hidden from you
+However, if your market is Fixed Term, then you will not be able to place a withdrawal request until such time as that maturity passes (well, either that or the market is closed by the borrower), and as such the Withdraw button is hidden from you:
 
 <figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption><p> We did this because we, as its' developers, got confused at one point as to why we weren't able to place withdrawal requests.</p></figcaption></figure>
 
