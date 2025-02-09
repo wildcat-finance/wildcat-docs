@@ -236,7 +236,13 @@ In the event that a borrower has finished utilising the funds for the purpose th
 
 This is a special case of reducing the APR (with the associated increased reserve rate that accompanies it). When a market is closed, sufficient assets must be repaid to increase the reserve ratio to 100%, after which interest ceases to accrue and _no further parameter adjustment or borrowing is possible_. The only thing possible to do in a closed market is for the lenders to file withdrawal requests and exit via claiming.
 
-Note that the withdrawal cycle period is erased in terminated markets: lenders still have to file two distinct transactions (i.e. across separate blocks), but the withdrawal cycle period is not enforced in this instance.
+You can access this by clicking **Terminate Market** in the left-hand status bar as a borrower:
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+Note that the withdrawal cycle period is erased in terminated markets: lenders still have to file two distinct transactions (i.e. across separate blocks), but the withdrawal cycle period is not enforced in this instance. If a withdrawal cycle was ongoing when the market was terminated, it is immediately concluded, allowing lenders therein to claim.
 
 ## Archcontroller Removal
 

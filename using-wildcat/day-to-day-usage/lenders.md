@@ -12,15 +12,15 @@ With that said, the first thing we want you to remember is that _Wildcat does no
 
 Moving on: this is what you're faced with when you get to the main lender dashboard.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Note that the lender has active loans to three markets - the 'No Active Markets' under the 'Non-Deposited' is indicative of the fact that there are no markets where the lender has been explicitly onboarded to by a borrower (or otherwise holds an access credential) and they haven't deposited any assets yet. This might be confusing, let us know if that's the case! </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Note that the lender has active loans to three markets - the 'No Active Markets' under the 'Non-Deposited' is indicative of the fact that there are no markets where the lender has been explicitly onboarded to by a borrower (or otherwise holds an access credential) and they haven't deposited any assets yet. This might be confusing, let us know if that's the case! </p></figcaption></figure>
 
 To look for a new market, you can either click _Other Markets_ in the table itself, or the **Observe New Markets** button in the top-right.
 
 At this stage, there are two types of markets: ones where you can onboard yourself provided that you are not OFAC-sanctioned, and ones where you must be explicitly onboarded by the borrower.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Note that if you try to enter a market which requires borrower onboarding, you will only be able to view descriptive statistics plus the market history.
 
