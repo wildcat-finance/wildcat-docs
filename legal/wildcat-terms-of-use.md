@@ -114,6 +114,10 @@ You are solely responsible for determining and ensuring compliance with all appl
 
 By creating and deploying a Market, you agree to indemnify, defend, and hold harmless the Company and its affiliates from any claims, liabilities, damages, losses, costs, or expenses (including reasonable attorneys’ fees) arising from or related to your Market(s), including any third-party claims or legal actions of any kind.
 
+By creating and deploying a Market, you explicitly agree to repay all debt incurred by your Market in accordance with the terms applicable to your Market. This obligation includes, but is not limited to, principal amounts, interest, protocol fees, and any other associated costs.\
+\
+By creating and deploying a Market, whether or not a Loan Agreement is utilised, you explicitly acknowledge and accept that if your Market enters into a delinquent state and has incurred the penalty rate (as determined by the grace tracker) for a continuous period of ninety (90) days, your Market will be considered in default. This default status may trigger enforcement actions, including but not limited to, liquidation of assets, legal proceedings, or other remedies as permitted under applicable law and the terms governing the Market.
+
 ### 6.3 Market Users/Lenders: Acknowledgment of Risk and Responsibility
 
 As a user of a Market, you acknowledge and agree that:
