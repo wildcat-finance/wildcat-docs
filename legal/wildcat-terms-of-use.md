@@ -1,7 +1,7 @@
 ---
 description: >-
-  Last Updated: 17 January 2025; SHA:
-  8aabe6da14a69e1785f166f38c69eaa1cd3b932654cea531c30aed5c11d693c1
+  Last Updated: 12 February 2025; SHA:
+  711a9e6707e6cf85166786461a0a45aa3b926b22b414abe8dfcc6c1afef020d1
 ---
 
 # Wildcat Terms Of Use
@@ -116,7 +116,7 @@ By creating and deploying a Market, you agree to indemnify, defend, and hold har
 
 By creating and deploying a Market, you explicitly agree to repay all debt incurred by your Market in accordance with the terms applicable to your Market. This obligation includes, but is not limited to, principal amounts, interest, protocol fees, and any other associated costs.\
 \
-By creating and deploying a Market, whether or not a Loan Agreement is utilised, you explicitly acknowledge and accept that if your Market enters into a delinquent state and has incurred the penalty rate (as determined by the grace tracker) for a continuous period of ninety (90) days, your Market will be considered in default. This default status may trigger enforcement actions, including but not limited to, liquidation of assets, legal proceedings, or other remedies as permitted under applicable law and the terms governing the Market.
+By creating and deploying a Market, whether or not a Loan Agreement is utilised, you explicitly acknowledge and accept that if your Market enters into a delinquent state and has incurred the penalty rate (as determined by the grace tracker) for a continuous period of ninety (90) days, your Market will be considered in default. This default status may trigger enforcement actions, including but not limited to, liquidation of assets, legal proceedings, or other remedies as permitted under applicable law and the terms governing the Market. In the event that a Loan Agreement is in place, this paragraph is superseded by that Loan Agreement.
 
 ### 6.3 Market Users/Lenders: Acknowledgment of Risk and Responsibility
 
