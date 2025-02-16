@@ -8,25 +8,27 @@ description: What you need to know as a Wildcat borrower.
 
 For the purpose of this section, we assume that the borrower has already gotten in contact with Wildcat and been added as a whitelisted borrower on the [**archcontroller**](../terminology.md#archcontroller) (the registry that tracks permissions and deployments).
 
-Once this is done, the borrower can go to the protocol UI, and having signed the [**Service Agreement**](../terminology.md#service-agreement) (if not done already), navigate to the Borrower section.
+Once this is done, the borrower can go to the protocol UI, and having signed the [**Terms of Use**](../../legal/wildcat-terms-of-use.md) (if not done already), navigate to the Borrower section by flipping the switch over from Lender.
 
-Thereafter, you need to ensure that your Borrower Profile page is accurate: you can view this by clicking on View Profile after clicking on your signed in address in the top-right of the app:
+Thereafter, you should ensure that your Borrower Profile page is accurate (although if you're on testnet this doesn't matter): you can view this by clicking on View Profile after clicking on your signed in address in the top-right of the app:
 
-<figure><img src="../../.gitbook/assets/image (10) (1).png" alt="" width="338"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (31).png" alt="" width="307"><figcaption></figcaption></figure>
 
-Ensured this is filled out (folk at the Wildcat Foundation will make any changes here if needed): this is needed for grabbing information for the master loan agreement template if you opt to make use of it.&#x20;
+Ensured this is filled out properly: you can change your socials and your Description here by yourself if needed, but anything else requires a site admin to make the change to ensure that you don't name yourself Raytheon to try and bamboozle people. These profile details are needed for grabbing information for the master loan agreement template if you opt to make use of it, and more generally it's just useful stuff for would-be lenders to know who they're engaging with.
 
 Now click **Create New Market**.
 
 <figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
-There are a number of parameter fields that are presented here, and the screen may appear a bit overwhelming, but they fundamentally represent the degrees of freedom you have available to you. \
+There are a number of parameter fields that are presented here, and the screen may appear a bit overwhelming, but they fundamentally represent the degrees of freedom you have available to you.&#x20;
+
+Note: the [**Terminology**](../terminology.md) page may help here if you get lost in the sauce.\
 \
 They are:
 
 ## 1) Policy Creation
 
-This is the section that dictates what hook instance is used to govern the market.
+This is the section that dictates the [hook instance](../terminology.md#hook-instance) used to govern the market.
 
 ### Market Policy
 
@@ -42,7 +44,7 @@ Two options here:
 
 * **Open Term**: deposits from lenders can be requested for withdrawal at will, at any time.
 * **Fixed Term**: deposits can only be requested after a set amount of time has elapsed after market creation, whereupon the market converts to an open-term. Once a market has converted, it cannot be entered into another fixed term. If you select this option, another three sub-options are shown:
-  * **Fixed Term Maturity Date \[00:00 UTC]**: when do you want to permit withdrawal requests? Please note that the Base APR _cannot be reduced_ while a market is in fixed-term!
+  * **Fixed Term Maturity Date \[00:00 UTC]**: when do you want to permit withdrawal requests? Please note that Base APR (chosen later) _cannot be reduced_ while a market is in fixed-term!
   * **Permit Early Termination**: do you want to reserve the right to repay all market debt and stop accruing interest even while the market is in a fixed-term?
   * **Permit Maturity Reduction**: do you want to reserve the right to bring the maturity (conversion to open term) date closer to the present?
 
@@ -51,7 +53,7 @@ Two options here:
 At present, we support two options here:
 
 * **Lender Self-Onboarding**: any lender can grant themselves a deposit credential provided they are not sanctioned by OFAC as detectable through the Chainalysis oracle for that chain.
-* **Borrower Operated Allowlist**: lenders can only deposit into markets if their address has been explicitly added to the policy by yourself.
+* **Borrower Operated Allowlist**: lenders can only deposit into markets if their address has been explicitly added to the policy on-chain by the borrower.
 
 <figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
@@ -61,7 +63,7 @@ Here you are asked for what it is you want to borrow and how you want to identif
 
 ### **Underlying Asset**
 
-This is the asset that you wish to borrow, such as LUSD or WETH: enter the token address if it's not something that comes up based on entering the symbol. **DO NOT create markets with rebasing assets such as stETH as the underlying: this breaks the underlying interest model. It's not a vulnerability, but rather you'll just end up causing yourself pain.**
+This is the asset that you wish to borrow, such as LUSD or WETH: enter the token address if it's not something that comes up based on entering the symbol. **DO NOT create markets with rebasing assets such as stETH as the underlying: this breaks the underlying interest model. It's not a vulnerability, but you'll just end up causing everyone pain.**
 
 ### **Market Token Name**
 
@@ -75,7 +77,7 @@ The prefix string that the market token issued to represent debt will use. For e
 
 ## 3) Basic Market Terms
 
-Here you configure the capacity, rates, reserve ratio and minimum deposits of your market.
+Here you configure the capacity, rates, reserve ratio and minimum deposit, plus the grace and withdrawal periods of your market.
 
 ### Maximum Borrowing Capacity
 
@@ -83,15 +85,13 @@ This represents the initial **capacity** of the market - the maximum amount of d
 
 ### Base APR
 
-The amount of interest that you are willing to pay on deposits to _lenders_. This is the rate that will apply presuming that your market never stays delinquent for long enough for the penalty APR to activate. The APR compounds every time the market is interacted with in a non-static call (such as a deposit or withdrawal request), so it's hard to determine precisely what the APY would be for this rate.
-
-Wildcat V2 markets allow for this value to range between **0 - 100%**. The zero is in homage to the American central banking system. \
+The amount of interest that you are willing to pay on deposits to _lenders_. This is the rate that will apply presuming that your market never stays delinquent for long enough for the penalty APR to activate (see below). The APR compounds every time the market is interacted with in a non-static call (such as a deposit or withdrawal request), so it's hard to determine precisely what the APY would be for this rate.\
 \
-Note: that this is not the true APR that you pay in the presence of a [protocol fee](../protocol-usage-fees.md), which will be added onto the base rate (e.g. selecting a base rate of 10% for a market that includes a 5% protocol fee produces a final rate for the borrower of 10% + (0.05 \* 10%) = 10.5%. However, this 0.5% does not accrue to the rebasing debt tokens, but rather to the required reserves of a market over time.
+Note: that this is not the true APR that you pay in the presence of the [protocol fee](../protocol-usage-fees.md), which will be added onto the base rate (e.g. selecting a base rate of 10% for a market that includes a 5% protocol fee produces a final rate for the borrower of 10% + (0.05 \* 10%) = 10.5%. However, this 0.5% does not accrue to the rebasing debt tokens, but rather to the required reserves of a market over time.
 
 ### Penalty APR
 
-The amount of _additional_ APR that you agree to pay in the event that your market becomes [**delinquent**](../terminology.md#delinquency) (i.e. falls below required reserves) and the delinquency is not resolved within the amount of time specified by the [**grace period**](../terminology.md#grace-period) (defined by yourself later), as observed by the [**grace tracker**](../terminology.md#grace-tracker).
+The amount of _additional_ APR that you agree to pay in the event that your market becomes [**delinquent**](../terminology.md#delinquency) (i.e. falls below required reserves) and the delinquency is not resolved within the amount of time specified by the [**grace period**](../terminology.md#grace-period) (defined in this panel by yourself), as observed by the [**grace tracker**](../terminology.md#grace-tracker).
 
 Wildcat V2 markets allow for this value to range between **0 - 100%**. We encourage borrowers to select a non-zero value to illustrate the seriousness with which they intend to monitor their obligations.\
 \
@@ -99,9 +99,9 @@ This penalty rate is added on to the base rate only for as long as the value of 
 
 ### Reserve Ratio
 
-The percentage of the market **supply** that must remain _within_ the market available for redemption. For example, a market with a capacity of 100,000 tokens, a supply of 20,000 tokens and a reserve ratio of 25% must have 5,000 tokens within the market ready for lenders to withdraw.\
-\
-Wildcat V2 markets allow for this ratio to range between **0 - 100%.** This enables fully uncollateralised markets: however, a borrower will still be expected to maintain a small amount within the market to handle protocol fee accrual.\
+The percentage of the market **supply** that must remain _within_ the market available for redemption. For example, a market with a capacity of 100,000 tokens, a supply of 20,000 tokens and a reserve ratio of 25% must have 5,000 tokens within the market ready for lenders to withdraw.
+
+Wildcat V2 markets allow for this value to range between **0 - 100%**. The zero is in homage to the American central banking system. This enables fully uncollateralised markets: however, a borrower will still be expected to maintain a small amount within the market to handle protocol fee accrual.\
 \
 Failing to maintain this level will result in the market becoming **delinquent**.\
 \
@@ -115,11 +115,11 @@ The grace period is a _rolling limit_: once delinquency has been cured within a 
 
 Wildcat V2 markets allow for this value to range between **0 - 2160 hours** (90 days).\
 \
-Note: this means that if a markets grace period is 3 days, and it takes 5 days to cure delinquency, this means that **4** days of penalty APR are paid. **This is important**: a borrower does not necessarily have `grace_period` amount of time to cure each distinct instance of delinquency!
+Note: this means that if a markets grace period is 3 days, and it takes 5 days to cure delinquency, this means that **4** days of penalty APR are paid (you took two days to fix it, and then it took another two days to climb back to zero). **This is important**: a borrower does not necessarily have `grace_period` amount of time to cure each distinct instance of delinquency!
 
 ### Withdrawal Cycle Duration
 
-The maximum amount of time that a lender who has filed a withdrawal request must wait before they are permitted to claim their assets from the market. If a lender has initiated a new withdrawal cycle, any other lender is able to join in the same cycle.
+The maximum amount of time that a lender who has filed a withdrawal request must wait before they are permitted to request their assets from the market. If a lender has initiated a new withdrawal cycle, any other lender is able to join in the same cycle.
 
 Wildcat V2 markets allow for this value to range between **0 - 2160 hours (90 days)**.\
 \
@@ -135,9 +135,9 @@ What is the minimum amount of the underlying asset that will be accepted by the 
 
 This section is related to hook management, and allows for you to determine who can deposit and withdraw from markets, as well as how transferable the debt tokens (dfdUSDC, in this example) are:
 
-* **Restrict Withdrawals** - restricts the ability to withdraw funds to users who meet market access criteria. **We recommend that this be turned on**.
+* **Restrict Withdrawals** - restricts the ability to withdraw funds to users who meet the market access criteria dictated by your policy. **We strongly recommend that this be turned on**.
 * **Restrict Transfers** - ensures that market tokens can only be transferred between participants who meet the specific access requirements set by the market’s policy.
-* **Disable Transfers** - stops the movement of tokens representing deposits or loans within the market. Transfers to the market starting withdrawal requests are not disabled.
+* **Disable Transfers** - stops the movement of tokens representing deposits or loans within the market. Transfers to the market as part of withdrawal requests are permitted.
 
 <figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
 
@@ -161,37 +161,57 @@ At this point, you are presented with a summary of the market that you are about
 
 <figure><img src="../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
 
-There are a series of notifications for you to pay attention to depending on your configuration, in particular regarding the protocol fee, which is derived from the Base APR as 5% of that value.
+There are a series of messages at the bottom of the page for you to pay attention to depending on your configuration, in particular regarding the protocol fee, which is derived from the Base APR as 5% of that value.
 
 You are then asked to Sign: this is related to the MLA, and requires you to ECDSA sign the template agreement or your refusal to offer it.
 
+**Please note:** if you're using a Safe multisig, you need to _keep this window open_ until the MLA signature/refusal has been signed so that you can fire off the deployment transaction afterwards. If you're on the testnet, you need to make _two_ transactions as part of deployment (we create a mock token contract for you as the base asset so you people can access a faucet). This is a pain for UX, but closing the window between these steps _will invalidate the MLA signature/lose all progress_, and you'll have to do it again. Not much we can do about this without some pretty beefy changes. \
+\
+**TL;DR: Have your multisig signers available when you do this!**
+
 <figure><img src="../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (35).png" alt=""><figcaption><p>The `Sign' button presents this if you offer an MLA.</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (34).png" alt=""><figcaption><p>You're asked to explicitly decline the MLA if you don't offer one.</p></figcaption></figure>
 
 After signing the MLA for your market (or your refusal to offer it), you can finally deploy!
 
+<figure><img src="../../.gitbook/assets/image (36).png" alt=""><figcaption><p>Post-deployment, your market will appear as Non-Deposited, since obviously no one has put anything in it yet!</p></figcaption></figure>
+
 ## Sourcing Deposits
 
-Once a given market is live, lenders can start onboarding to the market, depending on the access policy in place. For those markets which make use of an explicit address whitelist, the borrower must make use of the Market Details section of a market page to execute an on-chain transaction specifying one or multiple addresses.
+Once a given market is live, lenders can start onboarding to the market, depending on the access policy in place. For those markets which make use of an explicit address whitelist, the borrower must make use of the Edit Policy button within the Lenders section of a market to execute an on-chain transaction specifying one or multiple addresses. We defer the decision-making of who is 'allowed' to be onboarded to borrowers.
+
+<figure><img src="../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
 
 Wildcat itself does not source capital providers for you, although we may well advertise the fact that your markets exist and what their parameters are (as well as any changes).
 
-We defer the decision-making of who is 'allowed' to be onboarded to borrowers, but require that they do not seek to explicitly on-board lenders resident in sanctioned nations (even with things like geoblocking in place, an explicit whitelist can add whatever addresses they want).
-
-If Wildcat notices that borrowers are breaching this incredibly light-handed requirement, we are likely to [offboard](borrowers.md#archcontroller-removal) the offending borrower, and may opt to remove affected markets from the UI. Crypto is global, and Wildcat isn't going to stand by and watch a borrower reap the whirlwind by authorising addresses clearly tied to North Korea.
-
 ## Borrowing From A Market
 
-If we fast forward from here to the stage where lenders have onboarded and deposited assets, we can finally get to the _point_ of all of this: borrowing assets from the market that you have set up.
+If we fast forward from here to the stage where lenders have onboarded and deposited assets, we can finally get to the _point_ of all of this: borrowing assets from the market that you have set up. You can access your market from the market overview page, which takes you a page with several stats about your market: amount loaned, amount you can borrow, parameters, lists of who holds how much debt and so on.
+
+<figure><img src="../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
 
 Remember that the _capacity_ you set for your market only dictates the maximum amount that you are able to source from lenders, and that your _reserve ratio_ will dictate the amount of the _supply_ that you cannot remove from a market.
 
 If you have created a market with a maximum capacity of 1,000,000 USDC and a reserve ratio of 20%, this means you can borrow _up to_ 800,000 USDC provided that the market is 'full' (i.e. _supply_ is equal to _capacity_). In the event where the supply to this market is 600,000 USDC, you can only borrow up to 480,000 USDC.
 
-The process of actually borrowing available assets from a market is simple: navigate to the market details page of your market, and you will be presented with the ability to withdraw assets up to the current reserve ratio. If you've used protocols such as Euler or Aave in the past, you'll be familiar with this.
+The process of actually borrowing available assets from a market is simple: navigate to the market details page of your market, and you will be presented with the ability to withdraw assets up to the current reserve ratio.
+
+<figure><img src="../../.gitbook/assets/image (44).png" alt=""><figcaption><p>Step 1: Enter how much you want to borrow from your market.</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (45).png" alt=""><figcaption><p>Step 2: Verify you're comfortable with how long your market will remain healthy and confirm. </p></figcaption></figure>
 
 We strongly advise not borrowing right up to the limit, as the result of this will be that your market becomes delinquent after the very next non-static call which updates the market state and rebases the market token supply.
 
-Please also note that in the case where a protocol fee is in place for a market, said fees will accrue as [required reserves](../terminology.md#required-reserves) in the market over time, alongside interest that accrues to the rebasing debt tokens.
+Please also note that where a protocol fee is in place for a market, said fees will accrue as [required reserves](../terminology.md#required-reserves) in the market over time, alongside interest that accrues to the rebasing debt tokens.
 
 ## Repaying A Market
 
@@ -201,7 +221,9 @@ Withdrawal requests impact the liquid and required reserves of your market, and 
 
 The act of repaying is simple in the sense that it just requires moving assets back to the market contract via a standard ERC-20 transfer. Further, _anyone_ can repay assets to the market in this way - we've permitted this in case the borrower address is compromised.
 
-In the event of such an address compromise, all lenders can file withdrawal requests, assets can subsequently be repaid from a third party, and - due to the manner in which withdrawal requests sequester assets during a withdrawal - can be honoured through the market contract without the compromised borrower address being able to access any assets.
+<figure><img src="../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (47).png" alt=""><figcaption><p>You can also elect to repay a number of days worth of anticipated interest rather than a specific amount.</p></figcaption></figure>
 
 ## Reducing APR
 
@@ -214,21 +236,33 @@ The interest rate on a market is fixed at any given point in time (i.e. markets 
   * A borrower can reduce a market APR from 10% to 7.5% with no penalty, and two weeks thereafter will be able to reduce it again to 5.625%, and so on.
   * However, should a borrower reduce a market APR from 10% to 7.4% (a 26% reduction), they will be required to return 52% of the outstanding supply to the market for two weeks. After that time has passed, the reserve ratio can be reset back to the prior level and the assets can be borrowed again.
 
+<figure><img src="../../.gitbook/assets/image (43).png" alt=""><figcaption><p>POV: you're increasing Base APR. No change.<br>(Recently adjust notification here is just because it's a new market).</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (37).png" alt=""><figcaption><p>POV: you're reducing Base APR by 25% or less. No change.</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (39).png" alt=""><figcaption><p>POV: you're reducing Base APR by more than 25%. No collateral obligation here (empty market), but you'll only be able to borrow half of what anyone deposits for the next two weeks.</p></figcaption></figure>
+
 Note that the above only applies if your market is in an 'open-term' setting: i.e. there is no hook enabled which is preventing withdrawals at the time of the proposed change. If this is the case, you will not be able to reduce the APR while that hook is active (otherwise that enables a fairly obvious rug mechanic).
 
-If you're confused by this, ask us directly!
+If you're confused by this mechanism, let us know and we'll expand a bit more!
 
 ## Altering Capacity
 
 As a borrower, you are able to adjust the capacity up or down to whatever amount you wish. Note that that the rebasing of market tokens can bring the total debt of a market above such a capacity. Setting the capacity to below the current debt prevents further deposits until such time as the total supply has been reduced via withdrawal requests. Interest accrues on the outstanding supply until such time as lenders reduce the supply through withdrawal requests that burn market tokens. The required reserves of a market remain unchanged regardless of capacity changes.
 
+<figure><img src="../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+
 ## Altering Minimum Deposit
 
 You are capable of adjusting the minimum deposit level of your market at any time (it defaulted to 0 if you didn't set it on market creation). Furthermore, you can stop any future deposits without reducing the market capacity by simply setting the minimum deposit above the capacity.
 
+<figure><img src="../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+
 ## Reducing Maturity
 
 If your market is currently in a Fixed Term state, and you selected the Permit Maturity Reduction flag on market creation, you are able to bring the maturity forward (closer to the present day) at will. Note that you can't move the maturity further into the future, as that would enable a fairly obvious rug mechanism where you just set it to some impossible distance.
+
+<figure><img src="../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
 
 ## Terminating A Market
 
@@ -249,3 +283,5 @@ Note that the withdrawal cycle period is erased in terminated markets: lenders s
 For whatever reason, it may be the case that the Wildcat protocol itself no longer wishes to permit a given borrower to engage further with it. In this case, the address(es) of a borrower can be removed from the archcontroller by its owners. If this happens, the borrower can no longer deploy _new_ hooks instances or markets.
 
 However, they are still capable of interacting with _existing_ markets as before - neither the protocol nor its operators can force these closed. This is because there are potentially master loan agreements surrounding market usage, and Wildcat having the power to unilaterally step in and sever them would make it a key participant in the arrangement.
+
+We kindly ask that you treat your Wildcat markets with respect, and inform us (and your lenders) if anything has gone drastically wrong on your end. We're trying to enable something better than before.
