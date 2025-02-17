@@ -63,7 +63,11 @@ Here you are asked for what it is you want to borrow and how you want to identif
 
 ### **Underlying Asset**
 
-This is the asset that you wish to borrow, such as LUSD or WETH: enter the token address if it's not something that comes up based on entering the symbol. **DO NOT create markets with rebasing assets such as stETH as the underlying: this breaks the underlying interest model. It's not a vulnerability, but you'll just end up causing everyone pain.**
+This is the asset that you wish to borrow, such as LUSD or WETH.
+
+If you're deploying on mainnet, it's going to be easier for you to explicitly enter the token address rather than just searching for, say, USDC - this is because typing in a ticker performs a symbol search from [https://tokens.1inch.eth.link](https://tokens.1inch.eth.link): and as you'll see if you try, there are a _lot_ of different USDCs listed.\
+\
+**DO NOT create markets with rebasing assets such as stETH as the underlying: this breaks the underlying interest model. It's not a vulnerability, but you'll just end up causing everyone pain.**
 
 ### **Market Token Name**
 
