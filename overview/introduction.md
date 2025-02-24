@@ -20,7 +20,7 @@ Wildcat allows borrowers to create customised markets that suit their specific c
 
 **Lock-Up Periods:**
 
-* Choose whether lenders can withdraw immediately or after a predetermined lock-up period (e.g., six months). APR reductions are not permitted for fixed-term markets, although options are available to enable for early maturity.
+* Choose whether lenders can withdraw immediately or after a predetermined lock-up period (e.g., six months). APR reductions are not permitted for fixed-term markets, although options are available to enable early maturity or early market closure.
 
 **Deposit Requirements:**&#x20;
 
