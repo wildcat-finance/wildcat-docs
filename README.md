@@ -1,7 +1,5 @@
 ---
-description: >-
-  Massively configurable, unopinionated, hands-off un(der)collateralised
-  on-chain credit rails.
+description: Private credit, on your terms.
 ---
 
 # The Wildcat Protocol
