@@ -22,8 +22,14 @@ Check the Lender Withdrawal Requests tables within the market that you placed th
 
 ***
 
+### I have a Safe multisig, where is the option to connect my wallet?
+
+For those parties using a Safe, we ask that you go to the Safe website and connect to the Wildcat frontend via a [Custom App](https://help.safe.global/en/articles/40859-add-a-custom-safe-app). The URL for this is https://app.wildcat.finance (or https://testnet.wildcat.finance if you're looking around on Sepolia).
+
+We're in the process of talking to Safe about getting approved as an app on their site.
+
+***
 
 
-If you're encountering any difficulties, get in touch!
 
-Two questions in the FAQ doesn't seem like much, but the point of an FAQ is to answer the questions we hear a lot!
+If you're encountering any difficulties, get in touch! Three questions in the FAQ doesn't seem like much, but the point of an FAQ is to answer the questions we hear a lot!

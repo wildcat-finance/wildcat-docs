@@ -4,33 +4,26 @@ description: There's no such thing as a free lunch.
 
 # Protocol Usage Fees
 
-Wildcat has the ability to charge a fee for the usage of its markets.
+Wildcat has the ability to charge fees for the usage of its markets.
 
-Once a borrower has been added to the global registry by the archcontroller, they have free reign to deploy markets however they see fit, both in market parameters themselves (e.g. capacity, withdrawal period) and which hooks are in place to gate access.
+Once a borrower is added to the global registry by the archcontroller, they can freely deploy markets with customizable parameters (e.g., capacity, withdrawal periods) and access-control hooks.
 
-However, there is one parameter associated with a market that a borrower cannot change: the _protocol fee._ This manifests as:
+However, one parameter that borrowers cannot modify is the protocol fee. This fee can take one or both of the following forms:
 
-* an _origination fee_ (which must be paid during the deployment of a market),
-* a 'streaming' proportion of base APR which accrues over the supply of assets rather than the capacity (meaning that its' presence doesn't cause market tokens to rebase any faster), or
-* both.
+#### Origination Fee:
 
-The borrower that deploys a market with a base APR of 10% that has a 5% streaming protocol fee in place will find themselves paying 10.5% (the base APR receivable by lenders plus 5% of that rate). The lender will receive 10% as expected, the rest accrues to the protocol over time.
+* Paid during market deployment.
 
-Decreasing or increasing that APR will similarly adjust the actual protocol fee APR: reducing the base APR to 8% will result in a borrower paying 8.4%.
+#### Streaming Fee:
 
-Protocol fees do _not_ increase in the presence of a penalty APR if a market is delinquent and over the grace period: if a market has a base rate of 10% and is currently paying an additional penalty APR of 20%, the total market APR is 30.5% ((10% + 0.5%) + 20%), _not_ 31.5%.
+* A percentage of the base APR that accrues over the supply of assets, rather than the market’s capacity. This does not accelerate the rebase of market tokens.
 
-Protocol fees accrued as part of a market APR are senior to lender claims within a market - a lender who attempts to withdraw all of the reserves within a market will only be capable of removing that amount net any protocol fees that have accrued over time and not been withdrawn.\
-\
-The fee configuration of an active market can be adjusted by the archcontroller owner, and changes are retroactive in V2 markets.
+For example, if a borrower deploys a market with a 10% base APR and a 5% streaming protocol fee, the effective rate paid is 10.5%. Lenders still receive the full 10% APR, while the remaining 0.5% accrues to the protocol. Adjusting the base APR proportionally affects the protocol fee. For instance, lowering the base APR to 8% reduces the effective rate to 8.4%.
 
-If your market launched with a 0% streaming protocol fee which is subsequently increased to 5%, that fee will start to take effect after the appropriate hook instance contract tied to a market is updated. Any origination fee update will be rendered void for existing markets (since the market exists already!).
+Protocol fees are not applied to penalty APRs. If a market with a 10% base APR incurs a 20% penalty APR, the total rate is 30.5% (10% + 0.5% + 20%), not 31.5%.
 
-At the time of the Wildcat V2 launch, the fee was set at **5% streaming and no origination fee**.
+Protocol fees have seniority over lender claims within a market. When withdrawing reserves, lenders can only access the amount net of any accrued but unpaid protocol fees.
 
-In Wildcat V2, streaming protocol fees are hard-capped at 10% of base APR.
+The archcontroller owner can adjust the fee configuration of active markets, with changes applied retroactively in V2 markets. For example, if a market launches with a 0% streaming fee and this is later increased to 5%, the new fee takes effect once the associated hook instance contract is updated. Origination fee adjustments do not apply to existing markets.
 
-
-
-
-
+At the launch of Wildcat V2, the default fee was set at **5% streaming with no origination fee**. Streaming protocol fees are hard-capped at 10% of the base APR.

@@ -28,7 +28,7 @@ The example given is also an extreme one: in practice it'd much more likely be a
 
 ## **Bad Hook Implementations**
 
-If any of the hooks that are enabled for a market can revert unexpectedly, the corresponding market function may become permanently disabled. This is considered a known/unfixable issue with respect to the market, but if such an issue is actually discovered in a hooks template we have developed, this is a major vulnerability that should be reported.
+If any of the hooks that are enabled for a market can revert unexpectedly, the corresponding market function may become permanently disabled. This is considered a known/unfixable issue with respect to the market, but if such an issue is actually discovered in a hooks template that has been developed and deployed, this is a major vulnerability that should be reported.
 
 ## **Sanctioned Account Handling Can Lead To Unexpected Behaviour On Markets With Withdrawal Restrictions**
 
@@ -69,7 +69,7 @@ The way this would work is:
 * Never add any role providers.
 * Lenders can deposit, but since they'll never have a credential, they will never be given the `isKnownLender` flag, and thus can never withdraw.
 
-Unfortunately it is not possible to remove this problem without eliminating certain kinds of market that are desirable, so we consider this in a similar vein to the issue with malicious borrowers simply not repaying their debt, in that it's up to lenders to be selective with who they lend to.
+Unfortunately it is not possible to remove this problem without eliminating certain kinds of market that are desirable, so we consider this in a similar vein to the issue with malicious borrowers simply not repaying their debt, in that it's up to lenders to be selective with who they lend to. As a mitigation, we force all markets deployed through the Wildcat frontend as having credentials required for deposit.
 
 ## **Reliance On Chainalysis**
 

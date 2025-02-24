@@ -4,8 +4,7 @@
 
 ## Overview
 
-* [Introduction](overview/introduction.md)
-* [What Wildcat Enables](overview/what-wildcat-enables.md)
+* [The Elevator Pitch](overview/introduction.md)
 * [Whitepaper](overview/whitepaper.md)
 * [FAQs](overview/faqs.md)
 
@@ -75,8 +74,6 @@
 
 ## Miscellaneous
 
-* [Protocol History/Development](miscellaneous/who-we-are.md)
-* [Contact Us](miscellaneous/contact-us.md)
 * [DEPRECATED DOCUMENTATION](miscellaneous/deprecated-documentation/README.md)
   * [V1 Component Overview](miscellaneous/deprecated-documentation/component-overview/README.md)
     * [WildcatArchController.sol](miscellaneous/deprecated-documentation/component-overview/wildcatarchcontroller.sol.md)

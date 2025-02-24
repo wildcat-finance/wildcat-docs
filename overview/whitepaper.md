@@ -7,9 +7,5 @@ Most of the content is expanded on in this Gitbook, however, so if you've read t
 
 **v2.0 \[Release Date: 21 October 2024]:**
 
-[https://github.com/wildcat-finance/wildcat-whitepaper/blob/main/whitepaper\_v2.0.pdf](https://github.com/wildcat-finance/wildcat-whitepaper/blob/main/whitepaper\_v2.0.pdf)
-
-**Soon To Be Deprecated - v1.0 \[Release Date: 13 November 2023]:**\
-\
-[https://github.com/wildcat-finance/wildcat-whitepaper/blob/main/whitepaper\_v1.0.pdf](https://github.com/wildcat-finance/wildcat-whitepaper/blob/main/whitepaper\_v1.0.pdf)
+[https://github.com/wildcat-finance/wildcat-whitepaper/blob/main/whitepaper\_v2.0.pdf](https://github.com/wildcat-finance/wildcat-whitepaper/blob/main/whitepaper_v2.0.pdf)
 

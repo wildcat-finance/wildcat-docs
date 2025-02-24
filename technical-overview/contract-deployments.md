@@ -10,7 +10,7 @@ description: Core contract deployment addresses on Ethereum mainnet and Sepolia 
 
 ## Deprecated Ethereum Mainnet \[V1]
 
-<table><thead><tr><th width="288">Contract Name</th><th>Contract Address</th></tr></thead><tbody><tr><td>MarketLens</td><td><a href="https://etherscan.io/address/0xf1D516954f96c1363f8b0aE48D79c8ddE6237847">0xf1D516954f96c1363f8b0aE48D79c8ddE6237847</a></td></tr><tr><td>WildcatMarketControllerFactory<br>[DEPRECATED]</td><td><a href="https://etherscan.io/address/0xFd31007613C9F671df6A8D4234901324986Bfd13">0xFd31007613C9F671df6A8D4234901324986Bfd13</a></td></tr></tbody></table>
+<table><thead><tr><th width="288">Contract Name</th><th>Contract Address</th></tr></thead><tbody><tr><td>MarketLens</td><td><a href="https://etherscan.io/address/0xf1D516954f96c1363f8b0aE48D79c8ddE6237847">0xf1D516954f96c1363f8b0aE48D79c8ddE6237847</a></td></tr><tr><td>WildcatMarketControllerFactory</td><td><a href="https://etherscan.io/address/0xFd31007613C9F671df6A8D4234901324986Bfd13">0xFd31007613C9F671df6A8D4234901324986Bfd13</a></td></tr></tbody></table>
 
 ## Sepolia Testnet \[V1, components of pre-audited V2]
 
