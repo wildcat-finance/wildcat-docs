@@ -18,7 +18,7 @@
   * [Market Access Via Policies/Hooks](using-wildcat/day-to-day-usage/market-access-via-policies-hooks.md)
   * [The Sentinel](using-wildcat/day-to-day-usage/the-sentinel.md)
 * [Protocol Usage Fees](using-wildcat/protocol-usage-fees.md)
-* [Delinquency](using-wildcat/delinquency.md)
+* [Pending Market State](using-wildcat/delinquency.md)
 
 ## Technical Overview
 

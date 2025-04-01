@@ -42,7 +42,7 @@ NOW, THEREFORE, in consideration of the foregoing and other good and valuable co
 
 **\`Communication Platform\`** means digital communication platforms such as electronic mail, Telegram, Slack, X or other similar platforms, as specified by the Borrower on the Website.
 
-**\`Delinquent\`** means, with respect to the Market, any period of time in which there are insufficient Assets in the Market to meet the Reserve Ratio specified by the Borrower in the Term Sheet, which may be as a result of (a) the amount of Assets held within a Market falling below the Reserve Ratio as a result of Market Token Supply growth resulting from the Base APR and/or the Penalty APR and/or the removal from the Market of any accrued Protocol Fees, (b) the Reserve Ratio increasing as a result of Withdrawal requests that cannot be completed given the amount of Equivalent Loan Assets in the Market or (c) the Reserve Ratio temporarily increasing as a result of a reduction of the Base APR, each as may be further explained in the Wildcat Protocol Documentation.
+**\`Pending\`** means, with respect to the Market, any period of time in which there are insufficient Assets in the Market to meet the Reserve Ratio specified by the Borrower in the Term Sheet, which may be as a result of (a) the amount of Assets held within a Market falling below the Reserve Ratio as a result of Market Token Supply growth resulting from the Base APR and/or the Penalty APR and/or the removal from the Market of any accrued Protocol Fees, (b) the Reserve Ratio increasing as a result of Withdrawal requests that cannot be completed given the amount of Equivalent Loan Assets in the Market or (c) the Reserve Ratio temporarily increasing as a result of a reduction of the Base APR, each as may be further explained in the Wildcat Protocol Documentation.
 
 **\`Deposit Credential\`** means, with respect to a Market, permission – either temporary or permanent, as configured by the Borrower – to deposit Assets into a Market granted by a Role Provider according to a Lender Check Process determined by the Borrower.
 
@@ -50,7 +50,7 @@ NOW, THEREFORE, in consideration of the foregoing and other good and valuable co
 
 **\`Fixed Term State\`** means the optional Borrower-configured period of time after the deployment of a Market during which Withdrawals from Lenders are rejected.
 
-**\`Grace Period\`** means the period of time for which a Market can be Delinquent on a rolling basis before the Penalty APR becomes payable.
+**\`Grace Period\`** means the period of time for which a Market can be pending on a rolling basis before the Penalty APR becomes payable.
 
 **\`Known Lender\`** means, with respect to a Market, a state assigned to any Wallet Address that – while holding a valid, unexpired Deposit Credential – either (i) enters into a Loan by depositing Assets into the Market, or (ii) receives Market Tokens from a third party Wallet Address provided that the Market supports sufficient Token Transferability.
 
@@ -72,7 +72,7 @@ NOW, THEREFORE, in consideration of the foregoing and other good and valuable co
 
 **\`Open Term State\`** means, with respect to a Market, that it is not in a Fixed Term State as a result of (i) the Market having been initially deployed as Open Term, or (ii) the term to maturity of the Fixed Term State specified in the Term Sheet having elapsed.
 
-**\`Penalty APR\`** means the additional interest rate to be paid in addition to the Base APR that is applied if the Market is Delinquent for longer than the Grace Period.&#x20;
+**\`Penalty APR\`** means the additional interest rate to be paid in addition to the Base APR that is applied if the Market is Pending for longer than the Grace Period.&#x20;
 
 **\`Protocol\`** means the Wildcat Protocol, as defined by [https://docs.wildcat.finance](https://docs.wildcat.finance).&#x20;
 

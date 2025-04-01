@@ -15,12 +15,12 @@ Markets are configured with the following values:
 * `feeRecipient` - Recipient of protocol fees
 * `sentinel` - Chainalysis wrapper determining whether accounts are sanctioned
 * `maxTotalSupply` - The `totalSupply` at which the market will stop accepting withdrawals
-* `protocolFeeBips` - A fraction of `annualInterestBips` which accrues to the protocol (in excess of the rate paid to lenders, not subtracted from it). This is not affected by delinquency fees.
+* `protocolFeeBips` - A fraction of `annualInterestBips` which accrues to the protocol (in excess of the rate paid to lenders, not subtracted from it). This is not affected by pending fees.
 * `annualInterestBips` - The base interest rate set by the borrower. Accrues solely to lenders.
-* `delinquencyFeeBips` - Penalty fee added to the interest rate when the borrower is delinquent for too long. . Accrues solely to lenders.
+* `delinquencyFeeBips` - Penalty fee added to the interest rate when the borrower is pending for too long. . Accrues solely to lenders.
 * `withdrawalBatchDuration` - The length of a withdrawal cycle.
 * `reserveRatioBips` - The fraction of outstanding debt which the borrower is obligated to keep in liquid reserves.
-* `delinquencyGracePeriod` - The amount of time a borrower has before incurring penalties for a delinquent market.
+* `delinquencyGracePeriod` - The amount of time a borrower has before incurring penalties for a pending market.
 * `archController` - Registry for factory/controller/market deployments.
 * `sphereXEngine` - Engine for SphereX integration which does security checks on transactions.
 * `hooks` - The market's hooks policy and the address of the hooks instance.
@@ -49,23 +49,23 @@ state.normalizeAmount(state.scaledPendingWithdrawals)
 + state.accruedProtocolFees
 ```
 
-### **Delinquency**
+### **Pending**
 
-Whenever a market has less total assets than its minimum collateral obligation, the borrower is considered delinquent (`state.isDelinquent`). For every second the borrower remains delinquent, a timer (`state.timeDelinquent`) increments. For every second the market is in a healthy state, the timer decrements.
+Whenever a market has less total assets than its minimum collateral obligation, the borrower is considered pending (`state.isDelinquent`). For every second the borrower remains pending, a timer (`state.timeDelinquent`) increments. For every second the market is in a healthy state, the timer decrements.
 
-For every second that the market spends with its delinquency timer above the grace period, the delinquency fee is applied to the interest rate.
+For every second that the market spends with its pending timer above the grace period, the pending fee is applied to the interest rate.
 
-This system results in the borrower being penalized for two seconds for every second they allow `timeDelinquent` to exceed the grace period: once on the way up while the market is delinquent, and once on the way down when the market is healthy.
+This system results in the borrower being penalized for two seconds for every second they allow `timeDelinquent` to exceed the grace period: once on the way up while the market is pending, and once on the way down when the market is healthy.
 
 ### Interest Rates
 
 Borrowers pay interest based on three rates, all of which are denominated in annual bips (1 = 0.01%):
 
 * `annualInterestBips` - The base interest rate set by the borrower. Accrues solely to lenders.
-* `delinquencyFeeBips` - An additional fee added to the base interest rate whenever the borrower is in penalized delinquency. Accrues solely to lenders.
-* `protocolFeeBips` - A fraction of `annualInterestBips` which accrues to the protocol (in excess of the rate paid to lenders, not extracted from it). This is not affected by delinquency fees.
+* `delinquencyFeeBips` - An additional fee added to the base interest rate whenever the borrower is in penalized pending state. Accrues solely to lenders.
+* `protocolFeeBips` - A fraction of `annualInterestBips` which accrues to the protocol (in excess of the rate paid to lenders, not extracted from it). This is not affected by pending fees.
 
-Every state update, the sum of these rates is applied to the current `scaleFactor` (with the delinquency fee only being applied for the number of seconds the market was in penalized delinquency), compounding the market's interest.
+Every state update, the sum of these rates is applied to the current `scaleFactor` (with the pending fee only being applied for the number of seconds the market was in penalized pending state), compounding the market's interest.
 
 ### State Update
 
@@ -73,8 +73,8 @@ At the start of every stateful external function on a market which is the first 
 
 The basic state update sequence is:
 
-1. Accrues the base interest rate and protocol fees, as well as the delinquency fee for any seconds since the last update during which the market was in [penalized delinquency](https://github.com/wildcat-finance/v2-protocol/blob/main/docs/Core%20Behavior.md#delinquency)
-2. Updates the delinquency timer, increasing if the previous state was delinquent and decreasing if it was not (to a minimum of zero).
+1. Accrues the base interest rate and protocol fees, as well as the pending fee for any seconds since the last update during which the market was in [penalized pending](https://github.com/wildcat-finance/v2-protocol/blob/main/docs/Core%20Behavior.md#delinquency)
+2. Updates the pending timer, increasing if the previous state was pending and decreasing if it was not (to a minimum of zero).
 3. Applies any available liquidity to the pending withdrawal batch if there is one.
 
 If, at the start of the transaction, the current pending withdrawal batch has expired, the state update will be split into two iterations of the above sequence:

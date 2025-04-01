@@ -4,13 +4,13 @@ description: Some aspects and quirks of the protocol codebase that may raise con
 
 # Known Issues
 
-## **Avoiding Delinquency Fees**
+## **Avoiding Pending Fees**
 
-If the borrower closes a Wildcat market while it is still in penalized delinquency, they will not have to pay out the remaining time worth of penalized delinquency fees as the timer will be set to zero.
+If the borrower closes a Wildcat market while it is still in penalized pending state, they will not have to pay out the remaining time worth of penalized pending fees as the timer will be set to zero.
 
 We decided that this is an acceptable trade-off enabling lenders to access their funds immediately, rather than waiting what could range from days to weeks for a borrower to come good on their word.
 
-## **Malicious/Delinquent Borrowers Can Lead To Loss Of Funds**
+## **Malicious/Pending Borrowers Can Lead To Loss Of Funds**
 
 This one is fairly obvious but worth stating - if a borrower fails to repay their debt for any reason, lenders will inevitably lose funds.
 
