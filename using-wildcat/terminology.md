@@ -176,6 +176,13 @@ description: It's dangerous to go alone - learn these.
 * Encourages borrower to responsibly monitor the [reserve ratio](terminology.md#reserve-ratio) of a market.
 * No part of the penalty APR is receivable by the Wildcat protocol itself (does not inflate the protocol APR if present).
 
+#### Pending (State)
+
+* An alias for [delinquency](terminology.md#delinquency) that is used on the frontend while a [market](terminology.md#market) has insufficient [reserves](terminology.md#required-reserves).
+* It was observed that several lenders expressed concern about the loaded meaning of the word 'delinquent' (which is purely technical within the protocol itself).
+* As a result, 'Pending' is used on the frontend to emphasise that this state does not _necessarily_ imply a failure on the part of the borrower: typically delinquency is fallen into as soon as a large withdrawal request is made, and remains until repayments are made.
+* A market that is pending/delinquent for longer than the specified grace period subsequently enters the Penalty state, where the [Penalty APR](terminology.md#penalty-apr) applies.
+
 #### **Pending Withdrawal**
 
 * A [withdrawal request](terminology.md#withdrawal-request) that has not yet [expired](terminology.md#expired-withdrawal) (i.e. was created in the current [withdrawal cycle](../miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/wildcatmarketwithdrawals.sol.md#processunpaidwithdrawalbatch)).
@@ -189,8 +196,8 @@ description: It's dangerous to go alone - learn these.
 * Percentage of [base APR](terminology.md#base-apr) that accrues to the Wildcat protocol itself.
 * Parameter configured by the factory operator for each [hooks template](terminology.md#hooks-template), applying to all [markets](terminology.md#market) deployed with an instance of said template.
 * Can be zero.
-* Does not increase in the presence of an active [penalty APR](terminology.md#penalty-apr) (which only increases the APR accruing to [lenders](terminology.md#lender)).&#x20;
-* Example: market with base APR of 10% and protocol APR of 20% results in borrower paying 12% when penalty APR is not active.&#x20;
+* Does not increase in the presence of an active [penalty APR](terminology.md#penalty-apr) (which only increases the APR accruing to [lenders](terminology.md#lender)).
+* Example: market with base APR of 10% and protocol APR of 20% results in borrower paying 12% when penalty APR is not active.
 
 #### Required Reserves
 
@@ -269,4 +276,3 @@ description: It's dangerous to go alone - learn these.
 * An instruction to a [market](terminology.md#market) to transfer reserves within a market to the [unclaimed withdrawals pool](terminology.md#unclaimed-withdrawals-pool), to be [claimed](terminology.md#claim) at the end of a [withdrawal cycle](terminology.md#withdrawal-cycle).
 * A withdrawal request made of a market with non-zero reserves will burn as many [market tokens](terminology.md#market-token) as possible 1:1 to fully honour the request.
 * Any amount requested - whether or not it is in excess of the market reserves - is marked as a [pending withdrawal](terminology.md#pending-withdrawal), either to be fully honoured at the end of the cycle, or marked as [expired](terminology.md#expired-withdrawal) and added to the [withdrawal queue](terminology.md#withdrawal-queue), depending on the actions of the [borrower](terminology.md#borrower) during the cycle.
-
