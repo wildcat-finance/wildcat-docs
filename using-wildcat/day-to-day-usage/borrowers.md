@@ -89,17 +89,17 @@ This represents the initial **capacity** of the market - the maximum amount of d
 
 ### Base APR
 
-The amount of interest that you are willing to pay on deposits to _lenders_. This is the rate that will apply presuming that your market never stays pending for long enough for the penalty APR to activate (see below). The APR compounds every time the market is interacted with in a non-static call (such as a deposit or withdrawal request), so it's hard to determine precisely what the APY would be for this rate.\
+The amount of interest that you are willing to pay on deposits to _lenders_. This is the rate that will apply presuming that your market never stays delinquent for long enough for the penalty APR to activate (see below). The APR compounds every time the market is interacted with in a non-static call (such as a deposit or withdrawal request), so it's hard to determine precisely what the APY would be for this rate.\
 \
 Note: that this is not the true APR that you pay in the presence of the [protocol fee](../protocol-usage-fees.md), which will be added onto the base rate (e.g. selecting a base rate of 10% for a market that includes a 5% protocol fee produces a final rate for the borrower of 10% + (0.05 \* 10%) = 10.5%. However, this 0.5% does not accrue to the rebasing debt tokens, but rather to the required reserves of a market over time.
 
 ### Penalty APR
 
-The amount of _additional_ APR that you agree to pay in the event that your market becomes [pending ](../terminology.md#pending-market-state)(i.e. falls below required reserves) and the pending state is not resolved within the amount of time specified by the [**grace period**](../terminology.md#grace-period) (defined in this panel by yourself), as observed by the [**grace tracker**](../terminology.md#grace-tracker).
+The amount of _additional_ APR that you agree to pay in the event that your market becomes [**delinquent**](../terminology.md#delinquency) (i.e. falls below required reserves) and the delinquency is not resolved within the amount of time specified by the [**grace period**](../terminology.md#grace-period) (defined in this panel by yourself), as observed by the [**grace tracker**](../terminology.md#grace-tracker).
 
 Wildcat V2 markets allow for this value to range between **0 - 100%**. We encourage borrowers to select a non-zero value to illustrate the seriousness with which they intend to monitor their obligations.\
 \
-This penalty rate is added on to the base rate only for as long as the value of the grace tracker is above that of the grace period. The presence of an active penalty rate does not factor in to the calculation of any protocol fees that are in place, as Wildcat profiting from pending markets would present all manner of perverse incentives.
+This penalty rate is added on to the base rate only for as long as the value of the grace tracker is above that of the grace period. The presence of an active penalty rate does not factor in to the calculation of any protocol fees that are in place, as Wildcat profiting from delinquent markets would present all manner of perverse incentives.
 
 ### Reserve Ratio
 
@@ -107,19 +107,19 @@ The percentage of the market **supply** that must remain _within_ the market ava
 
 Wildcat V2 markets allow for this value to range between **0 - 100%**. The zero is in homage to the American central banking system. This enables fully uncollateralised markets: however, a borrower will still be expected to maintain a small amount within the market to handle protocol fee accrual.\
 \
-Failing to maintain this level will result in the market becoming **pending**.\
+Failing to maintain this level will result in the market becoming **delinquent**.\
 \
-Note that the capacity and the reserve ratio together dictate the _maximum_ that you are able to borrow from a market. A higher reserve ratio leads to a greater amount that you are paying interest on, but provides more of a cushion for lenders to easily exit their position, presuming that you fix the pending market state in a timely manner (lest you incur the _penalty APR_, see above).
+Note that the capacity and the reserve ratio together dictate the _maximum_ that you are able to borrow from a market. A higher reserve ratio leads to a greater amount that you are paying interest on, but provides more of a cushion for lenders to easily exit their position, presuming that you fix delinquencies in a timely manner (lest you incur the _penalty APR_, see above).
 
 ### Grace Period Duration
 
-The amount of time that a market is permitted to be pending for before the penalty APR activates. This parameter is measured in hours, and comes with a corresponding variable called the grace tracker, which measures the amount of time for which the market has been pending.\
+The amount of time that a market is permitted to be delinquent for before the penalty APR activates. This parameter is measured in hours, and comes with a corresponding variable called the grace tracker, which measures the amount of time for which the market has been delinquent.\
 \
-The grace period is a _rolling limit_: once pending state has been cured within a market, the grace tracker will count back down to zero from whatever value it had reached, and any penalty APR that is currently in force will only cease to do so after the grace tracker value is once again below the grace period.
+The grace period is a _rolling limit_: once delinquency has been cured within a market, the grace tracker will count back down to zero from whatever value it had reached, and any penalty APR that is currently in force will only cease to do so after the grace tracker value is once again below the grace period.
 
 Wildcat V2 markets allow for this value to range between **0 - 2160 hours** (90 days).\
 \
-Note: this means that if a markets grace period is 3 days, and it takes 5 days to cure the pending state, this means that **4** days of penalty APR are paid (you took two days to fix it, and then it took another two days to climb back to zero). **This is important**: a borrower does not necessarily have `grace_period` amount of time to cure each distinct instance of pending state!
+Note: this means that if a markets grace period is 3 days, and it takes 5 days to cure delinquency, this means that **4** days of penalty APR are paid (you took two days to fix it, and then it took another two days to climb back to zero). **This is important**: a borrower does not necessarily have `grace_period` amount of time to cure each distinct instance of delinquency!
 
 ### Withdrawal Cycle Duration
 
@@ -213,7 +213,7 @@ The process of actually borrowing available assets from a market is simple: navi
 
 <figure><img src="../../.gitbook/assets/image (45).png" alt=""><figcaption><p>Step 2: Verify you're comfortable with how long your market will remain healthy and confirm. </p></figcaption></figure>
 
-We strongly advise not borrowing right up to the limit, as the result of this will be that your market becomes pending after the very next non-static call which updates the market state and rebases the market token supply.
+We strongly advise not borrowing right up to the limit, as the result of this will be that your market becomes delinquent after the very next non-static call which updates the market state and rebases the market token supply.
 
 Please also note that where a protocol fee is in place for a market, said fees will accrue as [required reserves](../terminology.md#required-reserves) in the market over time, alongside interest that accrues to the rebasing debt tokens.
 

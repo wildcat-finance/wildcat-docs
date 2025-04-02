@@ -37,19 +37,19 @@ description: It's dangerous to go alone - learn these.
 
 #### Collateral Obligation
 
-* The minimum amount of [assets](terminology.md#underlying-asset) that the borrower is obligated to keep in the market in order to avoid a market [pending](terminology.md#pending-market-state).
+* The minimum amount of [assets](terminology.md#underlying-asset) that the borrower is obligated to keep in the market in order to avoid [delinquency](terminology.md#delinquency).
 * The sum of:
   * The [reserves](terminology.md#required-reserves) needed to meet the [reserve ratio](terminology.md#reserve-ratio) for the [outstanding supply](terminology.md#outstanding-supply),
   * The market's [unclaimed withdrawals pool](terminology.md#unclaimed-withdrawals-pool),
   * The normalized value of the market's [pending](terminology.md#pending-withdrawal) and [expired](terminology.md#expired-withdrawal) withdrawals, and
   * The unclaimed [protocol fees](terminology.md#protocol-apr).
 
-#### **Pending Market State**
+#### **Delinquency**
 
 * A [market](terminology.md#market) state wherein there are insufficient [assets](terminology.md#underlying-asset) in the market to meet the market's [collateral obligations](terminology.md#collateral-obligation).
 * Arises via the passage of time through interest if the borrower borrows right up to their reserve ratio.
 * Can also arise if a [lender](terminology.md#lender) makes a [withdrawal request](terminology.md#withdrawal-request) that exceeds the market's available liquidity.
-* A market being pending for an extended period of time (as specified by the [grace period](terminology.md#grace-period)) results in the [penalty APR](terminology.md#penalty-apr) being enforced in addition to the [base APR](terminology.md#base-apr) and any [protocol APR](terminology.md#protocol-apr) that may apply.
+* A market being delinquent for an extended period of time (as specified by the [grace period](terminology.md#grace-period)) results in the [penalty APR](terminology.md#penalty-apr) being enforced in addition to the [base APR](terminology.md#base-apr) and any [protocol APR](terminology.md#protocol-apr) that may apply.
 * 'Cured' by the borrower [depositing](terminology.md#deposit) sufficient assets into the market as to reattain the required collateral obligation.
 
 #### **Deposit**
@@ -90,7 +90,7 @@ description: It's dangerous to go alone - learn these.
 
 * Permission toggled by a [borrower](terminology.md#borrower) when creating a new [market](terminology.md#market).
 * If enabled, permits the borrower to purchase [market tokens](terminology.md#market-token) directly from a [lender](terminology.md#lender), subverting the market by swapping the market tokens for an equivalent amount of [underlying assets](terminology.md#underlying-asset) sourced from the borrower.
-* Cannot be used if a market is [pending ](terminology.md#pending-market-state)or currently in a [fixed term](terminology.md#fixed-term) state.
+* Cannot be used if a market is [delinquent](terminology.md#delinquency) or currently in a [fixed term](terminology.md#fixed-term) state.
 * If performed for the first time on a market, marks the borrower as a [known lender](terminology.md#known-lender).
 * Immediately forces the market tokens into a [withdrawal request](terminology.md#withdrawal-request) on behalf of the borrower.
 * Can be permanently disabled for a market at the borrower's discretion.
@@ -99,15 +99,15 @@ description: It's dangerous to go alone - learn these.
 #### **Grace Period**
 
 * Parameter required of [borrower](terminology.md#borrower) when creating a new [market](terminology.md#market).
-* Rolling period of time for which a market can be [pending ](terminology.md#pending-market-state)before the [penalty APR](terminology.md#penalty-apr) of the market activates.
-* Note that the grace period does not 'reset' to zero when the [pending ](terminology.md#pending-market-state)state is cured. See [grace tracker](terminology.md#grace-tracker) below for details.
+* Rolling period of time for which a market can be [delinquent](terminology.md#delinquency) before the [penalty APR](terminology.md#penalty-apr) of the market activates.
+* Note that the grace period does not 'reset' to zero when delinquency is cured. See [grace tracker](terminology.md#grace-tracker) below for details.
 
 #### **Grace Tracker**
 
 * Internal [market](terminology.md#market) parameter associated with the [grace period](terminology.md#grace-period).
 * `timeDelinquent` in the market state.
-* Once a market becomes [pending](terminology.md#pending-market-state), begins counting seconds up from zero - when the value of the grace tracker exceeds the grace period, the [penalty APR](terminology.md#penalty-apr) activates.
-* Once a market is cured of the [pending ](terminology.md#pending-market-state)state, it begins counting seconds down to zero - the penalty APR continues to apply _until the grace tracker value is below the grace period value_.
+* Once a market becomes [delinquent](terminology.md#delinquency), begins counting seconds up from zero - when the value of the grace tracker exceeds the grace period, the [penalty APR](terminology.md#penalty-apr) activates.
+* Once a market is cured of delinquency, begins counting seconds down to zero - the penalty APR continues to apply _until the grace tracker value is below the grace period value_.
 * Enforces the rolling nature of the grace period.
 
 #### **Hook**
@@ -203,7 +203,7 @@ description: It's dangerous to go alone - learn these.
 * Percentage of current [outstanding supply](terminology.md#outstanding-supply) that must be kept in the market (but still accrue interest).
 * Intended to provide a liquid buffer for [lenders](terminology.md#lender) to make [withdrawal requests](terminology.md#withdrawal-request) against, partially 'collateralising' the credit facility through lenders' deposits.
 * Increases temporarily when a borrower reduces the [base APR](terminology.md#base-apr) of a [market](terminology.md#market) (fixed-term increase).
-* A market which has insufficient assets in the market to meet the reserve ratio is said to be [pending](terminology.md#pending-market-state), with the [penalty APR](terminology.md#penalty-apr) potentially being enforced if the [pending ](terminology.md#pending-market-state)state is not cured before the [grace tracker](terminology.md#grace-tracker) value exceeds that of the [grace period](terminology.md#grace-period) for that particular market.
+* A market which has insufficient assets in the market to meet the reserve ratio is said to be [delinquent](terminology.md#delinquency), with the [penalty APR](terminology.md#penalty-apr) potentially being enforced if the delinquency is not cured before the [grace tracker](terminology.md#grace-tracker) value exceeds that of the [grace period](terminology.md#grace-period) for that particular market.
 
 #### Role Provider
 
