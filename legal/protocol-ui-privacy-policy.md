@@ -58,7 +58,20 @@ Strictly Necessary: These Cookies are necessary for the Services to work properl
 
 Functional: These Cookies enable technical performance and allow us to remember the choices you make while browsing our Services, including any preferences you set. They also include sign-in and authentication Cookies and IDs that enable you to return without additional sign-in.
 
-Performance/Analytics: These Cookies allow us to collect certain information about how you navigate the Services and services running on your device. They help us understand which areas you use and what we can do to improve them.
+Performance/Analytic&#x73;**:** These Cookies allow us to collect certain information about how you navigate the Services and services running on your device. They help us understand which areas you use and what we can do to improve them.\
+We use third-party analytics services, including Hotjar, to better understand how users interact with our Services, diagnose technical issues, and improve overall user experience.\
+Hotjar collects pseudonymised information such as:
+
+* Device type, operating system, and browser details
+* Geographic location (country only)
+* Preferred language settings
+* Anonymised interaction data (mouse movements, clicks, scrolls, navigation patterns)
+
+This information is stored in a pseudonymised user profile and processed solely for analytics purposes in accordance with applicable data protection laws.\
+For more information on how Hotjar processes data, please visit: https://www.hotjar.com/legal/policies/privacy/
+
+**Opt-Out:** You can disable Hotjar tracking at any time by following the instructions at: https://www.hotjar.com/legal/compliance/opt-out\
+We only activate Hotjar and other non-essential analytics cookies after obtaining your explicit consent through our Banner. You may withdraw or change your consent at any time via our cookie settings.
 
 Targeting: These Cookies are used to deliver relevant information related to our Services to an identified machine or other device (not a named or otherwise identifiable person) which has previously been used to visit our Services. Some of these types of Cookies on our Services are operated by third parties with our permission and are used to identify advertising sources that are effectively driving customers to our Services.
 
@@ -90,7 +103,7 @@ We may share or disclose the data we collect in the limited circumstances as des
 
 With regulators, government entities, and law enforcement to comply with our legal obligations
 
-With service providers and vendors who may assist us in providing, delivering, and improving the Services (hosting provider, mailing provider, etc)
+With service providers, including Hotjar, to help us understand how users interact with our Services, improve functionality, and diagnose technical issues. These providers act as our data processors under applicable privacy laws, process data solely on our behalf, and are bound by data processing agreements. They may collect pseudonymised information as described in the “Performance/Analytics” section.
 
 With blockchain security analytics providers to ensure the safety and security of our Services and to screen your wallet for any prior illicit activity
 
