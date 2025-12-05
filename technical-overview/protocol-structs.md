@@ -38,8 +38,7 @@ Note: you can generate this yourself via the `calculate_structs.py` Python scrip
 
 &#x20;   uint8 decimals
 
-&#x20;   HooksConfig hooks // NOTE: type HooksConfig is uint256;\
-
+&#x20;   HooksConfig hooks // NOTE: type HooksConfig is uint256;<br>
 
 ## File: src/IHooksFactory.sol
 
@@ -107,8 +106,7 @@ Note: you can generate this yourself via the `calculate_structs.py` Python scrip
 
 &#x20;   bool depositRequiresAccess
 
-&#x20;   uint128 minimumDeposit\
-
+&#x20;   uint128 minimumDeposit<br>
 
 ## File: src/access/FixedTermLoanHooks.sol
 
@@ -254,8 +252,7 @@ Note: you can generate this yourself via the `calculate_structs.py` Python scrip
 
 &#x20;   uint256 gas
 
-&#x20;   address engine\
-
+&#x20;   address engine<br>
 
 ## File: ../src/interfaces/IWildcatSanctionsSentinel.sol
 
@@ -265,8 +262,7 @@ Note: you can generate this yourself via the `calculate_structs.py` Python scrip
 
 &#x20;   address account
 
-&#x20;   address asset\
-
+&#x20;   address asset<br>
 
 ## File: src/interfaces/WildcatStructsAndEnums.sol
 

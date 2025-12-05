@@ -90,15 +90,13 @@ Just to reiterate the terminology here:
    * scaledBalanceOf(bob) = 100
    * balanceOf(bob) = scaledBalanceOf(bob) \* scaleFactor = 100
    * scaledTotalSupply = 100
-   * totalSupply = (scaledTotalSupply \* scaleFactor) = 100\
-
+   * totalSupply = (scaledTotalSupply \* scaleFactor) = 100<br>
 2. We update the market after half a year (T2):
    * scaleFactor = previousScaleFactor \_ (1 + APR \_ timeElapsed / oneYear) = 1.05
    * scaledBalanceOf(bob) = 100
    * balanceOf(bob) = scaledBalanceOf(bob) \* scaleFactor = 105
    * scaledTotalSupply = 100
-   * totalSupply = (scaledTotalSupply \* scaleFactor) = 105\
-
+   * totalSupply = (scaledTotalSupply \* scaleFactor) = 105<br>
 3. In the same block, Alice deposits 210 TKN (T3):
    * scaleFactor = 1.05
    * scaledBalanceOf(bob) = 100
@@ -106,8 +104,7 @@ Just to reiterate the terminology here:
    * scaledBalanceOf(alice) = deposit / scaleFactor = 210 / 1.05 = 200
    * balanceOf(alice) = scaledBalanceOf(alice) \* scaleFactor = 210
    * scaledTotalSupply = 300
-   * totalSupply = (scaledTotalSupply \* scaleFactor) = 315\
-
+   * totalSupply = (scaledTotalSupply \* scaleFactor) = 315<br>
 4. After another half a year, we update the market again (T4):
    * scaleFactor = previousScaleFactor \_ (1 + APR \_ timeElapsed / oneYear) = 1.1025
    * scaledBalanceOf(bob) = 100

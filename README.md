@@ -48,8 +48,8 @@ You might as well start at the beginning.
 
 Contract deployments, gas profiles etc can be found under the following section:
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="/broken/pages/fHCWqREPg9sfCxjKUeFQ" %}
+[Broken link](/broken/pages/fHCWqREPg9sfCxjKUeFQ)
 {% endcontent-ref %}
 
 More specifically, if you're taking part in an audit or validating a potential bug, please refer to:
@@ -61,8 +61,8 @@ More specifically, if you're taking part in an audit or validating a potential b
 \
 If you're interested in reading about our on-chain protection or previous security reviews:
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="/broken/pages/r1t7mLDeLFjD0UzQSmC1" %}
+[Broken link](/broken/pages/r1t7mLDeLFjD0UzQSmC1)
 {% endcontent-ref %}
 
 
@@ -71,13 +71,12 @@ If you're interested in reading about our on-chain protection or previous securi
 
 ## Lawyers/Regulators:
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="/broken/pages/xzRI15ndaOBjDUZmnohw" %}
+[Broken link](/broken/pages/xzRI15ndaOBjDUZmnohw)
 {% endcontent-ref %}
 
 
 
-Beyond that, the documentation is yours to enjoy (or not) at your leisure. \
-
+Beyond that, the documentation is yours to enjoy (or not) at your leisure. <br>
 
 Hic sunt dragones.

@@ -20,7 +20,7 @@ Now click **Create New Market**.
 
 <figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
-There are a number of parameter fields that are presented here, and the screen may appear a bit overwhelming, but they fundamentally represent the degrees of freedom you have available to you.&#x20;
+There are a number of parameter fields that are presented here, and the screen may appear a bit overwhelming, but they fundamentally represent the degrees of freedom you have available to you.
 
 Note: the [**Terminology**](../terminology.md) page may help here if you get lost in the sauce.\
 \
@@ -169,7 +169,7 @@ There are a series of messages at the bottom of the page for you to pay attentio
 
 You are then asked to Sign: this is related to the MLA, and requires you to ECDSA sign the template agreement or your refusal to offer it.
 
-**Please note:** if you're using a Safe multisig, you need to _keep this window open_ until the MLA signature/refusal has been signed so that you can fire off the deployment transaction afterwards. If you're on the testnet, you need to make _two_ transactions as part of deployment (we create a mock token contract for you as the base asset so you people can access a faucet). This is a pain for UX, but closing the window between these steps _will invalidate the MLA signature/lose all progress_, and you'll have to do it again. Not much we can do about this without some pretty beefy changes. \
+**Please note:** if you're using a Safe multisig, you need to _keep this window open_ until the MLA signature/refusal has been signed so that you can fire off the deployment transaction afterwards. If you're on the testnet, you need to make _two_ transactions as part of deployment (we create a mock token contract for you as the base asset so you people can access a faucet). This is a pain for UX, but closing the window between these steps _will invalidate the MLA signature/lose all progress_, and you'll have to do it again. Not much we can do about this without some pretty beefy changes.\
 \
 **TL;DR: Have your multisig signers available when you do this!**
 
@@ -211,7 +211,7 @@ The process of actually borrowing available assets from a market is simple: navi
 
 <figure><img src="../../.gitbook/assets/image (44).png" alt=""><figcaption><p>Step 1: Enter how much you want to borrow from your market.</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (45).png" alt=""><figcaption><p>Step 2: Verify you're comfortable with how long your market will remain healthy and confirm. </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (45).png" alt=""><figcaption><p>Step 2: Verify you're comfortable with how long your market will remain healthy and confirm.</p></figcaption></figure>
 
 We strongly advise not borrowing right up to the limit, as the result of this will be that your market becomes delinquent after the very next non-static call which updates the market state and rebases the market token supply.
 
@@ -276,9 +276,9 @@ This is a special case of reducing the APR (with the associated increased reserv
 
 You can access this by clicking **Terminate Market** in the left-hand status bar as a borrower:
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Note that the withdrawal cycle period is erased in terminated markets: lenders still have to file two distinct transactions (i.e. across separate blocks), but the withdrawal cycle period is not enforced in this instance. If a withdrawal cycle was ongoing when the market was terminated, it is immediately concluded, allowing lenders therein to claim.
 

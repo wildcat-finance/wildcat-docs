@@ -10,7 +10,7 @@ The results of these reviews (and associated reports) are available here:
 
 ## Wildcat V2 Reviews
 
-### [alpeh\_v](https://x.com/alpeh\_v) \[Independent Security Review]
+### [alpeh\_v](https://x.com/alpeh_v) \[Independent Security Review]
 
 **Date**: 12 - 23rd August 2024
 
@@ -43,14 +43,13 @@ The results of these reviews (and associated reports) are available here:
 
 **Report**: [https://code4rena.com/audits/2024-08-the-wildcat-protocol](https://code4rena.com/audits/2024-08-the-wildcat-protocol)
 
-Followed up by two subsequent mitigation reviews by [alpeh\_v](https://x.com/alpeh\_v).\
-
+Followed up by two subsequent mitigation reviews by [alpeh\_v](https://x.com/alpeh_v).<br>
 
 ***
 
 ## Wildcat V1 Reviews
 
-### [alpeh\_v](https://x.com/alpeh\_v) \[Independent Security Review]
+### [alpeh\_v](https://x.com/alpeh_v) \[Independent Security Review]
 
 **Date**: 13 - 29th September 2023
 
@@ -66,7 +65,7 @@ Followed up by two subsequent mitigation reviews by [alpeh\_v](https://x.com/alp
 * 2 low
 * Various notes
 
-**Report**: [https://hackmd.io/@geistermeister/r15gj\_y1p](https://hackmd.io/@geistermeister/r15gj\_y1p)
+**Report**: [https://hackmd.io/@geistermeister/r15gj\_y1p](https://hackmd.io/@geistermeister/r15gj_y1p)
 
 
 
