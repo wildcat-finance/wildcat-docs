@@ -10,6 +10,8 @@ Nonetheless, here you go:
 [the-scale-factor.md](the-scale-factor.md "mention")
 ----------------------------------------------------
 
+## [erc-4626-wrapper.md](erc-4626-wrapper.md "mention")
+
 ## [core-behaviour.md](core-behaviour.md "mention")
 
 ## [v1-greater-than-v2-changelog.md](v1-greater-than-v2-changelog.md "mention")
