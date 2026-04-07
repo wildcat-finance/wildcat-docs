@@ -18,6 +18,7 @@
   * [Optional Collateral Contracts](using-wildcat/day-to-day-usage/optional-collateral-contracts.md)
   * [Market Access Via Policies/Hooks](using-wildcat/day-to-day-usage/market-access-via-policies-hooks.md)
   * [The Sentinel](using-wildcat/day-to-day-usage/the-sentinel.md)
+  * [Page 1](using-wildcat/day-to-day-usage/page-1.md)
 * [Protocol Usage Fees](using-wildcat/protocol-usage-fees.md)
 * [Delinquency](using-wildcat/delinquency.md)
 * [Telegram Notification Bot](using-wildcat/telegram-notification-bot.md)
