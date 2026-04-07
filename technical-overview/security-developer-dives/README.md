@@ -1,4 +1,4 @@
-# Security Auditor Docs
+# Security/Developer Dives
 
 This page contains a handful of explainers that we have produced for the sake of auditors describing the various components of Wildcat V2 and how they work.
 
@@ -9,8 +9,6 @@ Nonetheless, here you go:
 \
 [the-scale-factor.md](the-scale-factor.md "mention")
 ----------------------------------------------------
-
-## [erc-4626-wrapper.md](erc-4626-wrapper.md "mention")
 
 ## [core-behaviour.md](core-behaviour.md "mention")
 
