@@ -20,6 +20,7 @@
   * [The Sentinel](using-wildcat/day-to-day-usage/the-sentinel.md)
 * [Protocol Usage Fees](using-wildcat/protocol-usage-fees.md)
 * [Delinquency](using-wildcat/delinquency.md)
+* [Telegram Notification Bot](using-wildcat/telegram-notification-bot.md)
 
 ## Technical Overview
 
