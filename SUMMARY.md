@@ -15,6 +15,7 @@
 * [Day-To-Day Usage](using-wildcat/day-to-day-usage/README.md)
   * [Borrowers](using-wildcat/day-to-day-usage/borrowers.md)
   * [Lenders](using-wildcat/day-to-day-usage/lenders.md)
+  * [Wildcat 4626 Wrapper](using-wildcat/day-to-day-usage/wildcat-4626-wrapper.md)
   * [Optional Collateral Contracts](using-wildcat/day-to-day-usage/optional-collateral-contracts.md)
   * [Market Access Via Policies/Hooks](using-wildcat/day-to-day-usage/market-access-via-policies-hooks.md)
   * [The Sentinel](using-wildcat/day-to-day-usage/the-sentinel.md)
