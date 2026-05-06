@@ -1,7 +1,7 @@
 ---
 description: Private credit, on your terms.
 ---
-
+ 
 # The Wildcat Protocol
 
 {% hint style="info" %}
