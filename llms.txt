@@ -16,6 +16,7 @@ Key links: App https://app.wildcat.finance (testnet: https://testnet.wildcat.fin
 - [The Elevator Pitch](https://docs.wildcat.finance/overview/introduction.md): What Wildcat is and why, summarised for borrowers and lenders — customisable loan terms, fixed rates, direct counterparty lending, optional Master Loan Agreement.
 - [Whitepaper](https://docs.wildcat.finance/overview/whitepaper.md): Pointer to the Wildcat v2.0 whitepaper PDF (ideology, design rationale, high-level logic).
 - [FAQs](https://docs.wildcat.finance/overview/faqs.md): Common operational issues — Fireblocks TAP rules, why claims wait for a withdrawal cycle, connecting a Safe multisig.
+- [For AI Agents & LLMs](https://docs.wildcat.finance/overview/for-ai-agents.md): Optional meta-guide for AI consumers covering Markdown endpoints, the ?ask endpoint, llms-full.txt, and the Wildcat protocol skill.
 
 ## Using Wildcat
 
@@ -69,7 +70,7 @@ Key links: App https://app.wildcat.finance (testnet: https://testnet.wildcat.fin
 - [/spherex — ISphereXProtectedRegisteredBase.sol](https://docs.wildcat.finance/technical-overview/function-event-signatures/spherex/ispherexprotectedregisteredbase.sol.md): SphereX protected-contract base interface.
 - [/spherex — SphereXConfig.sol](https://docs.wildcat.finance/technical-overview/function-event-signatures/spherex/spherexconfig.sol.md): SphereX configuration signatures.
 - [Protocol Structs](https://docs.wildcat.finance/technical-overview/protocol-structs.md): All V2 structs (MarketState, MarketParameters, DeployMarketInputs, HooksTemplate, WithdrawalBatch, LenderStatus, etc.) with field types.
-- [Contract Deployments](https://docs.wildcat.finance/technical-overview/contract-deployments.md): Canonical deployed addresses. Ethereum mainnet V2 — MarketLens 0xfDA5C5B96bb198D2fca1A01d759620B64Ae5afE7, WildcatArchController 0xfEB516d9D946dD487A9346F6fee11f40C6945eE4, WildcatSanctionsSentinel 0x437e0551892C2C9b06d3fFd248fe60572e08CD1A, WildcatHooksFactory 0xdd7dd3b5076cf89440d05585ff56d246386207be, Wildcat4626WrapperFactory 0xEA6DE11f8F3F83c79bD9d8Db5517fCFDf2Bb148a, FixedTermHooks template 0x7e49CabA6FB53CDc70CD98829731A2b8d76dfc36, OpenTermHooks template 0x4c62B4844C8371f321541E8d564A4B3896cEceC7. Also deployed on Plasma mainnet; Sepolia testnet for testing.
+- [Contract Deployments](https://docs.wildcat.finance/technical-overview/contract-deployments.md): Canonical deployed addresses. Ethereum mainnet V2 — MarketLens 0xfDA5C5B96bb198D2fca1A01d759620B64Ae5afE7, WildcatArchController 0xfEB516d9D946dD487A9346F6fee11f40C6945eE4, WildcatSanctionsSentinel 0x437e0551892C2C9b06d3fFd248fe60572e08CD1A, WildcatHooksFactory 0xdd7dd3b5076cf89440d05585ff56d246386207be, Wildcat4626WrapperFactory 0xEA6DE11f8F3F83c79bD9d8Db5517fCFDf2Bb148a, FixedTermHooks template 0x7e49CabA6FB53CDc70CD98829731A2b8d76dfc36, OpenTermHooks template 0x4c62B4844C8371f321541E8d564A4B3896cEceC7, WildcatFeeRecipient 0x35A5D1bd68F3139971027b92c1eE9384A0708554. Also deployed on Plasma mainnet; Sepolia testnet for testing.
 
 ## Security Measures
 

@@ -7,8 +7,8 @@
 * [The Elevator Pitch](overview/introduction.md)
 * [Whitepaper](overview/whitepaper.md)
 * [FAQs](overview/faqs.md)
-
 * [For AI Agents & LLMs](overview/for-ai-agents.md)
+
 ## Using Wildcat
 
 * [Terminology](using-wildcat/terminology.md)

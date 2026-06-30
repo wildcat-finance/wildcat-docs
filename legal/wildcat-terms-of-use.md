@@ -417,4 +417,4 @@ Wildcat Foundation Email: contact@thewildcat.foundation Address: PO Box 448, Elg
 
 By accessing or using the Products, you acknowledge that you have read, understood, and agree to be bound by these Terms of Use, as well as the Risk Disclosures, and Privacy Policy.
 
-Updated and effective: 17 January 2025
+Updated and effective: 12 February 2025
