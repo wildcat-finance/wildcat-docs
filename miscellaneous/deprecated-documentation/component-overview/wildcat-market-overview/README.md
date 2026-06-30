@@ -1,3 +1,7 @@
+---
+description: "Deprecated V1 market contract family overview."
+---
+
 # WildcatMarket
 
 The `WildcatMarket` (often referred to in code as a `Vault`in code) is the contract that facilitates lending and borrowing.

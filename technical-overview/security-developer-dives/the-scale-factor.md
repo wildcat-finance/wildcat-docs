@@ -1,3 +1,7 @@
+---
+description: "Scaled vs market token amounts and the scaleFactor (a ray) that rebases market tokens with interest."
+---
+
 # The Scale Factor
 
 We get a lot of questions about the scaling mechanics and want to be thorough, but here's the condensed version:

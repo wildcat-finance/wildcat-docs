@@ -1,3 +1,7 @@
+---
+description: "Wrap a rebasing market token into a non-rebasing ERC-4626 share for bridging, LPing or accounting."
+---
+
 # Wildcat 4626 Wrapper
 
 ## ERC-4626 Vault Wrappers

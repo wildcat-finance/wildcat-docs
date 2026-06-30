@@ -1,3 +1,7 @@
+---
+description: "The fixed-term variant of the access-control hooks, adding a withdrawal-blocking fixed term."
+---
+
 # Fixed Term Loan Hooks
 
 The fixed term loan hooks template is identical to the access control hooks template with one additional feature - the borrower can define a timestamp before which the market is considered a "closed term" loan, where withdrawals are disallowed. This expiry time can be reduced but can not be set to a later date after deployment.

@@ -1,3 +1,7 @@
+---
+description: "How a borrower can pledge separate, liquidatable ERC-20 collateral to back a market."
+---
+
 # Optional Collateral Contracts
 
 Wildcat allows for a borrower to deploy one or more smart contracts holding assets that can be liquidated and transferred in to a specific Wildcat market should capital calls (withdrawal requests) not be honoured in the appropriate time frame. The intention here is to offer lenders a mechanism by which they can underwrite a credit opportunity by referring to backing assets visible on-chain.

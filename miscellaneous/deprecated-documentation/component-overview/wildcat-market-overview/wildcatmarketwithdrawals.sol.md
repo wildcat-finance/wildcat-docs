@@ -1,3 +1,7 @@
+---
+description: "Deprecated V1 WildcatMarketWithdrawals.sol reference."
+---
+
 # WildcatMarketWithdrawals.sol
 
 The `WildcatMarketWithdrawals` is the withdrawal-related logic contract containing function to handle withdrawal queueing, processing, executing, and viewing.

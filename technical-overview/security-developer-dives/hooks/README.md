@@ -1,3 +1,7 @@
+---
+description: "Overview of the hooks system that gates and reacts to market actions."
+---
+
 # Hooks
 
 Wildcat V2 markets support hooks which can add additional behaviour to the markets, such as handling access control or adding new features.

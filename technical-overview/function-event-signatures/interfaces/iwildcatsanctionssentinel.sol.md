@@ -1,3 +1,7 @@
+---
+description: "Interface signatures for IWildcatSanctionsSentinel.sol."
+---
+
 # IWildcatSanctionsSentinel.sol
 
 ## Functions:

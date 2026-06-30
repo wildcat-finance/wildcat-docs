@@ -1,3 +1,7 @@
+---
+description: "Interface signatures for ISphereXEngine.sol."
+---
+
 # ISphereXEngine.sol
 
 ## Functions:

@@ -1,3 +1,7 @@
+---
+description: "The optional open-source Master Loan Agreement template borrowers can attach to a market."
+---
+
 # Template MLA
 
 **This template master loan agreement (MLA) can be adopted by borrowers for their use when deploying a market, in which case lenders are required to countersign before they can deposit through the frontend. The borrower may also elect to not offer this, in which case instances of what constitutes default are less explicitly defined for that market: caveat emptor.**

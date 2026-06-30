@@ -1,3 +1,7 @@
+---
+description: "Developer reference for the Wildcat4626Wrapper and its factory — functions, rounding, exchange-rate helpers and error codes."
+---
+
 # Page 1
 
 The `Wildcat4626Wrapper` is a vault that wraps a Wildcat market's rebasing debt token with a non-rebasing ERC-4626 share token. Wrapper shares mirror the market's _scaled_ balances while the underlying "asset" is the rebasing market token itself.

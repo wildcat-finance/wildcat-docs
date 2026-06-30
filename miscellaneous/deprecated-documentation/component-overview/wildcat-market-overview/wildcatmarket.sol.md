@@ -1,3 +1,7 @@
+---
+description: "Deprecated V1 WildcatMarket.sol reference."
+---
+
 # WildcatMarket.sol
 
 The `WildcatMarket` is the final contract, containing all vault-related logic.

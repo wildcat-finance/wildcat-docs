@@ -1,3 +1,7 @@
+---
+description: "Deprecated V1 WildcatMarketToken.sol reference."
+---
+
 # WildcatMarketToken.sol
 
 The `WildcatMarketToken` is the token-related logic contract containing functions for transfers and approvals.

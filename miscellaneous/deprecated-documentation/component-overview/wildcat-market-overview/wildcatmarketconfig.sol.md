@@ -1,3 +1,7 @@
+---
+description: "Deprecated V1 WildcatMarketConfig.sol reference."
+---
+
 # WildcatMarketConfig.sol
 
 The `WildcatMarketConfig` is the configuration contract containing configuration and authorization logic.

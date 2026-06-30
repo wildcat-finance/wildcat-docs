@@ -1,3 +1,7 @@
+---
+description: "Wildcat's Immunefi bug bounty (V1), its scope and reward tiers."
+---
+
 # Bug Bounty Program
 
 **NOTE: A bug bounty program is&#x20;**_**not**_**&#x20;yet active for Wildcat V2.**

@@ -1,3 +1,7 @@
+---
+description: "Independent and Code4rena security reviews of the Wildcat V1 and V2 contracts, with reports."
+---
+
 # Code Security Reviews
 
 The Wildcat protocol contracts have been subjected to independent security reviews and crowdsourced review via Code4rena.

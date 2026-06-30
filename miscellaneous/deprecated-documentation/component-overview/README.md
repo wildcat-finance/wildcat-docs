@@ -1,3 +1,7 @@
+---
+description: "Overview of the deprecated Wildcat V1 contracts."
+---
+
 # Component Overview
 
 **NOTE \[16 October]: Hey, if you're here from Code4rena, we haven't really got this part of the Gitbook fully specified yet because we only recently finalised everything for the code freeze. We're working on providing a little explainer for each variable and function, but if it's not present yet and you can't work it out from looking at source, ping us via C4 Discord and we'll respond/update when we can!**

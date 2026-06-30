@@ -1,3 +1,7 @@
+---
+description: "Index of per-contract function, event and error signatures for the V2 codebase."
+---
+
 # Function/Event Signatures
 
 This page includes the names/parameters and signatures for most functions and events within Wildcat V2.

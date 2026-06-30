@@ -1,3 +1,7 @@
+---
+description: "All V2 structs (MarketState, MarketParameters, WithdrawalBatch, and more) with their field types."
+---
+
 # Protocol Structs
 
 This page includes details of the structs used within Wildcat V2.

@@ -1,3 +1,7 @@
+---
+description: "The hookable market functions, HooksConfig flags, intermediate state, and the extraData calldata buffer."
+---
+
 # How Hooks Work
 
 Each of the following is considered a core function within the WildcatMarket contract which we may want a hooks contract to be able to track, impose restrictions on, or otherwise react to in some way:

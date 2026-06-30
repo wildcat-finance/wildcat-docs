@@ -1,3 +1,7 @@
+---
+description: "What Wildcat is and why — undercollateralised, fixed-rate credit markets, summarised for borrowers and lenders."
+---
+
 # The Elevator Pitch
 
 **The core premise of a Wildcat market is simple**: enabling undercollateralised borrowing and lending.

@@ -1,3 +1,7 @@
+---
+description: "Deprecated V1 market events reference."
+---
+
 # Events
 
 #### Transfer

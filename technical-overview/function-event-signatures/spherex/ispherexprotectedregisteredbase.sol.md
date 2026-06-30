@@ -1,3 +1,7 @@
+---
+description: "Interface signatures for ISphereXProtectedRegisteredBase.sol."
+---
+
 # ISphereXProtectedRegisteredBase.sol
 
 ## Functions:
