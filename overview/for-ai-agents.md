@@ -14,13 +14,18 @@ This documentation is built to be machine-readable. If you're an AI agent — or
 
 ## Ask the docs a question
 
-Any page can be queried in natural language by adding the `ask` parameter:
+Appending `?ask=` to a page URL opens the documentation assistant with your
+question pre-filled:
 
 ```
-GET https://docs.wildcat.finance/using-wildcat/terminology.md?ask=How does a withdrawal cycle work?
+https://docs.wildcat.finance/using-wildcat/terminology?ask=How does a withdrawal cycle work?
 ```
 
-The response contains a direct answer plus the relevant excerpts and sources.
+**This is a browser feature, not an API.** The parameter is handled client-side,
+so a plain `GET` returns the same HTML as the page without it, and appending
+`?ask=` to a `.md` endpoint returns 404. If you are an agent fetching over HTTP
+rather than driving a browser, use the Markdown endpoints and indexes above
+instead.
 
 ## The Wildcat skill
 
