@@ -22,6 +22,7 @@ Key links: App https://app.wildcat.finance (testnet: https://testnet.wildcat.fin
 
 - [Terminology](https://docs.wildcat.finance/using-wildcat/terminology.md): **Read first.** Definitive glossary — archcontroller, base/penalty/protocol APR, capacity, reserve ratio, delinquency, grace period/tracker, hooks, role providers, market token, withdrawal cycle/queue, known lender, sentinel, escrow, and more.
 - [Onboarding](https://docs.wildcat.finance/using-wildcat/onboarding.md): How borrowers (KYB/C via the Wildcat Foundation, registered on the archcontroller) and lenders (per-borrower credential policies) gain access to the protocol.
+- [How borrowers are onboarded](https://docs.wildcat.finance/using-wildcat/how-borrowers-are-onboarded.md): How borrowers complete KYB, get registered on-chain, and which public profile fields Wildcat verifies.
 - [Day-To-Day Usage](https://docs.wildcat.finance/using-wildcat/day-to-day-usage.md): Section landing for hands-on protocol operation.
 - [Borrowers](https://docs.wildcat.finance/using-wildcat/day-to-day-usage/borrowers.md): End-to-end borrower guide — creating a market (every parameter explained), sourcing deposits, borrowing, repaying, reducing APR (25%/2-week rule), altering capacity/minimum deposit/maturity, terminating a market, archcontroller removal.
 - [Lenders](https://docs.wildcat.finance/using-wildcat/day-to-day-usage/lenders.md): End-to-end lender guide — depositing, signing the MLA, rebasing market tokens, the withdrawal request → cycle → claim lifecycle, the unclaimed withdrawals pool, pro-rata claims and the expired-withdrawal queue (worked examples).
@@ -77,6 +78,7 @@ Key links: App https://app.wildcat.finance (testnet: https://testnet.wildcat.fin
 - [Code Security Reviews](https://docs.wildcat.finance/security-measures/code-security-reviews.md): Audit history. V2: independent review by alpeh_v (Aug 2024) + Code4rena $100k competitive audit (Aug–Sep 2024, 1 high / 8 medium) plus mitigation reviews. V1: alpeh_v review + Code4rena $60.5k audit (Oct 2023).
 - [SphereX Protection](https://docs.wildcat.finance/security-measures/spherex-protection.md): On-chain runtime protection — every external function is wrapped in a modifier that rejects exploit-shaped transactions against a training set, while keeping normal access continuous.
 - [Bug Bounty Program](https://docs.wildcat.finance/security-measures/bug-bounty-program.md): Immunefi bug bounty for V1 (up to $50k total; Critical $7.5k–10k). Note: no bounty is active for V2 yet.
+- [Proving You Are An Affected Lender in a Default](https://docs.wildcat.finance/security-measures/proving-you-are-an-affected-lender-in-a-default.md): How affected lenders can prove their position after a protocol-level default and request permitted borrower information.
 
 ## Legal
 

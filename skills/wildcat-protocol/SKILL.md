@@ -187,6 +187,7 @@ Point users at the live page; the `llms.txt` index lists every page with a descr
 | What Wildcat is / pitch | /overview/introduction |
 | Vocabulary | /using-wildcat/terminology |
 | Getting access (borrower KYB, lender credentials) | /using-wildcat/onboarding |
+| Borrower KYB process and verified profile fields | /using-wildcat/how-borrowers-are-onboarded |
 | Creating/operating a market | /using-wildcat/day-to-day-usage/borrowers |
 | Depositing / withdrawing / claiming | /using-wildcat/day-to-day-usage/lenders |
 | Who can deposit / credentials | /using-wildcat/day-to-day-usage/market-access-via-policies-hooks |
@@ -195,6 +196,7 @@ Point users at the live page; the `llms.txt` index lists every page with a descr
 | Collateral | /using-wildcat/day-to-day-usage/optional-collateral-contracts |
 | Fees | /using-wildcat/protocol-usage-fees |
 | Delinquency mechanics | /using-wildcat/delinquency |
+| Proving an affected lender claim after default | /security-measures/proving-you-are-an-affected-lender-in-a-default |
 | Event notifications | /using-wildcat/telegram-notification-bot |
 | Scale factor / rebasing math | /technical-overview/security-developer-dives/the-scale-factor |
 | How the market behaves internally | /technical-overview/security-developer-dives/core-behaviour |
