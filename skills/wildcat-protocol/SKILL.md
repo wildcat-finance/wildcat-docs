@@ -196,6 +196,7 @@ Point users at the live page; the `llms.txt` index lists every page with a descr
 | Collateral | /using-wildcat/day-to-day-usage/optional-collateral-contracts |
 | Fees | /using-wildcat/protocol-usage-fees |
 | Delinquency mechanics | /using-wildcat/delinquency |
+| Market transaction CSV exports | /using-wildcat/wildcat-market-csv-exporter |
 | Proving an affected lender claim after default | /security-measures/proving-you-are-an-affected-lender-in-a-default |
 | Event notifications | /using-wildcat/telegram-notification-bot |
 | Scale factor / rebasing math | /technical-overview/security-developer-dives/the-scale-factor |
