@@ -2,9 +2,9 @@
 description: How affected lenders use Juris to prove their position after a protocol-level default and ask the Wildcat Foundation for permitted borrower information.
 ---
 
-# Proving you are an affected lender in a default
+# Proving You Are an Affected Lender in a Default
 
-## Proving your lender position
+## Proving Your Lender Position
 
 If you lent capital to a market that has gone into default, [Juris](https://juris.wildcat.finance/) can produce a signed claim proving that you are one of its lenders. Wildcat Labs built and hosts Juris. The data you submit through it goes to the Wildcat Foundation, which handles the claim from that point on. Send the resulting *verification bundle* to the Foundation; the same proof supports any request for borrower information collected during KYC / KYB onboarding.
 
@@ -14,14 +14,14 @@ If you lent capital to a market that has gone into default, [Juris](https://juri
 
 Juris checks one narrow, protocol-observable condition: whether a market has been delinquent for longer than its grace period plus 90 days. That is the only kind of default it can validate from on-chain state. It is *not* the same thing as an Event of Default under a Master Loan Agreement. An MLA is a contract between you and the borrower; a default under it may occur earlier, or for reasons the protocol never sees at all. That is a matter for the agreement and your advisors, not something Juris can confirm. Juris shows the protocol-level status of each market so you can at least confirm that much with your own eyes before signing anything.
 
-### Before you start
+### Before You Start
 
 You will want two things to hand:
 
 * **The borrower address** of the market you lent to. You can find it on the borrower's profile at [app.wildcat.finance](https://app.wildcat.finance). The profile also carries the basics on the borrower, including its legal name and registered-address details, so have a read while you are there.
 * **The wallet you hold the relevant debt tokens in.** This matters: the proof attests to the address that holds your position, so connecting the wrong wallet produces a proof for the wrong lender.
 
-### Producing your proof
+### Producing Your Proof
 
 Wildcat Labs hosts Juris at [juris.wildcat.finance](https://juris.wildcat.finance/). Everything from finding the market to producing the signed bundle happens there, in five steps.
 
@@ -33,7 +33,7 @@ Wildcat Labs hosts Juris at [juris.wildcat.finance](https://juris.wildcat.financ
 
 Once it goes through, Juris confirms the wallet, amount owed, market and block it read, then generates the verification bundle.
 
-### Sending it to the Foundation
+### Sending It to the Foundation
 
 After submission, Juris produces a section labelled **Verification bundle (send this to the Wildcat Foundation)**. This is what the Foundation needs to verify your request: the signed data, your signature, the address recovered from it, and the market, lender and amount owed as read back from the server. Taken together, those show that you control the lender address behind the claim.
 
@@ -45,13 +45,13 @@ To send it:
 * Use the subject line `Default Lender - [Your wallet address]`.
 * Alongside the pasted bundle, tell the Foundation in a line or two what information you want.
 
-### What happens next
+### What Happens Next
 
 The Foundation will reply as soon as it reasonably can. Give it some time, though: sensitive information may need legal review and sign-off before it can leave the Foundation's hands. Legal review is not instant, and requests are often worked through in batches rather than one at a time.
 
 An email without a valid verification bundle *pasted into the body* from the correct lender wallet, a way to contact you, and a note explaining what you want will not get a reply. A bundle sent as an attachment counts as incomplete. The Foundation cannot act on a request it cannot verify, so paste the complete bundle into the email before sending it.
 
-### The bit that bears repeating
+### The Bit That Bears Repeating
 
 Anything the Foundation provides remains subject to applicable law, the [Wildcat Terms of Use](https://docs.wildcat.finance/legal/wildcat-terms-of-use), the [Privacy Policy](https://docs.wildcat.finance/legal/protocol-ui-privacy-policy), and any contractual restrictions, including those arising from third-party KYC / KYB provider arrangements. Within those limits, it may pass on only the limited borrower-identifying information available to it that it considers reasonably necessary for you to evaluate and, if you choose, pursue any rights and remedies open to you under the Master Loan Agreement, applicable law, or equity. The Foundation weighs every request against those same constraints.
 
