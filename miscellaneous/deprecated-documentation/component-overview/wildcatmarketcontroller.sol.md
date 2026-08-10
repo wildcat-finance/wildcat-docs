@@ -1,3 +1,7 @@
+---
+description: "Deprecated V1 WildcatMarketController.sol reference (removed in V2)."
+---
+
 # WildcatMarketController.sol
 
 A `WildcatMarketController` contract deploys markets and manages their configurable parameters (APR, reserve ratio) and maintains set of approved lenders.

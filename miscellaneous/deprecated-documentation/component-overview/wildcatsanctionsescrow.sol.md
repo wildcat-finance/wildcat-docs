@@ -1,3 +1,7 @@
+---
+description: "Deprecated V1 WildcatSanctionsEscrow.sol reference."
+---
+
 # WildcatSanctionsEscrow.sol
 
 A `WildcatSanctionsEscrow` contract holds assets for a particular account until it is removed from the Chainalysis sanctions list or until the borrower overrides the account's sanction status.

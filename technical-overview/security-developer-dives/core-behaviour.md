@@ -1,3 +1,7 @@
+---
+description: "How a market operates internally: configuration, collateral obligation, interest accrual, state updates and the withdrawal batch lifecycle."
+---
+
 # Core Behaviour
 
 This section contains the most important aspects of how a Wildcat market operates.

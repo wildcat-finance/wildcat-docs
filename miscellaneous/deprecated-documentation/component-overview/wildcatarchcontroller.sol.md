@@ -1,3 +1,7 @@
+---
+description: "Deprecated V1 WildcatArchController.sol reference."
+---
+
 # WildcatArchController.sol
 
 The `WildcatArchcontroller` is the contract that determines which addresses are capable of deploying controllers (and thereafter markets through these controllers).&#x20;

@@ -1,3 +1,7 @@
+---
+description: "Interface signatures for IWildcatArchController.sol."
+---
+
 # IWildcatArchController.sol
 
 ## Functions:

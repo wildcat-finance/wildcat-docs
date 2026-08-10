@@ -1,3 +1,7 @@
+---
+description: "How lender access is gated in V2 via hooks and role providers — sanctions checks, allowlists, credentials and known-lender status."
+---
+
 # Market Access Via Policies/Hooks
 
 When you first encounter a Wildcat market, you will be prevented from depositing unless you meet certain requirements specified by the borrower, to make sure that they're not making use of funds sourced from Lazarus, or worse, Ripple enthusiasts.

@@ -1,0 +1,108 @@
+# Wildcat Protocol
+
+> Wildcat is a decentralised protocol (live on Ethereum mainnet and Plasma) for **fixed-rate, undercollateralised borrowing and lending**. Borrowers deploy permissioned on-chain "markets" with fully customisable terms — capacity, base APR, reserve ratio, penalty APR, withdrawal cycle, fixed/open term and lender-access policies — and lenders deposit ERC-20 assets in exchange for rebasing "market tokens" (debt tokens). Wildcat is a hands-off settlement layer: it does **not** assess borrower creditworthiness, custody funds, or insure against default. Lenders bear full counterparty risk.
+
+This file helps LLMs and agents navigate the Wildcat documentation efficiently. The docs serve three audiences: users/researchers, security auditors/developers, and lawyers/regulators. The protocol's current generation is **V2** (V1 is deprecated; its docs are under "Optional" below). Every link below points to the clean Markdown version of the page (GitBook serves Markdown for any page by appending `.md` to its URL).
+
+Key concepts to understand first: a **market** is a single borrower's credit facility; **market tokens** rebase upward as interest accrues (see The Scale Factor); **delinquency** is when a market falls below its required reserves; **hooks** + **role providers** gate who may deposit; the **sentinel** + Chainalysis oracle handle sanctions. Read Terminology before anything technical.
+
+Tip for agents: any page can be queried in natural language via `GET https://docs.wildcat.finance/<path>.md?ask=<question>`.
+
+Key links: App https://app.wildcat.finance (testnet: https://testnet.wildcat.finance) · Landing https://wildcat.finance · Code https://github.com/wildcat-finance/v2-protocol · Whitepaper v2.0 https://github.com/wildcat-finance/wildcat-whitepaper/blob/main/whitepaper_v2.0.pdf · Contact contact@thewildcat.foundation · Telegram notifications bot https://t.me/wildcat_notifications_bot
+
+## Overview
+
+- [The Wildcat Protocol](https://docs.wildcat.finance/readme.md): Landing page; orients the three reader types (users/researchers, auditors/developers, lawyers/regulators).
+- [The Elevator Pitch](https://docs.wildcat.finance/overview/introduction.md): What Wildcat is and why, summarised for borrowers and lenders — customisable loan terms, fixed rates, direct counterparty lending, optional Master Loan Agreement.
+- [Whitepaper](https://docs.wildcat.finance/overview/whitepaper.md): Pointer to the Wildcat v2.0 whitepaper PDF (ideology, design rationale, high-level logic).
+- [FAQs](https://docs.wildcat.finance/overview/faqs.md): Common operational issues — Fireblocks TAP rules, why claims wait for a withdrawal cycle, connecting a Safe multisig.
+- [For AI Agents & LLMs](https://docs.wildcat.finance/overview/for-ai-agents.md): Optional meta-guide for AI consumers covering Markdown endpoints, the ?ask endpoint, llms-full.txt, and the Wildcat protocol skill.
+
+## Using Wildcat
+
+- [Terminology](https://docs.wildcat.finance/using-wildcat/terminology.md): **Read first.** Definitive glossary — archcontroller, base/penalty/protocol APR, capacity, reserve ratio, delinquency, grace period/tracker, hooks, role providers, market token, withdrawal cycle/queue, known lender, sentinel, escrow, and more.
+- [Onboarding](https://docs.wildcat.finance/using-wildcat/onboarding.md): How borrowers (KYB/C via the Wildcat Foundation, registered on the archcontroller) and lenders (per-borrower credential policies) gain access to the protocol.
+- [Day-To-Day Usage](https://docs.wildcat.finance/using-wildcat/day-to-day-usage.md): Section landing for hands-on protocol operation.
+- [Borrowers](https://docs.wildcat.finance/using-wildcat/day-to-day-usage/borrowers.md): End-to-end borrower guide — creating a market (every parameter explained), sourcing deposits, borrowing, repaying, reducing APR (25%/2-week rule), altering capacity/minimum deposit/maturity, terminating a market, archcontroller removal.
+- [Lenders](https://docs.wildcat.finance/using-wildcat/day-to-day-usage/lenders.md): End-to-end lender guide — depositing, signing the MLA, rebasing market tokens, the withdrawal request → cycle → claim lifecycle, the unclaimed withdrawals pool, pro-rata claims and the expired-withdrawal queue (worked examples).
+- [Wildcat 4626 Wrapper](https://docs.wildcat.finance/using-wildcat/day-to-day-usage/wildcat-4626-wrapper.md): User guide to wrapping a rebasing market token into a non-rebasing ERC-4626 share (v-[marketSymbol]) for bridging, LPing or accounting; wrap/unwrap flow and caveats.
+- [Optional Collateral Contracts](https://docs.wildcat.finance/using-wildcat/day-to-day-usage/optional-collateral-contracts.md): How a borrower can pledge separate ERC-20 assets as liquidatable collateral, making a market partially, fully or over-collateralised.
+- [Market Access Via Policies/Hooks](https://docs.wildcat.finance/using-wildcat/day-to-day-usage/market-access-via-policies-hooks.md): How lender access is gated in V2 — sanctions checks, allowlists, NFT/soulbound credentials, off-chain KYC via role providers; credential durations and known-lender status.
+- [The Sentinel](https://docs.wildcat.finance/using-wildcat/day-to-day-usage/the-sentinel.md): Sanctions handling — what happens when a lender or borrower is flagged by the Chainalysis oracle, escrow deployment, nukeFromOrbit, releaseEscrow/overrideSanction.
+- [Protocol Usage Fees](https://docs.wildcat.finance/using-wildcat/protocol-usage-fees.md): Origination vs streaming fees; default at V2 launch is 5% streaming / 0 origination; streaming hard-capped at 10% of base APR; fee seniority over lender claims; not applied to penalty APR.
+- [Delinquency](https://docs.wildcat.finance/using-wildcat/delinquency.md): What delinquency means, how the grace tracker/penalty APR work (penalised twice per second over grace period), and how pending withdrawals temporarily raise the required reserve ratio (worked examples).
+- [Telegram Notification Bot](https://docs.wildcat.finance/using-wildcat/telegram-notification-bot.md): Subscribing to on-chain market events by market/borrower/lender/chain; full command reference. Chains: Ethereum Mainnet, Sepolia, Plasma Mainnet, Plasma Testnet.
+
+## Technical Overview — Security & Developer Dives
+
+- [Security/Developer Dives](https://docs.wildcat.finance/technical-overview/security-developer-dives.md): Auditor-oriented explainers of how V2 components work.
+- [The Scale Factor](https://docs.wildcat.finance/technical-overview/security-developer-dives/the-scale-factor.md): **Core mechanic.** Scaled (share) vs market/normalized (value) token amounts; scaleFactor as a ray (1e27) that grows with auto-compounding interest; analogy to ERC-4626 vaults and Aave aTokens, with worked examples.
+- [Core Behaviour](https://docs.wildcat.finance/technical-overview/security-developer-dives/core-behaviour.md): Market configuration fields, the collateral obligation formula, delinquency timer, the three interest rates, per-block state-update sequence, and the full withdrawal batch lifecycle (current/unpaid/paid, FIFO priority, payment).
+- [V1 -> V2 Changelog](https://docs.wildcat.finance/technical-overview/security-developer-dives/v1-greater-than-v2-changelog.md): Major code changes from V1 to V2 — CREATE2 salts, removal of market controllers in favour of borrower-controlled markets + hooks, sanctioned-account handling, closure changes, transient-storage reentrancy guard.
+- [Known Issues](https://docs.wildcat.finance/technical-overview/security-developer-dives/known-issues.md): Accepted/known quirks and out-of-scope behaviours — closing while delinquent zeroes the penalty timer, malicious-borrower risks, intra-batch interest sharing, bad-hook risk, rounding dust, markets that can be built to block withdrawals, Chainalysis reliance.
+- [Hooks](https://docs.wildcat.finance/technical-overview/security-developer-dives/hooks.md): Overview of the hooks system that gates and reacts to market actions.
+- [How Hooks Work](https://docs.wildcat.finance/technical-overview/security-developer-dives/hooks/how-hooks-work.md): The ten hookable core functions, HooksConfig flags, the intermediate-state contract, what hooks may/may not do, and the extraData calldata buffer.
+- [Access Control Hooks](https://docs.wildcat.finance/technical-overview/security-developer-dives/hooks/access-control-hooks.md): Role-provider model (pull/push), grantRole/isPullProvider/getCredential/validateCredential, and the tryValidateAccess / tryPullCredential / handleHooksData logic (with flowcharts).
+- [Fixed Term Loan Hooks](https://docs.wildcat.finance/technical-overview/security-developer-dives/hooks/fixed-term-loan-hooks.md): The fixed-term variant of access-control hooks — fixedTermEndTime (≤1 year, reducible only), onCreateMarket hooksData encoding, withdrawal restriction.
+- [Wildcat 4626 Wrapper (developer reference)](https://docs.wildcat.finance/technical-overview/security-developer-dives/wildcat-4626-wrapper.md): Full technical spec for Wildcat4626Wrapper / Wildcat4626WrapperFactory — function signatures, preview vs execution rounding, exchange-rate helpers (assetsPerShareRay/sharesPerAssetRay), sanctions checks, error codes.
+
+## Technical Overview — Function, Event & Error Signatures
+
+- [Function/Event Signatures](https://docs.wildcat.finance/technical-overview/function-event-signatures.md): Index of per-contract function, event and error signatures for the V2 codebase.
+- [HooksFactory.sol](https://docs.wildcat.finance/technical-overview/function-event-signatures/hooksfactory.sol.md): Signatures for the factory that deploys hooks instances and markets.
+- [IHooksFactory.sol](https://docs.wildcat.finance/technical-overview/function-event-signatures/ihooksfactory.sol.md): Interface for the hooks factory.
+- [WildcatArchController.sol](https://docs.wildcat.finance/technical-overview/function-event-signatures/wildcatarchcontroller.sol.md): Signatures for the registry/permission gate tracking borrowers, factories, hooks and markets.
+- [WildcatSanctionsEscrow.sol](https://docs.wildcat.finance/technical-overview/function-event-signatures/wildcatsanctionsescrow.sol.md): Signatures for the per-lender escrow contract created on sanctions.
+- [WildcatSanctionsSentinel.sol](https://docs.wildcat.finance/technical-overview/function-event-signatures/wildcatsanctionssentinel.sol.md): Signatures for the sentinel that checks the Chainalysis oracle and deploys escrows.
+- [/access — AccessControlHooks.sol](https://docs.wildcat.finance/technical-overview/function-event-signatures/access/accesscontrolhooks.sol.md): Signatures for the open-term access-control hooks template.
+- [/access — IRoleProvider.sol](https://docs.wildcat.finance/technical-overview/function-event-signatures/access/iroleprovider.sol.md): The role-provider interface (pull/push credential granting).
+- [/access — MarketConstraintHooks.sol](https://docs.wildcat.finance/technical-overview/function-event-signatures/access/marketconstrainthooks.sol.md): Signatures for parameter-constraint hooks (e.g. temporary reserve ratio on APR cuts).
+- [/interfaces — IHooks.sol](https://docs.wildcat.finance/technical-overview/function-event-signatures/interfaces/ihooks.sol.md): Base hooks interface.
+- [/interfaces — IMarketEventsAndErrors.sol](https://docs.wildcat.finance/technical-overview/function-event-signatures/interfaces/imarketeventsanderrors.sol.md): All market events and custom errors.
+- [/interfaces — IWildcatArchController.sol](https://docs.wildcat.finance/technical-overview/function-event-signatures/interfaces/iwildcatarchcontroller.sol.md): Archcontroller interface.
+- [/interfaces — IWildcatSanctionsEscrow.sol](https://docs.wildcat.finance/technical-overview/function-event-signatures/interfaces/iwildcatsanctionsescrow.sol.md): Sanctions escrow interface.
+- [/interfaces — IWildcatSanctionsSentinel.sol](https://docs.wildcat.finance/technical-overview/function-event-signatures/interfaces/iwildcatsanctionssentinel.sol.md): Sanctions sentinel interface.
+- [/market — WildcatMarketConfig.sol](https://docs.wildcat.finance/technical-overview/function-event-signatures/market/wildcatmarketconfig.sol.md): Market configuration/getter/setter signatures.
+- [/market — WildcatMarketToken.sol](https://docs.wildcat.finance/technical-overview/function-event-signatures/market/wildcatmarkettoken.sol.md): ERC-20 (market token) signatures including scaled queries.
+- [/market — WildcatMarketWithdrawals.sol](https://docs.wildcat.finance/technical-overview/function-event-signatures/market/wildcatmarketwithdrawals.sol.md): Withdrawal queue/claim function signatures.
+- [/market — WildcatMarketBase.sol](https://docs.wildcat.finance/technical-overview/function-event-signatures/market/wildcatmarketbase.sol.md): Base market state and view signatures.
+- [/spherex — ISphereXEngine.sol](https://docs.wildcat.finance/technical-overview/function-event-signatures/spherex/ispherexengine.sol.md): SphereX engine interface.
+- [/spherex — ISphereXProtectedRegisteredBase.sol](https://docs.wildcat.finance/technical-overview/function-event-signatures/spherex/ispherexprotectedregisteredbase.sol.md): SphereX protected-contract base interface.
+- [/spherex — SphereXConfig.sol](https://docs.wildcat.finance/technical-overview/function-event-signatures/spherex/spherexconfig.sol.md): SphereX configuration signatures.
+- [Protocol Structs](https://docs.wildcat.finance/technical-overview/protocol-structs.md): All V2 structs (MarketState, MarketParameters, DeployMarketInputs, HooksTemplate, WithdrawalBatch, LenderStatus, etc.) with field types.
+- [Contract Deployments](https://docs.wildcat.finance/technical-overview/contract-deployments.md): Canonical deployed addresses. Ethereum mainnet V2 — MarketLens 0xfDA5C5B96bb198D2fca1A01d759620B64Ae5afE7, WildcatArchController 0xfEB516d9D946dD487A9346F6fee11f40C6945eE4, WildcatSanctionsSentinel 0x437e0551892C2C9b06d3fFd248fe60572e08CD1A, WildcatHooksFactory 0xdd7dd3b5076cf89440d05585ff56d246386207be, Wildcat4626WrapperFactory 0xEA6DE11f8F3F83c79bD9d8Db5517fCFDf2Bb148a, FixedTermHooks template 0x7e49CabA6FB53CDc70CD98829731A2b8d76dfc36, OpenTermHooks template 0x4c62B4844C8371f321541E8d564A4B3896cEceC7, WildcatFeeRecipient 0x35A5D1bd68F3139971027b92c1eE9384A0708554. Also deployed on Plasma mainnet; Sepolia testnet for testing.
+
+## Security Measures
+
+- [Code Security Reviews](https://docs.wildcat.finance/security-measures/code-security-reviews.md): Audit history. V2: independent review by alpeh_v (Aug 2024) + Code4rena $100k competitive audit (Aug–Sep 2024, 1 high / 8 medium) plus mitigation reviews. V1: alpeh_v review + Code4rena $60.5k audit (Oct 2023).
+- [SphereX Protection](https://docs.wildcat.finance/security-measures/spherex-protection.md): On-chain runtime protection — every external function is wrapped in a modifier that rejects exploit-shaped transactions against a training set, while keeping normal access continuous.
+- [Bug Bounty Program](https://docs.wildcat.finance/security-measures/bug-bounty-program.md): Immunefi bug bounty for V1 (up to $50k total; Critical $7.5k–10k). Note: no bounty is active for V2 yet.
+
+## Legal
+
+- [Wildcat Terms Of Use](https://docs.wildcat.finance/legal/wildcat-terms-of-use.md): Terms governing use of the Wildcat protocol UI and protocol (last updated 12 February 2025).
+- [Risk Disclosure Statement](https://docs.wildcat.finance/legal/risk-disclosure-statement.md): Disclosure of the risks of borrowing/lending on Wildcat — counterparty default, smart-contract, sanctions, liquidity (effective 16 January 2025).
+- [Template MLA](https://docs.wildcat.finance/legal/master-loan-agreement.md): The optional open-source Master Loan Agreement template that borrowers can attach to a market and lenders countersign on-chain.
+- [Privacy Policy](https://docs.wildcat.finance/legal/protocol-ui-privacy-policy.md): Privacy policy for the protocol UI (effective 16 January 2025).
+
+## Optional
+
+Deprecated Wildcat **V1** documentation — retained for historical/audit reference only. V1 used market controllers rather than the V2 hooks system; skip unless specifically working with V1.
+
+- [Deprecated Documentation](https://docs.wildcat.finance/miscellaneous/deprecated-documentation.md): Landing page for V1 docs.
+- [V1 Component Overview](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview.md): Overview of V1 contracts.
+- [V1 WildcatArchController.sol](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/wildcatarchcontroller.sol.md): V1 registry/permission contract.
+- [V1 WildcatMarketControllerFactory.sol](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/wildcatmarketcontrollerfactory.sol.md): V1 controller-factory (removed in V2).
+- [V1 WildcatMarketController.sol](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/wildcatmarketcontroller.sol.md): V1 per-borrower market controller (removed in V2).
+- [V1 Wildcat Market Overview](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview.md): V1 market contract family overview.
+- [V1 WildcatMarket.sol](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/wildcatmarket.sol.md): V1 top-level market contract.
+- [V1 WildcatMarketBase.sol](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/wildcatmarketbase.sol.md): V1 market base.
+- [V1 WildcatMarketConfig.sol](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/wildcatmarketconfig.sol.md): V1 market config.
+- [V1 WildcatMarketToken.sol](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/wildcatmarkettoken.sol.md): V1 market token.
+- [V1 WildcatMarketWithdrawals.sol](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/wildcatmarketwithdrawals.sol.md): V1 withdrawals.
+- [V1 Events](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/events.md): V1 market events.
+- [V1 WildcatSanctionsSentinel.sol](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/wildcatsanctionssentinel.sol.md): V1 sentinel.
+- [V1 WildcatSanctionsEscrow.sol](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/wildcatsanctionsescrow.sol.md): V1 escrow.
+- [V1 Structs](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/structs.md): V1 data structures.
+- [V1 Normalized vs Scaled Amounts](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/structs/some-notes-on-normalized-versus-scaled-amounts.md): V1 notes on scaled vs normalized amounts.
+- [V1 Protocol Gas Profile](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/protocol-gas-profile.md): V1 gas-cost profile.

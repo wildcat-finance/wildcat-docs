@@ -1,3 +1,7 @@
+---
+description: "Where to find the Wildcat v2.0 whitepaper, covering the protocol's ideology, design decisions and high-level logic."
+---
+
 # Whitepaper
 
 The bulk of the ideology, design decisions and high-level logic behind the protocol can be read in the Wildcat whitepaper. It's not highly technical, and intended to be a _fairly_ easy read barring some presented examples which you can skip over.

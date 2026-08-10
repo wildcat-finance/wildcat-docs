@@ -1,3 +1,7 @@
+---
+description: "Interface signatures for IHooksFactory.sol."
+---
+
 # IHooksFactory.sol
 
 ## Functions:

@@ -1,5 +1,8 @@
-# Page 1
+---
+description: "Developer reference for the Wildcat4626Wrapper and its factory — functions, rounding, exchange-rate helpers and error codes."
+---
 
+# Wildcat 4626 Wrapper (Developer Reference)
 The `Wildcat4626Wrapper` is a vault that wraps a Wildcat market's rebasing debt token with a non-rebasing ERC-4626 share token. Wrapper shares mirror the market's _scaled_ balances while the underlying "asset" is the rebasing market token itself.
 
 Make sure you understand the [scale factor](https://docs.wildcat.finance/technical-overview/security-developer-dives/the-scale-factor) before continuing: the wrapper leans on it heavily for all share/asset conversions.
@@ -151,7 +154,7 @@ Previews are therefore suitable for upper- and lower-bound quoting, but should n
 
 The wrapper does not interact with the underlying market's withdrawal queue at all. When you call `withdraw(assets, receiver, owner)` or `redeem(shares, receiver, owner)`, the wrapper burns your vault shares and executes a `safeTransfer` of the rebasing market token to the `receiver`.
 
-If you subsequently want to convert those market tokens into the actual underlying asset (e.g., USDC), you must interact with the Wildcat market directly following the market’s withdrawal flow (withdrawal request → batch expiry → execution/claim). For more detail on that lifecycle, see Core Behaviour and the terminology entries for Withdrawal Request and Claim.
+If you subsequently want to convert those market tokens into the actual underlying asset (e.g., USDC), you must interact with the Wildcat market directly following the market’s withdrawal flow (withdrawal request → batch expiry → execution/claim). For more detail on that lifecycle, see [Core Behaviour](core-behaviour.md) and the terminology entries for [Withdrawal Request](../../using-wildcat/terminology.md#withdrawal-request) and [Claim](../../using-wildcat/terminology.md#claim).
 
 #### Raw exchange rate helpers
 

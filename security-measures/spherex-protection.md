@@ -1,3 +1,7 @@
+---
+description: "How Wildcat uses SphereX on-chain runtime protection to reject exploit-shaped transactions."
+---
+
 # SphereX Protection
 
 The Wildcat protocol contracts are protected on-chain by [SphereX](https://www.spherex.xyz/).

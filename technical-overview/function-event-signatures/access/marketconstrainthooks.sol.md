@@ -1,3 +1,7 @@
+---
+description: "Function, event and error signatures for MarketConstraintHooks.sol."
+---
+
 # MarketConstraintHooks.sol
 
 ## Functions:

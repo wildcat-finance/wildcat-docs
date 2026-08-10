@@ -1,3 +1,7 @@
+---
+description: "Function, event and error signatures for WildcatSanctionsSentinel.sol."
+---
+
 # WildcatSanctionsSentinel.sol
 
 ## Functions:

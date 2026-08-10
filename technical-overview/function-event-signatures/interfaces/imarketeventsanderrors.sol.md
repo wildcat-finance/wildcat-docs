@@ -1,3 +1,7 @@
+---
+description: "Event and error signatures for IMarketEventsAndErrors.sol."
+---
+
 # IMarketEventsAndErrors.sol
 
 ## Events:

@@ -1,3 +1,7 @@
+---
+description: "Deprecated V1 notes on normalized versus scaled amounts."
+---
+
 # Some Notes On Normalized versus Scaled Amounts
 
 The scaled amounts used within the protocol are for internal accounting, whereas normalized amounts represent underlying amounts that the borrower owes.

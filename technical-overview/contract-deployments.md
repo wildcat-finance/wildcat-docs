@@ -1,7 +1,5 @@
 ---
-description: >-
-  Core contract deployment addresses on various chains Ethereum mainnet and
-  Sepolia testnet.
+description: "Core contract deployment addresses across chains — Ethereum mainnet, Plasma, and Sepolia testnet."
 ---
 
 # Contract Deployments

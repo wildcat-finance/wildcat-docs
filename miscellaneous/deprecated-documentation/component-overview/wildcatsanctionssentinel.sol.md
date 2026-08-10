@@ -1,3 +1,7 @@
+---
+description: "Deprecated V1 WildcatSanctionsSentinel.sol reference."
+---
+
 # WildcatSanctionsSentinel.sol
 
 The `WildcatSanctionsSentinel` contract interfaces with Chainalysis, allows borrowers to override lenders' sanction statuses and deploys escrows.&#x20;

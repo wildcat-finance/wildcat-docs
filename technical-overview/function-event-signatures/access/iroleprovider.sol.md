@@ -1,3 +1,7 @@
+---
+description: "Interface signatures for IRoleProvider.sol."
+---
+
 # IRoleProvider.sol
 
 ## Functions:

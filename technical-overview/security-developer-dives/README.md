@@ -1,3 +1,7 @@
+---
+description: "Auditor-oriented explainers of how the Wildcat V2 components work."
+---
+
 # Security/Developer Dives
 
 This page contains a handful of explainers that we have produced for the sake of auditors describing the various components of Wildcat V2 and how they work.

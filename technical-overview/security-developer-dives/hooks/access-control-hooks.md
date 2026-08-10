@@ -1,3 +1,7 @@
+---
+description: "The access-control hooks template: role providers (pull/push), credential validation, and the access-resolution flow."
+---
+
 # Access Control Hooks
 
 In the access control hooks, the borrower can configure a set of "role providers" - accounts which grant credentials to lenders.

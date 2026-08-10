@@ -1,3 +1,7 @@
+---
+description: "Deprecated V1 WildcatMarketControllerFactory.sol reference (removed in V2)."
+---
+
 # WildcatMarketControllerFactory.sol
 
 A `WildcatMarketControllerFactory` deploys controllers and manages protocol fee information.

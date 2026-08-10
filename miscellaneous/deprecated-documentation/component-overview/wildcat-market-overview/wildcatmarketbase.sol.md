@@ -1,3 +1,7 @@
+---
+description: "Deprecated V1 WildcatMarketBase.sol reference."
+---
+
 # WildcatMarketBase.sol
 
 The `WildcatMarketBase` is the base contract containing core state mutation and computation logic as well as storage variables and immutable values.

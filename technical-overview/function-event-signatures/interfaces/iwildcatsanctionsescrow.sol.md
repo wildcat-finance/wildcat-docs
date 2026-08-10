@@ -1,3 +1,7 @@
+---
+description: "Interface signatures for IWildcatSanctionsEscrow.sol."
+---
+
 # IWildcatSanctionsEscrow.sol
 
 ## Functions:

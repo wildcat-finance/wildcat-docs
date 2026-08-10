@@ -1,3 +1,7 @@
+---
+description: "Deprecated V1 protocol gas-cost profile."
+---
+
 # Protocol Gas Profile
 
 NOTE: this page has not been updated to reflect Wildcat V2, this was last updated for V1 launch.

@@ -48,8 +48,8 @@ You might as well start at the beginning.
 
 Contract deployments, gas profiles etc can be found under the following section:
 
-{% content-ref url="/broken/pages/fHCWqREPg9sfCxjKUeFQ" %}
-[Broken link](/broken/pages/fHCWqREPg9sfCxjKUeFQ)
+{% content-ref url="technical-overview/contract-deployments.md" %}
+[contract-deployments.md](technical-overview/contract-deployments.md)
 {% endcontent-ref %}
 
 More specifically, if you're taking part in an audit or validating a potential bug, please refer to:
@@ -61,8 +61,12 @@ More specifically, if you're taking part in an audit or validating a potential b
 \
 If you're interested in reading about our on-chain protection or previous security reviews:
 
-{% content-ref url="/broken/pages/r1t7mLDeLFjD0UzQSmC1" %}
-[Broken link](/broken/pages/r1t7mLDeLFjD0UzQSmC1)
+{% content-ref url="security-measures/spherex-protection.md" %}
+[spherex-protection.md](security-measures/spherex-protection.md)
+{% endcontent-ref %}
+
+{% content-ref url="security-measures/code-security-reviews.md" %}
+[code-security-reviews.md](security-measures/code-security-reviews.md)
 {% endcontent-ref %}
 
 
@@ -71,8 +75,12 @@ If you're interested in reading about our on-chain protection or previous securi
 
 ## Lawyers/Regulators:
 
-{% content-ref url="/broken/pages/xzRI15ndaOBjDUZmnohw" %}
-[Broken link](/broken/pages/xzRI15ndaOBjDUZmnohw)
+{% content-ref url="legal/wildcat-terms-of-use.md" %}
+[wildcat-terms-of-use.md](legal/wildcat-terms-of-use.md)
+{% endcontent-ref %}
+
+{% content-ref url="legal/risk-disclosure-statement.md" %}
+[risk-disclosure-statement.md](legal/risk-disclosure-statement.md)
 {% endcontent-ref %}
 
 
