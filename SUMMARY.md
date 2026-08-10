@@ -78,23 +78,3 @@
 * [Risk Disclosure Statement](legal/risk-disclosure-statement.md)
 * [Template MLA](legal/master-loan-agreement.md)
 * [Privacy Policy](legal/protocol-ui-privacy-policy.md)
-
-## Miscellaneous
-
-* [DEPRECATED DOCUMENTATION](miscellaneous/deprecated-documentation/README.md)
-  * [V1 Component Overview](miscellaneous/deprecated-documentation/component-overview/README.md)
-    * [WildcatArchController.sol](miscellaneous/deprecated-documentation/component-overview/wildcatarchcontroller.sol.md)
-    * [WildcatMarketControllerFactory.sol](miscellaneous/deprecated-documentation/component-overview/wildcatmarketcontrollerfactory.sol.md)
-    * [WildcatMarketController.sol](miscellaneous/deprecated-documentation/component-overview/wildcatmarketcontroller.sol.md)
-    * [Wildcat Market Overview](miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/README.md)
-      * [WildcatMarket.sol](miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/wildcatmarket.sol.md)
-      * [WildcatMarketBase.sol](miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/wildcatmarketbase.sol.md)
-      * [WildcatMarketConfig.sol](miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/wildcatmarketconfig.sol.md)
-      * [WildcatMarketToken.sol](miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/wildcatmarkettoken.sol.md)
-      * [WildcatMarketWithdrawals.sol](miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/wildcatmarketwithdrawals.sol.md)
-      * [Events](miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/events.md)
-    * [WildcatSanctionsSentinel.sol](miscellaneous/deprecated-documentation/component-overview/wildcatsanctionssentinel.sol.md)
-    * [WildcatSanctionsEscrow.sol](miscellaneous/deprecated-documentation/component-overview/wildcatsanctionsescrow.sol.md)
-    * [Structs](miscellaneous/deprecated-documentation/component-overview/structs/README.md)
-      * [Some Notes On Normalized versus Scaled Amounts](miscellaneous/deprecated-documentation/component-overview/structs/some-notes-on-normalized-versus-scaled-amounts.md)
-  * [Protocol Gas Profile](miscellaneous/deprecated-documentation/protocol-gas-profile.md)
