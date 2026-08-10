@@ -1,5 +1,7 @@
 ---
 description: "The optional open-source Master Loan Agreement template borrowers can attach to a market."
+effective_date: "2025-02-07"
+doc_version: "2025-02-07"
 ---
 
 # Template MLA

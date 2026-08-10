@@ -1,5 +1,7 @@
 ---
 description: 'Updated and effective: 16 January 2025'
+effective_date: "2025-01-16"
+doc_version: "2025-01-16"
 ---
 
 # Privacy Policy

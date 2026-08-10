@@ -2,6 +2,8 @@
 description: >-
   Last Updated: 12 February 2025; SHA:
   711a9e6707e6cf85166786461a0a45aa3b926b22b414abe8dfcc6c1afef020d1
+effective_date: "2025-02-12"
+doc_version: "sha256:711a9e6707e6cf85166786461a0a45aa3b926b22b414abe8dfcc6c1afef020d1"
 ---
 
 # Wildcat Terms Of Use
