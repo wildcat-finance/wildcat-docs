@@ -1,8 +1,43 @@
-root: ./
-
-structure:
-  readme: README.md
-  summary: SUMMARY.md
+# GitBook configuration.
+#
+# Redirects exist because the deprecated V1 documentation was unpublished: the
+# pages were generated into /llms.txt, /llms-full.txt and the ?ask index, where
+# their "this describes V1" warnings are prose that nothing machine-readable
+# sees. Unpublishing fixes that and breaks every inbound link, so each old URL
+# is mapped to its closest V2 equivalent rather than left to 404.
+#
+# Where V2 removed a concept outright — market controllers, the controller
+# factory, the V1 gas profile — the target is the V1→V2 changelog, which is the
+# page that actually explains the absence. Pointing those at a V2 contract
+# reference would answer a question the reader did not ask.
 
 redirects:
-  using-wildcat/onboarding/how-borrowers-are-onboarded: using-wildcat/how-borrowers-are-onboarded.md
+  # Landing pages
+  miscellaneous/deprecated-documentation: technical-overview/security-developer-dives/v1-greater-than-v2-changelog.md
+  miscellaneous/deprecated-documentation/component-overview: technical-overview/function-event-signatures/README.md
+  miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview: technical-overview/function-event-signatures/market/README.md
+
+  # Direct V2 equivalents
+  miscellaneous/deprecated-documentation/component-overview/wildcatarchcontroller.sol: technical-overview/function-event-signatures/wildcatarchcontroller.sol.md
+  miscellaneous/deprecated-documentation/component-overview/wildcatsanctionssentinel.sol: technical-overview/function-event-signatures/wildcatsanctionssentinel.sol.md
+  miscellaneous/deprecated-documentation/component-overview/wildcatsanctionsescrow.sol: technical-overview/function-event-signatures/wildcatsanctionsescrow.sol.md
+  miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/wildcatmarketbase.sol: technical-overview/function-event-signatures/market/wildcatmarketbase.sol.md
+  miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/wildcatmarketconfig.sol: technical-overview/function-event-signatures/market/wildcatmarketconfig.sol.md
+  miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/wildcatmarkettoken.sol: technical-overview/function-event-signatures/market/wildcatmarkettoken.sol.md
+  miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/wildcatmarketwithdrawals.sol: technical-overview/function-event-signatures/market/wildcatmarketwithdrawals.sol.md
+
+  # V2 has no single WildcatMarket.sol page; the market family README is the
+  # closest thing, and it lists the contracts that replaced it.
+  miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/wildcatmarket.sol: technical-overview/function-event-signatures/market/README.md
+
+  # Events moved into the shared interface
+  miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/events: technical-overview/function-event-signatures/interfaces/imarketeventsanderrors.sol.md
+
+  # Structs, and the scaled-vs-normalized note that became The Scale Factor
+  miscellaneous/deprecated-documentation/component-overview/structs: technical-overview/protocol-structs.md
+  miscellaneous/deprecated-documentation/component-overview/structs/some-notes-on-normalized-versus-scaled-amounts: technical-overview/security-developer-dives/the-scale-factor.md
+
+  # Removed in V2 — the changelog explains why, a contract page would not
+  miscellaneous/deprecated-documentation/component-overview/wildcatmarketcontroller.sol: technical-overview/security-developer-dives/v1-greater-than-v2-changelog.md
+  miscellaneous/deprecated-documentation/component-overview/wildcatmarketcontrollerfactory.sol: technical-overview/security-developer-dives/v1-greater-than-v2-changelog.md
+  miscellaneous/deprecated-documentation/protocol-gas-profile: technical-overview/security-developer-dives/v1-greater-than-v2-changelog.md

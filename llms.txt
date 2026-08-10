@@ -2,7 +2,7 @@
 
 > Wildcat is a decentralised protocol (live on Ethereum mainnet and Plasma) for **fixed-rate, undercollateralised borrowing and lending**. Borrowers deploy permissioned on-chain "markets" with fully customisable terms — capacity, base APR, reserve ratio, penalty APR, withdrawal cycle, fixed/open term and lender-access policies — and lenders deposit ERC-20 assets in exchange for rebasing "market tokens" (debt tokens). Wildcat is a hands-off settlement layer: it does **not** assess borrower creditworthiness, custody funds, or insure against default. Lenders bear full counterparty risk.
 
-This file helps LLMs and agents navigate the Wildcat documentation efficiently. The docs serve three audiences: users/researchers, security auditors/developers, and lawyers/regulators. The protocol's current generation is **V2** (V1 is deprecated; its docs are under "Optional" below). Every link below points to the clean Markdown version of the page (GitBook serves Markdown for any page by appending `.md` to its URL).
+This file helps LLMs and agents navigate the Wildcat documentation efficiently. The docs serve three audiences: users/researchers, security auditors/developers, and lawyers/regulators. The protocol's current generation is **V2**. V1 documentation is retained in the repository for historical reference but is not published — do not index it. Every link below points to the clean Markdown version of the page (GitBook serves Markdown for any page by appending `.md` to its URL).
 
 Key concepts to understand first: a **market** is a single borrower's credit facility; **market tokens** rebase upward as interest accrues (see The Scale Factor); **delinquency** is when a market falls below its required reserves; **hooks** + **role providers** gate who may deposit; the **sentinel** + Chainalysis oracle handle sanctions. Read Terminology before anything technical.
 
@@ -86,25 +86,3 @@ Key links: App https://app.wildcat.finance (testnet: https://testnet.wildcat.fin
 - [Risk Disclosure Statement](https://docs.wildcat.finance/legal/risk-disclosure-statement.md): Disclosure of the risks of borrowing/lending on Wildcat — counterparty default, smart-contract, sanctions, liquidity (effective 16 January 2025).
 - [Template MLA](https://docs.wildcat.finance/legal/master-loan-agreement.md): The optional open-source Master Loan Agreement template that borrowers can attach to a market and lenders countersign on-chain.
 - [Privacy Policy](https://docs.wildcat.finance/legal/protocol-ui-privacy-policy.md): Privacy policy for the protocol UI (effective 16 January 2025).
-
-## Optional
-
-Deprecated Wildcat **V1** documentation — retained for historical/audit reference only. V1 used market controllers rather than the V2 hooks system; skip unless specifically working with V1.
-
-- [Deprecated Documentation](https://docs.wildcat.finance/miscellaneous/deprecated-documentation.md): Landing page for V1 docs.
-- [V1 Component Overview](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview.md): Overview of V1 contracts.
-- [V1 WildcatArchController.sol](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/wildcatarchcontroller.sol.md): V1 registry/permission contract.
-- [V1 WildcatMarketControllerFactory.sol](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/wildcatmarketcontrollerfactory.sol.md): V1 controller-factory (removed in V2).
-- [V1 WildcatMarketController.sol](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/wildcatmarketcontroller.sol.md): V1 per-borrower market controller (removed in V2).
-- [V1 Wildcat Market Overview](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview.md): V1 market contract family overview.
-- [V1 WildcatMarket.sol](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/wildcatmarket.sol.md): V1 top-level market contract.
-- [V1 WildcatMarketBase.sol](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/wildcatmarketbase.sol.md): V1 market base.
-- [V1 WildcatMarketConfig.sol](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/wildcatmarketconfig.sol.md): V1 market config.
-- [V1 WildcatMarketToken.sol](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/wildcatmarkettoken.sol.md): V1 market token.
-- [V1 WildcatMarketWithdrawals.sol](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/wildcatmarketwithdrawals.sol.md): V1 withdrawals.
-- [V1 Events](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/wildcat-market-overview/events.md): V1 market events.
-- [V1 WildcatSanctionsSentinel.sol](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/wildcatsanctionssentinel.sol.md): V1 sentinel.
-- [V1 WildcatSanctionsEscrow.sol](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/wildcatsanctionsescrow.sol.md): V1 escrow.
-- [V1 Structs](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/structs.md): V1 data structures.
-- [V1 Normalized vs Scaled Amounts](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/component-overview/structs/some-notes-on-normalized-versus-scaled-amounts.md): V1 notes on scaled vs normalized amounts.
-- [V1 Protocol Gas Profile](https://docs.wildcat.finance/miscellaneous/deprecated-documentation/protocol-gas-profile.md): V1 gas-cost profile.
