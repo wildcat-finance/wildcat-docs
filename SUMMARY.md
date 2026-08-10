@@ -13,6 +13,7 @@
 
 * [Terminology](using-wildcat/terminology.md)
 * [Onboarding](using-wildcat/onboarding.md)
+* [How borrowers are onboarded](using-wildcat/how-borrowers-are-onboarded.md)
 * [Day-To-Day Usage](using-wildcat/day-to-day-usage/README.md)
   * [Borrowers](using-wildcat/day-to-day-usage/borrowers.md)
   * [Lenders](using-wildcat/day-to-day-usage/lenders.md)
@@ -69,6 +70,7 @@
 * [Code Security Reviews](security-measures/code-security-reviews.md)
 * [SphereX Protection](security-measures/spherex-protection.md)
 * [Bug Bounty Program](security-measures/bug-bounty-program.md)
+* [Proving You Are An Affected Lender in a Default](security-measures/proving-you-are-an-affected-lender-in-a-default.md)
 
 ## Legal
 
