@@ -1,5 +1,5 @@
 ---
-description: Things you need to know as a would-be lender through Wildcat.
+description: How lenders deposit, read balances, transfer market tokens, request withdrawals and claim underlying assets.
 ---
 
 # Lenders
@@ -53,6 +53,33 @@ Depending on the constraints placed upon the markets, lenders _may_ be able to t
 <figure><img src="../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 If your address has ever deposited to a market or received market tokens while holding a valid deposit credential, you will be marked as a known lender, and always be allowed to place withdrawal requests for that market. If the market permits it and Lender A sends their market tokens from their depositing wallet to a secondary one, those markets must either be sent back to the original wallet in order to claim, or the secondary wallet address must also become a known lender.
+
+## Reading Lender Balances
+
+A lender can see several numbers for the same market, but they are not
+interchangeable:
+
+* The **wallet market-token balance** is the rebasing balance returned by
+  `balanceOf(account)`. It represents market tokens still held by that address.
+  It is a lender claim on the borrower, not a statement that the market holds
+  enough immediately available underlying asset to redeem it.
+* The **transferable amount** is bounded by that wallet balance and by the
+  market's transfer policy. An open market allows arbitrary recipients; a
+  restricted market permits only known lenders or recipients with a valid
+  credential; and a disabled market permits the tokens to move only back to the
+  market as part of a withdrawal request. A transfer moves market tokens; it
+  does not redeem them for the underlying asset.
+* The **claimable amount** is underlying asset which has already been allocated
+  to the lender's withdrawal batch and can presently be claimed. It belongs to
+  the withdrawal ledger and may be zero, partial or fully funded independently
+  of the address's remaining wallet balance.
+
+When a lender queues a withdrawal, the requested market tokens leave the
+lender's wallet and are held by the market until the protocol can burn them
+against allocated underlying assets. Once a cycle expires, the funded portion
+becomes claimable. Any unfunded remainder remains in the withdrawal queue, while
+market tokens which were never queued remain in the wallet and continue to
+rebase.
 
 ## Making Withdrawals
 

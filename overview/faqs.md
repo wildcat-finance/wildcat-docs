@@ -1,5 +1,5 @@
 ---
-description: Answers to common questions about withdrawals, interest, market access, integrations, security and support.
+description: Answers to common questions about balances, withdrawals, delinquency, market access, integrations, security and support.
 ---
 
 # FAQs
@@ -31,6 +31,33 @@ In the app:
 * **Outstanding** is the portion still waiting to be funded.
 
 See [Making withdrawals](../using-wildcat/day-to-day-usage/lenders.md#making-withdrawals).
+
+***
+
+### Why are my wallet balance, transferable amount and claimable amount different?
+
+They describe different assets or stages of a withdrawal:
+
+* **Wallet balance** is the rebasing market-token balance currently held by the
+  address. It represents the address's unqueued lender position and normally
+  rises as interest accrues.
+* **Transferable amount** is the portion of that wallet-held market-token balance
+  which the market's transfer policy permits the address to send. Open markets
+  permit arbitrary recipients, restricted markets require an eligible recipient,
+  and disabled markets permit transfers only back to the market for withdrawal.
+  Transferability does not measure market liquidity.
+* **Claimable amount** is underlying asset already allocated to that address's
+  withdrawal batches and presently available to claim. It is determined by the
+  withdrawal cycle and batch funding, not by the address's remaining market-token
+  balance or its ability to transfer those tokens.
+
+Submitting a withdrawal request moves the requested market tokens out of the
+lender's wallet. As liquidity is assigned, queued market tokens are burned and
+the corresponding underlying asset becomes claimable. A partly funded batch can
+therefore have a claimable amount smaller than the amount requested, while any
+market tokens which were not queued remain a separate rebasing wallet balance.
+
+See [Reading lender balances](../using-wildcat/day-to-day-usage/lenders.md#reading-lender-balances).
 
 ***
 
@@ -123,6 +150,28 @@ For a particular market, check its live reserve shortfall, grace period and deli
 
 ***
 
+### What does delinquency change while my withdrawal is queued?
+
+Delinquency, withdrawal interest, batch payment and claim timing are separate:
+
+* **Interest:** the amount placed into the withdrawal batch stops earning
+  interest from the start of that batch's cycle. Any market tokens which remain
+  in the lender's wallet continue to rebase normally. Penalty APR applies to the
+  market's outstanding lender supply after the grace threshold; it does not turn
+  a queued withdrawal back into an interest-bearing wallet balance.
+* **Payment and liquidity:** delinquency means the market holds less than its
+  required liquidity. Pending withdrawals are part of that obligation, and new
+  liquidity is applied to older expired batches before newer ones. Delinquency
+  does not cancel or reprioritise the request.
+* **Claim timing:** the configured cycle expiry does not move merely because the
+  market is delinquent. Expiry makes the batch eligible for settlement, but only
+  its funded portion is claimable. Any unfunded remainder stays queued until more
+  liquidity is supplied and processed.
+
+See [Delinquency and queued withdrawals](../using-wildcat/delinquency.md#what-delinquency-changes-for-a-queued-withdrawal).
+
+***
+
 ### What should a borrower check regularly?
 
 The protocol does not prescribe a daily operational ritual, but borrowers should monitor:
@@ -187,6 +236,38 @@ Access is determined separately for each market under the borrower's chosen acce
 Check the market and borrower profile for its stated process. Wildcat cannot broker access, override the borrower's policy or transfer approval from one market to another.
 
 See [Onboarding](../using-wildcat/onboarding.md) and the [Lender guide](../using-wildcat/day-to-day-usage/lenders.md).
+
+***
+
+### If my wallet satisfies one role provider but not another, may it deposit?
+
+Under Wildcat's shipped `AccessControlHooks`, approved role providers are
+alternative sources of a deposit credential, not a checklist which every lender
+must satisfy. One valid, unexpired credential from any provider still approved by
+the hook instance is sufficient for the access check. A failed check against one
+provider does not override a valid credential from another.
+
+The market's hook instance makes the final on-chain access decision; a role
+provider only supplies or validates evidence. To determine access for a particular
+wallet, the evidence must identify the market and wallet and show:
+
+* which hook instance and access-control template the market uses;
+* whether the provider is currently approved and whether its credential has
+  expired under that provider's configured time-to-live;
+* any stored credential, pull-provider result, or transaction-supplied proof
+  required by that provider; and
+* whether the wallet has been explicitly blocked from deposits.
+
+Some evidence may exist only in provider-specific data supplied with the deposit
+transaction or in an external verification system. Without it, public market
+configuration alone cannot prove that the wallet will pass. A custom hook may
+also implement different rules, so the alternative-provider behaviour must not
+be assumed outside the shipped `AccessControlHooks` template.
+
+Passing the access hook does not guarantee that a deposit will succeed: balance,
+allowance, capacity and minimum-deposit checks still apply.
+
+See [How multiple role providers are evaluated](../using-wildcat/day-to-day-usage/market-access-via-policies-hooks.md#how-multiple-role-providers-are-evaluated).
 
 ***
 

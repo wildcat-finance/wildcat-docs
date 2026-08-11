@@ -1,5 +1,5 @@
 ---
-description: "How lender access is gated in V2 via hooks and role providers — sanctions checks, allowlists, credentials and known-lender status."
+description: "How V2 hooks combine role providers, credentials, sanctions checks, allowlists and known-lender status to decide market access."
 ---
 
 # Market Access Via Policies/Hooks
@@ -26,6 +26,42 @@ The fourth example is one that extends off-chain. Lenders may be required to upl
 All of these are implemented via _role providers_, smart contracts deployed by the borrower that enforce the check, following a fairly loose specification: more on this in [access-control-hooks.md](../../technical-overview/security-developer-dives/hooks/access-control-hooks.md "mention"). For the most part, Wildcat will make templates for commonly requested use cases available so that it's simply point-and-click plus some initial configuration for the borrower, but borrowers _are_ capable of writing their own Eldritch horror role providers and deploying them themselves, should the urge overtake them.
 
 We'll be able to illustrate this in far more detail once we have some live policies and markets available, but the TL;DR is: in most cases, we expect you to be able to onboard yourself to Wildcat markets without ever having to reach out to a borrower via Telegram or email.
+
+## How Multiple Role Providers Are Evaluated
+
+For the shipped `AccessControlHooks` template, a hook instance owns the access
+decision and its approved role providers supply possible credentials. Providers
+are alternatives: one valid, unexpired credential from any provider which is
+still approved by that hook instance is sufficient. A lender does not need to
+pass every configured provider.
+
+The hook first accepts an existing unexpired credential. If none exists, it can
+validate provider-specific data supplied with the transaction, refresh an
+expired credential from its pull provider, and then try the remaining approved
+pull providers. The first valid result is stored and access succeeds. If no
+provider yields a valid credential, the restricted action reverts.
+
+Consequently, evidence that a wallet satisfies one provider is not enough to
+predict a particular deposit unless the evidence also identifies:
+
+* the market and its hook instance;
+* the hook template and whether deposit access checking is enabled;
+* whether that provider is currently approved and its configured credential
+  time-to-live;
+* the wallet's stored credential or the provider result/proof needed to create
+  one; and
+* whether the hook instance has explicitly blocked the wallet from deposits.
+
+Some providers can be queried on-chain by wallet address. Others validate data
+which must accompany the deposit transaction, and the underlying off-chain
+verification may not be public. In that case, public chain state alone cannot
+prove that the wallet will pass. Custom hook templates may impose different or
+cumulative rules; the alternative-provider behaviour described here belongs to
+Wildcat's shipped `AccessControlHooks` template.
+
+Access is only one part of deposit execution. Even after the hook accepts the
+wallet, the transaction can still fail because of the underlying-token balance
+or allowance, remaining market capacity, or minimum-deposit setting.
 
 ## Credential Applicability/Durations
 

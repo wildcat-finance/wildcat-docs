@@ -1,5 +1,5 @@
 ---
-description: What it means for a market to be delinquent, and the resulting impact.
+description: What delinquency means and how it separately affects interest, liquidity, withdrawal payment and claim timing.
 ---
 
 # Delinquency
@@ -15,6 +15,33 @@ Rather, if the market has a supply of 4,000,000 USDC from lenders, then 800,000 
 A market which has a zero percent reserve ratio need only worry about this to the extent that they need to monitor for withdrawal requests and keep sufficient assets available to cover the protocol fee, if the latter is active.
 
 A market that goes below the reserve ratio - however it does so - is _delinquent_.
+
+## What Delinquency Changes For A Queued Withdrawal
+
+Delinquency does not cancel a withdrawal request, change its place in the queue
+or reset its configured cycle expiry. It does show that the market currently
+holds less than its collateral obligation, which includes pending and processed
+withdrawals as well as ordinary reserve requirements and accrued protocol fees.
+
+The effects must be read separately:
+
+* **Interest:** an amount placed into a withdrawal batch stops earning interest
+  from the start of that batch's cycle. Market tokens which remain outside the
+  request continue to rebase. If delinquency persists beyond the grace period,
+  penalty APR applies to the outstanding lender supply, not to underlying assets
+  already allocated to the unclaimed withdrawals pool.
+* **Payment and liquidity:** the request remains valid, but a liquidity shortfall
+  may leave its batch partly or wholly unfunded. Returned liquidity is applied to
+  older expired withdrawal batches before newer ones. Delinquency itself neither
+  funds a batch nor moves one lender ahead of another.
+* **Claim timing:** cycle expiry makes the batch eligible for settlement; it does
+  not guarantee full payment. The lender can claim the funded portion after
+  expiry. Any remainder stays queued until additional liquidity is supplied and
+  processed.
+
+The live delinquency status therefore cannot, by itself, establish a lender's
+claimable amount. That requires the market's withdrawal-batch state and the
+lender's position within those batches.
 
 ## Related Market Parameters
 
@@ -58,6 +85,5 @@ More particularly, any withdrawal request that exceeds the reserves currently in
 \[_The above includes one mild simplification: as stated in_ [_Protocol Usage Fees_](protocol-usage-fees.md)_, lenders are only capable of withdrawing reserves net of any protocol fees that have been accrued and not withdrawn. However, the overall point remains._]
 
 The astute borrower of a market will actively monitor withdrawal requests and current reserve ratios in order to minimise the time for which the grace tracker is active to avoid paying penalties.
-
 
 
