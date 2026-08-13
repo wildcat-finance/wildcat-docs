@@ -72,6 +72,7 @@
 * [SphereX Protection](security-measures/spherex-protection.md)
 * [Bug Bounty Program](security-measures/bug-bounty-program.md)
 * [Proving You Are An Affected Lender in a Default](security-measures/proving-you-are-an-affected-lender-in-a-default.md)
+* [Ripcord: Emergency Withdrawal Recovery](security-measures/ripcord.md)
 
 ## Legal
 
