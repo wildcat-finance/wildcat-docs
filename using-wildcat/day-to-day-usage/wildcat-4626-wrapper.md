@@ -31,6 +31,8 @@ When you wrap your market tokens:
 
 Any registered Wildcat market can have a wrapper deployed for it. Either the borrower (at market deployment) or any lender (at any point afterwards) can deploy one. Only one wrapper can exist per market — if one already exists, you use that one rather than deploying a new one.
 
+A wrapper can also be deployed after a market is terminated. Termination closes the market, but it does not destroy the market token or unregister the market. A non-rebasing wrapper may still be useful for accounting or secondary-market liquidity. Deploying one does not reopen the market or change the route back to the underlying asset.
+
 > Deployed wrapper factory addresses for mainnet and Sepolia can be found in Contract Deployments.
 
 ***

@@ -134,6 +134,8 @@ Returns the wrapper address for `market`, if one has already been deployed.
 
 Deploys a new wrapper for `market`. Reverts if `market` is the zero address, if a wrapper already exists, or if the market is not registered in the `ArchController`.
 
+Market termination is not a deployment restriction. A terminated market remains eligible while it is registered and its transfer policy supports wrapping. Deploying a wrapper does not reopen the market or change its withdrawal and redemption mechanics.
+
 ### Usage Notes
 
 #### Do not transfer tokens directly to the vault
