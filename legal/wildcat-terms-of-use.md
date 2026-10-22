@@ -1,9 +1,9 @@
 ---
 description: >-
-  Last Updated: 12 February 2025; SHA:
-  711a9e6707e6cf85166786461a0a45aa3b926b22b414abe8dfcc6c1afef020d1
-effective_date: "2025-02-12"
-doc_version: "sha256:711a9e6707e6cf85166786461a0a45aa3b926b22b414abe8dfcc6c1afef020d1"
+  Last Updated: 22 October 2026; SHA:
+  007e86459dfcab2734e4a2d573d3832f109cf9258f0dec212eaeb79b3c55c067
+effective_date: "2026-10-22"
+doc_version: "sha256:007e86459dfcab2734e4a2d573d3832f109cf9258f0dec212eaeb79b3c55c067"
 ---
 
 # Wildcat Terms Of Use
@@ -39,6 +39,10 @@ If you continue using the Products after any modifications, you accept the updat
 ### 2.3 Retroactive Application
 
 Modifications to these Terms will apply only prospectively. If any modification is found to be unenforceable, it will be applied within the bounds of enforceability without affecting other provisions.
+
+### 2.4 Required Re-Acceptance
+
+From time to time, in our sole discretion, we may require affirmative re-acceptance of the updated Terms (such as by wallet signature through the Products) from borrowers and from lenders before they may continue to access the relevant functions through the Products. If a borrower does not provide re-acceptance when required, the Company may suspend or restrict that borrower’s access to borrower functions through the Products and may revoke that borrower’s eligibility to deploy new Markets through the Products (Section 4.1) and exercise its rights under Section 17 until re-acceptance is provided. If a lender does not provide re-acceptance when required, the Company may restrict the making of new deposits through the Products; the Company will not, under this Section, restrict the submission of withdrawal requests or the claiming of assets that have become available, and those functions remain exercisable directly on-chain, independently of the Products. For all other users, continued use of the Products after posting of the updated Terms constitutes acceptance in accordance with Sections 2.1 and 2.2.
 
 ## 3 Disclaimers and Acknowledgments
 
@@ -419,4 +423,4 @@ Wildcat Foundation Email: contact@thewildcat.foundation Address: PO Box 448, Elg
 
 By accessing or using the Products, you acknowledge that you have read, understood, and agree to be bound by these Terms of Use, as well as the Risk Disclosures, and Privacy Policy.
 
-Updated and effective: 12 February 2025
+Updated and effective: 22 October 2026
